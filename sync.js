@@ -61,13 +61,18 @@
 
   /* ---------- backends ---------- */
   const CONFLICT = 'conflict';
-  function cloudBackend(key) {
+  /** Call one of the cloud database functions. Errors come back as readable messages. */
+  async function rpc(fn, body) {
     const p = project();
-    const call = async (fn, body) => {
-      const r = await fetch(p.url + '/rest/v1/rpc/' + fn, { method: 'POST', headers: { apikey: p.anon, Authorization: 'Bearer ' + p.anon, 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
-      if (!r.ok) { const t = await r.text().catch(() => ''); throw Error(r.status === 404 ? 'The cloud database isn’t set up yet (run the setup SQL).' : r.status === 401 ? 'The cloud key was rejected. Check the anon key.' : 'Cloud error ' + r.status + (t ? ': ' + t.slice(0, 120) : '')); }
-      return r.json();
-    };
+    const r = await fetch(p.url + '/rest/v1/rpc/' + fn, { method: 'POST', headers: { apikey: p.anon, Authorization: 'Bearer ' + p.anon, 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
+    if (!r.ok) {
+      const t = await r.text().catch(() => ''); let msg = ''; try { msg = JSON.parse(t).message || ''; } catch (e) { }
+      throw Error(r.status === 404 ? 'The cloud database isn’t set up yet (run the setup SQL).' : r.status === 401 ? 'The cloud key was rejected. Check the anon key.' : msg || ('Cloud error ' + r.status));
+    }
+    const t = await r.text(); return t ? JSON.parse(t) : null;
+  }
+  function cloudBackend(key) {
+    const call = rpc;
     return {
       id: 'cloud', label: 'Cloud',
       async pull() { const rows = await call('get_progress', { k: key }); const row = Array.isArray(rows) ? rows[0] : null; return row ? { state: row.data, rev: Number(row.rev) } : null; },
@@ -129,7 +134,7 @@
     status.busy = true; status.msg = 'Syncing…'; paintPill();
     try {
       for (const b of list) { status.route = b.label; await syncWith(b); }
-      status.ok = true; status.at = Date.now(); status.msg = 'Synced'; lastHash = stateHash(S().state); setCfg({ lastSync: status.at });
+      status.ok = true; status.at = Date.now(); status.msg = 'Synced'; lastHash = stateHash(S().state); setCfg({ lastSync: status.at }); try { window.Account?.afterSync?.(); } catch (e) { }
     } catch (e) {
       // A guest on the private Claude link can read but not save there: turn Claude sync off for them quietly.
       if (e && e.code === 'invalid_argument' && status.route === 'Claude account') { claudeDb = null; status.ok = null; status.msg = ''; }
@@ -170,7 +175,7 @@
     const statusLine = r => status.route === r && status.msg ? `<p class="sync-status ${status.ok === false ? 'bad' : ''}" role="status">${esc(status.msg)}${status.ok && status.at ? ' · ' + when(status.at) : ''}</p>` : '';
     const player = `<p class="source">Syncing player: <strong>${esc(profileName())}</strong>. Each player syncs separately.</p>`;
     $('#app').innerHTML = S().heading('TOOLS / SYNC', 'Sync your devices', 'Keep your laptop and phone on the same progress. Both devices keep working offline and merge when they reconnect. Your scores, XP, review schedule, and missed questions combine instead of overwriting.') +
-      (note ? `<div class="sync-note" role="status">${note}</div>` : '') + player +
+      (note ? `<div class="sync-note" role="status">${note}</div>` : '') + (window.Account?.cardHTML?.() || '') + player +
       `<div class="sync-grid">
       <section class="panel sync-card ${cloudOn ? 'is-on' : ''}"><span class="eyebrow">OPTION 1 · AUTOMATIC</span><h2>Cloud sync</h2>
         ${inClaude() ? `<p>Cloud sync works in the downloaded game folder and on a regular web link. Claude links can’t reach outside servers, so here use Claude sync or a transfer code.</p>` : !hasProject() ? `<p>Syncs by itself whenever you’re online, on any device and any link. It needs a free cloud database set up once. The steps are in <strong>SYNC-SETUP.md</strong> in the game folder.</p>
@@ -319,5 +324,5 @@
     paintPill();
     if (activeBackends().length) syncNow('start');
   }
-  window.SyncUI = { open: render, syncNow, init, _decode: decode, _encode: encode, get status() { return status; } };
+  window.SyncUI = { open: render, syncNow, init, rpc, hasProject, cfg, setCfg, forgetCloudBase: () => LS.del(baseKey('cloud')), paintPill, _decode: decode, _encode: encode, get status() { return status; } };
 })();

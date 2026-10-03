@@ -31,6 +31,7 @@
       ${msg ? `<p class="source">${msg}</p>` : ''}</section>
       <section class="panel"><h2>Compare with a friend</h2><p>Paste the result they texted you.</p><div class="dy-compare"><input id="dy-friend" type="text" placeholder="Study Terminal Daily #30 …" autocomplete="off"><button data-action="dy-compare">Compare</button></div><div id="dy-cmp"></div></section>
       ${histHTML(D)}`;
+    window.Account?.dailyFriends?.();
   }
   const grid = bits => bits.map(b => b ? '🟩' : '🟥').join('');
   function shareText(d, r) { return `Study Terminal Daily #${dayNumber(d)} (Exam ${exam()}) ${r.score}/5 ${grid(r.bits)} ${fmtT(r.secs)}${r.streak > 1 ? ' 🔥' + r.streak : ''}`; }

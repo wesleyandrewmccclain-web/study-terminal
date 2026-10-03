@@ -47,17 +47,26 @@
     if (live && live.code === code) return live;
     liveLeave();
     try {
-      const room = window.claude?.use ? await window.claude.use('room') : null; if (!room) return null;
+      const room = window.claude?.use ? await window.claude.use('room') : null;
+      if (!room) {
+        if (!window.Account?.available) return null;
+        // No Claude room here: share progress through the cloud and check for the other player every 2 seconds.
+        live = { code, cloud: true, others: [] };
+        const poll = async () => { if (!live || live.code !== code) return; try { const rows = await window.Account.duelGet(code); live.others = rows.map(r => ({ presence: { ...r.state, name: r.name } })); livePaint(); } catch (e) { } };
+        live.timer = setInterval(() => { if (S().page !== 'duel') return; poll(); }, 2000); poll();
+        livePub(); return live;
+      }
       const g = await room.join('duel-' + code.toLowerCase());
       live = { code, g, others: [] };
       live.off = g.onPeers(ch => { if (!live) return; live.others = ch.peers.filter(p => !p.isMe && p.presence && p.presence.duel === code); livePaint(); });
       livePub(); return live;
     } catch (e) { live = null; return null; }
   }
-  function liveLeave() { if (!live) return; try { live.off?.(); live.g.leave(); } catch (e) { } live = null; }
+  function liveLeave() { if (!live) return; try { clearInterval(live.timer); live.off?.(); live.g?.leave(); } catch (e) { } live = null; }
   function livePub() {
     if (!live) return; const d = duels()[live.code] || {}, mine = d.mine;
-    live.g.presence({ duel: live.code, name: cleanName(myName()), at: duel && duel.code === live.code ? duel.i : (mine ? 10 : 0), done: !!mine, bits: mine ? mine.bits.map(b => b ? 1 : 0).join('') : null, secs: mine ? mine.secs : null }).catch(() => { });
+    const pres = { duel: live.code, name: cleanName(myName()), at: duel && duel.code === live.code ? duel.i : (mine ? 10 : 0), done: !!mine, bits: mine ? mine.bits.map(b => b ? 1 : 0).join('') : null, secs: mine ? mine.secs : null };
+    if (live.cloud) window.Account?.duelSet(live.code, pres).catch(() => { }); else live.g.presence(pres).catch(() => { });
   }
   function livePaint() {
     if (!live) return; const o = live.others[0], d = duels()[live.code];
@@ -67,7 +76,7 @@
       if (fresh && d.mine && S().page === 'duel' && !duel) { duelLobby(live.code); return; }
     }
     const el = $('#duel-live'); if (!el) return;
-    el.innerHTML = o ? `<span class="live-dot"></span> ${esc(o.presence.name || 'Friend')} is in this duel · ${o.presence.done ? 'finished' : 'on question ' + Math.min(10, (+o.presence.at || 0) + 1) + ' of 10'}` : '<span class="live-dot off"></span> Live: waiting for your friend to open this duel on the same Claude link. Codes still work too.';
+    el.innerHTML = o ? `<span class="live-dot"></span> ${esc(o.presence.name || 'Friend')} is in this duel · ${o.presence.done ? 'finished' : 'on question ' + Math.min(10, (+o.presence.at || 0) + 1) + ' of 10'}` : '<span class="live-dot off"></span> Live: waiting for your friend to open this duel' + (live.cloud ? ' (logged in on their device).' : ' on the same Claude link.') + ' Codes still work too.';
   }
 
   function duelHome(msg) {
@@ -187,6 +196,7 @@
       const list = friends().filter(f => f.name.toLowerCase() !== c.name.toLowerCase()); list.push(c); set(FRIENDS, JSON.stringify(list));
       S().sound('match'); S().toast(`${c.name} added to your leaderboard.`); boardPage();
     });
+    window.Account?.onlineBoard?.();
   }
 
   async function copy(text, btn) {

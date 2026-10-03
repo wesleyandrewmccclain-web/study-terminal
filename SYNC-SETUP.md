@@ -2,25 +2,27 @@
 
 Open **⇅ Sync devices** in the sidebar, or tap the **⇅** button at the top. There are three ways to sync. You can use one or combine them.
 
-## Option 1: Cloud sync (automatic, recommended)
+## Option 1: Your account (automatic, recommended)
 
-Syncs by itself whenever you're online. It works from the downloaded folder, the web link, your phone and your laptop. It needs a free Supabase database, which you set up once (about 5 minutes).
+Cloud sync is already set up in this copy of the game. Play at **https://wesleyandrewmccclain-web.github.io/study-terminal/** on any laptop or phone.
 
-1. Go to **supabase.com** → **Start your project** → sign in with GitHub or email.
-2. **New project**. Any name (e.g. `study-terminal`), any database password, and the region closest to you (e.g. *US East*). Wait about a minute for it to finish.
-3. In the left sidebar, open **SQL Editor** → **New query**. Paste the whole of **`sync-setup.sql`** from this folder, then click **Run**. You should see "Success. No rows returned."
-4. Open **Project Settings → API** (or **Connect**). Copy:
-   - the **Project URL** (`https://xxxx.supabase.co`)
-   - the **anon / public** key (a long string starting `eyJ…`). Don't use the `service_role` key.
-5. In the game: **Sync devices → Cloud sync → "I have the Project URL and anon key"**. Paste both, then **Save**.
-6. Tap **Create a sync key**. Your progress uploads.
-7. Still in Sync, tap **Pair another device**. On your phone, open the game → **Sync devices** → **Scan QR** (or paste the code under **Receive**). Done. Both devices now stay in step on their own.
+1. Open **⇅ Sync devices** → **Log in to sync everywhere**.
+2. First time: type a username and a PIN or password (6+ characters) → **Create account**. Your progress uploads.
+3. Every other device: the same username and PIN → **Log in**. Progress from that device merges in; nothing is lost.
+4. It keeps syncing by itself while you're online. It also works offline and catches up later.
 
-**For your friend:** tap **Copy a setup code for them** and send it. They paste it under **Receive**, then tap **Create a sync key** for their own player. Their progress stays separate from yours.
+**What an account adds:**
+- **Online leaderboard**: everyone with an account, on the Leaderboard page.
+- **Today's results**: everyone's daily-challenge score, on the Daily page.
+- **Live duels anywhere**: create a duel, send the 6-letter code, and you'll see each other's progress live.
 
-**To skip step 5 on every device:** put the URL and anon key into `sync-config.js` in this folder, or send them to Claude to do it. Then every copy of the game is ready for cloud sync out of the box.
+**Your friend** creates their own account on their own device. Progress never mixes between accounts.
 
-*Is the anon key safe to share?* Yes. It can only call the two sync functions, and only with a sync key it already knows. It can't list, read or delete anyone else's progress. Your **sync key** is what unlocks your progress, so only share it with your own devices.
+**Forgot your PIN?** It can't be recovered (it's stored hashed). Make a new account. After 8 wrong tries an account locks for 15 minutes.
+
+**Behind the scenes:** a free Supabase database (project `bqjxvzjvaecnauhirvud`, set up with `sync-setup.sql`). The key in `sync-config.js` is safe to share. It can only call the game's functions. It can't list, read or delete anyone's data directly.
+
+**Advanced (no username):** under Cloud sync you can still make a bare sync key and pair devices with a QR code.
 
 ## Option 2: Claude account sync (automatic, Wesley only)
 

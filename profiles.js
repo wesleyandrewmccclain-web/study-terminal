@@ -92,6 +92,7 @@
     storageKey: () => keyFor(meta.current),
     current: () => ({ ...current() }),
     close: closePanel,
+    rename(id, name) { const n = cleanName(name), p = meta.list.find(x => x.id === id); if (!n || !p || meta.list.some(x => x.id !== id && x.name.toLowerCase() === n.toLowerCase())) return false; p.name = n; saveMeta(); renderChip(); return true; },
     init() { if (!current().name) current().name = 'Guest'; saveMeta(); renderChip(); },
     handle(a, b) {
       if (!a.startsWith('pf-')) return false;

@@ -134,3 +134,16 @@ body:is([data-skin="dusk"],[data-skin="signal"]) .brand{color:var(--ink)!importa
 body:is([data-skin="dusk"],[data-skin="signal"]) .plan-card{background:var(--light)!important;border-color:var(--line)!important}
 body:is([data-skin="dusk"],[data-skin="signal"]) .plan-check{background:#2d332b}
 body:is([data-skin="dusk"],[data-skin="signal"]) .plan-count{background:#2f4a2a;color:#cfe5bb}
+
+/* ---------- Accounts + online board ---------- */
+.acct-card{margin-bottom:16px}
+.acct-card.is-on{border-color:#b9cfa6;box-shadow:inset 3px 0 0 #6f9255}
+.acct-row{display:flex;gap:14px;align-items:flex-start}
+.acct-avatar{flex:none;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:#36573e;color:#fff;font-weight:700;font-size:18px}
+.acct-row h2{margin:2px 0 4px}
+.acct-form{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;align-items:end;margin-top:10px}
+.acct-form .field{display:flex;flex-direction:column;gap:4px;font-size:13px}
+.acct-form .actions,.acct-form .pf-error{grid-column:1/-1}
+.online-board{margin-bottom:16px}
+.online-board .board-me td,.dy-hist .board-me{background:#eef4e6}
+body:is([data-skin="dusk"],[data-skin="signal"]) :is(.online-board .board-me td,.dy-hist .board-me){background:#2f4a2a!important}
