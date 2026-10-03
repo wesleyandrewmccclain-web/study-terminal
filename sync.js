@@ -134,11 +134,12 @@
     status.busy = true; status.msg = 'Syncing…'; paintPill();
     try {
       for (const b of list) { status.route = b.label; await syncWith(b); }
-      status.ok = true; status.at = Date.now(); status.msg = 'Synced'; lastHash = stateHash(S().state); setCfg({ lastSync: status.at }); try { window.Account?.afterSync?.(); } catch (e) { }
+      status.ok = true; status.at = Date.now(); status.msg = 'Synced'; lastHash = stateHash(S().state); setCfg({ lastSync: status.at }); try { window.Account?.afterSync?.(); window.Account?.refreshMe?.(); } catch (e) { }
     } catch (e) {
       // A guest on the private Claude link can read but not save there: turn Claude sync off for them quietly.
       if (e && e.code === 'invalid_argument' && status.route === 'Claude account') { claudeDb = null; status.ok = null; status.msg = ''; }
       else { status.ok = false; status.msg = e.message || 'Sync failed'; }
+      if (/account was deleted/i.test(e?.message || '')) try { window.Account?.refreshMe?.(true); } catch (x) { }
     }
     status.busy = false; paintPill(); if (S().page === 'sync') render();
     return status.ok;

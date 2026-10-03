@@ -151,3 +151,13 @@ body:is([data-skin="dusk"],[data-skin="signal"]) :is(.online-board .board-me td,
 .acct-form input:focus{outline:2px solid #6f9255;outline-offset:1px}
 .acct-form .actions{display:flex;gap:10px;flex-wrap:wrap}
 body[data-skin="dusk"] .acct-form input,body[data-skin="signal"] .acct-form input,body[data-skin="archive"] .acct-form input{background:rgba(255,255,255,.06)}
+.acct-privacy{margin:14px 0 4px;padding:12px 14px;border:1px solid var(--line);border-radius:10px}
+.acct-switch{display:flex;gap:12px;align-items:flex-start;cursor:pointer}
+.acct-switch input{width:22px;height:22px;min-height:0;margin:2px 0 0;flex:none;accent-color:#36573e}
+.acct-switch span{display:flex;flex-direction:column;gap:3px}
+.acct-switch small{opacity:.75;font-size:13px}
+.acct-danger{margin-top:12px;padding:14px;border:1px solid #c98a7d;border-radius:10px;background:rgba(201,138,125,.08)}
+.acct-danger h3{margin:0 0 6px}
+.acct-danger .field{display:flex;flex-direction:column;gap:4px;font-size:13px;margin:10px 0}
+.acct-danger input{padding:11px 12px;border:1px solid var(--line);border-radius:8px;font:16px inherit;max-width:280px;min-height:44px;background:transparent;color:inherit}
+.acct-danger .actions{display:flex;gap:10px;flex-wrap:wrap}

@@ -18,6 +18,8 @@ Cloud sync is already set up in this copy of the game. Play at **https://wesleya
 
 **Your friend** creates their own account on their own device. Progress never mixes between accounts.
 
+**Privacy:** under **Sync devices** you can tick **Hide me from the online leaderboard** (your name, scores and daily results disappear for everyone else), or **Delete my account** (asks for your PIN, then removes the account, its scores, duels and the cloud copy; progress saved on each device stays).
+
 **Forgot your PIN?** It can't be recovered (it's stored hashed). Make a new account. After 8 wrong tries an account locks for 15 minutes.
 
 **Behind the scenes:** a free Supabase database (project `bqjxvzjvaecnauhirvud`, set up with `sync-setup.sql`). The key in `sync-config.js` is safe to share. It can only call the game's functions. It can't list, read or delete anyone's data directly.

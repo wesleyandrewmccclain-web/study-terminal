@@ -25,6 +25,7 @@ declare cur bigint;
 begin
   if k is null or length(k) < 20 or length(k) > 100 then raise exception 'sync key must be 20-100 characters'; end if;
   if pg_column_size(d) > 3000000 then raise exception 'progress is too large'; end if;
+  if exists (select 1 from public.study_deleted_keys x where x.key_hash = encode(extensions.digest(k, 'sha256'), 'hex')) then raise exception 'This account was deleted. Log in again or create a new account.'; end if;
   select p.rev into cur from public.study_progress p where p.sync_key = k for update;
   if cur is null then
     if coalesce(expected, 0) <> 0 then return -1; end if;
@@ -37,6 +38,11 @@ begin
   return cur + 1;
 end; $$;
 
+-- Keys of deleted accounts (hashed), so a device that still has one can't re-upload after deletion.
+create table if not exists public.study_deleted_keys (key_hash text primary key, deleted_at timestamptz not null default now());
+alter table public.study_deleted_keys enable row level security;
+revoke all on table public.study_deleted_keys from anon, authenticated;
+
 -- ---------- accounts: username + PIN → the player's sync key ----------
 create table if not exists public.study_accounts (
   username   text primary key check (username ~ '^[a-z0-9_.-]{3,20}$'),
@@ -47,6 +53,7 @@ create table if not exists public.study_accounts (
   locked_until timestamptz,
   created_at timestamptz not null default now()
 );
+alter table public.study_accounts add column if not exists hidden boolean not null default false;
 alter table public.study_accounts enable row level security;
 revoke all on table public.study_accounts from anon, authenticated;
 
@@ -76,7 +83,7 @@ begin
   if a.locked_until is not null and a.locked_until > now() then return jsonb_build_object('ok', false, 'error', 'Too many wrong tries. Wait 15 minutes and try again.'); end if;
   if a.pin_hash = crypt(pin, a.pin_hash) then
     update public.study_accounts set fails = 0, locked_until = null where username = a.username;
-    return jsonb_build_object('ok', true, 'key', a.sync_key, 'name', a.display);
+    return jsonb_build_object('ok', true, 'key', a.sync_key, 'name', a.display, 'hidden', a.hidden);
   end if;
   update public.study_accounts set fails = a.fails + 1, locked_until = case when a.fails + 1 >= 8 then now() + interval '15 minutes' else null end where username = a.username;
   return jsonb_build_object('ok', false, 'error', 'Wrong username or PIN.');
@@ -115,7 +122,7 @@ returns table (name text, xp int, answers int, accuracy int, mock_best int, boss
 language sql security definer set search_path = public as $$
   select a.display, s.xp, s.answers, s.accuracy, s.mock_best, s.bosses, s.daily_streak, s.daily_day, s.daily_score, s.daily_secs, s.daily_grid, s.updated_at
   from public.study_scores s join public.study_accounts a using (username)
-  where s.exam = ex order by s.xp desc limit 100;
+  where s.exam = ex and not a.hidden order by s.xp desc limit 100;
 $$;
 
 -- ---------- live duels (progress while two players answer the same 10 questions) ----------
@@ -146,6 +153,38 @@ returns table (name text, state jsonb, updated_at timestamptz) language sql secu
   select a.display, d.state, d.updated_at from public.study_duels d join public.study_accounts a using (username) where d.code = upper(c);
 $$;
 
+-- ---------- account controls: who am I, hide from the leaderboard, delete everything ----------
+create or replace function public.account_me(k text)
+returns jsonb language sql security definer set search_path = public as $$
+  select jsonb_build_object('name', a.display, 'hidden', a.hidden) from public.study_accounts a where a.sync_key = k and length(k) >= 20;
+$$;
+
+create or replace function public.set_hidden(k text, h boolean)
+returns boolean language plpgsql security definer set search_path = public as $$
+begin
+  update public.study_accounts set hidden = coalesce(h, false) where sync_key = k and length(k) >= 20;
+  if not found then raise exception 'Not signed in.'; end if;
+  return coalesce(h, false);
+end; $$;
+
+-- Needs the PIN again. Removes the account, its scores, duels and the cloud copy of its progress.
+create or replace function public.delete_account(u text, pin text)
+returns jsonb language plpgsql security definer set search_path = public, extensions as $$
+declare a public.study_accounts;
+begin
+  select * into a from public.study_accounts where username = lower(trim(u)) for update;
+  if not found then return jsonb_build_object('ok', false, 'error', 'Wrong username or PIN.'); end if;
+  if a.locked_until is not null and a.locked_until > now() then return jsonb_build_object('ok', false, 'error', 'Too many wrong tries. Wait 15 minutes and try again.'); end if;
+  if a.pin_hash <> crypt(pin, a.pin_hash) then
+    update public.study_accounts set fails = a.fails + 1, locked_until = case when a.fails + 1 >= 8 then now() + interval '15 minutes' else null end where username = a.username;
+    return jsonb_build_object('ok', false, 'error', 'Wrong PIN. Nothing was deleted.');
+  end if;
+  insert into public.study_deleted_keys (key_hash) values (encode(digest(a.sync_key, 'sha256'), 'hex')) on conflict do nothing;
+  delete from public.study_progress where sync_key = a.sync_key;
+  delete from public.study_accounts where username = a.username;  -- scores and duels go with it
+  return jsonb_build_object('ok', true);
+end; $$;
+
 -- ---------- permissions: anon may call the functions, nothing else ----------
 revoke all on function public.get_progress(text) from public;
 revoke all on function public.put_progress(text, jsonb, bigint) from public;
@@ -155,6 +194,10 @@ revoke all on function public.post_score(text, int, jsonb) from public;
 revoke all on function public.get_leaderboard(int) from public;
 revoke all on function public.duel_set(text, text, jsonb) from public;
 revoke all on function public.duel_get(text) from public;
+revoke all on function public.account_me(text) from public;
+revoke all on function public.set_hidden(text, boolean) from public;
+revoke all on function public.delete_account(text, text) from public;
 grant execute on function public.get_progress(text), public.put_progress(text, jsonb, bigint), public.create_account(text, text, text),
-  public.login(text, text), public.post_score(text, int, jsonb), public.get_leaderboard(int), public.duel_set(text, text, jsonb), public.duel_get(text)
+  public.login(text, text), public.post_score(text, int, jsonb), public.get_leaderboard(int), public.duel_set(text, text, jsonb), public.duel_get(text),
+  public.account_me(text), public.set_hidden(text, boolean), public.delete_account(text, text)
   to anon, authenticated;
