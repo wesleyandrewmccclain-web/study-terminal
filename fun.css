@@ -147,3 +147,7 @@ body:is([data-skin="dusk"],[data-skin="signal"]) .plan-count{background:#2f4a2a;
 .online-board{margin-bottom:16px}
 .online-board .board-me td,.dy-hist .board-me{background:#eef4e6}
 body:is([data-skin="dusk"],[data-skin="signal"]) :is(.online-board .board-me td,.dy-hist .board-me){background:#2f4a2a!important}
+.acct-form input{padding:11px 12px;border:1px solid var(--line);border-radius:8px;background:var(--paper,#fbfaf4);color:inherit;font:16px/1.2 inherit;width:100%;min-height:44px}
+.acct-form input:focus{outline:2px solid #6f9255;outline-offset:1px}
+.acct-form .actions{display:flex;gap:10px;flex-wrap:wrap}
+body[data-skin="dusk"] .acct-form input,body[data-skin="signal"] .acct-form input,body[data-skin="archive"] .acct-form input{background:rgba(255,255,255,.06)}
