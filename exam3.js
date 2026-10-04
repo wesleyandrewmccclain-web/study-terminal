@@ -324,10 +324,84 @@ window.EXAM3_DATA = (() => {
       steps: ['FUTA = 0.006 × 7,000 = 42.00.', 'Base = 21.50 × 38 = 817.00; fee = 204.25; total = 1,021.25 (= 817 × 1.25).', 'The agency issues the W-2, because it is the legal employer.'] }
   );
 
+  /* ---- 10/3 Payroll Update (Canvas Resources: Fed & State Tax Rates page, Payroll Deduction Flowchart, 2025 Fed W-4, 2025 IL W-4) ----
+     Own id prefix (e3p-) so adding these never shifts the ids of earlier items. */
+  const PU = 'Payroll Update (10/3)', CT = 'Canvas tax table', FL = 'Canvas payroll flowchart', W4 = '2025 W-4 / IL-W-4';
+  let pn = 0;
+  const pq = (prompt, options, answer, explanation, source) => ({ id: 'e3p-q' + (++pn), topic: 'payroll', prompt, options, answer, answerKeyText: options[answer], explanation, source });
+  const pc = (front, back, source, core = true) => ({ id: 'e3p-c' + (++pn), topic: 'payroll', front, back, source, core });
+  const pk = (clue, answer, source) => ({ id: 'e3p-k' + (++pn), topic: 'payroll', clue, answer, source });
+  questions.push(
+    pq('In the payroll deduction flow, what is taken out FIRST after gross pay?', ['Taxes', 'Before-tax deductions', 'After-tax deductions', 'Garnishments'], 1, 'Gross → before-tax deductions → taxes → after-tax deductions → net pay.', 'Written from ' + FL),
+    pq('A Roth 401(k) contribution is a(n):', ['Before-tax deduction', 'After-tax deduction', 'Employer-paid tax', 'Part of gross pay'], 1, 'Roth = after-tax, so it doesn’t lower taxes. A plain 401(k) is before-tax. Same account family, opposite layer.', 'Written from ' + FL),
+    pq('Which of these is a BEFORE-tax deduction on the flowchart?', ['Union dues', 'Wage garnishment', 'HSA contribution', 'Charitable giving'], 2, 'Before-tax: health insurance, 401(k)/HSA/FSA, commuter benefits. Dues, garnishments and charity are after-tax.', 'Written from ' + FL),
+    pq('Which of these is an AFTER-tax deduction?', ['Health insurance premium', 'Traditional 401(k)', 'Commuter benefits', 'Union dues'], 3, 'After-tax: Roth 401(k), union dues, garnishments, charity.', 'Written from ' + FL),
+    pq('Why does a before-tax deduction save the employee money?', ['It is paid by the employer', 'It lowers taxable income, so less income tax is withheld', 'It is refunded at year end', 'It skips Social Security'], 1, 'Before-tax deductions come out before income tax is figured, shrinking taxable pay. (In the prof’s method FICA still comes off gross.)', 'Written from ' + PU),
+    pq('The U.S. federal income tax is:', ['Flat: one rate on all income', 'Progressive and marginal: each slice is taxed at its own rate', 'A fixed 4.95%', 'Paid only by the employer'], 1, 'Each slice of taxable income is taxed at its bracket’s rate. You never apply one rate to the whole amount.', 'Written from ' + CT),
+    pq('Taxable income is $40,000 (single, 2025). Federal income tax is:', ['$4,000', '$4,562', '$4,800', '$8,800'], 1, '12% bracket: 1,193 + 0.12 × (40,000 − 11,925) = 1,193 + 3,369 = $4,562.', 'Written from ' + CT + ' · guide example A'),
+    pq('Taxable income is $49,000. Federal income tax is:', ['$10,780.00', '$5,880.00', '$5,694.50', '$4,900.00'], 2, '22% bracket: 5,579 + 0.22 × (49,000 − 48,475) = 5,579 + 115.50 = $5,694.50. 22% × 49,000 = $10,780 is the trap.', 'Written from ' + CT + ' · guide example B'),
+    pq('Someone with $60,000 of taxable income has a MARGINAL tax rate of:', ['10%', '12%', '22%', '24%'], 2, '$60,000 lands in the $48,476–$103,350 bracket, so the last dollar is taxed at 22%.', 'Written from ' + CT),
+    pq('Compared with the marginal rate, the EFFECTIVE tax rate (total tax ÷ taxable income) is:', ['Always higher', 'Always lower (or equal in the first bracket)', 'Always the same', 'Unrelated'], 1, 'Lower slices are taxed at lower rates, so the average comes out below the top rate. $40,000 → $4,562 = 11.4% vs a 12% marginal rate.', 'Written from ' + PU),
+    pq('What is Illinois’s state income tax rate?', ['3.00% with brackets', '4.95% flat', '6.20%', '7.65%'], 1, 'Canvas: Illinois has a fixed income tax rate of 4.95%. No brackets.', CT),
+    pq('A question describes a tax as “fixed” or “one rate.” Which tax is it?', ['Federal income tax', 'Illinois income tax', 'FUTA', 'Medicare'], 1, '“Flat/fixed” → Illinois. “Progressive/brackets” → federal.', 'Written from ' + PU),
+    pq('Monthly taxable pay is $3,650. Illinois income tax withheld is:', ['$108.04', '$180.68', '$226.30', '$279.23'], 1, '4.95% × 3,650 = $180.68.', 'Written from ' + PU + ' 4.11'),
+    pq('Before using the bracket table on a bi-weekly paycheck, you multiply by:', ['12', '24', '26', '52'], 2, 'Annualize: monthly ×12 · semi-monthly ×24 · bi-weekly ×26 · weekly ×52. Then divide the annual tax back down.', 'Written from ' + PU),
+    pq('Monthly gross $4,000; before-tax $350; Roth $100; single, Illinois. Net pay (prof’s method, FICA off gross) is:', ['$2,645.15', '$2,745.15', '$2,951.15', '$3,034.00'], 0, 'FICA 248 + 58; fed 5,018/12 = 418.17; IL 180.68. 4,000 − 350 − 306 − 418.17 − 180.68 − 100 = $2,645.15.', 'Written from ' + PU + ' 4.11'),
+    pq('If a payroll problem GIVES you the income tax withheld, you should:', ['Recompute it from the bracket table', 'Subtract the given amount as is', 'Apply 4.95% instead', 'Ignore it'], 1, 'Given a withholding number → just subtract it. Only use the brackets when you have to compute it yourself.', 'Written from ' + PU),
+    pq('Where does an employee’s completed Form W-4 go?', ['To the IRS', 'To the employer', 'To the state', 'To the Social Security Administration'], 1, 'The form says “Give Form W-4 to your employer.” It tells the employer how much to withhold.', W4),
+    pq('An employee wants an extra $25 withheld from every paycheck. Which part of the federal W-4?', ['Step 1', 'Step 2', 'Step 3', 'Step 4(c)'], 3, 'Step 4(c) = extra withholding each pay period.', W4),
+    pq('On the 2025 W-4, Step 3 (Claim Dependents) gives:', ['$500 per child under 17', '$2,000 per qualifying child under 17 and $500 per other dependent', '$1,000 per dependent', 'One allowance per dependent'], 1, '$2,000 × qualifying children under 17 + $500 × other dependents (income $200k or less; $400k MFJ).', W4),
+    pq('An employee has two jobs. Which W-4 step applies?', ['Step 2: Multiple Jobs or Spouse Works', 'Step 3: Claim Dependents', 'Step 4(b): Deductions', 'Step 5: Sign'], 0, 'Step 2 covers more than one job or a working spouse (estimator, worksheet → 4(c), or the two-jobs checkbox).', W4),
+    pq('Which statement about allowances is TRUE?', ['The federal W-4 still uses allowances', 'The IL-W-4 uses allowances; more allowances = less tax withheld', 'More allowances = more tax withheld', 'Neither form uses allowances'], 1, 'Federal dropped allowances in the 2020 redesign. The Illinois IL-W-4 still uses them.', W4),
+    pq('An employee claims exempt on the federal W-4. They:', ['Leave the form blank', 'Write “Exempt” under Step 4(c) and complete only Steps 1(a), 1(b) and 5', 'Check a box in Step 3', 'Send it to the IRS'], 1, 'Exempt is allowed only if they owed no tax last year and expect to owe none.', W4),
+    pq('The W-4 determines:', ['The final tax the employee owes', 'How much is withheld from each paycheck', 'The employer’s FUTA rate', 'The employee’s gross pay'], 1, 'W-4 sets withholding, not the final tax. The difference settles when they file.', 'Written from ' + PU)
+  );
+  flashcards.push(
+    pc('Payroll deduction flow', 'Gross → BEFORE-tax deductions → TAXES (fed, SS, Medicare, state) → AFTER-tax deductions → NET pay.', FL),
+    pc('Before-tax deductions', 'Health insurance · 401(k) / HSA / FSA · commuter benefits. They lower taxable income.', FL),
+    pc('After-tax deductions', 'Roth 401(k) · union dues · garnishments · charity. They don’t lower taxes.', FL),
+    pc('Roth vs traditional 401(k)', 'Traditional = before-tax. Roth = after-tax. Same account family, opposite layer.', PU),
+    pc('2025 federal brackets (single)', '10% to 11,925 · 12% to 48,475 · 22% to 103,350 · 24% to 197,300 · 32% to 250,525 · 35% to 626,350 · 37% above.', CT),
+    pc('Bracket bases', '1,193 (12%) · 5,579 (22%) · 17,651 (24%) · 40,199 (32%) · 57,231 (35%) · 188,770 (37%).', CT),
+    pc('Federal tax steps', '1 Annualize · 2 subtract before-tax → taxable · 3 tax = base + rate × (taxable − floor) · 4 ÷ pay periods.', PU),
+    pc('Annualizing', 'Monthly ×12 · semi-monthly ×24 · bi-weekly ×26 · weekly ×52.', PU),
+    pc('Marginal vs effective rate', 'Marginal = rate on the last dollar (your bracket). Effective = total tax ÷ taxable income (lower).', PU),
+    pc('Illinois income tax', 'Flat 4.95% of taxable pay. No brackets.', CT),
+    pc('Federal W-4 steps', '1 personal info + filing status · 2 multiple jobs / spouse works · 3 dependents ($2,000/child <17, $500 other) · 4 other income, deductions, (c) extra withholding · 5 sign.', W4),
+    pc('IL-W-4 lines', 'Line 1 basic allowances · Line 2 additional allowances (65+, blind, deductions ÷ 1,000) · Line 3 extra $ per paycheck · Exempt box.', W4),
+    pc('Allowances trap', 'Federal W-4: no allowances since 2020. IL-W-4: yes, and more allowances = less withheld.', W4),
+    pc('Given vs computed tax', 'Given a withholding number → subtract it. Only compute from brackets when none is given. FICA comes off gross in the prof’s method.', PU)
+  );
+  cues.push(
+    pk('“Roth,” “union dues,” “garnishment,” “charity”', 'after-tax deduction', FL),
+    pk('“401(k), HSA, FSA, health premium, commuter”', 'before-tax deduction', FL),
+    pk('“flat,” “fixed,” “one rate”', 'Illinois 4.95%', CT),
+    pk('“progressive,” “brackets”', 'federal income tax', CT),
+    pk('“rate on the last dollar”', 'marginal rate', PU),
+    pk('“extra withholding each paycheck”', 'W-4 Step 4(c) / IL-W-4 Line 3', W4),
+    pk('“two jobs” / “working spouse”', 'W-4 Step 2', W4),
+    pk('“dependents” / “child credit”', 'W-4 Step 3', W4),
+    pk('“allowances”', 'IL-W-4 only (federal dropped them)', W4)
+  );
+  math.push(
+    { id: 'e3m-pu1', title: 'Payroll Update · Federal tax from brackets', topic: 'payroll', type: 'fedtax', source: PU + ' 4.9 examples', origin: 'notes',
+      prompt: 'Using the 2025 single brackets, find the federal income tax on (a) $40,000 of taxable income and (b) $49,000 of taxable income. Then (c) the effective rate for (a), as a %.',
+      fields: [$f('a', '(a) Tax on $40,000', 4562), $f('b', '(b) Tax on $49,000', 5694.5), $f('eff', '(c) Effective rate for (a)', 11.4, '%', 0.05)],
+      steps: ['(a) 12% bracket: 1,193 + 0.12 × (40,000 − 11,925) = 1,193 + 3,369 = 4,562.', '(b) 22% bracket: 5,579 + 0.22 × (49,000 − 48,475) = 5,579 + 115.50 = 5,694.50. Not 22% × 49,000.', '(c) 4,562 ÷ 40,000 = 11.4% (below the 12% marginal rate).'] },
+    { id: 'e3m-pu2', title: 'Payroll Update · Net pay with computed taxes', topic: 'payroll', type: 'paytax', source: PU + ' 4.11', origin: 'notes',
+      prompt: 'Monthly gross $4,000. Before-tax: $200 401(k) + $150 health premium. After-tax: $100 Roth. Single, Illinois. Find SS, Medicare, monthly federal tax, Illinois tax, and net pay.',
+      fields: [$f('ss', 'Social Security', 248), $f('med', 'Medicare', 58), $f('fed', 'Federal income tax (monthly)', 418.17), $f('il', 'Illinois tax', 180.68), $f('net', 'Net pay', 2645.15)],
+      steps: ['Taxable = 4,000 − 350 = 3,650/mo → × 12 = 43,800/yr.', 'SS = 6.2% × 4,000 = 248; Medicare = 1.45% × 4,000 = 58 (off gross).', 'Fed = 1,193 + 0.12 × (43,800 − 11,925) = 5,018/yr ÷ 12 = 418.17.', 'IL = 4.95% × 3,650 = 180.68.', 'Net = 4,000 − 350 − 248 − 58 − 418.17 − 180.68 − 100 = 2,645.15.'] }
+  );
+
   return {
-    exam: 3, examDay: 'Wed 10/7', examDate: [2026, 9, 7, 12, 35], scope: 'Benefits + Slides 09–10 (guest speakers pending)',
-    note: 'Some Exam 3 material isn’t in the game yet: the two guest speakers, the Benefits deck, and the 10/5 compa-ratio exercise. Benefits items are drafted from the textbook.',
+    exam: 3, examDay: 'Mon 10/12', examDate: [2026, 9, 12, 12, 35], scope: 'Benefits + Slides 09–10 + payroll update (guest speakers pending)',
+    note: 'Exam 3 moved to Mon 10/12 (150 pts). New: payroll tax brackets, Illinois 4.95%, the deduction flow and W-4s. Still missing: the two guest speakers, the Benefits deck, and the 10/5 compa-ratio exercise. Benefits items are drafted from the textbook.',
     topics: [{ id: 'benefits', name: 'Benefits' }, { id: 'compa', name: 'Compa-Ratios' }, { id: 'payroll', name: 'Payroll' }, { id: 'flex', name: 'Flexible Workforce' }, { id: 'exec', name: 'Executive Pay' }],
+    /* Class meetings the study plan shows on their day. */
+    classes: [
+      { day: '2026-10-05', title: 'Review class at 12:35: get the compa-ratio exercise, ask about the exam format, and ask whether FICA comes off gross or after before-tax deductions', why: 'Anything said here is gold.', send: 'Send Claude your review notes + the exercise' }
+    ],
     /* Exam 3 material that isn't in the game yet. Shown as "Not yet available" cards. When you add one,
        give its questions/cards a topic id and move it into topics above, then delete it here. */
     pending: [

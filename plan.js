@@ -36,25 +36,29 @@
     const pending = (S().data.pending || []).filter(p => p.status !== 'Done');
     const T = (id, title, why, go, check, manual) => ({ id, title, why, go, check, manual });
     const notes = pending.length ? T('notes', 'Send Claude the missing material', pending.map(p => p.name.replace(/^Guest speaker: /, '')).join(', ') + ' still aren’t in the game.', null, null, true) : null;
-    if (dte >= 4) return { title: 'Get a baseline', items: [
-      T('mock', 'Take a mock exam', 'See where you stand before you study more.', 'mock', mockToday),
+    // Class meetings that fall on this day (from the exam pack), e.g. the 10/5 review.
+    const e = examDate(), date = e ? new Date(e) : new Date(); date.setDate(date.getDate() - dte);
+    const classes = (S().data.classes || []).filter(c => c.day === dayKey(date)).flatMap(c => [T('class-' + c.day, c.title, c.why || 'Anything said in class is gold.', null, null, true), c.send ? T('send-' + c.day, c.send, 'It goes straight into the game and the mock exam.', null, null, true) : null]).filter(Boolean);
+    const withClass = (title, list) => ({ title, items: [...classes, ...list].filter(t => t && !(t.id === 'notes' && classes.some(c => c.id.startsWith('send-')))) });
+    const mockBefore = (S().state.mocks?.[ek()] || []).some(m => !isToday(m.at));
+    if (dte >= 7) return withClass('Get a baseline', [
+      mockBefore ? T('mission', 'Finish a 20-minute mission', 'Mixed review, weighted to what you miss.', 'missions', missionToday) : T('mock', 'Take a mock exam', 'See where you stand before you study more.', 'mock', mockToday),
       T('weak', `Drill ${wName}: 10 answers`, 'Your lowest readiness right now.', wId ? 'topic:' + wId : 'drill', () => answeredToday(wId) >= 10),
-      T('daily', 'Play the daily challenge', 'Two minutes, keeps the streak.', 'daily', dailyToday), notes].filter(Boolean) };
-    if (dte === 3) return { title: 'Build it up', items: [
+      T('daily', 'Play the daily challenge', 'Two minutes, keeps the streak.', 'daily', dailyToday), notes]);
+    if (dte >= 3) return withClass('Build it up', [
       T('mission', 'Finish a 20-minute mission', 'Mixed review, weighted to what you miss.', 'missions', missionToday),
-      T('written', 'Write two short answers', 'The exam has short answer and essay too.', 'written', () => writtenToday() >= 2),
-      T('lookup', 'One formula lookup round', 'Practice finding things on your sheet fast.', 'lookup', lookupToday),
-      T('trap', 'Play spot the trap', 'The professor’s favorite mix-ups.', 'arcade', trapToday), notes].filter(Boolean) };
-    if (dte === 2) return { title: 'Review day', items: [
-      T('queue', 'Clear your review queue before class', 'Everything that’s due, so class fills gaps instead.', 'review', () => dueNow() === 0 || missionToday()),
-      T('class', 'Review class at 12:35: get the compa-ratio exercise and ask about the exam format', 'Anything said here is gold.', null, null, true),
-      T('send', 'Send Claude your review notes + the exercise', 'They go straight into the game and the mock exam.', null, null, true),
-      T('daily', 'Play the daily challenge', 'Keep the streak.', 'daily', dailyToday)] };
-    if (dte === 1) return { title: 'Final run', items: [
+      dte % 2 ? T('written', 'Write two short answers', 'The exam has short answer and essay too.', 'written', () => writtenToday() >= 2) : T('weak', `Drill ${wName}: 10 answers`, 'Your lowest readiness right now.', wId ? 'topic:' + wId : 'drill', () => answeredToday(wId) >= 10),
+      dte % 2 ? T('lookup', 'One formula lookup round', 'Practice finding things on your sheet fast.', 'lookup', lookupToday) : T('trap', 'Play spot the trap', 'The professor’s favorite mix-ups.', 'arcade', trapToday),
+      T('daily', 'Play the daily challenge', 'Keep the streak.', 'daily', dailyToday), notes]);
+    if (dte === 2) return withClass('Review day', [
+      T('queue', 'Clear your review queue', 'Everything that’s due, so nothing is cold on exam day.', 'review', () => dueNow() === 0 || missionToday()),
+      T('mock', 'Take a mock exam', 'Your midpoint check. Compare with the first one.', 'mock', mockToday),
+      T('daily', 'Play the daily challenge', 'Keep the streak.', 'daily', dailyToday)]);
+    if (dte === 1) return withClass('Final run', [
       T('mock', 'Take a second mock exam', 'Compare with your first one.', 'mock', mockToday),
       T('weak', `Fix ${wName}: 10 answers`, 'Your lowest readiness right now.', wId ? 'topic:' + wId : 'drill', () => answeredToday(wId) >= 10),
       T('listen', 'Listen mode: 10 cards', 'Easy review for the evening.', 'listen', () => listenToday() >= 10),
-      T('lookup', 'One formula lookup round', 'Lock in where everything is.', 'lookup', lookupToday)] };
+      T('lookup', 'One formula lookup round', 'Lock in where everything is.', 'lookup', lookupToday)]);
     if (dte === 0) return { title: 'Exam day', items: [
       T('lookup', 'One formula lookup round (morning)', 'Warm up your short look at notes.', 'lookup', lookupToday),
       T('mission', 'A 5-minute mission', 'Light review, nothing new.', 'missions', missionToday),
@@ -92,9 +96,9 @@
     const dte = daysLeft(), e = examDate();
     if (dte == null || dte < 0) { $('#app').innerHTML = S().heading('PLAN', 'Study plan', 'This exam is behind you. Switch exams in the sidebar to plan for the next one.'); return; }
     const days = [];
-    for (let d = Math.min(dte, 4); d >= 0; d--) { const date = new Date(e); date.setDate(date.getDate() - d); days.push({ d, date }); }
-    const st = store();
-    $('#app').innerHTML = S().heading('PLAN / EXAM ' + ek(), 'Your plan to Wednesday', 'A few focused tasks a day. Game tasks tick off on their own when you do them; class and notes have a checkbox.') +
+    for (let d = Math.min(dte, 10); d >= 0; d--) { const date = new Date(e); date.setDate(date.getDate() - d); days.push({ d, date }); }
+    const st = store(), dayName = e.toLocaleDateString('en-US', { weekday: 'long' });
+    $('#app').innerHTML = S().heading('PLAN / EXAM ' + ek(), `Your plan to ${dayName} ${e.getMonth() + 1}/${e.getDate()}`, 'A few focused tasks a day. Game tasks tick off on their own when you do them; class and notes have a checkbox.') +
       `<div class="plan-week">${days.map(({ d, date }) => {
         const isT = d === dte, plan = isT ? evaluate(d) : tasksFor(d), key = dayKey(date), past = d > dte;
         const items = plan.items.map(t => { if (!isT) t.done = !!(st.done[key]?.[t.id] || st.manual[key]?.[t.id]); return t; });

@@ -25,6 +25,11 @@ window.FUN_DATA = {
       { q: 'Taxes the employer pays that the employee doesn’t', a: 'FUTA and SUTA', b: 'FICA', why: 'Both pay FICA; FUTA/SUTA are employer-only.' },
       { q: 'Total FICA withheld from the employee', a: '7.65%', b: '15.30%', why: '15.3% is employee + employer combined.' },
       { q: 'W-4 vs W-2', a: 'W-4 at hire, W-2 at year end', b: 'W-2 at hire, W-4 at year end', why: 'W-4 sets withholding; W-2 reports the year.' },
+      { q: 'Federal tax on $49,000 of taxable income', a: '$5,579 + 22% of the amount over $48,475', b: '22% × $49,000', why: 'Marginal brackets: only dollars above the floor get the top rate.' },
+      { q: 'A Roth 401(k) contribution', a: 'After-tax (doesn’t lower taxes)', b: 'Before-tax, like a 401(k)', why: 'Same account family, opposite layer.' },
+      { q: 'Illinois income tax', a: 'Flat 4.95%', b: 'Brackets like federal', why: '“Fixed” rate per the Canvas page.' },
+      { q: 'Allowances are used on…', a: 'The Illinois IL-W-4', b: 'The federal W-4', why: 'Federal dropped allowances in 2020.' },
+      { q: 'Where the employee gives the W-4', a: 'To the employer', b: 'To the IRS', why: 'The employer uses it to set withholding.' },
       { q: 'A worker leaving in May to return to school', a: 'NOT a contingent worker', b: 'A contingent worker', why: 'Personal reasons (school, retiring) don’t count.' },
       { q: 'A part-time cashier', a: 'A contingent worker', b: 'A core employee', why: 'Part-timers are contingent.' },
       { q: 'Health insurance for part-time workers', a: 'Need not be offered at all', b: 'Must be offered under PPACA', why: 'Part-timers aren’t protected under PPACA.' },
@@ -70,7 +75,7 @@ window.FUN_DATA = {
       payroll: { ch: 'Chapter 3 · The Ledger', log: 'Every paycheck passes through the Ledger: gross in, taxes out, six steps from time clock to report.', after: 'The Ledger is balanced. 6.2 plus 1.45, off gross, never off the balance.' },
       flex: { ch: 'Chapter 4 · The Contract', log: 'Workers who never signed on for long. The Contractor hides them behind agencies and 1099s.', after: 'The Contractor is exposed: four kinds of flexible worker, two tests to tell them apart.' },
       exec: { ch: 'Chapter 5 · The Top Floor', log: 'At the top of the tower, salary is only 8.7% of the story. The Executive is paid in futures.', after: 'The Top Floor is quiet. Base, bonus, long-term, benefits, perks: five parts, and you can price them all.' },
-      final: { ch: 'Final · The Core Archive', log: 'Every sector clear opens the Core Archive. Exam 3 waits on the other side.', after: 'The archive is yours. See you Wednesday.' }
+      final: { ch: 'Final · The Core Archive', log: 'Every sector clear opens the Core Archive. Exam 3 waits on the other side.', after: 'The archive is yours. See you on exam day.' }
     },
     2: {
       competitiveness: { ch: 'Chapter 1 · The Market', log: 'The Sentinel watches the market line. Lead, match, or lag.', after: 'The market line is yours.' },

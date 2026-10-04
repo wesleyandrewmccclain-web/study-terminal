@@ -128,13 +128,25 @@ window.BOOST_DATA = {
         { label: 'Bonuses are a shrinking share of exec pay', any: ['smaller', 'shrink', 'declin', 'less of'] },
         { label: 'Perks = position-based, extend to family; benefits = insurance/retirement', any: ['perk', 'perquisite', 'position', 'family', 'depend', 'car'] }
       ],
-      model: 'Annual bonus plans motivate better short-term performance, and nearly every private-sector executive has one. They are commonly measured on profit, revenue, and cash flow, with non-financial measures that can be strategic, individual, or discretionary; a balanced scorecard is preferred. Bonuses have become a smaller share of executive pay as long-term incentives grow. Perquisites are privileges that come with the position and often extend to the family (like a company car), while benefits are the insurance and retirement package. Both are separate items on the list of five.' }
+      model: 'Annual bonus plans motivate better short-term performance, and nearly every private-sector executive has one. They are commonly measured on profit, revenue, and cash flow, with non-financial measures that can be strategic, individual, or discretionary; a balanced scorecard is preferred. Bonuses have become a smaller share of executive pay as long-term incentives grow. Perquisites are privileges that come with the position and often extend to the family (like a company car), while benefits are the insurance and retirement package. Both are separate items on the list of five.' },
+    { id: 'w-pu-flow', topic: 'payroll', kind: 'short', source: 'Payroll Update (10/3) · Canvas flowchart + tax rates',
+      prompt: 'Walk through the payroll deduction flow from gross to net pay, give an example of each type of deduction, and explain how federal and Illinois income tax are calculated differently.',
+      points: [
+        { label: 'Order: gross → before-tax → taxes → after-tax → net', any: ['before-tax', 'pre-tax', 'pretax', 'before tax'] },
+        { label: 'Before-tax example (health, 401(k), HSA/FSA, commuter)', any: ['health', '401', 'hsa', 'fsa', 'commuter'] },
+        { label: 'After-tax example (Roth, union dues, garnishment, charity)', any: ['roth', 'dues', 'garnish', 'charit'] },
+        { label: 'Before-tax deductions lower taxable income', any: ['lower', 'reduce', 'taxable income', 'taxable pay'] },
+        { label: 'Federal = progressive brackets, each slice at its own rate', any: ['bracket', 'progressive', 'marginal', 'slice'] },
+        { label: 'Illinois = flat 4.95%', any: ['4.95', 'flat', 'fixed'] }
+      ],
+      model: 'Pay starts at gross (wages, salary, bonus, overtime). Before-tax deductions come out first: health insurance, a traditional 401(k), HSA or FSA, and commuter benefits. Because they come out first, they lower taxable income. Then taxes: federal income tax, Social Security (6.2%), Medicare (1.45%) and state tax. Last come after-tax deductions such as a Roth 401(k), union dues, garnishments and charity, which do not lower taxes. What is left is net (take-home) pay. Federal income tax is progressive: annualize taxable pay, find the bracket, and tax = base + rate × (taxable − bracket floor), so only the dollars above the floor get the top rate. Illinois is a flat 4.95% of taxable pay with no brackets.' }
   ],
 
   /* Formula-sheet lookup drill: sections match "MGT 354 – Formula Sheet (Exam 3)". */
   sheet: [
     { n: 1, name: 'Compa-Ratio' }, { n: 2, name: 'Payroll Taxes & Net Pay' }, { n: 3, name: 'Payroll Process & Forms' }, { n: 4, name: 'Executive Compensation' },
-    { n: 5, name: 'Flexible / Contingent Workforce' }, { n: 6, name: 'Employee vs. Contractor' }, { n: 7, name: 'Benefits — numbers & laws' }, { n: 8, name: 'Retirement & Health Plan Types' }
+    { n: 5, name: 'Flexible / Contingent Workforce' }, { n: 6, name: 'Employee vs. Contractor' }, { n: 7, name: 'Benefits — numbers & laws' }, { n: 8, name: 'Retirement & Health Plan Types' },
+    { n: 9, name: 'Payroll Update: brackets, Illinois, W-4 (10/3)' }
   ],
   lookup: [
     { q: 'Jordan earns $46,750. The grade midpoint is $55,000. Is Jordan paid in line with policy?', f: 'Pay ÷ midpoint', s: 1 },
@@ -156,6 +168,11 @@ window.BOOST_DATA = {
     { q: 'A laid-off worker wants to keep their health plan. What can they be charged?', f: 'COBRA: up to 102% of premium', s: 7 },
     { q: 'Who carries the investment risk in a 401(k)?', f: 'DC → employee bears risk', s: 8 },
     { q: 'The plan lets you choose HMO or PPO at the time of service. What is it?', f: 'POS = HMO/PPO hybrid', s: 8 },
-    { q: 'A visit costs 20% of the bill after the deductible. What is that called?', f: 'Coinsurance (a percentage)', s: 8 }
+    { q: 'A visit costs 20% of the bill after the deductible. What is that called?', f: 'Coinsurance (a percentage)', s: 8 },
+    { q: 'An employee has $49,000 of taxable income. How much federal income tax?', f: 'Base + rate × (taxable − bracket floor)', s: 9 },
+    { q: 'A bi-weekly paycheck needs federal tax figured from the annual table. First step?', f: 'Annualize: × 26 (mo 12 · semi 24 · wk 52)', s: 9 },
+    { q: 'How much Illinois income tax on $3,650 of taxable pay?', f: '4.95% × taxable pay (flat)', s: 9 },
+    { q: 'Does a Roth 401(k) contribution lower taxable pay?', f: 'No: Roth = after-tax; traditional = before-tax', s: 9 },
+    { q: 'An employee wants $25 more withheld every paycheck. Where on the W-4?', f: 'W-4 Step 4(c) (IL-W-4 Line 3)', s: 9 }
   ]
 };

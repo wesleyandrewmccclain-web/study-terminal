@@ -25,7 +25,7 @@
   const make = (type, section, title, prompt, fields, steps, dataTable, note) => {
     const problem = {
       id: 'generated-' + type + '-' + Date.now() + '-' + (++sequence),
-      type, topic: ({ compa: 'compa', groupcompa: 'compa', netpay: 'payroll', overtime: 'payroll', exec: 'exec', workcomp: 'benefits', lease: 'flex' })[type] || 'structures', origin: 'generated',
+      type, topic: ({ compa: 'compa', groupcompa: 'compa', netpay: 'payroll', overtime: 'payroll', fedtax: 'payroll', paytax: 'payroll', exec: 'exec', workcomp: 'benefits', lease: 'flex' })[type] || 'structures', origin: 'generated',
       source: 'Generated practice · Formula Sheet §' + section,
       title, prompt, fields, steps
     };
@@ -149,7 +149,7 @@
       [`Total = ${fmt(base)} + ${fmt(bonus)} + ${fmt(benefits)} + ${fmt(stock)} = $${fmt(total)}.`, `Pay level = ${fmt(total)} ÷ ${count} = $${fmt(level)}.`, `Labor costs = pay level × ${count} = $${fmt(total)}.`]);
   };
   const types = [
-    ['annualize', 'Annual bonus → total comp'], ['mean', 'Mean'], ['weighted', 'Weighted mean'], ['median', 'Median & mode'], ['incumbent', 'Incumbent median'], ['iqr', 'Outliers (IQR)'], ['grades', 'Full pay grade table'], ['points', 'Pay for points'], ['piecework', 'Hourly piecework'], ['per-unit', 'Per-unit + batch bonus'], ['factors', 'Compensable factor points'], ['labor', 'Pay level & labor costs'], ['compa', 'Compa-ratios (Exam 3)'], ['groupcompa', 'Group compa-ratio & raise (Exam 3)'], ['netpay', 'Net pay & FICA (Exam 3)'], ['overtime', 'Overtime → net pay (Exam 3)'], ['exec', 'Executive pay package (Exam 3)'], ['workcomp', 'Workers’ comp benefit (Exam 3)'], ['lease', 'Leased labor & FUTA (Exam 3)']
+    ['annualize', 'Annual bonus → total comp'], ['mean', 'Mean'], ['weighted', 'Weighted mean'], ['median', 'Median & mode'], ['incumbent', 'Incumbent median'], ['iqr', 'Outliers (IQR)'], ['grades', 'Full pay grade table'], ['points', 'Pay for points'], ['piecework', 'Hourly piecework'], ['per-unit', 'Per-unit + batch bonus'], ['factors', 'Compensable factor points'], ['labor', 'Pay level & labor costs'], ['compa', 'Compa-ratios (Exam 3)'], ['groupcompa', 'Group compa-ratio & raise (Exam 3)'], ['netpay', 'Net pay & FICA (Exam 3)'], ['overtime', 'Overtime → net pay (Exam 3)'], ['fedtax', 'Federal tax from brackets (Exam 3)'], ['paytax', 'Net pay with computed taxes (Exam 3)'], ['exec', 'Executive pay package (Exam 3)'], ['workcomp', 'Workers’ comp benefit (Exam 3)'], ['lease', 'Leased labor & FUTA (Exam 3)']
   ].map(([id, label]) => ({ id, label, exam: /Exam 3/.test(label) ? 3 : 2 }));
   const forExam = exam => types.filter(t => (exam === 3) === (t.exam === 3));
   generators.compa = () => {
@@ -180,6 +180,31 @@
       [f('total', 'Sum of pay', total), f2('avg', 'Average pay', avg), Object.assign(f('group', 'Group compa-ratio', group, ''), { tolerance: 0.005 }), f('raise', 'Raise for lowest-paid to reach 1.00', raise)],
       [`Sum = ${pays.map(fmt).join(' + ')} = ${fmt(total)}.`, `Average = ${fmt(total)} ÷ ${n} = ${fmt(normal(avg, 2))}.`, `Group CR = ${fmt(normal(avg, 2))} ÷ ${fmt(mid)} = ${group.toFixed(2)}. Average FIRST, then divide once.`, `Lowest pay ${fmt(low)} → raise = ${fmt(mid)} − ${fmt(low)} = $${fmt(raise)}.`],
       table(['Employee', 'Pay'], pays.map((p, i) => ['E' + (i + 1), p])));
+  };
+  /* 2025 federal brackets, single (Canvas "Fed & State Tax Rates" page). Base amounts are the table's own. */
+  const BRACKETS = [[0, 0.10, 0], [11925, 0.12, 1193], [48475, 0.22, 5579], [103350, 0.24, 17651], [197300, 0.32, 40199], [250525, 0.35, 57231], [626350, 0.37, 188770]];
+  const fedTax = taxable => { let b = BRACKETS[0]; for (const r of BRACKETS) if (taxable > r[0]) b = r; return { tax: normal(b[2] + b[1] * (taxable - b[0]), 2), floor: b[0], rate: b[1], base: b[2] }; };
+  const taxStep = (taxable, t) => t.floor === 0 ? `10% bracket: 0.10 × ${fmt(taxable)} = ${money(t.tax)}.` : `${Math.round(t.rate * 100)}% bracket: ${fmt(t.base)} + ${t.rate} × (${fmt(taxable)} − ${fmt(t.floor)}) = ${money(t.tax)}.`;
+  const PERIODS = [['monthly', 12], ['bi-weekly', 26], ['semi-monthly', 24], ['weekly', 52]];
+  generators.fedtax = () => {
+    const taxable = pick([rand(8, 11) * 1000 + rand(0, 9) * 100, rand(14, 47) * 1000 + rand(0, 9) * 100, rand(49, 102) * 1000 + rand(0, 9) * 100, rand(105, 190) * 1000]);
+    const t = fedTax(taxable), eff = normal(t.tax / taxable * 100, 2), wrong = normal(taxable * t.rate, 2);
+    return make('fedtax', 'Exam 3 · Payroll update', 'Federal income tax from the brackets', `Using the 2025 single-filer brackets, an employee has $${fmt(taxable)} of annual taxable income. Find the federal income tax, the marginal rate, and the effective rate (2 decimals).`,
+      [f2('tax', 'Federal income tax', t.tax), Object.assign(f('marg', 'Marginal rate', Math.round(t.rate * 100), '%'), { tolerance: 0.01 }), Object.assign(f('eff', 'Effective rate', eff, '%'), { tolerance: 0.01 })],
+      [taxStep(taxable, t), `Marginal = the bracket you land in = ${Math.round(t.rate * 100)}%.`, `Effective = ${money(t.tax)} ÷ ${fmt(taxable)} = ${eff.toFixed(2)}%.`].concat(t.floor ? [`Trap: ${Math.round(t.rate * 100)}% × the whole ${fmt(taxable)} = ${money(wrong)}, which is wrong. Only dollars above ${fmt(t.floor)} get the top rate.`] : []),
+      table(['Rate', 'Over', 'Base'], BRACKETS.map(r => [Math.round(r[1] * 100) + '%', fmt(r[0]), fmt(r[2])])));
+  };
+  generators.paytax = () => {
+    const [label, per] = pick(PERIODS.slice(0, 3));
+    const gross = per === 12 ? rand(30, 75) * 100 : per === 26 ? rand(14, 34) * 100 : rand(15, 36) * 100;
+    const k401 = pick([0, 50, 100, 150, 200]), health = pick([75, 100, 125, 150]), roth = pick([0, 0, 50, 100]), dues = pick([0, 0, 25, 40]);
+    const pre = k401 + health, taxable = gross - pre, annual = taxable * per, t = fedTax(annual);
+    const ss = normal(gross * 0.062, 2), med = normal(gross * 0.0145, 2), fed = normal(t.tax / per, 2), il = normal(taxable * 0.0495, 2), after = roth + dues;
+    const net = normal(gross - pre - ss - med - fed - il - after, 2);
+    const afterTxt = [roth ? `$${roth} Roth 401(k)` : '', dues ? `$${dues} union dues` : ''].filter(Boolean).join(' and ');
+    return make('paytax', 'Exam 3 · Payroll update', 'Net pay with computed taxes', `An Illinois employee (single) is paid $${fmt(gross)} ${label} gross. Before-tax: ${k401 ? `$${k401} 401(k) + ` : ''}$${health} health premium.${afterTxt ? ` After-tax: ${afterTxt}.` : ''} No withholding amount is given, so compute it: federal from the 2025 brackets, Illinois at 4.95%. FICA comes off gross. Find each amount for ONE paycheck.`,
+      [f2('ss', 'Social Security', ss), f2('med', 'Medicare', med), f2('fed', 'Federal income tax (per paycheck)', fed), f2('il', 'Illinois tax', il), f2('net', 'Net pay', net)],
+      [`Before-tax = ${pre}; taxable = ${fmt(gross)} − ${pre} = ${fmt(taxable)} per paycheck → × ${per} = ${fmt(annual)}/yr.`, `SS = 6.2% × ${fmt(gross)} = ${money(ss)}; Medicare = 1.45% × ${fmt(gross)} = ${money(med)}.`, taxStep(annual, t) + ` ÷ ${per} = ${money(fed)}.`, `IL = 4.95% × ${fmt(taxable)} = ${money(il)}.`, `Net = ${fmt(gross)} − ${pre} − ${money(ss)} − ${money(med)} − ${money(fed)} − ${money(il)}${after ? ' − ' + after + ' (after-tax)' : ''} = ${money(net)}.`]);
   };
   generators.overtime = () => {
     const rate = rand(32, 56) / 2, hours = rand(42, 52), tax = rand(6, 18) * 12, other = pick([0, 25, 40, 60, 75]);
