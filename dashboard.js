@@ -23,10 +23,10 @@
   const esc = value => S().esc(value);
   const today = () => { const d=new Date(); return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`; };
   let duration=10;
-  const symbol = id => ({quiz:'✓',math:'∑',flash:'▤',missions:'→',campaign:'◇',review:'↺',exam:'◷',sheet:'▦',cue:'⊷',scenarios:'◎',assault:'⌖',duel:'⚔',chips:'◇',board:'▥',drill:'◎',cram:'▤',mathexam:'∑',search:'⌕',install:'↗',mock:'◷',written:'✎',lookup:'⌕',listen:'♪',daily:'◈',arcade:'♥',badges:'★',plan:'▤'})[id]||'◇';
+  const symbol = id => ({quiz:'✓',math:'∑',flash:'▤',missions:'→',campaign:'◇',review:'↺',exam:'◷',sheet:'▦',cue:'⊷',scenarios:'◎',assault:'⌖',duel:'⚔',chips:'◇',board:'▥',drill:'◎',cram:'▤',mathexam:'∑',search:'⌕',install:'↗',mock:'◷',written:'✎',lookup:'⌕',listen:'♪',daily:'◈',arcade:'♥',badges:'★',plan:'▤',games:'◆','g-sort':'⇶','g-mistake':'✗','g-pay':'$','g-order':'⇅','g-swipe':'⇆','g-odd':'◌','g-memory':'▦'})[id]||'◇';
   function cards() {
     const extra=[['missions','Study missions','A focused mix based on what you need next.','drill','study',''],['review','Review queue','Return to material when it is due.','flashcards','study',''],['campaign','Campaign','Practice, pass checkpoints, and clear the bosses.','assault','play',''],['install','Phone & offline','Install the game and move your progress between devices.','board','tools','']];
-    return [...extra,...modules,...(window.Boost?.library||[]),...(window.Fun?.library||[]),...(window.Plan?.library||[])].filter(m=>(filter==='all'||m[4]===filter)&&(m[0]!=='sheet'||window.Worksheet)).map(([id,name,desc])=>`<button class="activity-row" data-action="mode" data-mode="${id}"><span class="activity-icon" aria-hidden="true">${symbol(id)}</span><span><strong>${name}</strong><small>${desc}</small></span><span class="activity-arrow" aria-hidden="true">↗</span></button>`).join('');
+    return [...extra,...modules,...(window.Boost?.library||[]),...(window.Fun?.library||[]),...(window.Plan?.library||[]),...(window.Games?.library||[])].filter(m=>(filter==='all'||m[4]===filter)&&(m[0]!=='sheet'||window.Worksheet)).map(([id,name,desc])=>`<button class="activity-row" data-action="mode" data-mode="${id}"><span class="activity-icon" aria-hidden="true">${symbol(id)}</span><span><strong>${name}</strong><small>${desc}</small></span><span class="activity-arrow" aria-hidden="true">↗</span></button>`).join('');
   }
   function library() {
     S().setPage('library');

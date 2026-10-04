@@ -35,9 +35,10 @@
 
   function render(page,modes) {
     const byId=Object.fromEntries(modes.map(m=>[m[0],m]));
-    const entries=[['home','Home','⌂'],['missions','Study missions','→'],['review','Review queue','↺'],['campaign','Campaign','◇'],['library','All activities','▦']];
+    const entries=[['home','Home','⌂'],['missions','Study missions','→'],['review','Review queue','↺'],['campaign','Campaign','◇'],...(window.Games?[['games','Game modes','◆']]:[]),['library','All activities','▦']];
     const libraryPages=['quiz','exam','math','flash','cue','scenarios','sheet','assault','chips','duel','board','drill','cram','mathexam','search'];
-    $('#navigation').innerHTML=entries.map(([id,name,icon])=>`<button class="nav-button ${page===id||(id==='library'&&libraryPages.includes(page))?'active':''}" data-action="${id==='home'?'home':'mode'}" data-mode="${id}" ${page===id||(id==='library'&&libraryPages.includes(page))?'aria-current="page"':''}><span class="nav-symbol" aria-hidden="true">${icon}</span><span class="nav-name">${name}</span></button>`).join('');
+    const on=id=>page===id||(id==='library'&&libraryPages.includes(page))||(id==='games'&&/^g-/.test(page||''));
+    $('#navigation').innerHTML=entries.map(([id,name,icon])=>`<button class="nav-button ${on(id)?'active':''}" data-action="${id==='home'?'home':'mode'}" data-mode="${id}" ${on(id)?'aria-current="page"':''}><span class="nav-symbol" aria-hidden="true">${icon}</span><span class="nav-name">${name}</span></button>`).join('');
     renderBottom();
   }
   function renderBottom() {
