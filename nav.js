@@ -34,11 +34,12 @@
   }
 
   function render(page,modes) {
-    const byId=Object.fromEntries(modes.map(m=>[m[0],m]));
-    const entries=[['home','Home','⌂'],['missions','Study missions','→'],['review','Review queue','↺'],['campaign','Campaign','◇'],...(window.Games?[['games','Game modes','◆']]:[]),['library','All activities','▦']];
-    const libraryPages=['quiz','exam','math','flash','cue','scenarios','sheet','assault','chips','duel','board','drill','cram','mathexam','search'];
-    const on=id=>page===id||(id==='library'&&libraryPages.includes(page))||(id==='games'&&/^g-/.test(page||''));
-    $('#navigation').innerHTML=entries.map(([id,name,icon])=>`<button class="nav-button ${on(id)?'active':''}" data-action="${id==='home'?'home':'mode'}" data-mode="${id}" ${on(id)?'aria-current="page"':''}><span class="nav-symbol" aria-hidden="true">${icon}</span><span class="nav-name">${name}</span></button>`).join('');
+    const H=window.Hubs;
+    const entries=H?[['home','Home','⌂'],['plan','Study plan','▤'],...Object.entries(H.HUBS).map(([id,h])=>[id,h.long,h.icon])]
+      :[['home','Home','⌂'],['missions','Study missions','→'],['review','Review queue','↺'],['campaign','Campaign','◇'],['library','All activities','▦']];
+    const on=id=>page===id||(H&&H.hubOf(page)===id&&!(id==='h-progress'&&page==='plan'));
+    $('#navigation').innerHTML=(H?`<button class="nav-search" data-action="hub-search"><span aria-hidden="true">⌕</span> Search<kbd>/</kbd></button>`:'')+entries.map(([id,name,icon])=>`<button class="nav-button ${on(id)?'active':''}" data-action="${id==='home'?'home':'mode'}" data-mode="${id}" ${on(id)?'aria-current="page"':''}><span class="nav-symbol" aria-hidden="true">${icon}</span><span class="nav-name">${name}</span></button>`).join('');
+    H?.onPage(page);
     renderBottom();
   }
   function renderBottom() {
@@ -52,7 +53,7 @@
   let dialogReturnFocus = null;
   function syncAccess() {
     const narrow = mobile.matches, open = narrow && document.body.classList.contains('nav-open');
-    const modal = $('#pf-modal, #reset-modal, #ops-boot');
+    const modal = $('#pf-modal, #reset-modal, #ops-boot, #qs-modal');
     const sidebar = $('.sidebar');
     if (sidebar) {
       sidebar.inert = !!modal || (narrow && !open);
@@ -157,7 +158,7 @@
   }
   function closeReset() { $('#reset-modal')?.remove(); closeDialog(); }
   document.addEventListener('keydown', e => {
-    const modal = $('#pf-modal, #reset-modal, #ops-boot');
+    const modal = $('#pf-modal, #reset-modal, #ops-boot, #qs-modal');
     const box = modal || (mobile.matches && document.body.classList.contains('nav-open') ? $('.sidebar') : null);
     if (box && e.key === 'Tab') {
       const items = focusable(box), first = items[0], last = items[items.length - 1];
@@ -166,7 +167,8 @@
       else if (!e.shiftKey && (document.activeElement === last || !box.contains(document.activeElement))) { e.preventDefault(); first.focus(); }
     }
     if (e.key === 'Escape') {
-      if (modal?.id === 'reset-modal') closeReset();
+      if (modal?.id === 'qs-modal') window.Hubs?.closeSearch();
+      else if (modal?.id === 'reset-modal') closeReset();
       else if (modal?.id === 'pf-modal') window.Profiles?.close();
       else if (modal?.id === 'ops-boot') window.Ops?.skipIntro();
       else { closeDrawer(); closeVol(true); }
