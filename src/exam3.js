@@ -517,9 +517,47 @@ window.EXAM3_DATA = (() => {
     dk('“AI hiring tool discriminates”', 'employer is liable (compliance)')
   );
 
+  /* ---- Compa-Ratio Exercise (handed out Mon 10/5). No answer key yet: answers worked by Claude with the class
+     conventions (midpoint differential applies to the grade you move INTO; pay-table numbers use normal rounding).
+     Problem 1 reads "ideal pay rate" as the grade midpoint (CR = 1.0). Check both against the 10/7 review. */
+  const CX = 'Compa-Ratio Exercise (10/5) · worked, key pending';
+  let xn = 0;
+  const xq = (prompt, options, answer, explanation) => ({ id: 'e3x-q' + (++xn), topic: 'compa', prompt, options, answer, answerKeyText: options[answer], explanation, source: CX });
+  const xc = (front, back) => ({ id: 'e3x-c' + (++xn), topic: 'compa', front, back, source: CX, core: true });
+  questions.push(
+    xq('Exercise P1: Grade 3’s midpoint is $57,964 and every midpoint differential is 10%. Grade 4’s midpoint is:', ['$52,695', '$63,760', '$66,659', '$69,557'], 1, '57,964 × 1.10 = 63,760.4 → 63,760.'),
+    xq('Exercise P1: going DOWN from Grade 3 ($57,964, 10% differential), Grade 2’s midpoint is:', ['$52,168', '$52,695', '$49,269', '$63,760'], 1, 'Divide, don’t multiply by 0.90: 57,964 ÷ 1.10 = 52,695. (57,964 × 0.9 = 52,168 is the trap.)'),
+    xq('Exercise P1: the market average for Employment Consultant (48,752 · 50,247 · 45,132) is:', ['$48,044', '$50,247', '$48,752', '$47,940'], 0, '144,131 ÷ 3 = 48,043.67 → $48,044.'),
+    xq('Exercise P1: Accountant II (780 pts) is in Grade 4 (mid $63,760). Market average = $56,751. Company mid ÷ market =', ['0.89', '1.12', '1.25', '1.30'], 1, '63,760 ÷ 56,751 = 1.12: paying 12% above market, but inside 0.75–1.25.'),
+    xq('Exercise P1 result: comparing each grade midpoint to the market, what do you recommend?', ['Raise Grade 2', 'Lower Grade 4', 'No change: all three jobs land inside 0.75–1.25', 'Rebuild the whole chart'], 2, 'EC 1.21 · IT 1.07 · Acct II 1.12 (or 0.83 / 0.94 / 0.89 the other way). All inside the ideal range → no change, and say WHY. Check this against Wednesday’s key.'),
+    xq('Exercise P2: Grade 3 mid $67,860; Grade 4 has a 17% midpoint differential. Grade 4’s midpoint is:', ['$78,039', '$79,396', '$81,432', '$95,275'], 1, '67,860 × 1.17 = 79,396.2 → 79,396.'),
+    xq('Exercise P2: Grade 5 has a 20% midpoint differential on top of Grade 4 ($79,396). Grade 5’s midpoint is:', ['$93,000', '$95,275', '$99,245', '$114,330'], 1, '79,396 × 1.20 = 95,275.2 → 95,275.'),
+    xq('Exercise P2: Job A (700 pts) pays $59,780; Grade 4 mid = $79,396. Its compa-ratio is:', ['0.73', '0.75', '0.88', '1.33'], 1, '59,780 ÷ 79,396 = 0.753: right at the bottom of 0.75–1.25, and $19,616 below the midpoint.'),
+    xq('Exercise P2: Job B (900 pts) pays $69,840; Grade 5 mid = $95,275. Compa-ratio and action?', ['0.73 → below 0.75, raise pay', '0.88 → fine', '1.36 → freeze', '0.73 → freeze'], 0, '69,840 ÷ 95,275 = 0.733 → below 0.75 → raise. It’s even under the Grade 5 minimum (76,220).'),
+    xq('Exercise P2: Job C (300 pts) pays $51,655; Grade 2 mid = $59,009 (67,860 ÷ 1.15). Compa-ratio?', ['0.76', '0.88', '1.14', '0.73'], 1, '51,655 ÷ 59,009 = 0.875 → inside the range; $7,354 below mid. No urgent change.'),
+    xq('Exercise P2: Job A’s CR is 0.75, technically “in range.” Why might you still raise it?', ['It’s above the max', 'It pays below the Grade 4 MINIMUM ($63,517 at a 20% range spread)', 'Its CR is above 1.25', 'Grade 4 has no midpoint'], 1, 'Min = 79,396 × 0.80 = 63,517. Pay of 59,780 is under the floor of its own range: raise to at least the minimum.'),
+    xq('Exercise P2: how much would it cost to bring Job B up to the midpoint (CR = 1.0)?', ['$6,380', '$19,616', '$25,435', '$7,354'], 2, 'Raise to 1.0 = mid − pay = 95,275 − 69,840 = $25,435.')
+  );
+  flashcards.push(
+    xc('Compa-ratio exercise: steps', '1 Fill the midpoints (× 1 + diff going up, ÷ 1 + diff going down) · 2 Min/max = mid × (1 ∓ range diff) · 3 Put each job in its grade by points · 4 CR = pay ÷ mid (or mid vs market) · 5 Act: <0.75 raise, >1.25 freeze, in range → explain why no change.'),
+    xc('Going DOWN a grade', 'Divide by (1 + the differential of the grade above): 57,964 ÷ 1.10 = 52,695. NOT × 0.90 (52,168).'),
+    xc('Exercise P2 answers', 'Mids: G2 59,009 · G3 67,860 · G4 79,396 · G5 95,275. Job A 0.75 (below G4 min 63,517) · Job B 0.73 → raise (cost to mid 25,435) · Job C 0.88 OK.'),
+    xc('Exercise P1 answers (key pending)', 'Mids: G2 52,695 · G3 57,964 · G4 63,760. Market: EC 48,044 · IT 49,386 · Acct II 56,751. Mid ÷ market: 1.21 · 1.07 · 1.12 → all in range → no change.')
+  );
+  math.push(
+    { id: 'e3m-cx2', title: 'Compa-Ratio Exercise · Problem 2 (10/5)', topic: 'compa', type: 'compa', source: CX, origin: 'notes',
+      prompt: 'Grade 3 mid = $67,860. Midpoint differentials: G2 10%, G3 15%, G4 17%, G5 20%. Job A (700 pts) $59,780 · Job B (900 pts) $69,840 · Job C (300 pts) $51,655. Find each job’s compa-ratio (2 decimals) and how far Job B is below its midpoint.',
+      fields: [$f('a', 'Job A CR', 0.75, '', 0.006), $f('b', 'Job B CR', 0.73, '', 0.006), $f('c', 'Job C CR', 0.88, '', 0.006), $f('gap', 'Job B below mid', 25435)],
+      steps: ['G4 mid = 67,860 × 1.17 = 79,396 · G5 = 79,396 × 1.20 = 95,275 · G2 = 67,860 ÷ 1.15 = 59,009.', 'A (G4): 59,780 ÷ 79,396 = 0.75 · B (G5): 69,840 ÷ 95,275 = 0.73 · C (G2): 51,655 ÷ 59,009 = 0.88.', 'B gap: 95,275 − 69,840 = 25,435. B is below 0.75 → raise. A sits under the G4 minimum (63,517) → raise to at least the min.'] },
+    { id: 'e3m-cx1', title: 'Compa-Ratio Exercise · Problem 1 (10/5)', topic: 'compa', type: 'compa', source: CX, origin: 'notes',
+      prompt: 'Grade 3 mid = $57,964, all midpoint differentials 10%. Find the Grade 2 and Grade 4 midpoints, the Accountant II market average (59,134 · 54,326 · 56,794), and Grade 4 mid ÷ that market average.',
+      fields: [$f('g2', 'Grade 2 midpoint', 52695), $f('g4', 'Grade 4 midpoint', 63760), $f('mkt', 'Accountant II market avg', 56751), $f('cr', 'G4 mid ÷ market', 1.12, '', 0.006)],
+      steps: ['G4 = 57,964 × 1.10 = 63,760. G2 = 57,964 ÷ 1.10 = 52,695.', 'Market = 170,254 ÷ 3 = 56,751.', '63,760 ÷ 56,751 = 1.12 → inside 0.75–1.25. Same for the other two jobs (1.21, 1.07) → no change recommended.'] }
+  );
+
   return {
     exam: 3, examDay: 'Mon 10/12', examDate: [2026, 9, 12, 12, 35], scope: 'Benefits + Slides 09–10 + payroll update + both guest speakers',
-    note: 'Exam 3 is Mon 10/12 (150 pts). Canvas lists: Kathleen’s Benefits talk (that IS the benefits unit, no separate deck), Derek’s AI & HR talk, Compa-Ratios & Payroll class notes + exercises, and the Exec/Flexible Workforce lecture video. Only the compa-ratio/payroll exercises are still missing.',
+    note: 'Exam 3 is Mon 10/12 (150 pts). Canvas lists: Kathleen’s Benefits talk (that IS the benefits unit, no separate deck), Derek’s AI & HR talk, Compa-Ratios & Payroll class notes + exercises, and the Exec/Flexible Workforce lecture video. The compa-ratio exercise is in (answers worked by Claude; check them at the 10/7 review).',
     topics: [{ id: 'benefits', name: 'Benefits' }, { id: 'compa', name: 'Compa-Ratios' }, { id: 'payroll', name: 'Payroll' }, { id: 'flex', name: 'Flexible Workforce' }, { id: 'exec', name: 'Executive Pay' }, { id: 'ai', name: 'AI & HR' }],
     /* Class meetings the study plan shows on their day. */
     classes: [
@@ -529,7 +567,7 @@ window.EXAM3_DATA = (() => {
     /* Exam 3 material that isn't in the game yet. Shown as "Not yet available" cards. When you add one,
        give its questions/cards a topic id and move it into topics above, then delete it here. */
     pending: [
-      { id: 'compa-exercise', name: 'Compa-Ratio & Payroll exercises', sub: 'Shown Mon 10/5 · reviewed Wed 10/7', status: 'Not yet available', what: 'Not on Canvas yet. The prof shows them in class Monday and reviews them Wednesday. Send the sheets and answers when you have them.' }
+      { id: 'compa-exercise', name: 'Compa-Ratio exercise answer key', sub: 'Reviewed Wed 10/7', status: 'In progress', what: 'The exercise is in the game with answers worked by Claude. Send the answers from Wednesday’s review so they can be checked.' }
     ],
     questions, flashcards, cues, math, scenarioIds: questions.filter(x => x.prompt.length > 70).map(x => x.id), scenarioContexts: {}
   };
