@@ -519,17 +519,17 @@ window.EXAM3_DATA = (() => {
 
   return {
     exam: 3, examDay: 'Mon 10/12', examDate: [2026, 9, 12, 12, 35], scope: 'Benefits + Slides 09–10 + payroll update + both guest speakers',
-    note: 'Exam 3 moved to Mon 10/12 (150 pts). New: payroll tax brackets, Illinois 4.95%, the deduction flow and W-4s. Both guest talks are in (Kathleen → Benefits/Payroll, Derek → AI & HR). Still missing: the Benefits deck, and the 10/5 compa-ratio exercise. Benefits items are drafted from the textbook.',
+    note: 'Exam 3 is Mon 10/12 (150 pts). Canvas lists: Kathleen’s Benefits talk (that IS the benefits unit, no separate deck), Derek’s AI & HR talk, Compa-Ratios & Payroll class notes + exercises, and the Exec/Flexible Workforce lecture video. Only the compa-ratio/payroll exercises are still missing.',
     topics: [{ id: 'benefits', name: 'Benefits' }, { id: 'compa', name: 'Compa-Ratios' }, { id: 'payroll', name: 'Payroll' }, { id: 'flex', name: 'Flexible Workforce' }, { id: 'exec', name: 'Executive Pay' }, { id: 'ai', name: 'AI & HR' }],
     /* Class meetings the study plan shows on their day. */
     classes: [
-      { day: '2026-10-05', title: 'Review class at 12:35: get the compa-ratio exercise, ask about the exam format, and ask whether FICA comes off gross or after before-tax deductions', why: 'Anything said here is gold.', send: 'Send Claude your review notes + the exercise' }
+      { day: '2026-10-05', title: 'Class 12:35: Compa-Ratios & Payroll lecture; the prof shows the exercises. Ask whether FICA comes off gross or after before-tax deductions', why: 'This lecture + the exercises are on Exam 3.', send: 'Send Claude the exercises + your notes' },
+      { day: '2026-10-07', title: 'Class 12:35: review of the Compa-Ratio & Payroll exercises', why: 'Last class before the exam. Write down every answer.', send: 'Send Claude the worked answers' }
     ],
     /* Exam 3 material that isn't in the game yet. Shown as "Not yet available" cards. When you add one,
        give its questions/cards a topic id and move it into topics above, then delete it here. */
     pending: [
-      { id: 'benefits-deck', name: 'Benefits slide deck', sub: 'The Impact of Benefits on Compensation', status: 'In progress', what: 'Benefits items are drafted from the textbook for now. They’ll be checked against the real deck once it’s added.' },
-      { id: 'compa-exercise', name: 'Compa-Ratio exercise', sub: 'Class discussion · Mon 10/5', status: 'Not yet available', what: 'Handed out and discussed in class on 10/5. Add the sheet and answer key when you have them.' }
+      { id: 'compa-exercise', name: 'Compa-Ratio & Payroll exercises', sub: 'Shown Mon 10/5 · reviewed Wed 10/7', status: 'Not yet available', what: 'Not on Canvas yet. The prof shows them in class Monday and reviews them Wednesday. Send the sheets and answers when you have them.' }
     ],
     questions, flashcards, cues, math, scenarioIds: questions.filter(x => x.prompt.length > 70).map(x => x.id), scenarioContexts: {}
   };
