@@ -9,7 +9,7 @@
  window.addEventListener('appinstalled',()=>{installEvent=null;if(S()?.page==='install')open();});
  async function initialize(){
   if(file||!('serviceWorker' in navigator)||window.claude){checking=false;return;}
-  try {registration=await navigator.serviceWorker.register('./sw.js',{scope:'./',updateViaCache:'none'});registration.addEventListener('updatefound',()=>{const worker=registration.installing;worker?.addEventListener('statechange',()=>{if(worker.state==='installed'&&S()?.page==='install')open();});});await navigator.serviceWorker.ready;ready=true;}
+  try {const hadCtl=!!navigator.serviceWorker.controller,t0=Date.now();registration=await navigator.serviceWorker.register('./sw.js',{scope:'./',updateViaCache:'none'});navigator.serviceWorker.addEventListener('controllerchange',()=>{if(!hadCtl||window.__swReloaded)return;window.__swReloaded=true;try{S()?.save?.();}catch(e){}if(Date.now()-t0<20000)location.reload();else S()?.toast?.('A new version is ready. Refresh the page to get it.');});registration.addEventListener('updatefound',()=>{const worker=registration.installing;worker?.addEventListener('statechange',()=>{if(worker.state==='installed'&&S()?.page==='install')open();});});await navigator.serviceWorker.ready;ready=true;}
   catch(e){error='Offline storage could not be prepared. Keep this page online, or use the downloaded folder.';}
   checking=false;if(S()?.page==='install')open();
  }
