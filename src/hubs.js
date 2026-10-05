@@ -9,6 +9,9 @@
   const exam = () => Number(S()?.data?.exam || window.ACTIVE_EXAM || 2);
   const LS = { get(k) { try { return JSON.parse(localStorage.getItem(k) || 'null'); } catch (e) { return null; } }, set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) { } } };
 
+  const THEME_KEY = 'mgt354-theme';
+  const applyTheme = t => { if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t; else delete document.documentElement.dataset.theme; };
+  try { applyTheme(localStorage.getItem(THEME_KEY)); } catch (e) { }
   const HUBS = {
     'h-learn': { name: 'Learn', long: 'Learn it', icon: '◎', blurb: 'Get it into your head: cards, cues, formulas, and audio.' },
     'h-practice': { name: 'Practice', long: 'Practice & test', icon: '✓', blurb: 'Answer questions and work problems, then test yourself under exam conditions.' },
@@ -22,8 +25,10 @@
     ['listen', 'Listen mode', 'Hands-free: cards read aloud.', 'h-learn', 'learn', 'audio read aloud walk drive'],
     ['lookup', 'Formula lookup', 'Practice finding the right formula on your sheet fast.', 'h-learn', 'learn', 'formula sheet find section'],
     ['cram', 'Cram sheet', 'Formulas, cues, and your weak spots on one page.', 'h-learn', 'learn', 'summary review last minute'],
+    ['cheat', 'Cheat sheet', 'Exam 3 on one printable page.', 'h-learn', 'learn', 'print formula sheet notes summary one page'],
     ['search', 'Search your notes', 'Find any term, question, card, or cue.', 'h-learn', 'learn', 'find lookup term'],
     ['missions', 'Study missions', '5, 10, or 20 minutes, mixed to what you need next.', 'h-practice', 'practice', 'session adaptive mix start'],
+    ['mistakes', 'Mistakes notebook', 'Everything you’ve missed, with the answer and why.', 'h-practice', 'practice', 'missed wrong errors notebook review'],
     ['review', 'Review queue', 'Items that are due for another look.', 'h-practice', 'practice', 'due spaced repetition'],
     ['quiz', 'Quick quiz', 'Ten questions with instant feedback.', 'h-practice', 'practice', 'multiple choice questions'],
     ['math', 'Math Lab', 'Worked problems with new numbers every time.', 'h-practice', 'practice', 'calculations formulas tax compa net pay generator'],
@@ -50,7 +55,7 @@
     ['library', 'Everything A–Z', 'Every activity in one list.', 'h-progress', 'progress', 'all activities list']
   ];
   const byId = Object.fromEntries(REG.map(r => [r[0], r]));
-  const available = id => id !== 'sheet' || !!window.Worksheet;
+  const available = id => (id !== 'sheet' || !!window.Worksheet) && (id !== 'cheat' || exam() === 3);
   const hubOf = page => { if (!page || page === 'home') return null; if (HUBS[page]) return page; if (/^g-/.test(page)) return 'h-play'; return byId[page]?.[3] || null; };
   const nameOf = page => HUBS[page]?.long || byId[page]?.[1] || (window.Games?.library || []).find(x => x[0] === page)?.[1] || null;
 
@@ -59,7 +64,7 @@
     const st = S().state;
     try {
       if (id === 'review') { const n = window.Learning?.summary?.().due || 0; return n ? `${n} due` : ''; }
-      if (id === 'drill') { const n = st.missed?.length || 0; return n ? `${n} missed` : ''; }
+      if (id === 'mistakes') { const n = st.missed?.length || 0; return n ? `${n} to review` : ''; }
       if (id === 'daily') { const d = st.fun?.daily?.[String(exam())]?.results; const t = new Date(), k = `${t.getFullYear()}-${String(t.getMonth() + 1).padStart(2, '0')}-${String(t.getDate()).padStart(2, '0')}`; return d?.[k] ? 'Done today' : 'New today'; }
       if (id === 'mock') { const m = st.mocks?.[String(exam())] || []; return m.length ? `Best ${Math.max(...m.map(x => x.pct))}%` : ''; }
       if (id === 'games') { const g = st.games?.[String(exam())] || {}; const n = Object.values(g).filter(x => x.plays).length; return n ? `${n}/7 played` : '7 games'; }
@@ -138,6 +143,11 @@
     const tools = $('.top-tools'), pick = $('.exam-pick');
     if (tools && pick && !tools.contains(pick)) tools.insertBefore(pick, $('#vol-wrap') || $('#player-chip') || null);
     const vb = $('#vol-btn'); if (vb && !vb.dataset.tidy) { vb.dataset.tidy = '1'; vb.innerHTML = '<span aria-hidden="true">♪</span>'; vb.setAttribute('aria-label', 'Sound settings'); }
+    const pop = $('#vol-pop'); if (pop && !$('#appearance')) {
+      let cur = 'auto'; try { cur = localStorage.getItem(THEME_KEY) || 'auto'; } catch (e) { }
+      const box = document.createElement('div'); box.id = 'appearance'; box.innerHTML = `<span class="ap-label">Appearance</span><div class="ap-seg" role="group" aria-label="Appearance">${[['auto', 'Auto'], ['light', 'Light'], ['dark', 'Dark']].map(([v, n]) => `<button data-action="hub-theme" data-v="${v}" aria-pressed="${v === cur}">${n}</button>`).join('')}</div>`;
+      pop.prepend(box);
+    }
     const calc = $('#calc-top'); if (calc && !calc.dataset.tidy) { calc.dataset.tidy = '1'; calc.innerHTML = '<span aria-hidden="true">±</span>'; calc.setAttribute('aria-label', 'Calculator'); calc.title = 'Calculator'; }
   }
   function renderTabs(page) {
@@ -211,10 +221,12 @@
       const app = $('#app'); if (app) new MutationObserver(crumbs).observe(app, { childList: true });
       crumbs();
     },
-    mode(p) { if (HUBS[p]) { hubPage(p); return true; } return false; },
+    mode(p) { if (HUBS[p]) { hubPage(p); return true; } return !!window.Notebook?.mode(p); },
     handle(a, b) {
+      if (window.Notebook?.handle(a, b)) return true;
       if (!a.startsWith('hub-')) return false;
       if (a === 'hub-up') go(b.dataset.to);
+      else if (a === 'hub-theme') { const v = b.dataset.v; try { localStorage.setItem(THEME_KEY, v); } catch (e) { } applyTheme(v); document.querySelectorAll('[data-action="hub-theme"]').forEach(x => x.setAttribute('aria-pressed', String(x === b))); }
       else if (a === 'hub-search') openSearch();
       else if (a === 'hub-search-close') closeSearch();
       else if (a === 'hub-go') { closeSearch(); S().mode(b.dataset.mode); }

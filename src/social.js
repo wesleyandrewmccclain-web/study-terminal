@@ -22,7 +22,7 @@
     const topic = TOPIC_KEYS[code[0]] || 'all';
     const r = rng(seedFrom(code));
     const pool = setFor(code).questions.filter(q => topic === 'all' || q.topic === topic).slice().sort((a, b) => a.id < b.id ? -1 : 1);
-    return sshuffle(pool, r).slice(0, 10).map(q => ({ q, order: sshuffle([0, 1, 2, 3], r) }));
+    return sshuffle(pool, r).slice(0, 10).map(q => ({ q, order: sshuffle(q.options.map((_, i) => i), r) }));
   }
   const newCode = topicKey => topicKey + Array.from({ length: 5 }, () => ALPH[Math.floor(Math.random() * ALPH.length)]).join('');
   const validCode = c => /^[ACSMLE][A-Z2-9]{5}$/.test(c);

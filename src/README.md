@@ -61,8 +61,3 @@ Real Chrome browser checks covered all 15 mode screens, quiz scoring, mixed math
 There is no automatic cross-device sync. Export progress on one device and import it on the other; this includes adaptive history, campaign checkpoints, and saved missions. Browser cleanup can erase local progress and offline files. Keep an occasional exported backup.
 
 Install behavior follows your browser’s capabilities: [MDN installation guidance](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Guides/Making_PWAs_installable). Safari on iPhone/iPad uses Share → Add to Home Screen; compatible Chromium browsers expose Install app. A browser cannot be forced to install an app automatically.
-
-## How this repo is laid out
-- The site (what GitHub Pages serves) is the **built** version: one bundled `app.*.min.js` + one `app.*.min.css`, so it opens fast on a phone.
-- The editable source files live in `src/`. After changing them, rebuild from the repo root:
-  `cd src/tools && npm install && node build.js .. ../.. study-terminal-vNN-<date>` — then copy back README/SYNC files if needed. Bump the cache name every deploy.
