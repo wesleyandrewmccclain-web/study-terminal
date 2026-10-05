@@ -42,7 +42,7 @@
     ['duel', 'Duel a friend', 'Same 10 questions, live or by code.', 'h-play', 'friends', 'friend multiplayer versus'],
     ['board', 'Leaderboard', 'You vs everyone, online and on this device.', 'h-play', 'friends', 'ranking scores friends online'],
     ['chips', 'Chips & rank', 'Spend XP on upgrades.', 'h-play', 'extras', 'xp upgrades rank'],
-    ['badges', 'Achievements & looks', 'Badges, themes, and POD colors.', 'h-play', 'extras', 'themes colors unlock'],
+    ['badges', 'Achievements & looks', 'Badges and POD colors.', 'h-play', 'extras', 'themes colors unlock'],
     ['plan', 'Study plan', 'A few tasks a day until the exam.', 'h-progress', 'progress', 'schedule countdown tasks'],
     ['progress', 'Detailed stats & backups', 'Every score, export, or reset.', 'h-progress', 'progress', 'stats export backup reset history'],
     ['sync', 'Sync & account', 'Log in to sync your phone and laptop.', 'h-progress', 'progress', 'account login cloud phone laptop'],
@@ -126,7 +126,22 @@
   });
 
   /* ---------- phone tab bar ---------- */
+  function renderTopNav(page) {
+    const bar = $('.topbar'); if (!bar) return; let nav = $('#topnav');
+    if (!nav) { nav = document.createElement('nav'); nav.id = 'topnav'; nav.setAttribute('aria-label', 'Main sections'); bar.insertBefore(nav, $('.top-tools')); }
+    const cur = page === 'home' ? 'home' : hubOf(page);
+    nav.innerHTML = [['home', 'Home'], ...Object.entries(HUBS).map(([id, h]) => [id, h.name])].map(([id, n]) =>
+      `<button data-action="${id === 'home' ? 'home' : 'mode'}" data-mode="${id}" ${cur === id ? 'aria-current="page" class="on"' : ''}>${n}</button>`).join('');
+  }
+  function tidyTopbar() {
+    // Course picker lives in the top bar now (the sidebar is gone); Settings becomes a sound icon.
+    const tools = $('.top-tools'), pick = $('.exam-pick');
+    if (tools && pick && !tools.contains(pick)) tools.insertBefore(pick, $('#vol-wrap') || $('#player-chip') || null);
+    const vb = $('#vol-btn'); if (vb && !vb.dataset.tidy) { vb.dataset.tidy = '1'; vb.innerHTML = '<span aria-hidden="true">♪</span>'; vb.setAttribute('aria-label', 'Sound settings'); }
+    const calc = $('#calc-top'); if (calc && !calc.dataset.tidy) { calc.dataset.tidy = '1'; calc.innerHTML = '<span aria-hidden="true">±</span>'; calc.setAttribute('aria-label', 'Calculator'); calc.title = 'Calculator'; }
+  }
   function renderTabs(page) {
+    renderTopNav(page);
     let bar = $('#tabbar');
     if (!bar) { bar = document.createElement('nav'); bar.id = 'tabbar'; bar.setAttribute('aria-label', 'Main sections'); document.body.appendChild(bar); document.body.classList.add('has-tabbar'); }
     const cur = page === 'home' ? 'home' : hubOf(page);
@@ -191,7 +206,7 @@
   window.Hubs = {
     HUBS, REG, hubOf, nameOf, onPage, jumpHTML, hubTilesHTML, openSearch, closeSearch,
     init() {
-      addSearchButton();
+      addSearchButton(); tidyTopbar();
       try { history.replaceState({ page: 'home' }, ''); } catch (e) { }
       const app = $('#app'); if (app) new MutationObserver(crumbs).observe(app, { childList: true });
       crumbs();

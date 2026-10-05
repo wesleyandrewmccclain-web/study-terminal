@@ -155,14 +155,14 @@
   const xp = () => S().state.ops?.xp || 0;
   function applyLook() {
     const f = fun(), th = THEMES.find(t => t[0] === f.theme && xp() >= t[3]) ? f.theme : 'field', pod = PODS.find(p => p[0] === f.pod && xp() >= p[2]) || PODS[0];
-    document.body.dataset.skin = th; document.body.style.setProperty('--pod-hue', pod[3] + 'deg');
+    delete document.body.dataset.skin; document.body.style.setProperty('--pod-hue', pod[3] + 'deg'); // color themes retired for the clean look; POD colors stay
   }
   function badgesPage() {
     S().setPage('badges'); checkBadges(true); const got = fun().badges || {}, f = fun();
     const earned = BADGES.filter(b => got[ek() + ':' + b[0]]).length;
-    $('#app').innerHTML = S().heading('PLAY / ACHIEVEMENTS', 'Achievements & looks', `${earned} of ${BADGES.length} achievements for Exam ${exam()}. XP unlocks new themes and POD colors. You have ${xp()} XP.`) +
+    $('#app').innerHTML = S().heading('PLAY / ACHIEVEMENTS', 'Achievements & looks', `${earned} of ${BADGES.length} achievements for Exam ${exam()}. XP unlocks new POD colors. You have ${xp()} XP.`) +
       `<section class="panel"><div class="badge-grid">${BADGES.map(([id, name, desc]) => { const at = got[ek() + ':' + id]; return `<div class="badge ${at ? 'on' : ''}"><span class="badge-icon" aria-hidden="true">${at ? '★' : '☆'}</span><strong>${esc(name)}</strong><small>${esc(desc)}</small>${at ? `<em>${new Date(at).toLocaleDateString([], { month: 'short', day: 'numeric' })}</em>` : ''}</div>`; }).join('')}</div></section>
-      <div class="section-line"><h2>THEMES</h2></div><section class="panel"><div class="look-grid">${THEMES.map(([id, name, desc, need]) => `<button class="look ${(f.theme || 'field') === id ? 'on' : ''}" data-action="fx-theme" data-id="${id}" ${xp() < need ? 'disabled' : ''}><span class="swatch sw-${id}"></span><strong>${esc(name)}</strong><small>${xp() < need ? `Unlocks at ${need} XP` : esc(desc)}</small></button>`).join('')}</div></section>
+      
       <div class="section-line"><h2>POD COLOR</h2></div><section class="panel"><div class="look-grid pods">${PODS.map(([id, name, need, hue]) => `<button class="look ${(f.pod || 'olive') === id ? 'on' : ''}" data-action="fx-pod" data-id="${id}" ${xp() < need ? 'disabled' : ''}><img src="assets/bot-helper.png" alt="" style="filter:hue-rotate(${hue}deg)"><strong>${esc(name)}</strong><small>${xp() < need ? `Unlocks at ${need} XP` : 'Unlocked'}</small></button>`).join('')}</div></section>`;
   }
 
@@ -172,8 +172,8 @@
 
   /* ================= wiring ================= */
   window.Fun = {
-    modes: [['daily', 'Daily challenge', 'Five questions a day, shareable result.', 'duel'], ['arcade', 'Arcade', 'Survival, lightning, and spot the trap.', 'assault'], ['badges', 'Achievements & looks', 'Badges, themes, and POD colors.', 'chips']],
-    library: [['daily', 'Daily challenge', 'Five questions, the same for everyone today. Share your score.', 'duel', 'play', 'NEW EVERY DAY'], ['arcade', 'Arcade', 'Survival, 60-second lightning, and spot the trap.', 'assault', 'play', 'QUICK GAMES'], ['badges', 'Achievements & looks', 'Earn badges and unlock themes and POD colors with XP.', 'chips', 'play', 'UNLOCKS']],
+    modes: [['daily', 'Daily challenge', 'Five questions a day, shareable result.', 'duel'], ['arcade', 'Arcade', 'Survival, lightning, and spot the trap.', 'assault'], ['badges', 'Achievements & looks', 'Badges and POD colors.', 'chips']],
+    library: [['daily', 'Daily challenge', 'Five questions, the same for everyone today. Share your score.', 'duel', 'play', 'NEW EVERY DAY'], ['arcade', 'Arcade', 'Survival, 60-second lightning, and spot the trap.', 'assault', 'play', 'QUICK GAMES'], ['badges', 'Achievements & looks', 'Earn badges and unlock POD colors with XP.', 'chips', 'play', 'UNLOCKS']],
     bossLines: id => F().bosses[id], storyFor, storyFinal, checkBadges, applyLook,
     homeHTML() {
       const D = per('daily'), r = D.results?.[today()];
