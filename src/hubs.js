@@ -36,6 +36,7 @@
     ['drill', 'Weak-spot drill', 'Your misses plus your weakest topic.', 'h-practice', 'practice', 'missed mistakes weak'],
     ['scenarios', 'Scenarios', 'Apply the ideas to cases.', 'h-practice', 'practice', 'cases application'],
     ['sheet', 'Worksheet', 'Build pay tables step by step.', 'h-practice', 'practice', 'pay grade table walkthrough'],
+    ['crsheet', 'Compa-ratio worksheet', 'The 10/5 compa-ratio exercise, cell by cell.', 'h-practice', 'practice', 'compa ratio exercise worksheet midpoint market'],
     ['mock', 'Mock exam', 'The real format, with a predicted grade.', 'h-practice', 'test', 'practice test grade predicted'],
     ['exam', 'Exam simulation', 'A timed full-length run.', 'h-practice', 'test', 'timed test'],
     ['mathexam', 'Math-only exam', 'Timed word problems, new numbers.', 'h-practice', 'test', 'timed math calculations'],
@@ -55,7 +56,7 @@
     ['library', 'Everything A–Z', 'Every activity in one list.', 'h-progress', 'progress', 'all activities list']
   ];
   const byId = Object.fromEntries(REG.map(r => [r[0], r]));
-  const available = id => (id !== 'sheet' || !!window.Worksheet) && (id !== 'cheat' || exam() === 3);
+  const available = id => (id !== 'sheet' || !!window.Worksheet) && (id !== 'cheat' || exam() === 3) && (id !== 'crsheet' || (exam() === 3 && !!window.CRSheet));
   const hubOf = page => { if (!page || page === 'home') return null; if (HUBS[page]) return page; if (/^g-/.test(page)) return 'h-play'; return byId[page]?.[3] || null; };
   const nameOf = page => HUBS[page]?.long || byId[page]?.[1] || (window.Games?.library || []).find(x => x[0] === page)?.[1] || null;
 
@@ -221,9 +222,10 @@
       const app = $('#app'); if (app) new MutationObserver(crumbs).observe(app, { childList: true });
       crumbs();
     },
-    mode(p) { if (HUBS[p]) { hubPage(p); return true; } return !!window.Notebook?.mode(p); },
+    mode(p) { if (HUBS[p]) { hubPage(p); return true; } return !!window.Notebook?.mode(p) || !!window.CRSheet?.mode(p); },
     handle(a, b) {
       if (window.Notebook?.handle(a, b)) return true;
+      if (window.CRSheet?.handle(a, b)) return true;
       if (!a.startsWith('hub-')) return false;
       if (a === 'hub-up') go(b.dataset.to);
       else if (a === 'hub-theme') { const v = b.dataset.v; try { localStorage.setItem(THEME_KEY, v); } catch (e) { } applyTheme(v); document.querySelectorAll('[data-action="hub-theme"]').forEach(x => x.setAttribute('aria-pressed', String(x === b))); }
