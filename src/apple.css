@@ -301,3 +301,18 @@ mark{background:rgba(255,204,0,.45);color:inherit;border-radius:3px;padding:0 2p
 .hero{background:var(--ap-hero)!important;border:0!important;border-radius:24px}
 .framed{border:0!important;border-image:none!important;background:var(--ap-card)!important}
 @media(pointer:fine){button,select,summary,.flashcard{cursor:pointer!important}}
+
+/* Guided walkthroughs (pay grade + compa-ratio sheets) in the Apple style */
+.wt-progress{height:6px!important;border:0!important;border-radius:999px;background:var(--ap-track)!important;margin:0 0 18px!important;overflow:hidden}
+.wt-progress i{background:var(--ap-blue)!important;border-radius:999px}
+.wt-formula{border:0!important;border-radius:12px;background:var(--ap-fill)!important;color:var(--ap-text)!important;font:600 15px/1.6 -apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",system-ui,sans-serif!important}
+.wt-hint{border:0!important;border-radius:12px;background:rgba(255,159,10,.12)!important;color:var(--ap-text)!important}
+.wt-hint b{font:700 11px/1 -apple-system,system-ui,sans-serif!important;letter-spacing:.06em;color:#c77700}
+.wt-sorted,.wt-work{background:none!important;font:14px/1.7 -apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",system-ui,sans-serif!important}
+.wt-field input,.wt-field select{padding:11px 12px!important;border:1px solid var(--ap-border)!important;border-radius:10px!important;background:var(--ap-card)!important;color:var(--ap-text)!important;font:16px -apple-system,system-ui,sans-serif!important}
+.wt-field.ok input,.wt-field.ok select{border-color:#34c759!important;background:rgba(52,199,89,.1)!important}
+.wt-field.bad input,.wt-field.bad select{border-color:#ff3b30!important;background:rgba(255,59,48,.08)!important}
+.wt-field.blank input,.wt-field.blank select{border-style:dashed!important;border-color:#ff3b30!important}
+.wt-field small{color:#ff3b30;font-size:13px}
+.wt-launch{font-weight:600}
+.wt-jobs{margin:12px 0 0;padding-left:18px;font-size:14px;line-height:1.6;color:var(--ap-2)}

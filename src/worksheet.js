@@ -132,7 +132,7 @@
 
     $('#app').innerHTML = S().heading('CALCULATE / WORKSHEET', 'Pay Grade & Statistics Sheet', 'Complete the whole exercise like the class handout. Your entries save as you type. Check the sheet to see which cells are right.',
       `<div class="ws-score">${w.checked ? `<b>${ok}</b> / ${tot}<small>cells correct</small>` : `<small>${tot} cells</small>`}</div>`) +
-      `<section class="panel ws-bar"><div class="ws-switch"><button class="${w.kind === 'class' ? 'primary' : ''}" data-action="ws-kind" data-kind="class">Class sheet</button><button class="${w.kind === 'gen' ? 'primary' : ''}" data-action="ws-kind" data-kind="gen">New numbers</button><button data-action="wt-open" class="wt-launch">▶ Guided walkthrough</button>${Number(S().data?.exam) === 3 && window.CRSheet ? '<button data-action="mode" data-mode="crsheet">Compa-ratio sheet →</button>' : ''}</div>
+      `<section class="panel ws-bar"><div class="ws-switch"><button class="${w.kind === 'class' ? 'primary' : ''}" data-action="ws-kind" data-kind="class">Class sheet</button><button class="${w.kind === 'gen' ? 'primary' : ''}" data-action="ws-kind" data-kind="gen">New numbers</button><button data-action="wt-open" class="wt-launch">▶ Guided walkthrough</button></div>
       <span class="source">${esc(sh.title)}</span></section>
       <section class="panel ws-part"><h2>Part 1 · Total comp</h2>${part1}<h3 class="ws-h3">Statistics</h3>${statsT}</section>
       <section class="panel ws-part"><h2>Part 2 · Pay grade chart</h2>${part2}</section>

@@ -56,7 +56,7 @@
     ['library', 'Everything A–Z', 'Every activity in one list.', 'h-progress', 'progress', 'all activities list']
   ];
   const byId = Object.fromEntries(REG.map(r => [r[0], r]));
-  const available = id => (id !== 'sheet' || !!window.Worksheet) && (id !== 'cheat' || exam() === 3) && (id !== 'crsheet' || (exam() === 3 && !!window.CRSheet));
+  const available = id => (id !== 'sheet' || (!!window.Worksheet && exam() !== 3)) && (id !== 'cheat' || exam() === 3) && (id !== 'crsheet' || (exam() === 3 && !!window.CRSheet));
   const hubOf = page => { if (!page || page === 'home') return null; if (HUBS[page]) return page; if (/^g-/.test(page)) return 'h-play'; return byId[page]?.[3] || null; };
   const nameOf = page => HUBS[page]?.long || byId[page]?.[1] || (window.Games?.library || []).find(x => x[0] === page)?.[1] || null;
 
@@ -222,7 +222,7 @@
       const app = $('#app'); if (app) new MutationObserver(crumbs).observe(app, { childList: true });
       crumbs();
     },
-    mode(p) { if (HUBS[p]) { hubPage(p); return true; } return !!window.Notebook?.mode(p) || !!window.CRSheet?.mode(p); },
+    mode(p) { if (p === 'sheet' && exam() === 3 && window.CRSheet) return window.CRSheet.mode('crsheet'); if (HUBS[p]) { hubPage(p); return true; } return !!window.Notebook?.mode(p) || !!window.CRSheet?.mode(p); },
     handle(a, b) {
       if (window.Notebook?.handle(a, b)) return true;
       if (window.CRSheet?.handle(a, b)) return true;

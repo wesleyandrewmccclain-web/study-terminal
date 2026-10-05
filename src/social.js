@@ -84,7 +84,7 @@
     const past = Object.entries(duels()).sort((a, b) => b[1].when - a[1].when).slice(0, 6);
     $('#app').innerHTML = S().heading('FRIENDS / DUEL', 'Head-to-head duel', 'Both players answer the same 10 questions in the same order. Fewest misses wins; time breaks a tie.') +
       `<div class="duel-grid"><section class="panel"><h2>Start a duel</h2><p>Pick a topic, then text the code to your friend.</p>
-        <div class="config"><label class="field">Topic<select id="d-topic">${window.ACTIVE_EXAM === 3 ? '<option value="E">All Exam 3 topics</option><option value="A">Exam 2 review: all topics</option>' : '<option value="A">All Exam 2 topics</option><option value="C">Competitiveness</option><option value="S">Pay Structures &amp; Math</option><option value="M">Merit &amp; Incentives</option><option value="L">Sam Lewis</option><option value="E">Exam 3: all topics</option>'}</select></label></div>
+        <div class="config"><label class="field">Topic<select id="d-topic">${window.ACTIVE_EXAM === 3 ? '<option value="E">All Exam 3 topics</option>' : '<option value="A">All Exam 2 topics</option><option value="C">Competitiveness</option><option value="S">Pay Structures &amp; Math</option><option value="M">Merit &amp; Incentives</option><option value="L">Sam Lewis</option><option value="E">Exam 3: all topics</option>'}</select></label></div>
         <button class="primary" data-action="d-new">Create duel →</button></section>
       <section class="panel"><h2>Join a duel</h2><p>Got a code from a friend? Type it here.</p>
         <label class="field">Duel code<input id="d-code" maxlength="6" autocomplete="off" autocapitalize="characters" placeholder="e.g. AK7Q2X"></label>
