@@ -35,7 +35,7 @@
       '<b>Group CR</b> = (Σ pay ÷ # employees) ÷ midpoint · Pay = CR × mid · Raise to 1.0 = mid − pay',
       '⚠ Never divide by min/max. Only min + spread given? Mid = Min ÷ (1 − RD)']],
     ['Payroll basics', [
-      '<b>SS 6.2% + Medicare 1.45% = FICA 7.65%</b>, always off <b>gross</b>',
+      '<b>SS 6.2% (to $184,500) + Medicare 1.45% (all wages) = FICA 7.65%</b>, off <b>gross</b> · employer on $60k = $4,590',
       'Net = gross − SS − Medicare − income tax − other deductions',
       'Employer pays matching 7.65% + <b>FUTA (0.6% of first $7,000 = $42)</b> + SUTA (experience rating)',
       'Angela $2,000: 2,000 − 124 − 29 − 237 − 50 = <b>$1,560</b> · $1,000 → $76.50 FICA',
@@ -79,6 +79,9 @@
       '<b>DB</b>: benefit promised, <b>employer</b> risk, retention · <b>DC (401k)</b>: contribution promised, <b>employee</b> risk, mobility',
       'Indemnity any provider · <b>HMO</b> network only, cheapest · PPO out of network for more · <b>POS</b> hybrid',
       'Copay = flat $ · <b>coinsurance = %</b> · deductible = before plan pays · HSA rolls over · FSA use it or lose it']],
+    ['Guest speakers', [
+      '<b>Kathleen</b>: benefits shape total comp · risk · compliance · talent · fully insured = fixed premium, predictable · <b>self-funded</b> = pays claims, more risk + control, stop-loss (≠ no risk) · workers’ comp employer-paid, 1099s outside · ACA 50+ FTEs, kids to 26, affordable ≤ 9.96% · birthday rule · QLE vs open enrollment · IL UI $14,250, new 3.35% · IL posting: pay range + benefits',
+      '<b>Derek</b>: Moore’s Law · AI timeline 1689 Lloyd’s → Markov → 2012 AlexNet → 2016 Tay → 2018 BERT → 2020 GPT · FERPA / HIPAA / COPPA / GDPR · CRAFTY prompts · AI hiring: compliance + accuracy, employer liable (CA CO IL NY MD)']],
     ['Before you answer', [
       'Read the bold/underlined words · % off gross · CR uses the midpoint · annualize first · high CR → freeze · personal reasons ≠ contingent · FMLA unpaid / COBRA employee-paid · DB employer risk / DC employee risk · vesting ≠ portability · perks ≠ benefits · Roth = after-tax · brackets tax only the dollars above the floor']]
   ];

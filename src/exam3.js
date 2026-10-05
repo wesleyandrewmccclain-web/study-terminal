@@ -2,7 +2,7 @@
    9/30: added the Exam 3 Practice Set (25 MC, 10 T/F, 6 word problems, keyed) and cards/cues from the Exam 3 Study Guide.
    Sources: lecture slides 09–10, Exam 2 Study Guide Parts 4–5, Practice Set WP6–7 and MC 8–11 (with key).
    Questions marked "written from" were authored for practice from those exact slide lines.
-   Guest speakers Kathleen (9/23) and Derek Story (9/30) are not included yet. */
+   Kathleen (9/23) and Derek Story (9/30) are included from Wesley's notes. */
 window.EXAM3_DATA = (() => {
   const S9 = 'Slides 09 · Compa-Ratios & Payroll', S10 = 'Slides 10 · Executives & Flexible Workforce';
   const P4 = 'Study Guide Part 4', P5 = 'Study Guide Part 5';
@@ -394,10 +394,133 @@ window.EXAM3_DATA = (() => {
       steps: ['Taxable = 4,000 − 350 = 3,650/mo → × 12 = 43,800/yr.', 'SS = 6.2% × 4,000 = 248; Medicare = 1.45% × 4,000 = 58 (off gross).', 'Fed = 1,193 + 0.12 × (43,800 − 11,925) = 5,018/yr ÷ 12 = 418.17.', 'IL = 4.95% × 3,650 = 180.68.', 'Net = 4,000 − 350 − 248 − 58 − 418.17 − 180.68 − 100 = 2,645.15.'] }
   );
 
+  /* ---- Guest speaker Kathleen Hermacinski (Landmark Community Center), Wed 9/23 — from Wesley's class notes.
+     Own id prefix (e3k-). Notes said "FMLA 12 weeks paid" and "ACA $99.60": the game keeps the course/legal facts
+     (FMLA is UNPAID; ACA affordability for 2026 is 9.96% of household income). */
+  const KH = 'Guest speaker Kathleen Hermacinski (9/23)';
+  let kn = 0;
+  const kq = (prompt, options, answer, explanation) => ({ id: 'e3k-q' + (++kn), topic: 'benefits', prompt, options, answer, answerKeyText: options[answer], explanation, source: KH });
+  const kc = (front, back) => ({ id: 'e3k-c' + (++kn), topic: 'benefits', front, back, source: KH, core: true });
+  const kk = (clue, answer) => ({ id: 'e3k-k' + (++kn), topic: 'benefits', clue, answer, source: KH });
+  questions.push(
+    kq('Kathleen described four ways benefits shape an organization. Which is NOT one of them?', ['Total compensation', 'Risk allocation', 'Compliance', 'Stock price'], 3, 'Benefits shape: 1 total compensation · 2 risk allocation · 3 compliance · 4 talent.'),
+    kq('Kathleen defined a “benefit” as:', ['Any cash paid in a paycheck', 'An advantage or value gained from something', 'A tax the employer must pay', 'A bonus tied to performance'], 1, 'Benefit = an advantage or value gained from something (healthcare, paid time off, etc.).'),
+    kq('Who pays for workers’ compensation coverage?', ['The employee, through payroll deductions', 'The employer; premiums are NOT deducted from the employee’s pay', 'Split 50/50', 'The federal government'], 1, 'Workers’ comp is employer funded. Premiums are not taken out of paychecks.'),
+    kq('An employee cuts a finger on a fan at work. What should happen first under workers’ comp?', ['Nothing; it’s the employee’s fault', 'Document and report the injury', 'The employee sues the employer', 'The employee files under COBRA'], 1, 'Workers’ comp covers work injuries. The first step is to document and report the injury. (It’s no-fault, so blame doesn’t matter.)'),
+    kq('A 1099 independent contractor is hurt while working on a job for a company. Generally:', ['The company’s workers’ comp covers them', 'They fall outside the employer’s workers’ comp; the company isn’t responsible', 'COBRA covers them', 'FMLA covers them'], 1, '1099 = doesn’t work FOR the employer, just on the job. Contractors generally fall outside employee workers’ comp.'),
+    kq('True or false: Self-funded health plans eliminate all of the employer’s risk.', ['True', 'False'], 1, 'False. In a self-funded plan the employer pays claims itself, so it carries MORE claims risk, not none.'),
+    kq('Which of these did Kathleen list as a fringe benefit?', ['Base salary', 'Overtime pay', 'Pet insurance', 'FICA'], 2, 'Fringe benefits: vision, memberships, catered meals, snacks, pet insurance, EAP (mental health).'),
+    kq('An EAP (Employee Assistance Program) mainly offers:', ['Retirement matching', 'Mental health and personal support', 'Extra vacation days', 'Stock options'], 1, 'EAP = mental health support, listed as a fringe benefit.'),
+    kq('The ACA employer mandate applies to employers with at least:', ['20 employees', '50 full-time equivalent employees', '100 employees', '15 employees'], 1, 'ACA = 50+ full-time equivalents (an “applicable large employer”).'),
+    kq('Under the ACA, an employer’s coverage counts as “affordable” in 2026 if the employee’s cost for self-only coverage is no more than:', ['7.65% of income', '9.96% of household income', '4.95% of income', '$99.60 per year'], 1, '2026 affordability = 9.96%. Employers use IRS “safe harbors” (W-2 wages, rate of pay, or federal poverty line) to prove it.'),
+    kq('Under FMLA, an eligible employee can take up to 12 weeks of leave that is:', ['Paid at full salary', 'Unpaid, but the job is protected', 'Paid at 2/3 salary', 'Only for the employee’s own illness'], 1, 'FMLA leave is UNPAID with job protection. (Easy to mis-hear as “paid”; the exam wants unpaid.)'),
+    kq('COBRA lets a worker:', ['Get free insurance for life', 'Keep group health insurance after a qualifying loss of coverage (they pay)', 'Take 12 weeks of leave', 'Avoid FICA'], 1, 'COBRA = continue insurance after a qualifying event (job loss, cut hours). The person pays, up to 102%.'),
+    kq('Which account is tied to a HIGH-DEDUCTIBLE health plan?', ['FSA', 'HSA', 'DC FSA', 'EAP'], 1, 'HSA = Health Savings Account, paired with a high-deductible plan. The money rolls over.'),
+    kq('A DC FSA (Dependent Care FSA) is used for:', ['Doctor copays', 'Day care for dependents', 'Retirement', 'Dental cleanings'], 1, 'Dependent Care Flexible Spending Account: optional, pays for day care with pre-tax money.'),
+    kq('FICA stands for:', ['Federal Income Compensation Act', 'Federal Insurance Contributions Act', 'Fair Income Credit Account', 'Federal Insurance Coverage Allowance'], 1, 'FICA = Federal Insurance Contributions Act: Social Security 6.2% + Medicare 1.45%.')
+  );
+  flashcards.push(
+    kc('Benefit (Kathleen)', 'An advantage or value gained from something. Examples: healthcare, paid time off.'),
+    kc('How benefits shape the org (4)', '1 Total compensation · 2 Risk allocation · 3 Compliance · 4 Talent.'),
+    kc('Workers’ comp: who pays?', 'Employer funded. Premiums are NOT deducted from the employee’s pay. Covers work injuries (cut finger on a fan). First step: document and report.'),
+    kc('1099 contractor + workers’ comp', 'Works on the job, not for the employer. Generally outside employee workers’ comp; employer not responsible.'),
+    kc('Fringe benefits (Kathleen’s list)', 'Vision · memberships · catered meals · snacks · pet insurance · EAP (mental health).'),
+    kc('Self-funded plans', 'Do NOT eliminate all risk (false). The employer pays claims itself, so it carries the claims risk.'),
+    kc('ACA', 'Affordable Care Act: applies at 50+ full-time equivalents. Safe harbors prove coverage is affordable. 2026 affordability = 9.96% of household income.'),
+    kc('FMLA vs COBRA', 'FMLA: 12 weeks UNPAID, job-protected leave. COBRA: keep group insurance after a qualifying loss; the person pays.'),
+    kc('FSA vs HSA vs DC FSA', 'FSA: flexible spending, use it or lose it. HSA: high-deductible plan, rolls over. DC FSA: dependent care (day care), optional.'),
+    kc('FICA', 'Federal Insurance Contributions Act = Social Security 6.2% + Medicare 1.45%.')
+  );
+  cues.push(
+    kk('“premiums not deducted from pay” / “cut finger at work”', 'workers’ compensation (employer funded)'),
+    kk('“1099” / “works on the job, not for the employer”', 'contractor: outside workers’ comp'),
+    kk('“EAP,” “pet insurance,” “catered meals,” “snacks”', 'fringe benefits'),
+    kk('“50 full-time equivalents,” “safe harbor,” “affordability”', 'ACA'),
+    kk('“high deductible”', 'HSA'),
+    kk('“day care”', 'DC FSA (dependent care FSA)')
+  );
+
+  /* Kathleen, pages 3–4 (FICA wage base, employer FICA example, pay transparency, unemployment, funding types, enrollment rules). */
+  questions.push(
+    kq('Kathleen: Social Security (6.2%) applies to wages up to what 2026 limit?', ['$168,600', '$176,100', '$184,500', 'No limit'], 2, 'SS stops at the $184,500 wage base. Medicare (1.45%) applies to ALL wages, no cap.'),
+    kq('Which FICA tax has NO wage cap?', ['Social Security', 'Medicare', 'FUTA', 'SUTA'], 1, 'Medicare 1.45% is on all wages. Social Security stops at $184,500 (2026).'),
+    kq('An employee earns a $60,000 salary. What does the EMPLOYER pay in FICA on top of salary?', ['$3,720', '$870', '$4,590', '$9,180'], 2, 'Employer SS 6.2% × 60,000 = 3,720 + Medicare 1.45% × 60,000 = 870 → $4,590 above the salary. ($9,180 would be employer + employee.)'),
+    kq('In a FULLY INSURED health plan, the employer:', ['Pays claims as they happen', 'Pays the carrier a fixed premium', 'Has no costs', 'Must buy stop-loss'], 1, 'Fully insured = fixed premium to the carrier: predictable, less claims risk, less plan control, subject to state premium tax.'),
+    kq('Which is TRUE of a SELF-FUNDED plan compared with fully insured?', ['Fixed, predictable cost', 'Less plan control', 'More claims risk, more control, employer keeps the savings', 'Subject to state premium tax'], 2, 'Self-funded: employer pays claims + admin → variable cost, more risk, more control, keeps savings. Usually paired with stop-loss.'),
+    kq('Stop-loss coverage is best described as:', ['A COBRA extension', 'Insurance on top of insurance for a self-funded employer', 'An employee deductible', 'Unemployment insurance'], 1, 'Stop-loss protects a self-funded employer from very large claims: “insurance on top of insurance.”'),
+    kq('Under the ACA, a child can stay on a parent’s health plan until age:', ['18', '21', '26', '30'], 2, 'At 26 you can no longer be on your parents’ insurance.'),
+    kq('A child is covered by both parents’ plans. Under the birthday rule, the primary plan is:', ['The older parent’s', 'The parent whose birthday comes first in the calendar year', 'The father’s', 'The plan with the lower premium'], 1, 'Birthday rule: whoever’s birthday comes first in the year (month and day, not age) is primary.'),
+    kq('Getting married lets an employee change insurance outside open enrollment because it is a:', ['COBRA event', 'Qualifying life event (QLE)', 'Stop-loss claim', 'Safe harbor'], 1, 'QLE examples: death, marriage, court order. Otherwise changes wait for open enrollment.'),
+    kq('Unemployment insurance is:', ['Federal only, paid by employees', 'A federal–state program that replaces part of lost wages for eligible workers', 'Paid by the worker’s new employer', 'The same as workers’ comp'], 1, 'Federal–state program; replaces part of lost wages for eligible workers, with extra for dependents in Illinois.'),
+    kq('Kathleen’s Illinois unemployment numbers: taxable wage base and new-employer rate are:', ['$7,000 and 0.6%', '$14,250 and 3.35%', '$184,500 and 6.2%', '$14,250 and 7.65%'], 1, 'Illinois: wage base $14,250, new-employer rate 3.35%, rates range about 0.75%–7.05%. ($7,000 / 0.6% is FUTA.)'),
+    kq('Illinois pay transparency: a job posting must include:', ['Only the job title', 'The salary range and a general description of benefits', 'Every employee’s pay', 'The last person’s salary'], 1, 'Pay range + reasonable benefits description, and internal candidates must be told about the opening.'),
+    kq('Kathleen noted Illinois paid leave accrues at:', ['1 hour per 20 hours worked', '1 hour per 40 hours worked', '1 day per month', 'Nothing until year 2'], 1, '1 hour for every 40 hours worked. Employers can also “front load” the hours up front.'),
+    kq('Who pays for workers’ comp when an employee gets hurt at work?', ['The employee', 'The employer', 'Unemployment insurance', 'Medicare'], 1, 'Workers’ comp: employers pay.')
+  );
+  flashcards.push(
+    kc('FICA limits (2026)', 'SS 6.2% up to $184,500 · Medicare 1.45% on ALL wages. Employer matches both.'),
+    kc('Employer FICA on $60,000', '3,720 SS + 870 Medicare = $4,590 on top of salary.'),
+    kc('Fully insured vs self-funded', 'Fully insured: fixed premium, predictable, less risk, less control, state premium tax. Self-funded: pays claims + admin, variable, more risk, more control, keeps savings, stop-loss.'),
+    kc('Stop-loss', 'Insurance on top of insurance for a self-funded employer (caps huge claims).'),
+    kc('Enrollment rules', 'ACA: on parents’ plan until 26. Birthday rule: parent whose birthday is first in the year = primary. QLE (death, marriage, court) = change now; otherwise wait for open enrollment.'),
+    kc('Illinois unemployment (Kathleen)', 'Federal–state, replaces part of lost wages. IL wage base $14,250 · new employer 3.35% · range ~0.75–7.05% · extra for dependents.'),
+    kc('Pay transparency (Illinois)', 'Postings show salary range + benefits description; tell internal candidates. Paid leave: 1 hr per 40 hrs worked, or front-loaded.')
+  );
+  cues.push(
+    kk('“fixed premium to the carrier,” “predictable”', 'fully insured'),
+    kk('“insurance on top of insurance”', 'stop-loss'),
+    kk('“whose birthday is first”', 'birthday rule: that parent’s plan is primary'),
+    kk('“marriage, death, court order”', 'qualifying life event (QLE)'),
+    kk('“$184,500”', 'Social Security wage base (Medicare has none)')
+  );
+
+  /* ---- Guest speaker Derek Story, Wed 9/30: technology & AI in HR — from Wesley's class notes (topic 'ai'). */
+  const DS = 'Guest speaker Derek Story (9/30)';
+  let dn = 0;
+  const dq = (prompt, options, answer, explanation) => ({ id: 'e3d-q' + (++dn), topic: 'ai', prompt, options, answer, answerKeyText: options[answer], explanation, source: DS });
+  const dc = (front, back) => ({ id: 'e3d-c' + (++dn), topic: 'ai', front, back, source: DS, core: true });
+  const dk = (clue, answer) => ({ id: 'e3d-k' + (++dn), topic: 'ai', clue, answer, source: DS });
+  questions.push(
+    dq('Moore’s Law is about:', ['Pay compression', 'The steady growth in computing power on microchips (CPUs/GPUs)', 'Minimum wage increases', 'Benefit costs'], 1, 'Moore’s Law: chip power keeps doubling, which drove the tech revolution (CPU → GPU).'),
+    dq('Put the video-meeting tech in order:', ['Zoom → WebEx → AT&T Picturephone', 'AT&T Picturephone (1964) → CU-SeeMe (1992) → WebEx/GoToMeeting (1995–2004) → Zoom (2010s)', 'CU-SeeMe → Zoom → Picturephone', 'WebEx → Picturephone → Zoom'], 1, 'Derek’s timeline: 1964 Picturephone · 1992 CU-SeeMe · 1995–2004 WebEx & GoToMeeting · 2010–20 Zoom.'),
+    dq('On Derek’s AI timeline, what came FIRST?', ['AlexNet', 'Lloyd’s of London (1689)', 'Autocorrect', 'GPT'], 1, '1689 Lloyd’s of London (risk/probability) → 1900s Markov → 1950s–60s the term “AI” → 90s–00s autocorrect → 2012 AlexNet → 2016 Tay → 2018 BERT → 2020 GPT.'),
+    dq('Which matches Derek’s timeline?', ['2012 GPT', '2016 Microsoft Tay', '2018 AlexNet', '2020 BERT'], 1, '2012 AlexNet · 2016 Microsoft Tay · 2018 BERT · 2020 GPT.'),
+    dq('Which law protects student education records?', ['HIPAA', 'FERPA', 'COPPA', 'GDPR'], 1, 'FERPA = student records. HIPAA = health info (student health services, child care). COPPA = kids online. GDPR = EU data privacy.'),
+    dq('HIPAA would matter most for which campus data?', ['Grades', 'Student health services records', 'Course catalog', 'Parking permits'], 1, 'HIPAA covers health information, e.g. student health services and child care.'),
+    dq('Which privacy law protects children online?', ['FERPA', 'COPPA', 'FMLA', 'ERISA'], 1, 'COPPA = Children’s Online Privacy Protection Act.'),
+    dq('In the CRAFTY prompt method, the “A” stands for:', ['Accuracy', 'Audience: who it is for', 'Algorithm', 'Answer'], 1, 'C character · R request · A audience · F format/features · T tone · Y your extras/questions.'),
+    dq('In CRAFTY, “C – Character” means:', ['Word count', 'Who the AI should act as (e.g., a professor)', 'Company culture', 'Compliance'], 1, 'Character = who the AI plays, e.g. professor or student.'),
+    dq('Building an AI-friendly culture means AI use should be:', ['Secret and fast', 'Transparent and aligned with cultural values', 'Banned', 'Only for IT'], 1, '1. Transparent · 2. Aligns with cultural values.'),
+    dq('The main disadvantages of AI in hiring and recruitment are:', ['Speed and cost', 'Compliance and accuracy', 'Too many applicants', 'Lower pay'], 1, 'Hiring & recruitment: disadvantages are compliance and accuracy.'),
+    dq('If an AI hiring tool discriminates, who is liable?', ['Nobody', 'The software vendor only', 'The employer: an AI mistake is still the employer’s liability', 'The applicant'], 2, 'AI mistake is liable. This has happened in CA, CO, IL, NY and MD.'),
+    dq('Which states did Derek list for AI hiring/discrimination issues?', ['TX, FL, OH', 'CA, CO, IL, NY, MD', 'WA, OR, NV', 'Only IL'], 1, 'CA, CO, IL, NY, MD.'),
+    dq('Which was NOT one of the AI concerns raised by Bill Gates / Barack Obama?', ['Safety and security', 'Socializing the next generation', 'Environmental threats', 'Higher minimum wage'], 3, 'Concerns: safety/security, socializing the next generation, environmental threats.'),
+    dq('Using AI as a translator in operations: good side vs bad side?', ['Good: translates; Bad: you need to know how to ask questions', 'Good: free; Bad: slow', 'Good: legal; Bad: illegal', 'No downside'], 0, 'Good: able to translate. Bad: depends on knowing how to ask questions.'),
+    dq('Elizabeth Adams, PhD (cited by Derek) focuses on fairness, accountability, leadership and ___ in AI.', ['Profitability', 'Algorithmic accuracy', 'Speed', 'Marketing'], 1, 'Fairness · accountability · leadership · algorithmic accuracy in AI.')
+  );
+  flashcards.push(
+    dc('Moore’s Law', 'Computing power on a microchip keeps doubling. Drove the tech revolution (CPU → GPU) and HRIS systems.'),
+    dc('Video-meeting timeline', '1964 AT&T Picturephone · 1992 CU-SeeMe · 1995–2004 WebEx & GoToMeeting · 2010–20 Zoom.'),
+    dc('AI timeline', '1689 Lloyd’s of London · 1900s Markov · 1950s–60s term “AI” · 90s–00s autocorrect · 2012 AlexNet · 2016 Microsoft Tay · 2018 BERT · 2020 GPT.'),
+    dc('Privacy laws', 'FERPA student records · HIPAA health info (student health, child care) · COPPA kids online · GDPR EU data.'),
+    dc('CRAFTY prompts', 'Character (who) · Request · Audience (for whom) · Format/Features · Tone (professional) · Your extras / questions.'),
+    dc('AI-friendly culture', '1. Transparent · 2. Aligns with cultural values. Elizabeth Adams: fairness, accountability, leadership, algorithmic accuracy.'),
+    dc('AI in hiring', 'Disadvantages: compliance + accuracy. AI mistakes = employer liable (CA, CO, IL, NY, MD).'),
+    dc('AI concerns (Gates / Obama)', 'Safety & security · socializing the next generation · environmental threats.'),
+    dc('Where AI shows up in HR', 'Hiring & recruitment · training & development · operations (translator: good at translating, bad if you can’t ask good questions).')
+  );
+  cues.push(
+    dk('“chip power doubles”', 'Moore’s Law'),
+    dk('“student records”', 'FERPA'),
+    dk('“children online”', 'COPPA'),
+    dk('“Character, Request, Audience…”', 'CRAFTY prompt method'),
+    dk('“AI hiring tool discriminates”', 'employer is liable (compliance)')
+  );
+
   return {
-    exam: 3, examDay: 'Mon 10/12', examDate: [2026, 9, 12, 12, 35], scope: 'Benefits + Slides 09–10 + payroll update (guest speakers pending)',
-    note: 'Exam 3 moved to Mon 10/12 (150 pts). New: payroll tax brackets, Illinois 4.95%, the deduction flow and W-4s. Still missing: the two guest speakers, the Benefits deck, and the 10/5 compa-ratio exercise. Benefits items are drafted from the textbook.',
-    topics: [{ id: 'benefits', name: 'Benefits' }, { id: 'compa', name: 'Compa-Ratios' }, { id: 'payroll', name: 'Payroll' }, { id: 'flex', name: 'Flexible Workforce' }, { id: 'exec', name: 'Executive Pay' }],
+    exam: 3, examDay: 'Mon 10/12', examDate: [2026, 9, 12, 12, 35], scope: 'Benefits + Slides 09–10 + payroll update + both guest speakers',
+    note: 'Exam 3 moved to Mon 10/12 (150 pts). New: payroll tax brackets, Illinois 4.95%, the deduction flow and W-4s. Both guest talks are in (Kathleen → Benefits/Payroll, Derek → AI & HR). Still missing: the Benefits deck, and the 10/5 compa-ratio exercise. Benefits items are drafted from the textbook.',
+    topics: [{ id: 'benefits', name: 'Benefits' }, { id: 'compa', name: 'Compa-Ratios' }, { id: 'payroll', name: 'Payroll' }, { id: 'flex', name: 'Flexible Workforce' }, { id: 'exec', name: 'Executive Pay' }, { id: 'ai', name: 'AI & HR' }],
     /* Class meetings the study plan shows on their day. */
     classes: [
       { day: '2026-10-05', title: 'Review class at 12:35: get the compa-ratio exercise, ask about the exam format, and ask whether FICA comes off gross or after before-tax deductions', why: 'Anything said here is gold.', send: 'Send Claude your review notes + the exercise' }
@@ -405,8 +528,6 @@ window.EXAM3_DATA = (() => {
     /* Exam 3 material that isn't in the game yet. Shown as "Not yet available" cards. When you add one,
        give its questions/cards a topic id and move it into topics above, then delete it here. */
     pending: [
-      { id: 'kathleen', name: 'Guest speaker: Kathleen Hermacinski', sub: 'Benefits · Wed 9/23', status: 'Not yet available', what: 'Needs your notes or the recording. Guest speakers are listed as exam material.' },
-      { id: 'derek', name: 'Guest speaker: Derek Story', sub: 'AI & HR · Wed 9/30', status: 'In progress', what: 'Talk was today. Add your notes: where AI is used in HR, what it can’t do, risks, effect on pay.' },
       { id: 'benefits-deck', name: 'Benefits slide deck', sub: 'The Impact of Benefits on Compensation', status: 'In progress', what: 'Benefits items are drafted from the textbook for now. They’ll be checked against the real deck once it’s added.' },
       { id: 'compa-exercise', name: 'Compa-Ratio exercise', sub: 'Class discussion · Mon 10/5', status: 'Not yet available', what: 'Handed out and discussed in class on 10/5. Add the sheet and answer key when you have them.' }
     ],

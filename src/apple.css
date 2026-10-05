@@ -245,14 +245,14 @@ details>summary{color:var(--ap-text)}
 .cs-t th,.cs-t td{border:1px solid var(--ap-line);padding:2px 6px;text-align:left}
 .cs-t th{background:var(--ap-fill)}
 @media print{
-  @page{size:letter;margin:0.35in}
+  @page{size:letter;margin:0.3in}
   html,body{background:#fff!important}
   .topbar,#tabbar,.crumbs,.page-heading,#toast,#qs-modal,.skip-link,#calc-panel,[id*="calc"]{display:none!important}
   main,#app{padding:0!important;max-width:none!important}
-  .cs{box-shadow:none!important;padding:0!important;columns:2;column-gap:18px}
-  .cs-sec li{font-size:8.6pt;line-height:1.3}
-  .cs-t{font-size:8pt}
-  .cs-sec h3{font-size:9pt!important;color:#000!important}
+  .cs{box-shadow:none!important;padding:0!important;columns:2;column-gap:14px}
+  .cs-sec li{font-size:7.6pt;line-height:1.2}
+  .cs-t{font-size:7.4pt}
+  .cs-sec h3{font-size:8.5pt!important;margin:5px 0 2px!important;color:#000!important}
   .cs-head strong{font-size:11pt}
   *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
 }

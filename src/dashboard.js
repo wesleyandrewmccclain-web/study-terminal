@@ -34,7 +34,7 @@
   }
 
   /* "Up next": one tap starts a session aimed at your weakest topic, with due cards mixed in. */
-  const GAME_FOR={payroll:['g-pay','Build the paycheck'],benefits:['g-sort','Sort it'],compa:['g-mistake','Find the mistake'],flex:['g-sort','Sort it'],exec:['g-odd','Odd one out']};
+  const GAME_FOR={payroll:['g-pay','Build the paycheck'],benefits:['g-sort','Sort it'],compa:['g-mistake','Find the mistake'],flex:['g-sort','Sort it'],exec:['g-odd','Odd one out'],ai:['g-swipe','Swipe true or false']};
   function upNext(){
     const r=(window.Boost?.readiness?.()||[]).slice().sort((a,b)=>a.value-b.value||b.n-a.n), weak=r[0], due=window.Learning?.summary().due||0;
     const game=weak&&GAME_FOR[weak.id]&&window.Games?GAME_FOR[weak.id]:window.Games?['g-swipe','Swipe true or false']:null;
