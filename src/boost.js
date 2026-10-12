@@ -92,7 +92,7 @@
     const src = shuffle(d.math).slice(0, FORMAT.math - gens.length);
     const math = shuffle([...gens, ...src]).slice(0, FORMAT.math);
     const written = exam() === 3 ? shuffle(B().written).slice(0, FORMAT.written).map(w => w.id) : [];
-    return { v: 1, started: Date.now(), deadline: Date.now() + FORMAT.minutes * 60000, mc: mc.map(q => ({ id: q.id, order: shuffle(q.options.map((_, i) => i)) })), tf: tf.map(q => q.id), math, written, ans: {}, done: false };
+    return { v: 1, started: Date.now(), deadline: Date.now() + FORMAT.minutes * 60000, mc: mc.map(q => ({ id: q.id, order: (window.pinNone||((_,o)=>o))(q,shuffle(q.options.map((_, i) => i))) })), tf: tf.map(q => q.id), math, written, ans: {}, done: false };
   }
   function mockRun() { const st = S().state; st.mockRun = st.mockRun || {}; return st.mockRun[ek()]; }
   function mockRender() {

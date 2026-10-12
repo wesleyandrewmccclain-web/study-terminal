@@ -1,0 +1,226 @@
+[
+ {
+  "id": "e3d-q1",
+  "topic": "ai",
+  "prompt": "Moore’s Law is about:",
+  "options": [
+   "Pay compression",
+   "The steady growth in computing power on microchips (CPUs/GPUs)",
+   "Minimum wage increases",
+   "Benefit costs"
+  ],
+  "answer": 1,
+  "explanation": "Moore’s Law: chip power keeps doubling, which drove the tech revolution (CPU → GPU).",
+  "source": "Guest speaker Derek Story (9/30)"
+ },
+ {
+  "id": "e3d-q2",
+  "topic": "ai",
+  "prompt": "Put the video-meeting tech in order:",
+  "options": [
+   "Zoom → WebEx → AT&T Picturephone",
+   "AT&T Picturephone (1964) → CU-SeeMe (1992) → WebEx/GoToMeeting (1995–2004) → Zoom (2010s)",
+   "CU-SeeMe → Zoom → Picturephone",
+   "WebEx → Picturephone → Zoom"
+  ],
+  "answer": 1,
+  "explanation": "Derek’s timeline: 1964 Picturephone · 1992 CU-SeeMe · 1995–2004 WebEx & GoToMeeting · 2010–20 Zoom.",
+  "source": "Guest speaker Derek Story (9/30)"
+ },
+ {
+  "id": "e3d-q3",
+  "topic": "ai",
+  "prompt": "On Derek’s AI timeline, what came FIRST?",
+  "options": [
+   "AlexNet",
+   "Lloyd’s of London (1689)",
+   "Autocorrect",
+   "GPT"
+  ],
+  "answer": 1,
+  "explanation": "1689 Lloyd’s of London (risk/probability) → 1900s Markov → 1950s–60s the term “AI” → 90s–00s autocorrect → 2012 AlexNet → 2016 Tay → 2018 BERT → 2020 GPT.",
+  "source": "Guest speaker Derek Story (9/30)"
+ },
+ {
+  "id": "e3d-q4",
+  "topic": "ai",
+  "prompt": "Which matches Derek’s timeline?",
+  "options": [
+   "2012 GPT",
+   "2016 Microsoft Tay",
+   "2018 AlexNet",
+   "2020 BERT"
+  ],
+  "answer": 1,
+  "explanation": "2012 AlexNet · 2016 Microsoft Tay · 2018 BERT · 2020 GPT.",
+  "source": "Guest speaker Derek Story (9/30)"
+ },
+ {
+  "id": "e3d-q5",
+  "topic": "ai",
+  "prompt": "Which law protects student education records?",
+  "options": [
+   "HIPAA",
+   "FERPA",
+   "COPPA",
+   "GDPR"
+  ],
+  "answer": 1,
+  "explanation": "FERPA = student records. HIPAA = health info (student health services, child care). COPPA = kids online. GDPR = EU data privacy.",
+  "source": "Guest speaker Derek Story (9/30)"
+ },
+ {
+  "id": "e3d-q6",
+  "topic": "ai",
+  "prompt": "HIPAA would matter most for which campus data?",
+  "options": [
+   "Grades",
+   "Student health services records",
+   "Course catalog",
+   "Parking permits"
+  ],
+  "answer": 1,
+  "explanation": "HIPAA covers health information, e.g. student health services and child care.",
+  "source": "Guest speaker Derek Story (9/30)"
+ },
+ {
+  "id": "e3d-q7",
+  "topic": "ai",
+  "prompt": "Which privacy law protects children online?",
+  "options": [
+   "FERPA",
+   "COPPA",
+   "FMLA",
+   "ERISA"
+  ],
+  "answer": 1,
+  "explanation": "COPPA = Children’s Online Privacy Protection Act.",
+  "source": "Guest speaker Derek Story (9/30)"
+ },
+ {
+  "id": "e3d-q8",
+  "topic": "ai",
+  "prompt": "In the CRAFTY prompt method, the “A” stands for:",
+  "options": [
+   "Accuracy",
+   "Audience: who it is for",
+   "Algorithm",
+   "Answer"
+  ],
+  "answer": 1,
+  "explanation": "C character · R request · A audience · F format/features · T tone · Y your extras/questions.",
+  "source": "Guest speaker Derek Story (9/30)"
+ },
+ {
+  "id": "e3d-q9",
+  "topic": "ai",
+  "prompt": "In CRAFTY, “C – Character” means:",
+  "options": [
+   "Word count",
+   "Who the AI should act as (e.g., a professor)",
+   "Company culture",
+   "Compliance"
+  ],
+  "answer": 1,
+  "explanation": "Character = who the AI plays, e.g. professor or student.",
+  "source": "Guest speaker Derek Story (9/30)"
+ },
+ {
+  "id": "e3d-q10",
+  "topic": "ai",
+  "prompt": "Building an AI-friendly culture means AI use should be:",
+  "options": [
+   "Secret and fast",
+   "Transparent and aligned with cultural values",
+   "Banned",
+   "Only for IT"
+  ],
+  "answer": 1,
+  "explanation": "1. Transparent · 2. Aligns with cultural values.",
+  "source": "Guest speaker Derek Story (9/30)"
+ },
+ {
+  "id": "e3d-q11",
+  "topic": "ai",
+  "prompt": "The main disadvantages of AI in hiring and recruitment are:",
+  "options": [
+   "Speed and cost",
+   "Compliance and accuracy",
+   "Too many applicants",
+   "Lower pay"
+  ],
+  "answer": 1,
+  "explanation": "Hiring & recruitment: disadvantages are compliance and accuracy.",
+  "source": "Guest speaker Derek Story (9/30)"
+ },
+ {
+  "id": "e3d-q12",
+  "topic": "ai",
+  "prompt": "If an AI hiring tool discriminates, who is liable?",
+  "options": [
+   "Nobody",
+   "The software vendor only",
+   "The employer: an AI mistake is still the employer’s liability",
+   "The applicant"
+  ],
+  "answer": 2,
+  "explanation": "AI mistake is liable. This has happened in CA, CO, IL, NY and MD.",
+  "source": "Guest speaker Derek Story (9/30)"
+ },
+ {
+  "id": "e3d-q13",
+  "topic": "ai",
+  "prompt": "Which states did Derek list for AI hiring/discrimination issues?",
+  "options": [
+   "TX, FL, OH",
+   "CA, CO, IL, NY, MD",
+   "WA, OR, NV",
+   "Only IL"
+  ],
+  "answer": 1,
+  "explanation": "CA, CO, IL, NY, MD.",
+  "source": "Guest speaker Derek Story (9/30)"
+ },
+ {
+  "id": "e3d-q14",
+  "topic": "ai",
+  "prompt": "Which was NOT one of the AI concerns raised by Bill Gates / Barack Obama?",
+  "options": [
+   "Safety and security",
+   "Socializing the next generation",
+   "Environmental threats",
+   "Higher minimum wage"
+  ],
+  "answer": 3,
+  "explanation": "Concerns: safety/security, socializing the next generation, environmental threats.",
+  "source": "Guest speaker Derek Story (9/30)"
+ },
+ {
+  "id": "e3d-q15",
+  "topic": "ai",
+  "prompt": "Using AI as a translator in operations: good side vs bad side?",
+  "options": [
+   "Good: translates; Bad: you need to know how to ask questions",
+   "Good: free; Bad: slow",
+   "Good: legal; Bad: illegal",
+   "No downside"
+  ],
+  "answer": 0,
+  "explanation": "Good: able to translate. Bad: depends on knowing how to ask questions.",
+  "source": "Guest speaker Derek Story (9/30)"
+ },
+ {
+  "id": "e3d-q16",
+  "topic": "ai",
+  "prompt": "Elizabeth Adams, PhD (cited by Derek) focuses on fairness, accountability, leadership and ___ in AI.",
+  "options": [
+   "Profitability",
+   "Algorithmic accuracy",
+   "Speed",
+   "Marketing"
+  ],
+  "answer": 1,
+  "explanation": "Fairness · accountability · leadership · algorithmic accuracy in AI.",
+  "source": "Guest speaker Derek Story (9/30)"
+ }
+]

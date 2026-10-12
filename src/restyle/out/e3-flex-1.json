@@ -1,0 +1,314 @@
+[
+ {
+  "id": "e3-2",
+  "prompt": "An organization engages a worker who uses their own tools, is paid per project, and serves several other clients at the same time. Under the common-law test, this worker is most likely classified as a(n):",
+  "options": [
+   "Core Employee",
+   "Leased Employee",
+   "Independent Contractor",
+   "Part-Time Employee who must automatically receive employer benefits"
+  ],
+  "answer": 2,
+  "explanation": "Using their own tools, being paid by the project, and working for more than one business are contractor factors on the common-law test. Leased employees work for a staffing agency, not for themselves."
+ },
+ {
+  "id": "e3-4",
+  "prompt": "Part-time workers who resign from an organization are eligible to purchase continued health insurance coverage under:",
+  "options": [
+   "COBRA",
+   "ERISA",
+   "PPACA, which strictly mandates employer-paid coverage for all part-time workers",
+   "FUTA"
+  ],
+  "answer": 0,
+  "explanation": "Following resignation, part-time workers are eligible to purchase health insurance under COBRA rules. Part-time workers are not protected under PPACA."
+ },
+ {
+  "id": "e3-24",
+  "prompt": "Individuals who do not have an implicit or explicit contract for ongoing employment are known as:",
+  "options": [
+   "Core Employees",
+   "Nonexempt Employees",
+   "Contingent (Flexible) Workers",
+   "Exempt Employees under the FLSA duties test"
+  ],
+  "answer": 2,
+  "explanation": "Flexible/contingent workers do not have an implicit or explicit contract for ongoing employment; core employees plan on long-term relationships."
+ },
+ {
+  "id": "e3-25",
+  "prompt": "An HR analyst reviews the status of a staff member who will not continue her employment because she is returning to school. How should the analyst classify this individual?",
+  "options": [
+   "As a contingent worker, because she has no expectation of continued employment",
+   "As not a contingent worker, because she does not expect to continue for personal reasons",
+   "As a leased employee of a staffing agency",
+   "As an independent contractor under the common-law test"
+  ],
+  "answer": 1,
+  "explanation": "People who do not expect to continue for personal reasons, such as returning to school or retirement, are not contingent workers. Her short remaining tenure is a personal choice, not the absence of an ongoing-employment contract."
+ },
+ {
+  "id": "e3-26",
+  "prompt": "Two or more part-time employees performing one job is called:",
+  "options": [
+   "Telecommuting",
+   "Compressed Workweek",
+   "Employee Leasing",
+   "Job Sharing"
+  ],
+  "answer": 3,
+  "explanation": "Job sharing is two or more part-timers performing one job; it reduces costs, increases flexibility, maintains productivity, and may increase loyalty."
+ },
+ {
+  "id": "e3-27",
+  "prompt": "Which of the following is NOT a listed reason for the rise in use of flexible workers?",
+  "options": [
+   "Economic recessions",
+   "New federal overtime rules",
+   "International competition",
+   "The shift from a manufacturing to a service economy"
+  ],
+  "answer": 1,
+  "explanation": "The slide lists recessions, international competition, and the shift from manufacturing to a service economy; new federal overtime rules are not on the list."
+ },
+ {
+  "id": "e3-28",
+  "prompt": "A compensation manager benchmarking benefits wants to compare part-time and full-time workers. Approximately what share of part-time workers have retirement benefits, compared with full-time workers?",
+  "options": [
+   "About 81% of part-time workers vs. 38% of full-time workers",
+   "About 38% of part-time workers vs. 81% of full-time workers",
+   "About 50% of each, because Federal law requires equal retirement access",
+   "About 8.7% of part-time workers vs. 91% of full-time workers"
+  ],
+  "answer": 1,
+  "explanation": "Retirement benefits reach about 38% of part-time workers compared to 81% of full-time workers. The first option simply reverses the two figures."
+ },
+ {
+  "id": "e3-29",
+  "prompt": "Employers must allow part-time workers to participate in retirement plans once they meet the age and service requirements of:",
+  "options": [
+   "COBRA",
+   "PPACA",
+   "ERISA",
+   "FLSA"
+  ],
+  "answer": 2,
+  "explanation": "Part-time workers must be allowed to participate after fulfilling the ERISA age and service requirements. COBRA concerns continued health coverage, not retirement plans."
+ },
+ {
+  "id": "e3-30",
+  "prompt": "Part-time workers are NOT protected under which of the following?",
+  "options": [
+   "COBRA",
+   "ERISA",
+   "FICA",
+   "PPACA"
+  ],
+  "answer": 3,
+  "explanation": "For health insurance, part-time workers are not protected under PPACA. They can still purchase COBRA coverage after resigning and must be allowed into retirement plans once ERISA requirements are met."
+ },
+ {
+  "id": "e3-31",
+  "prompt": "An organization offers its employees flextime, compressed workweeks, and telecommuting. These arrangements are collectively known as:",
+  "options": [
+   "Flexible Work Schedules",
+   "Contingent Worker Types",
+   "Perquisites",
+   "Payroll Deduction Steps"
+  ],
+  "answer": 0,
+  "explanation": "Flexible work schedules include flextime, compressed workweeks, and telecommuting. Contingent worker types describe who is employed, not how hours are arranged."
+ },
+ {
+  "id": "e3-32",
+  "prompt": "A company schedules its flexible employees to work during a holiday. Which policy must the company follow?",
+  "options": [
+   "Pay them triple time, as Federal law strictly mandates for all holiday work",
+   "Automatically convert them to full-time status",
+   "Provide them alternative time off",
+   "None of the answer choices are correct"
+  ],
+  "answer": 2,
+  "explanation": "For treatment of paid time off for holidays, companies must provide alternative time off when flexible employees work during holidays."
+ },
+ {
+  "id": "e3-33",
+  "prompt": "An organization pays a worker by the hour, directly supervises the work, and provides the tools used on the job. Under the common-law test, this worker is classified as:",
+  "options": [
+   "An Independent Contractor",
+   "A Leased Employee",
+   "A Consultant",
+   "An Employee"
+  ],
+  "answer": 3,
+  "explanation": "A worker is an employee if the employer controls/supervises, provides tools and location, and pays by the hour or time worked."
+ },
+ {
+  "id": "e3-34",
+  "prompt": "Which of the following factors appears in the economic realities test?",
+  "options": [
+   "Intent of the parties",
+   "Method of payment",
+   "Opportunity for profit or loss (risk)",
+   "Type of business"
+  ],
+  "answer": 2,
+  "explanation": "Economic realities factors are integration, investment in facilities, right to control, risk (profit or loss), skill, and continuing relationship. Intent, method of payment, and type of business are common-law factors."
+ },
+ {
+  "id": "e3-35",
+  "prompt": "An HR analyst finds that a worker has made a substantial investment in the work facilities and equipment. Under the economic realities test, this factor points toward:",
+  "options": [
+   "Employee Status",
+   "Part-Time Status",
+   "Leased Status",
+   "Independent Contractor Status"
+  ],
+  "answer": 3,
+  "explanation": "On the economic realities test, a substantial investment in facilities and equipment points toward contractor status."
+ },
+ {
+  "id": "e3-52",
+  "prompt": "Which of the following individuals is NOT a contingent worker?",
+  "options": [
+   "An employee who plans to leave in May to return to graduate school",
+   "A part-time cashier",
+   "A seasonal warehouse worker hired through December 31",
+   "A consultant engaged for a six-month project"
+  ],
+  "answer": 0,
+  "explanation": "Leaving for personal reasons (e.g., school, retirement) does not make someone contingent; the professor repeated this in the video. Part-timers, seasonal hires, and project consultants lack a contract for ongoing employment."
+ },
+ {
+  "id": "e3-53",
+  "prompt": "A leased employee is legally the employee of:",
+  "options": [
+   "The client organization where the work is performed",
+   "The staffing agency",
+   "Neither, because leased employees are always legally self-employed",
+   "Both, jointly and equally under federal law"
+  ],
+  "answer": 1,
+  "explanation": "A leased employee belongs to the staffing agency: the client pays the agency, and the agency pays the worker."
+ },
+ {
+  "id": "e3-54",
+  "prompt": "An HR director preparing a workforce plan summarizes the three reasons given for the rise in use of flexible workers. Which of the following is NOT one of those reasons?",
+  "options": [
+   "Economic recessions",
+   "International competition",
+   "The passage of the Family and Medical Leave Act",
+   "The shift from manufacturing to a service economy"
+  ],
+  "answer": 2,
+  "explanation": "The three reasons are recessions, international competition, and the manufacturing-to-service shift; the FMLA is not one of them."
+ },
+ {
+  "id": "e3-55",
+  "prompt": "Regarding benefits for part-time workers, which of the following statements is accurate?",
+  "options": [
+   "Federal law requires employers to offer them health insurance under PPACA",
+   "They are legally ineligible for COBRA coverage after resignation",
+   "Retirement is a legally required benefit for all workers",
+   "Employers must allow them into retirement plans once ERISA age and service requirements are met"
+  ],
+  "answer": 3,
+  "explanation": "Employers must allow retirement participation once ERISA thresholds are met. Part-timers are not protected under PPACA, can buy COBRA coverage, and retirement is a discretionary benefit."
+ },
+ {
+  "id": "e3-56",
+  "prompt": "“Investment in facilities” and “risk of profit or loss” are factors found in:",
+  "options": [
+   "The economic realities test only",
+   "The common-law test only",
+   "Both tests",
+   "Neither test"
+  ],
+  "answer": 0,
+  "explanation": "These are economic realities test factors only; neither appears on the common-law list."
+ },
+ {
+  "id": "e3-57",
+  "prompt": "An organization adopts a compressed workweek for its staff. Which form does a compressed workweek most commonly take?",
+  "options": [
+   "Five 7-hour days",
+   "Four 10-hour days",
+   "Six 6-hour days",
+   "Three 8-hour days"
+  ],
+  "answer": 1,
+  "explanation": "Four 10-hour days is the most common form. Three 12-hour days (36 hours) also appears, but 4×10 is most common."
+ },
+ {
+  "id": "e3-70",
+  "prompt": "Which of the following statements about part-time employees is accurate?",
+  "options": [
+   "They are considered contingent workers",
+   "They are always considered core employees",
+   "They are legally classified as independent contractors",
+   "None of the answer choices are correct"
+  ],
+  "answer": 0,
+  "explanation": "Part-time employees are considered contingent workers. Core employees are those who plan on a long-term relationship."
+ },
+ {
+  "id": "e3-73",
+  "prompt": "A private organization’s HR manager is reviewing its holiday policy. Which statement about federal holidays is accurate?",
+  "options": [
+   "Federal law requires all private organizations to close on federal holidays",
+   "Private organizations are not legally required to close on federal holidays",
+   "Private organizations must close on federal holidays only if they employ flexible workers",
+   "None of the answer choices are correct"
+  ],
+  "answer": 1,
+  "explanation": "Private organizations are not legally required to close on federal holidays. That is exactly why the rule to provide alternative paid time off exists."
+ },
+ {
+  "id": "e3-95",
+  "prompt": "A retailer hires three workers for the holidays with a definite stop date. The stop date is what makes these workers:",
+  "options": [
+   "Exempt Employees",
+   "Core Employees",
+   "Leased Employees",
+   "Contingent Workers"
+  ],
+  "answer": 3,
+  "explanation": "A definite stop date means there is no contract for ongoing employment, so the workers are contingent."
+ },
+ {
+  "id": "e3-96",
+  "prompt": "Two part-time employees split one full-time job. Which of the following is NOT one of the four listed effects of job sharing?",
+  "options": [
+   "Reduces costs",
+   "Increases flexibility",
+   "Guarantees benefits eligibility under federal law",
+   "May increase loyalty"
+  ],
+  "answer": 2,
+  "explanation": "The four effects are: reduces costs, increases flexibility, maintains productivity, and may increase loyalty. Job sharers typically are not benefit-eligible."
+ },
+ {
+  "id": "e3-97",
+  "prompt": "“Intent” and “method of payment” are factors on which test?",
+  "options": [
+   "The economic realities test only",
+   "The FLSA duties test",
+   "Both tests",
+   "The common-law test only"
+  ],
+  "answer": 3,
+  "explanation": "Intent, tools, supervision, method of payment, type of business, and working for more than one firm are common-law factors only."
+ },
+ {
+  "id": "e3-98",
+  "prompt": "An employee drops her child off at 8:15, starts work at 8:30, leaves at 3:15, and finishes her hours remotely. This arrangement is called:",
+  "options": [
+   "Flextime",
+   "Compressed Workweek",
+   "Job Sharing",
+   "Telecommuting only"
+  ],
+  "answer": 0,
+  "explanation": "Working different times of the day is flextime. A compressed workweek fits full-time hours into fewer days, which is not happening here."
+ }
+]

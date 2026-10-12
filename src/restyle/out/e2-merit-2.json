@@ -1,0 +1,86 @@
+[
+ {
+  "id": "bank-90",
+  "prompt": "A bank splits its team bonus pool among team members according to each member’s contribution to the team’s goals. Which allocation method is the bank using?",
+  "options": [
+   "Equal payments to all members",
+   "Differential payments according to base pay",
+   "Forced Distribution",
+   "Differential payments based on contribution to goals"
+  ],
+  "answer": 3,
+  "explanation": "The prof said Jeff Stewart’s bank uses contribution-based differential payments."
+ },
+ {
+  "id": "bank-91",
+  "prompt": "What is one of the major advantages of group incentives?",
+  "options": [
+   "Greater group cohesion",
+   "The free-rider effect",
+   "Members’ pay depends on others",
+   "Higher turnover"
+  ],
+  "answer": 0,
+  "explanation": "Group advantages: performance measures are easier to develop · greater cohesion. The disadvantages are free riders (which lead to turnover) and discomfort with others influencing your pay."
+ },
+ {
+  "id": "bank-92",
+  "prompt": "A compensation manager notices that on teams paid through group incentives, some members coast while others carry the workload. If this free-rider effect continues, it is most likely to lead to:",
+  "options": [
+   "Lower labor costs",
+   "Better signaling",
+   "Higher turnover among high performers",
+   "A higher range midpoint"
+  ],
+  "answer": 2,
+  "explanation": "High performers get frustrated carrying coasters and leave."
+ },
+ {
+  "id": "bank-93",
+  "prompt": "In most situations, incentive pay should:",
+  "options": [
+   "Replace traditional pay entirely",
+   "Complement traditional pay",
+   "Be paid only annually, as Federal law requires",
+   "Be based on seniority"
+  ],
+  "answer": 1,
+  "explanation": "Commission-only roles replace traditional pay, but usually incentives complement it. The time horizon for goals should be attainable and realistic."
+ },
+ {
+  "id": "practice-5",
+  "prompt": "Which of the following is a feature of incentive pay rather than merit pay?",
+  "options": [
+   "A permanent addition to base pay",
+   "Based on years of service",
+   "A nonrecurring payment that must be re-earned",
+   "Raises the range midpoint"
+  ],
+  "answer": 2,
+  "explanation": "Incentive pay is nonrecurring and must be re-earned; merit pay is a permanent addition to base, and years of service describes seniority pay."
+ },
+ {
+  "id": "practice-6",
+  "prompt": "A manager ranks all 12 employees in the department from best to worst. Which type of appraisal system is this?",
+  "options": [
+   "Trait System",
+   "Behavioral System",
+   "Goal-Oriented System",
+   "Comparison System"
+  ],
+  "answer": 3,
+  "explanation": "Ranking employees against each other is a comparison system; a trait system evaluates characteristics and a behavioral system rates job behaviors."
+ },
+ {
+  "id": "practice-7",
+  "prompt": "Team members complain that one person coasts while still sharing the group bonus. This is known as the:",
+  "options": [
+   "Halo Effect",
+   "Free-Rider Effect",
+   "Signaling Effect",
+   "None of the answer choices are correct"
+  ],
+  "answer": 1,
+  "explanation": "This is the free-rider effect, a disadvantage of group incentives."
+ }
+]

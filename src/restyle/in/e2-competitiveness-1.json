@@ -1,0 +1,422 @@
+[
+ {
+  "id": "bank-1",
+  "topic": "competitiveness",
+  "prompt": "External competitiveness refers to:",
+  "options": [
+   "Pay relationships among jobs within one organization",
+   "The organization's pay relative to its competitors",
+   "How employees rate their own pay",
+   "The ratio of pay to the range midpoint"
+  ],
+  "answer": 1,
+  "explanation": "External = pay relationships AMONG organizations. Pay relationships within one organization are internal alignment (Exam 1).",
+  "source": "MC Bank #1 · Question Bank PDF p. 1; key p. 15"
+ },
+ {
+  "id": "bank-2",
+  "topic": "competitiveness",
+  "prompt": "A company deliberately pays below the market average for a role. This policy is:",
+  "options": [
+   "Market lead",
+   "Market match",
+   "Market lag",
+   "Broadbanding"
+  ],
+  "answer": 2,
+  "explanation": "Lag = below market, match = equal to market, lead = above market.",
+  "source": "MC Bank #2 · Question Bank PDF p. 1; key p. 15"
+ },
+ {
+  "id": "bank-3",
+  "topic": "competitiveness",
+  "prompt": "External competitiveness is expressed in practice by setting the pay level AND:",
+  "options": [
+   "Determining the pay mix relative to competitors",
+   "Writing job descriptions",
+   "Classifying jobs as exempt or non-exempt",
+   "Running performance appraisals"
+  ],
+  "answer": 0,
+  "explanation": "The two levers are pay level (above, below, or equal to competitors) and pay mix relative to competitors.",
+  "source": "MC Bank #3 · Question Bank PDF p. 1; key p. 15"
+ },
+ {
+  "id": "bank-4",
+  "topic": "competitiveness",
+  "prompt": "Which item is NOT part of the pay level calculation?",
+  "options": [
+   "Bonuses",
+   "Benefits",
+   "Value of stock holdings",
+   "Number of job applicants"
+  ],
+  "answer": 3,
+  "explanation": "Pay level = (base + bonuses + benefits + value of stock holdings) ÷ number of employees.",
+  "source": "MC Bank #4 · Question Bank PDF p. 1; key p. 15"
+ },
+ {
+  "id": "bank-5",
+  "topic": "competitiveness",
+  "prompt": "Per the lecture video, why is pay level NOT calculated from base pay alone?",
+  "options": [
+   "Base pay is confidential",
+   "Compensation is much more than base pay",
+   "The FLSA prohibits it",
+   "Base pay is always at the market rate"
+  ],
+  "answer": 1,
+  "explanation": "Bonuses, benefits, and stock all cost the company money, so they all count toward pay level.",
+  "source": "MC Bank #5 · Question Bank PDF p. 1; key p. 15"
+ },
+ {
+  "id": "bank-6",
+  "topic": "competitiveness",
+  "prompt": "The various types of payments, or pay forms, that make up total compensation are called:",
+  "options": [
+   "Pay level",
+   "Pay mix",
+   "Pay range",
+   "Pay grade"
+  ],
+  "answer": 1,
+  "explanation": "Pay mix = the forms (base, bonus, benefits, stock). Pay level = the average of all of it.",
+  "source": "MC Bank #6 · Question Bank PDF p. 1; key p. 15"
+ },
+ {
+  "id": "bank-7",
+  "topic": "competitiveness",
+  "prompt": "What are the two objectives of pay level and pay mix decisions?",
+  "options": [
+   "Control costs/increase revenues, and attract/retain employees",
+   "Comply with FLSA, and reduce taxes",
+   "Build pay grades, and run surveys",
+   "Increase seniority, and reduce turnover"
+  ],
+  "answer": 0,
+  "explanation": "(1) Control costs and increase revenues, where labor costs = pay level × # employees. (2) Attract and retain employees.",
+  "source": "MC Bank #7 · Question Bank PDF p. 1; key p. 15"
+ },
+ {
+  "id": "bank-8",
+  "topic": "competitiveness",
+  "prompt": "Why is there no single 'going rate' in the labor market for a job?",
+  "options": [
+   "The government sets different minimums",
+   "Different employers set different pay levels and define the same role differently",
+   "Surveys are always inaccurate",
+   "Unions set all rates"
+  ],
+  "answer": 1,
+  "explanation": "Prof's example: an HR generalist in automotive is a different job than an HR generalist in healthcare.",
+  "source": "MC Bank #8 · Question Bank PDF p. 1; key p. 15"
+ },
+ {
+  "id": "bank-9",
+  "topic": "competitiveness",
+  "prompt": "The three groups of factors that shape external competitiveness are:",
+  "options": [
+   "Labor market, product market, and organization factors",
+   "Trait, behavior, and goal factors",
+   "Occupation, geography, and competitors",
+   "Seniority, merit, and incentive factors"
+  ],
+  "answer": 0,
+  "explanation": "Occupation/geography/competitors are how you define the RELEVANT MARKET, which is a different list. Don't mix them up.",
+  "source": "MC Bank #9 · Question Bank PDF p. 2; key p. 15"
+ },
+ {
+  "id": "bank-10",
+  "topic": "competitiveness",
+  "prompt": "Which is NOT one of the four basic assumptions of labor market theories?",
+  "options": [
+   "Employers always seek to maximize profits",
+   "People are all the same and interchangeable",
+   "Employees value nonmonetary rewards more than pay",
+   "The markets employers face are competitive"
+  ],
+  "answer": 2,
+  "explanation": "The 4 assumptions: maximize profits · people are interchangeable · pay rates reflect all costs of employment · markets are competitive. The prof says none of them are fully true.",
+  "source": "MC Bank #10 · Question Bank PDF p. 2; key p. 15"
+ },
+ {
+  "id": "bank-11",
+  "topic": "competitiveness",
+  "prompt": "The prof said an HR professional couldn't just go work as a nurse. Which labor market assumption does this disprove?",
+  "options": [
+   "Employers maximize profits",
+   "People are all the same and interchangeable",
+   "Markets are competitive",
+   "Pay reflects all costs"
+  ],
+  "answer": 1,
+  "explanation": "People have different skills, knowledge, and experience, so they aren't interchangeable.",
+  "source": "MC Bank #11 · Question Bank PDF p. 2; key p. 15"
+ },
+ {
+  "id": "bank-12",
+  "topic": "competitiveness",
+  "prompt": "The additional OUTPUT from employing one more person, with other production factors held constant, is the:",
+  "options": [
+   "Marginal revenue of labor",
+   "Marginal product of labor",
+   "Efficiency wage",
+   "Labor cost"
+  ],
+  "answer": 1,
+  "explanation": "Product = output. Revenue = the added dollars that person generates.",
+  "source": "MC Bank #12 · Question Bank PDF p. 2; key p. 15"
+ },
+ {
+  "id": "bank-13",
+  "topic": "competitiveness",
+  "prompt": "The additional REVENUE generated by employing one more person, with other factors held constant, is the:",
+  "options": [
+   "Marginal product of labor",
+   "Marginal revenue of labor",
+   "Pay level",
+   "Range differential"
+  ],
+  "answer": 1,
+  "explanation": "A single employer's demand for labor lines up with the marginal product of labor. Output can be high while revenue stays low if demand is weak.",
+  "source": "MC Bank #13 · Question Bank PDF p. 2; key p. 15"
+ },
+ {
+  "id": "bank-14",
+  "topic": "competitiveness",
+  "prompt": "Under efficiency wage theory, high wages lower labor costs if they do all of these EXCEPT:",
+  "options": [
+   "Attract higher-quality applicants",
+   "Lower turnover",
+   "Reduce the need for supervision",
+   "Increase the number of pay grades"
+  ],
+  "answer": 3,
+  "explanation": "The 5: better applicants · lower turnover · more worker effort · less shirking · less need for supervision.",
+  "source": "MC Bank #14 · Question Bank PDF p. 2; key p. 15"
+ },
+ {
+  "id": "bank-15",
+  "topic": "competitiveness",
+  "prompt": "'Shirking behavior' means:",
+  "options": [
+   "Refusing overtime",
+   "Wasting time on the job",
+   "Negotiating starting pay",
+   "Leaving for a competitor"
+  ],
+  "answer": 1,
+  "explanation": "Prof: on average we only spend about 51% of the workday actually working. Higher wages should reduce shirking.",
+  "source": "MC Bank #15 · Question Bank PDF p. 2; key p. 15"
+ },
+ {
+  "id": "bank-16",
+  "topic": "competitiveness",
+  "prompt": "The effect a pay strategy has on the composition of the workforce (who is attracted and who is retained) is called:",
+  "options": [
+   "Signaling",
+   "Sorting",
+   "Leveling",
+   "Broadbanding"
+  ],
+  "answer": 1,
+  "explanation": "Sorting = who ends up coming and staying. Signaling = the employer deliberately designing pay to communicate what behavior it wants.",
+  "source": "MC Bank #16 · Question Bank PDF p. 2; key p. 15"
+ },
+ {
+  "id": "bank-17",
+  "topic": "competitiveness",
+  "prompt": "An employer that deliberately designs its pay level and mix to tell candidates what behaviors it wants is using:",
+  "options": [
+   "Sorting",
+   "Signaling",
+   "Quoted-price market",
+   "Benchmark conversion"
+  ],
+  "answer": 1,
+  "explanation": "Signaling is deliberate, aimed at both prospective and current employees.",
+  "source": "MC Bank #17 · Question Bank PDF p. 3; key p. 15"
+ },
+ {
+  "id": "bank-18",
+  "topic": "competitiveness",
+  "prompt": "Which does NOT affect the SUPPLY of labor?",
+  "options": [
+   "Geographic barriers to mobility",
+   "Union requirements",
+   "Marginal revenue of labor",
+   "Lack of information about job openings"
+  ],
+  "answer": 2,
+  "explanation": "Supply factors: geographic barriers · union requirements · lack of job info · degree of risk · degree of unemployment · nonmonetary aspects. Marginal revenue is on the DEMAND side.",
+  "source": "MC Bank #18 · Question Bank PDF p. 3; key p. 15"
+ },
+ {
+  "id": "bank-19",
+  "topic": "competitiveness",
+  "prompt": "During COVID, some workers stayed on enhanced unemployment instead of returning to work. Which supply-side factor is this?",
+  "options": [
+   "Degree of unemployment",
+   "Union requirements",
+   "Geographic barriers",
+   "Degree of risk"
+  ],
+  "answer": 0,
+  "explanation": "This was the prof's example for the degree of unemployment (and unemployment benefits) affecting labor supply.",
+  "source": "MC Bank #19 · Question Bank PDF p. 3; key p. 15"
+ },
+ {
+  "id": "bank-20",
+  "topic": "competitiveness",
+  "prompt": "A micromanaging, unfriendly manager keeps people from applying. Which supply factor is this?",
+  "options": [
+   "Nonmonetary aspects of jobs",
+   "Degree of unemployment",
+   "Union requirements",
+   "Marginal product"
+  ],
+  "answer": 0,
+  "explanation": "Things other than pay about the job (like the manager) change who is willing to supply their labor.",
+  "source": "MC Bank #20 · Question Bank PDF p. 3; key p. 15"
+ },
+ {
+  "id": "bank-21",
+  "topic": "competitiveness",
+  "prompt": "Which set lists the product market factors that affect ability to pay?",
+  "options": [
+   "Productivity of labor, technology employed, level of production relative to plant capacity",
+   "Occupation, geography, competitors",
+   "Trait, comparison, behavioral",
+   "Equal, contribution-based, base-pay-based"
+  ],
+  "answer": 0,
+  "explanation": "In the video the prof also named the degree of competition and the level of product demand.",
+  "source": "MC Bank #21 · Question Bank PDF p. 3; key p. 16"
+ },
+ {
+  "id": "bank-22",
+  "topic": "competitiveness",
+  "prompt": "A REGULAR full-time nurse earns about ___ of the base rate, ___ benefits, and the hospital ___ an agency fee.",
+  "options": [
+   "100%, gets, pays no",
+   "132%, gets no, pays no",
+   "150%, gets, pays",
+   "150%, gets no, pays"
+  ],
+  "answer": 0,
+  "explanation": "Regular 100% / benefits / no fee · Pool 132% / no benefits / no fee · Registry and Traveler 150% / benefits paid by the agency / hospital pays an agency fee.",
+  "source": "MC Bank #22 · Question Bank PDF p. 3; key p. 16"
+ },
+ {
+  "id": "bank-23",
+  "topic": "competitiveness",
+  "prompt": "A registry nurse (agency employee working at multiple area hospitals) earns about:",
+  "options": [
+   "100%",
+   "132%",
+   "150%",
+   "200%"
+  ],
+  "answer": 2,
+  "explanation": "Registry = 150%, benefits paid by the agency, and the hospital pays the agency a fee.",
+  "source": "MC Bank #23 · Question Bank PDF p. 3; key p. 16"
+ },
+ {
+  "id": "bank-24",
+  "topic": "competitiveness",
+  "prompt": "The nurse table is the slide example of:",
+  "options": [
+   "Segmented supplies of labor with different going rates",
+   "Efficiency wage theory",
+   "Broadbanding",
+   "Forced distribution"
+  ],
+  "answer": 0,
+  "explanation": "One occupation can have several labor supplies, each at its own going rate.",
+  "source": "MC Bank #24 · Question Bank PDF p. 3; key p. 16"
+ },
+ {
+  "id": "bank-25",
+  "topic": "competitiveness",
+  "prompt": "Which set lists the ORGANIZATION factors that shape pay?",
+  "options": [
+   "Industry & technology, employer size, people's preferences",
+   "Supply, demand, marginal revenue",
+   "Quoted-price and bourse markets",
+   "Mean, median, mode"
+  ],
+  "answer": 0,
+  "explanation": "In the video the prof also mentioned strategy and individual managers.",
+  "source": "MC Bank #25 · Question Bank PDF p. 4; key p. 16"
+ },
+ {
+  "id": "bank-26",
+  "topic": "competitiveness",
+  "prompt": "Per the slides, the bigger the organization, the:",
+  "options": [
+   "Lower the pay, typically",
+   "Higher the pay, typically",
+   "More pay grades it must legally have",
+   "Less it uses surveys"
+  ],
+  "answer": 1,
+  "explanation": "Employer size: bigger organizations typically pay more because they usually have more revenue.",
+  "source": "MC Bank #26 · Question Bank PDF p. 4; key p. 16"
+ },
+ {
+  "id": "bank-27",
+  "topic": "competitiveness",
+  "prompt": "The prof's bowling industry example (a declining industry) shows which organization factor?",
+  "options": [
+   "Industry",
+   "Union requirements",
+   "Signaling",
+   "Degree of risk"
+  ],
+  "answer": 0,
+  "explanation": "Whether an industry is growing or dying affects its ability to pay.",
+  "source": "MC Bank #27 · Question Bank PDF p. 4; key p. 16"
+ },
+ {
+  "id": "bank-28",
+  "topic": "competitiveness",
+  "prompt": "What three factors are commonly used to define the RELEVANT labor market?",
+  "options": [
+   "Occupation, geography, competitors",
+   "Size, industry, technology",
+   "Mean, weighted mean, median",
+   "Lag, match, lead"
+  ],
+  "answer": 0,
+  "explanation": "Occupation = skills/knowledge · Geography = willingness to relocate, commute, or work virtually · Competitors = same product/service and labor markets.",
+  "source": "MC Bank #28 · Question Bank PDF p. 4; key p. 16"
+ },
+ {
+  "id": "bank-29",
+  "topic": "competitiveness",
+  "prompt": "A company widens its search to people willing to commute, relocate, or work remotely. Which relevant-market factor is it adjusting?",
+  "options": [
+   "Occupation",
+   "Geography",
+   "Competitors",
+   "Technology"
+  ],
+  "answer": 1,
+  "explanation": "Geography covers relocating, commuting, or being a virtual employee.",
+  "source": "MC Bank #29 · Question Bank PDF p. 4; key p. 16"
+ },
+ {
+  "id": "bank-30",
+  "topic": "competitiveness",
+  "prompt": "Product-market competitor data should get MORE weight when:",
+  "options": [
+   "Labor costs are a large share of total costs",
+   "Labor supply is very responsive to pay changes",
+   "Product demand does not respond to price",
+   "Skills transfer easily to any industry"
+  ],
+  "answer": 0,
+  "explanation": "All 4 conditions: skills are specific to the product market · labor costs are a large share of total costs · product demand responds to price · labor supply does NOT respond to pay.",
+  "source": "MC Bank #30 · Question Bank PDF p. 4; key p. 16"
+ }
+]

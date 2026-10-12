@@ -1,0 +1,362 @@
+[
+ {
+  "id": "e3-43",
+  "prompt": "Employee benefits are best defined as the part of the total compensation package that is:",
+  "options": [
+   "Paid in cash on a delayed schedule",
+   "Always strictly mandated by federal statute for every employer",
+   "Other than pay for time worked",
+   "Negotiated exclusively through collective bargaining"
+  ],
+  "answer": 2,
+  "explanation": "Benefits are the part of total compensation “other than pay for time worked.” The statute option is wrong because most benefits are discretionary."
+ },
+ {
+  "id": "e3-44",
+  "prompt": "A compensation manager preparing a total rewards statement for U.S. private industry workers wants to report the share of total compensation that benefits represent. Which approximate figure should the manager use?",
+  "options": [
+   "10%",
+   "30%",
+   "42%",
+   "Federal law caps benefits at 20% of total compensation"
+  ],
+  "answer": 1,
+  "explanation": "Benefits are about 30% of total compensation. 42% is the ratio to wages and salaries only, the classic distractor."
+ },
+ {
+  "id": "e3-45",
+  "prompt": "The original catalyst for the growth of employee benefits in the 1940s and 1950s is known as:",
+  "options": [
+   "ERISA",
+   "The Affordable Care Act",
+   "Wage and Price Controls",
+   "The Shift to a Service Economy"
+  ],
+  "answer": 2,
+  "explanation": "During WWII and Korea, wage and price controls kept employers from raising wages, so they competed on benefits instead."
+ },
+ {
+  "id": "e3-60",
+  "prompt": "An organization replaces its traditional pension with a defined contribution plan. Which statement best describes who bears the investment risk and what the plan tends to facilitate?",
+  "options": [
+   "The employer bears the risk, and the plan encourages retention",
+   "The employee bears the risk, and the plan facilitates mobility",
+   "Federal law requires the employer to guarantee all investment losses under any defined contribution plan",
+   "The employee bears the risk, and the plan encourages retention"
+  ],
+  "answer": 1,
+  "explanation": "Under DC the employee bears the investment risk, and the plan facilitates mobility (portable, faster vesting). DB is the plan that encourages retention."
+ },
+ {
+  "id": "e3-61",
+  "prompt": "Which of the following does ERISA require?",
+  "options": [
+   "Every employer must offer a pension plan",
+   "Pension benefits must be fully portable between employers",
+   "Employees be eligible for pension plans beginning at age 21",
+   "The PBGC must replace 100% of a failed plan’s benefits"
+  ],
+  "answer": 2,
+  "explanation": "ERISA sets eligibility at age 21. It does not require employers to offer a plan or make benefits portable, and the PBGC guarantees only a basic benefit."
+ },
+ {
+  "id": "e3-62",
+  "prompt": "An HR manager is checking whether the company is covered by the Family and Medical Leave Act (FMLA). Which combination of employer size, radius and leave entitlement applies?",
+  "options": [
+   "At least 20 employees within a 50-mile radius; up to 18 weeks of paid leave",
+   "At least 50 employees within a 75-mile radius; up to 12 weeks of paid leave",
+   "At least 50 employees within a 75-mile radius; up to 12 weeks of unpaid leave",
+   "None of the answer choices are correct"
+  ],
+  "answer": 2,
+  "explanation": "FMLA covers employers with 50 employees within a 75-mile radius and provides up to 12 weeks of UNPAID leave. The “paid” option is the common trap."
+ },
+ {
+  "id": "e3-63",
+  "prompt": "A terminated employee elects COBRA continuation coverage. What is the maximum percentage of the premium the employer may charge the former employee?",
+  "options": [
+   "50%, with the employer paying the remainder",
+   "100%; federal law prohibits charging any administrative fee",
+   "120%",
+   "102%"
+  ],
+  "answer": 3,
+  "explanation": "COBRA allows up to 102%: 100% of the premium plus 2% for administration."
+ },
+ {
+  "id": "e3-64",
+  "prompt": "A health plan that combines HMO and PPO features, letting the person choose which to use at the time of service, is called:",
+  "options": [
+   "A Point-of-Service (POS) Plan",
+   "An Indemnity Plan",
+   "A Health Savings Account",
+   "A Consumer-Driven Health Plan"
+  ],
+  "answer": 0,
+  "explanation": "A point-of-service (POS) plan is the HMO/PPO hybrid, with the choice made at the time of service."
+ },
+ {
+  "id": "e3-65",
+  "prompt": "A warehouse employee is injured on the job and asks HR whether he can sue the employer. Which description of workers’ compensation should HR rely on?",
+  "options": [
+   "A state no-fault program under which the covered employee generally cannot sue the employer",
+   "A federal no-fault program that preserves the employee’s right to sue",
+   "A discretionary benefit offered by about 47% of employers",
+   "A federal program financed by employee payroll deductions"
+  ],
+  "answer": 0,
+  "explanation": "Workers’ compensation is a state, no-fault program, and the covered worker gives up the right to sue the employer."
+ },
+ {
+  "id": "e3-67",
+  "prompt": "A benefit plan under which the employer pays the entire cost and the employee contributes nothing is known as a(n):",
+  "options": [
+   "Contributory Plan",
+   "Noncontributory Plan",
+   "Cafeteria Plan",
+   "Defined Contribution Plan"
+  ],
+  "answer": 1,
+  "explanation": "Noncontributory means the employer pays the entire cost and the employee contributes nothing."
+ },
+ {
+  "id": "e3-68",
+  "prompt": "An employee is injured on the job because of his own carelessness, and his supervisor argues that he should be denied workers’ compensation. Which response is accurate?",
+  "options": [
+   "The supervisor is correct; federal law prohibits workers’ compensation for injuries caused by employee negligence",
+   "The employee must file for unemployment insurance instead",
+   "The employee is eligible only if he can prove the employer was negligent",
+   "The employee remains eligible, because workers’ compensation is a no-fault program"
+  ],
+  "answer": 3,
+  "explanation": "Workers’ comp is no-fault, so an injury caused by the employee’s own carelessness is still covered."
+ },
+ {
+  "id": "e3-69",
+  "prompt": "In most states, unemployment insurance is financed:",
+  "options": [
+   "Exclusively by employers",
+   "Exclusively through employee payroll deductions",
+   "Split 50/50 between employer and employee",
+   "Entirely by the federal government"
+  ],
+  "answer": 0,
+  "explanation": "In most states employers pay the entire cost of unemployment insurance."
+ },
+ {
+  "id": "e3-71",
+  "prompt": "A compensation manager explains to new hires that their retirement plan is a defined benefit plan. Which statement about this plan is accurate?",
+  "options": [
+   "The employer’s contribution is defined and the employee bears the investment risk",
+   "The benefit is defined and the employer bears the investment risk",
+   "The benefit is defined and the employee bears the investment risk",
+   "Federal law requires the PBGC to bear all investment risk under every defined benefit plan"
+  ],
+  "answer": 1,
+  "explanation": "Under DB the benefit is defined and the employer bears the risk. A defined employer contribution with employee risk describes defined contribution."
+ },
+ {
+  "id": "e3-72",
+  "prompt": "An employee’s own contributions to a pension fund:",
+  "options": [
+   "Vest immediately and irrevocably",
+   "Follow the same vesting schedule as the employer’s contributions",
+   "Never vest until the employee reaches retirement age",
+   "Are automatically forfeited if the employee leaves before retirement"
+  ],
+  "answer": 0,
+  "explanation": "An employee’s own contributions vest immediately and irrevocably. Only the employer’s contributions follow a vesting schedule."
+ },
+ {
+  "id": "e3-74",
+  "prompt": "A percentage of the bill that the employee pays after the deductible is called:",
+  "options": [
+   "Copay",
+   "Premium",
+   "Coinsurance",
+   "Experience Rating"
+  ],
+  "answer": 2,
+  "explanation": "Coinsurance is a percentage of the bill after the deductible. A copay is the flat dollar amount paid per office visit."
+ },
+ {
+  "id": "e3-76",
+  "prompt": "A compensation analyst wants to tell managers how much benefits add on top of every $1 of wages and salaries. Which figure should the analyst use?",
+  "options": [
+   "About 12 cents",
+   "About 30 cents",
+   "About 42 cents",
+   "None of the answer choices are correct"
+  ],
+  "answer": 2,
+  "explanation": "Benefits add about 42 cents per dollar of wages and salaries. 30% is benefits’ share of total compensation, which uses a different denominator."
+ },
+ {
+  "id": "e3-77",
+  "prompt": "A manager argues that benefits are cheaper to provide than the same amount in cash because of group rates and tax treatment. Which reason for the growth of employee benefits is the manager describing?",
+  "options": [
+   "Wage and Price Controls",
+   "Unions",
+   "Government Impetus",
+   "Cost (Including Tax) Effectiveness"
+  ],
+  "answer": 3,
+  "explanation": "“Tax advantaged” and “cheaper than cash” point to cost (including tax) effectiveness."
+ },
+ {
+  "id": "e3-78",
+  "prompt": "An HR analyst discovers that employees rate benefits as important but underestimate what they cost. What should the organization do to close this gap?",
+  "options": [
+   "Add another benefit to raise perceived value",
+   "Improve benefits communication and give employees more responsibility",
+   "Cut benefits and raise wages",
+   "Switch to a noncontributory plan, which automatically eliminates the gap"
+  ],
+  "answer": 1,
+  "explanation": "Low perceived value is fixed with better communication (and more employee responsibility), not by adding another benefit."
+ },
+ {
+  "id": "e3-79",
+  "prompt": "The benefit planning objective that judges a benefit by the employee’s financial exposure with versus without it is called:",
+  "options": [
+   "Adequacy",
+   "Competitiveness",
+   "Cost Effectiveness",
+   "Equity"
+  ],
+  "answer": 0,
+  "explanation": "Adequacy asks whether the benefit is enough to matter to the employee’s financial exposure."
+ },
+ {
+  "id": "e3-80",
+  "prompt": "In an organization’s cafeteria plan, employees choose the coverage they already know they will use, driving up the cost of that option. This problem is called:",
+  "options": [
+   "Moral Hazard",
+   "Experience Rating",
+   "Adverse Selection",
+   "Cost Shifting"
+  ],
+  "answer": 2,
+  "explanation": "Adverse selection is the main downside of flexible (cafeteria) plans, along with administration."
+ },
+ {
+  "id": "e3-81",
+  "prompt": "A benefits manager is deciding what goes into the benefit package. Which of the following is an EMPLOYEE factor in that decision?",
+  "options": [
+   "Personal needs tied to age, marital status, and dependents",
+   "Competitor offerings",
+   "Legal requirements",
+   "Relationship to total compensation costs"
+  ],
+  "answer": 0,
+  "explanation": "Employee factors are equity and personal needs. Competitor offerings is an employer factor."
+ },
+ {
+  "id": "e3-82",
+  "prompt": "Which of the following is NOT a discretionary benefit?",
+  "options": [
+   "401(k) Plan",
+   "Health Insurance",
+   "Paid Vacation",
+   "Unemployment Insurance"
+  ],
+  "answer": 3,
+  "explanation": "Unemployment insurance is legally required, along with workers’ comp and Social Security/Medicare. The other options are discretionary."
+ },
+ {
+  "id": "e3-83",
+  "prompt": "A funding approach in which this year’s Social Security contributions immediately pay this year’s beneficiaries is known as:",
+  "options": [
+   "Fully Funded",
+   "Pay As You Go",
+   "Defined Contribution",
+   "Experience Rated"
+  ],
+  "answer": 1,
+  "explanation": "Social Security is pay-as-you-go, which is the core funding problem as the number of workers per retiree falls."
+ },
+ {
+  "id": "e3-84",
+  "prompt": "After a year of heavy layoffs, a company sees its state unemployment tax rate rise. This increase is due to:",
+  "options": [
+   "Vesting",
+   "Adverse Selection",
+   "Experience Rating",
+   "COBRA"
+  ],
+  "answer": 2,
+  "explanation": "Under experience rating, an employer’s unemployment tax rate depends on its own layoff history."
+ },
+ {
+  "id": "e3-85",
+  "prompt": "Which law limits denying coverage for a preexisting condition and has strict privacy rules?",
+  "options": [
+   "HIPAA",
+   "FMLA",
+   "COBRA",
+   "ERISA"
+  ],
+  "answer": 0,
+  "explanation": "HIPAA (1996) covers preexisting conditions and privacy."
+ },
+ {
+  "id": "e3-86",
+  "prompt": "An employee asks HR, “How long until the company’s match is mine?” This is a question about:",
+  "options": [
+   "Portability",
+   "Coinsurance",
+   "Experience Rating",
+   "Vesting"
+  ],
+  "answer": 3,
+  "explanation": "Vesting is ownership earned over time. Portability is moving the money to a new employer."
+ },
+ {
+  "id": "e3-87",
+  "prompt": "A health plan that restricts employees to a fixed network of providers in exchange for low cost is called a(n):",
+  "options": [
+   "Indemnity Plan",
+   "PPO",
+   "HMO",
+   "None of the answer choices are correct"
+  ],
+  "answer": 2,
+  "explanation": "Restricting employees to network providers only, at low cost, describes an HMO."
+ },
+ {
+  "id": "e3-88",
+  "prompt": "An employee wants a health account that she owns and that rolls over from year to year. Which account fits?",
+  "options": [
+   "FSA, because unused funds automatically roll over without limit",
+   "HSA",
+   "PPO",
+   "COBRA account"
+  ],
+  "answer": 1,
+  "explanation": "HSA money belongs to the employee and rolls over. FSA money is use-it-or-lose-it."
+ },
+ {
+  "id": "e3k-q1",
+  "prompt": "Guest speaker Kathleen Hermacinski described four ways benefits shape an organization. Which of the following is NOT one of them?",
+  "options": [
+   "Total Compensation",
+   "Risk Allocation",
+   "Stock Price",
+   "Compliance"
+  ],
+  "answer": 2,
+  "explanation": "Benefits shape total compensation, risk allocation, compliance and talent. Stock price is not on the list."
+ },
+ {
+  "id": "e3k-q2",
+  "prompt": "According to guest speaker Kathleen Hermacinski, an advantage or value gained from something (e.g., healthcare, paid time off) is called a:",
+  "options": [
+   "Bonus",
+   "Payroll Tax",
+   "Incentive",
+   "Benefit"
+  ],
+  "answer": 3,
+  "explanation": "Kathleen defined a benefit as an advantage or value gained from something, such as healthcare or paid time off."
+ }
+]

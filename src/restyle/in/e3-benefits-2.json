@@ -1,0 +1,378 @@
+[
+ {
+  "id": "e3k-q3",
+  "topic": "benefits",
+  "prompt": "Who pays for workers’ compensation coverage?",
+  "options": [
+   "The employee, through payroll deductions",
+   "The employer; premiums are NOT deducted from the employee’s pay",
+   "Split 50/50",
+   "The federal government"
+  ],
+  "answer": 1,
+  "explanation": "Workers’ comp is employer funded. Premiums are not taken out of paychecks.",
+  "source": "Guest speaker Kathleen Hermacinski (9/23)"
+ },
+ {
+  "id": "e3k-q4",
+  "topic": "benefits",
+  "prompt": "An employee cuts a finger on a fan at work. What should happen first under workers’ comp?",
+  "options": [
+   "Nothing; it’s the employee’s fault",
+   "Document and report the injury",
+   "The employee sues the employer",
+   "The employee files under COBRA"
+  ],
+  "answer": 1,
+  "explanation": "Workers’ comp covers work injuries. The first step is to document and report the injury. (It’s no-fault, so blame doesn’t matter.)",
+  "source": "Guest speaker Kathleen Hermacinski (9/23)"
+ },
+ {
+  "id": "e3k-q5",
+  "topic": "benefits",
+  "prompt": "A 1099 independent contractor is hurt while working on a job for a company. Generally:",
+  "options": [
+   "The company’s workers’ comp covers them",
+   "They fall outside the employer’s workers’ comp; the company isn’t responsible",
+   "COBRA covers them",
+   "FMLA covers them"
+  ],
+  "answer": 1,
+  "explanation": "1099 = doesn’t work FOR the employer, just on the job. Contractors generally fall outside employee workers’ comp.",
+  "source": "Guest speaker Kathleen Hermacinski (9/23)"
+ },
+ {
+  "id": "e3k-q6",
+  "topic": "benefits",
+  "prompt": "True or false: Self-funded health plans eliminate all of the employer’s risk.",
+  "options": [
+   "True",
+   "False"
+  ],
+  "answer": 1,
+  "explanation": "False. In a self-funded plan the employer pays claims itself, so it carries MORE claims risk, not none.",
+  "source": "Guest speaker Kathleen Hermacinski (9/23)"
+ },
+ {
+  "id": "e3k-q7",
+  "topic": "benefits",
+  "prompt": "Which of these did Kathleen list as a fringe benefit?",
+  "options": [
+   "Base salary",
+   "Overtime pay",
+   "Pet insurance",
+   "FICA"
+  ],
+  "answer": 2,
+  "explanation": "Fringe benefits: vision, memberships, catered meals, snacks, pet insurance, EAP (mental health).",
+  "source": "Guest speaker Kathleen Hermacinski (9/23)"
+ },
+ {
+  "id": "e3k-q8",
+  "topic": "benefits",
+  "prompt": "An EAP (Employee Assistance Program) mainly offers:",
+  "options": [
+   "Retirement matching",
+   "Mental health and personal support",
+   "Extra vacation days",
+   "Stock options"
+  ],
+  "answer": 1,
+  "explanation": "EAP = mental health support, listed as a fringe benefit.",
+  "source": "Guest speaker Kathleen Hermacinski (9/23)"
+ },
+ {
+  "id": "e3k-q9",
+  "topic": "benefits",
+  "prompt": "The ACA employer mandate applies to employers with at least:",
+  "options": [
+   "20 employees",
+   "50 full-time equivalent employees",
+   "100 employees",
+   "15 employees"
+  ],
+  "answer": 1,
+  "explanation": "ACA = 50+ full-time equivalents (an “applicable large employer”).",
+  "source": "Guest speaker Kathleen Hermacinski (9/23)"
+ },
+ {
+  "id": "e3k-q10",
+  "topic": "benefits",
+  "prompt": "Under the ACA, an employer’s coverage counts as “affordable” in 2026 if the employee’s cost for self-only coverage is no more than:",
+  "options": [
+   "7.65% of income",
+   "9.96% of household income",
+   "4.95% of income",
+   "$99.60 per year"
+  ],
+  "answer": 1,
+  "explanation": "2026 affordability = 9.96%. Employers use IRS “safe harbors” (W-2 wages, rate of pay, or federal poverty line) to prove it.",
+  "source": "Guest speaker Kathleen Hermacinski (9/23)"
+ },
+ {
+  "id": "e3k-q11",
+  "topic": "benefits",
+  "prompt": "Under FMLA, an eligible employee can take up to 12 weeks of leave that is:",
+  "options": [
+   "Paid at full salary",
+   "Unpaid, but the job is protected",
+   "Paid at 2/3 salary",
+   "Only for the employee’s own illness"
+  ],
+  "answer": 1,
+  "explanation": "FMLA leave is UNPAID with job protection. (Easy to mis-hear as “paid”; the exam wants unpaid.)",
+  "source": "Guest speaker Kathleen Hermacinski (9/23)"
+ },
+ {
+  "id": "e3k-q12",
+  "topic": "benefits",
+  "prompt": "COBRA lets a worker:",
+  "options": [
+   "Get free insurance for life",
+   "Keep group health insurance after a qualifying loss of coverage (they pay)",
+   "Take 12 weeks of leave",
+   "Avoid FICA"
+  ],
+  "answer": 1,
+  "explanation": "COBRA = continue insurance after a qualifying event (job loss, cut hours). The person pays, up to 102%.",
+  "source": "Guest speaker Kathleen Hermacinski (9/23)"
+ },
+ {
+  "id": "e3k-q13",
+  "topic": "benefits",
+  "prompt": "Which account is tied to a HIGH-DEDUCTIBLE health plan?",
+  "options": [
+   "FSA",
+   "HSA",
+   "DC FSA",
+   "EAP"
+  ],
+  "answer": 1,
+  "explanation": "HSA = Health Savings Account, paired with a high-deductible plan. The money rolls over.",
+  "source": "Guest speaker Kathleen Hermacinski (9/23)"
+ },
+ {
+  "id": "e3k-q14",
+  "topic": "benefits",
+  "prompt": "A DC FSA (Dependent Care FSA) is used for:",
+  "options": [
+   "Doctor copays",
+   "Day care for dependents",
+   "Retirement",
+   "Dental cleanings"
+  ],
+  "answer": 1,
+  "explanation": "Dependent Care Flexible Spending Account: optional, pays for day care with pre-tax money.",
+  "source": "Guest speaker Kathleen Hermacinski (9/23)"
+ },
+ {
+  "id": "e3k-q15",
+  "topic": "benefits",
+  "prompt": "FICA stands for:",
+  "options": [
+   "Federal Income Compensation Act",
+   "Federal Insurance Contributions Act",
+   "Fair Income Credit Account",
+   "Federal Insurance Coverage Allowance"
+  ],
+  "answer": 1,
+  "explanation": "FICA = Federal Insurance Contributions Act: Social Security 6.2% + Medicare 1.45%.",
+  "source": "Guest speaker Kathleen Hermacinski (9/23)"
+ },
+ {
+  "id": "e3k-q32",
+  "topic": "benefits",
+  "prompt": "Kathleen: Social Security (6.2%) applies to wages up to what 2026 limit?",
+  "options": [
+   "$168,600",
+   "$176,100",
+   "$184,500",
+   "No limit"
+  ],
+  "answer": 2,
+  "explanation": "SS stops at the $184,500 wage base. Medicare (1.45%) applies to ALL wages, no cap.",
+  "source": "Guest speaker Kathleen Hermacinski (9/23)"
+ },
+ {
+  "id": "e3k-q33",
+  "topic": "benefits",
+  "prompt": "Which FICA tax has NO wage cap?",
+  "options": [
+   "Social Security",
+   "Medicare",
+   "FUTA",
+   "SUTA"
+  ],
+  "answer": 1,
+  "explanation": "Medicare 1.45% is on all wages. Social Security stops at $184,500 (2026).",
+  "source": "Guest speaker Kathleen Hermacinski (9/23)"
+ },
+ {
+  "id": "e3k-q34",
+  "topic": "benefits",
+  "prompt": "An employee earns a $60,000 salary. What does the EMPLOYER pay in FICA on top of salary?",
+  "options": [
+   "$3,720",
+   "$870",
+   "$4,590",
+   "$9,180"
+  ],
+  "answer": 2,
+  "explanation": "Employer SS 6.2% × 60,000 = 3,720 + Medicare 1.45% × 60,000 = 870 → $4,590 above the salary. ($9,180 would be employer + employee.)",
+  "source": "Guest speaker Kathleen Hermacinski (9/23)"
+ },
+ {
+  "id": "e3k-q35",
+  "topic": "benefits",
+  "prompt": "In a FULLY INSURED health plan, the employer:",
+  "options": [
+   "Pays claims as they happen",
+   "Pays the carrier a fixed premium",
+   "Has no costs",
+   "Must buy stop-loss"
+  ],
+  "answer": 1,
+  "explanation": "Fully insured = fixed premium to the carrier: predictable, less claims risk, less plan control, subject to state premium tax.",
+  "source": "Guest speaker Kathleen Hermacinski (9/23)"
+ },
+ {
+  "id": "e3k-q36",
+  "topic": "benefits",
+  "prompt": "Which is TRUE of a SELF-FUNDED plan compared with fully insured?",
+  "options": [
+   "Fixed, predictable cost",
+   "Less plan control",
+   "More claims risk, more control, employer keeps the savings",
+   "Subject to state premium tax"
+  ],
+  "answer": 2,
+  "explanation": "Self-funded: employer pays claims + admin → variable cost, more risk, more control, keeps savings. Usually paired with stop-loss.",
+  "source": "Guest speaker Kathleen Hermacinski (9/23)"
+ },
+ {
+  "id": "e3k-q37",
+  "topic": "benefits",
+  "prompt": "Stop-loss coverage is best described as:",
+  "options": [
+   "A COBRA extension",
+   "Insurance on top of insurance for a self-funded employer",
+   "An employee deductible",
+   "Unemployment insurance"
+  ],
+  "answer": 1,
+  "explanation": "Stop-loss protects a self-funded employer from very large claims: “insurance on top of insurance.”",
+  "source": "Guest speaker Kathleen Hermacinski (9/23)"
+ },
+ {
+  "id": "e3k-q38",
+  "topic": "benefits",
+  "prompt": "Under the ACA, a child can stay on a parent’s health plan until age:",
+  "options": [
+   "18",
+   "21",
+   "26",
+   "30"
+  ],
+  "answer": 2,
+  "explanation": "At 26 you can no longer be on your parents’ insurance.",
+  "source": "Guest speaker Kathleen Hermacinski (9/23)"
+ },
+ {
+  "id": "e3k-q39",
+  "topic": "benefits",
+  "prompt": "A child is covered by both parents’ plans. Under the birthday rule, the primary plan is:",
+  "options": [
+   "The older parent’s",
+   "The parent whose birthday comes first in the calendar year",
+   "The father’s",
+   "The plan with the lower premium"
+  ],
+  "answer": 1,
+  "explanation": "Birthday rule: whoever’s birthday comes first in the year (month and day, not age) is primary.",
+  "source": "Guest speaker Kathleen Hermacinski (9/23)"
+ },
+ {
+  "id": "e3k-q40",
+  "topic": "benefits",
+  "prompt": "Getting married lets an employee change insurance outside open enrollment because it is a:",
+  "options": [
+   "COBRA event",
+   "Qualifying life event (QLE)",
+   "Stop-loss claim",
+   "Safe harbor"
+  ],
+  "answer": 1,
+  "explanation": "QLE examples: death, marriage, court order. Otherwise changes wait for open enrollment.",
+  "source": "Guest speaker Kathleen Hermacinski (9/23)"
+ },
+ {
+  "id": "e3k-q41",
+  "topic": "benefits",
+  "prompt": "Unemployment insurance is:",
+  "options": [
+   "Federal only, paid by employees",
+   "A federal–state program that replaces part of lost wages for eligible workers",
+   "Paid by the worker’s new employer",
+   "The same as workers’ comp"
+  ],
+  "answer": 1,
+  "explanation": "Federal–state program; replaces part of lost wages for eligible workers, with extra for dependents in Illinois.",
+  "source": "Guest speaker Kathleen Hermacinski (9/23)"
+ },
+ {
+  "id": "e3k-q42",
+  "topic": "benefits",
+  "prompt": "Kathleen’s Illinois unemployment numbers: taxable wage base and new-employer rate are:",
+  "options": [
+   "$7,000 and 0.6%",
+   "$14,250 and 3.35%",
+   "$184,500 and 6.2%",
+   "$14,250 and 7.65%"
+  ],
+  "answer": 1,
+  "explanation": "Illinois: wage base $14,250, new-employer rate 3.35%, rates range about 0.75%–7.05%. ($7,000 / 0.6% is FUTA.)",
+  "source": "Guest speaker Kathleen Hermacinski (9/23)"
+ },
+ {
+  "id": "e3k-q43",
+  "topic": "benefits",
+  "prompt": "Illinois pay transparency: a job posting must include:",
+  "options": [
+   "Only the job title",
+   "The salary range and a general description of benefits",
+   "Every employee’s pay",
+   "The last person’s salary"
+  ],
+  "answer": 1,
+  "explanation": "Pay range + reasonable benefits description, and internal candidates must be told about the opening.",
+  "source": "Guest speaker Kathleen Hermacinski (9/23)"
+ },
+ {
+  "id": "e3k-q44",
+  "topic": "benefits",
+  "prompt": "Kathleen noted Illinois paid leave accrues at:",
+  "options": [
+   "1 hour per 20 hours worked",
+   "1 hour per 40 hours worked",
+   "1 day per month",
+   "Nothing until year 2"
+  ],
+  "answer": 1,
+  "explanation": "1 hour for every 40 hours worked. Employers can also “front load” the hours up front.",
+  "source": "Guest speaker Kathleen Hermacinski (9/23)"
+ },
+ {
+  "id": "e3k-q45",
+  "topic": "benefits",
+  "prompt": "Who pays for workers’ comp when an employee gets hurt at work?",
+  "options": [
+   "The employee",
+   "The employer",
+   "Unemployment insurance",
+   "Medicare"
+  ],
+  "answer": 1,
+  "explanation": "Workers’ comp: employers pay.",
+  "source": "Guest speaker Kathleen Hermacinski (9/23)"
+ }
+]

@@ -1,0 +1,149 @@
+[
+ {
+  "id": "e3d-q1",
+  "prompt": "Moore’s Law describes ______.",
+  "options": [
+   "Pay Compression between new hires and long-tenured employees",
+   "the steady growth in computing power on microchips (CPUs/GPUs)",
+   "a federal rule requiring the minimum wage to rise every year",
+   "the rising cost of employee benefits"
+  ],
+  "answer": 1,
+  "explanation": "Moore’s Law says chip power keeps doubling, which drove the tech revolution (CPU → GPU). The other options are unrelated compensation topics."
+ },
+ {
+  "id": "e3d-q2",
+  "prompt": "Which of the following puts the video-meeting technologies from guest speaker Derek Story’s timeline in the correct order?",
+  "options": [
+   "Zoom → WebEx → AT&T Picturephone",
+   "CU-SeeMe → Zoom → AT&T Picturephone",
+   "WebEx → AT&T Picturephone → Zoom",
+   "AT&T Picturephone (1964) → CU-SeeMe (1992) → WebEx/GoToMeeting (1995–2004) → Zoom (2010s)"
+  ],
+  "answer": 3,
+  "explanation": "Derek’s timeline: 1964 Picturephone, 1992 CU-SeeMe, 1995–2004 WebEx and GoToMeeting, 2010–20 Zoom."
+ },
+ {
+  "id": "e3d-q3",
+  "prompt": "On guest speaker Derek Story’s AI timeline, which of the following came FIRST?",
+  "options": ["Lloyd’s of London (1689)", "Autocorrect", "AlexNet", "GPT"],
+  "answer": 0,
+  "explanation": "The timeline starts with Lloyd’s of London in 1689 (risk and probability), then Markov (1900s), the term “AI” (1950s–60s), autocorrect (90s–00s), AlexNet (2012), Tay (2016), BERT (2018) and GPT (2020)."
+ },
+ {
+  "id": "e3d-q4",
+  "prompt": "Which of the following correctly matches a year to an event on Derek Story’s AI timeline?",
+  "options": ["2012 – GPT", "2018 – AlexNet", "2016 – Microsoft Tay", "2020 – BERT"],
+  "answer": 2,
+  "explanation": "The correct pairs are 2012 AlexNet, 2016 Microsoft Tay, 2018 BERT and 2020 GPT; the other options swap the years."
+ },
+ {
+  "id": "e3d-q5",
+  "prompt": "A university office receives a request to release a student’s education records. Which law protects these records?",
+  "options": ["HIPAA", "GDPR", "FERPA", "COPPA"],
+  "answer": 2,
+  "explanation": "FERPA protects student records. HIPAA covers health information, COPPA protects children online and GDPR is EU data privacy."
+ },
+ {
+  "id": "e3d-q6",
+  "prompt": "A campus compliance officer is reviewing which records fall under HIPAA. HIPAA would matter most for which campus data?",
+  "options": ["Grades", "Course catalog", "Parking permits", "Student health services records"],
+  "answer": 3,
+  "explanation": "HIPAA covers health information (e.g., student health services and child care). Grades fall under FERPA instead."
+ },
+ {
+  "id": "e3d-q7",
+  "prompt": "The privacy law that protects children online is known as:",
+  "options": ["COPPA", "FERPA", "FMLA", "ERISA"],
+  "answer": 0,
+  "explanation": "COPPA is the Children’s Online Privacy Protection Act. FERPA covers student records."
+ },
+ {
+  "id": "e3d-q8",
+  "prompt": "In Derek Story’s CRAFTY prompt method, the “A” stands for:",
+  "options": ["Accuracy", "Algorithm", "Answer", "Audience (who the output is for)"],
+  "answer": 3,
+  "explanation": "CRAFTY is Character, Request, Audience, Format/Features, Tone and Your extras/questions; “A” is Audience."
+ },
+ {
+  "id": "e3d-q9",
+  "prompt": "A student begins an AI prompt by telling the tool to act as a professor. Under Derek Story’s CRAFTY method, which element is the student using?",
+  "options": ["Request", "Character", "Tone", "Audience"],
+  "answer": 1,
+  "explanation": "Character is who the AI should play (e.g., a professor or a student). Audience is who the output is for, which is a common mix-up."
+ },
+ {
+  "id": "e3d-q10",
+  "prompt": "An organization wants to build an AI-friendly culture. According to Derek Story, its AI use should be:",
+  "options": [
+   "Kept quiet so employees adopt it quickly",
+   "Transparent and aligned with the organization’s cultural values",
+   "Banned outright, because federal law prohibits workplace AI use",
+   "Restricted to the IT department only"
+  ],
+  "answer": 1,
+  "explanation": "Derek’s two keys are (1) transparency and (2) alignment with cultural values."
+ },
+ {
+  "id": "e3d-q11",
+  "prompt": "A recruiting director is evaluating an AI screening tool. According to Derek Story, what are the main disadvantages of AI in hiring and recruitment?",
+  "options": [
+   "Compliance and accuracy",
+   "Speed and cost",
+   "It attracts too many applicants",
+   "None of the answer choices are correct"
+  ],
+  "answer": 0,
+  "explanation": "For hiring and recruitment, Derek named compliance and accuracy as the disadvantages."
+ },
+ {
+  "id": "e3d-q12",
+  "prompt": "An employer uses an AI hiring tool that is later found to discriminate against applicants. Who is liable?",
+  "options": [
+   "The software vendor only, because the employer did not write the algorithm",
+   "The applicant, for agreeing to AI screening",
+   "No one, because AI decisions are automatically exempt from discrimination law",
+   "The employer, because an AI mistake is still the employer’s liability"
+  ],
+  "answer": 3,
+  "explanation": "An AI mistake is still the employer’s liability. This has happened in CA, CO, IL, NY and MD."
+ },
+ {
+  "id": "e3d-q13",
+  "prompt": "Which states did Derek Story list as having had AI hiring and discrimination issues?",
+  "options": ["TX, FL, OH", "Illinois only", "CA, CO, IL, NY, MD", "WA, OR, NV"],
+  "answer": 2,
+  "explanation": "Derek listed CA, CO, IL, NY and MD. Illinois is on the list, but it is not the only state."
+ },
+ {
+  "id": "e3d-q14",
+  "prompt": "Which of the following was NOT one of the AI concerns raised by Bill Gates and Barack Obama?",
+  "options": [
+   "Safety and security",
+   "A higher minimum wage",
+   "Socializing the next generation",
+   "Environmental threats"
+  ],
+  "answer": 1,
+  "explanation": "The concerns were safety and security, socializing the next generation and environmental threats. A higher minimum wage was not one of them."
+ },
+ {
+  "id": "e3d-q15",
+  "prompt": "An operations team starts using AI as a translator. According to Derek Story, what are the good side and the bad side of this use?",
+  "options": [
+   "Good: it is free; Bad: it is slow",
+   "Good: it removes all risk, because AI translation is always fully accurate; Bad: none",
+   "Good: it can translate; Bad: the results depend on knowing how to ask questions",
+   "None of the answer choices are correct"
+  ],
+  "answer": 2,
+  "explanation": "The good side is that AI can translate. The bad side is that results depend on knowing how to ask questions."
+ },
+ {
+  "id": "e3d-q16",
+  "prompt": "Elizabeth Adams, PhD (cited by Derek Story) focuses on fairness, accountability, leadership and ______ in AI.",
+  "options": ["algorithmic accuracy", "profitability", "speed", "marketing"],
+  "answer": 0,
+  "explanation": "Adams focuses on fairness, accountability, leadership and algorithmic accuracy in AI."
+ }
+]

@@ -1,0 +1,410 @@
+[
+ {
+  "id": "e3-43",
+  "topic": "benefits",
+  "prompt": "Employee benefits are best defined as the part of the total compensation package that is:",
+  "options": [
+   "Paid in cash on a delayed schedule",
+   "Other than pay for time worked",
+   "Required by federal statute",
+   "Negotiated by a union"
+  ],
+  "answer": 1,
+  "explanation": "The definition is “other than pay for time worked.” (c) is wrong because most benefits are discretionary.",
+  "source": "Exam 3 Practice Set A1 · key (textbook — check vs Benefits deck)"
+ },
+ {
+  "id": "e3-44",
+  "topic": "benefits",
+  "prompt": "Benefits account for approximately what share of total compensation for U.S. private industry workers?",
+  "options": [
+   "10%",
+   "20%",
+   "30%",
+   "42%"
+  ],
+  "answer": 2,
+  "explanation": "30% of total compensation. 42% is the ratio to wages and salaries only, the classic distractor.",
+  "source": "Exam 3 Practice Set A2 · key (textbook — check vs Benefits deck)"
+ },
+ {
+  "id": "e3-45",
+  "topic": "benefits",
+  "prompt": "Which was the original catalyst for the growth of employee benefits in the 1940s and 1950s?",
+  "options": [
+   "ERISA",
+   "Wage and price controls",
+   "The Affordable Care Act",
+   "The shift to a service economy"
+  ],
+  "answer": 1,
+  "explanation": "Wage and price controls during WWII and Korea: employers couldn’t raise wages, so they competed on benefits.",
+  "source": "Exam 3 Practice Set A3 · key (textbook — check vs Benefits deck)"
+ },
+ {
+  "id": "e3-60",
+  "topic": "benefits",
+  "prompt": "Under a defined contribution plan, investment risk is borne by the ____ and the plan tends to facilitate ____.",
+  "options": [
+   "Employer; retention",
+   "Employee; retention",
+   "Employer; mobility",
+   "Employee; mobility"
+  ],
+  "answer": 3,
+  "explanation": "Employee bears the risk; DC facilitates mobility (portable, faster vesting). DB encourages retention.",
+  "source": "Exam 3 Practice Set A20 · key (textbook — check vs Benefits deck)"
+ },
+ {
+  "id": "e3-61",
+  "topic": "benefits",
+  "prompt": "ERISA requires that:",
+  "options": [
+   "Every employer offer a pension plan",
+   "Pension benefits be fully portable between employers",
+   "Employees be eligible for pension plans beginning at age 21",
+   "The PBGC replace 100% of a failed plan’s benefits"
+  ],
+  "answer": 2,
+  "explanation": "Eligibility at age 21. ERISA doesn’t require offering a plan or portability, and PBGC guarantees only a basic benefit.",
+  "source": "Exam 3 Practice Set A21 · key (textbook — check vs Benefits deck)"
+ },
+ {
+  "id": "e3-62",
+  "topic": "benefits",
+  "prompt": "FMLA applies to employers with at least ____ employees within a ____ radius and provides up to ____ of leave.",
+  "options": [
+   "20; 50-mile; 18 weeks paid",
+   "50; 75-mile; 12 weeks unpaid",
+   "50; 75-mile; 12 weeks paid",
+   "20; 75-mile; 12 weeks unpaid"
+  ],
+  "answer": 1,
+  "explanation": "50 employees, 75-mile radius, 12 weeks unpaid.",
+  "source": "Exam 3 Practice Set A22 · key (textbook — check vs Benefits deck)"
+ },
+ {
+  "id": "e3-63",
+  "topic": "benefits",
+  "prompt": "Under COBRA, an employer may charge a former employee up to what percentage of the premium?",
+  "options": [
+   "50%",
+   "100%",
+   "102%",
+   "120%"
+  ],
+  "answer": 2,
+  "explanation": "102% (100% premium + 2% administration).",
+  "source": "Exam 3 Practice Set A23 · key (textbook — check vs Benefits deck)"
+ },
+ {
+  "id": "e3-64",
+  "topic": "benefits",
+  "prompt": "A health plan that combines HMO and PPO features, letting the person choose which to use at the time of service, is:",
+  "options": [
+   "An indemnity plan",
+   "A point-of-service plan",
+   "A health savings account",
+   "A consumer-driven health plan"
+  ],
+  "answer": 1,
+  "explanation": "Point-of-service (POS) = the HMO/PPO hybrid.",
+  "source": "Exam 3 Practice Set A24 · key (textbook — check vs Benefits deck)"
+ },
+ {
+  "id": "e3-65",
+  "topic": "benefits",
+  "prompt": "Workers’ compensation is best described as:",
+  "options": [
+   "A federal no-fault program that preserves the right to sue",
+   "A state no-fault program under which the covered employee generally cannot sue the employer",
+   "A discretionary benefit offered by about 47% of employers",
+   "A federal program financed by employee payroll deductions"
+  ],
+  "answer": 1,
+  "explanation": "State, no-fault, and the covered worker gives up the right to sue.",
+  "source": "Exam 3 Practice Set A25 · key (textbook — check vs Benefits deck)"
+ },
+ {
+  "id": "e3-67",
+  "topic": "benefits",
+  "prompt": "True or false: Under a noncontributory benefit plan, the employer pays the entire cost.",
+  "options": [
+   "True",
+   "False"
+  ],
+  "answer": 0,
+  "explanation": "True. Noncontributory means the employee contributes nothing.",
+  "source": "Exam 3 Practice Set B27 · key (textbook — check vs Benefits deck)"
+ },
+ {
+  "id": "e3-68",
+  "topic": "benefits",
+  "prompt": "True or false: An employee injured on the job because of his own carelessness is ineligible for workers’ compensation.",
+  "options": [
+   "True",
+   "False"
+  ],
+  "answer": 1,
+  "explanation": "False. Workers’ comp is no-fault.",
+  "source": "Exam 3 Practice Set B28 · key (textbook — check vs Benefits deck)"
+ },
+ {
+  "id": "e3-69",
+  "topic": "benefits",
+  "prompt": "True or false: Unemployment insurance in most states is financed exclusively by employers.",
+  "options": [
+   "True",
+   "False"
+  ],
+  "answer": 0,
+  "explanation": "True. In most states employers pay it all.",
+  "source": "Exam 3 Practice Set B29 · key (textbook — check vs Benefits deck)"
+ },
+ {
+  "id": "e3-71",
+  "topic": "benefits",
+  "prompt": "True or false: Under a defined benefit plan, the employer’s contribution is defined and the employee bears the investment risk.",
+  "options": [
+   "True",
+   "False"
+  ],
+  "answer": 1,
+  "explanation": "False. That describes defined contribution. Under DB the benefit is defined and the employer bears the risk.",
+  "source": "Exam 3 Practice Set B31 · key (textbook — check vs Benefits deck)"
+ },
+ {
+  "id": "e3-72",
+  "topic": "benefits",
+  "prompt": "True or false: An employee’s own contributions to a pension fund vest immediately and irrevocably.",
+  "options": [
+   "True",
+   "False"
+  ],
+  "answer": 0,
+  "explanation": "True. Only the employer’s contributions follow a vesting schedule.",
+  "source": "Exam 3 Practice Set B32 · key (textbook — check vs Benefits deck)"
+ },
+ {
+  "id": "e3-74",
+  "topic": "benefits",
+  "prompt": "True or false: Coinsurance is a flat dollar amount the employee pays per office visit.",
+  "options": [
+   "True",
+   "False"
+  ],
+  "answer": 1,
+  "explanation": "False. That’s a copay. Coinsurance is a percentage of the bill after the deductible.",
+  "source": "Exam 3 Practice Set B34 · key (textbook — check vs Benefits deck)"
+ },
+ {
+  "id": "e3-76",
+  "topic": "benefits",
+  "prompt": "Benefits add roughly how much on top of every $1 of wages and salaries?",
+  "options": [
+   "12 cents",
+   "30 cents",
+   "42 cents",
+   "75 cents"
+  ],
+  "answer": 2,
+  "explanation": "About 42 cents per dollar of wages. 30% is the share of total comp; different denominator.",
+  "source": "Written from Exam 3 Study Guide 1.1 (textbook — check vs Benefits deck)"
+ },
+ {
+  "id": "e3-77",
+  "topic": "benefits",
+  "prompt": "A manager says benefits are cheaper to give than the same amount in cash because of group rates and tax treatment. Which reason for benefit growth is this?",
+  "options": [
+   "Wage and price controls",
+   "Unions",
+   "Cost (including tax) effectiveness",
+   "Government impetus"
+  ],
+  "answer": 2,
+  "explanation": "“Tax advantaged / cheaper than cash” → cost and tax effectiveness.",
+  "source": "Written from Exam 3 Study Guide 1.2 (textbook — check vs Benefits deck)"
+ },
+ {
+  "id": "e3-78",
+  "topic": "benefits",
+  "prompt": "Employees rate benefits as important but underestimate what they cost. The course’s fix for that gap is:",
+  "options": [
+   "Add another benefit",
+   "Better communication (and more employee responsibility)",
+   "Cut benefits and raise wages",
+   "Switch to a noncontributory plan"
+  ],
+  "answer": 1,
+  "explanation": "Low perceived value → communication, not another benefit.",
+  "source": "Written from Exam 3 Study Guide 1.3 (textbook — check vs Benefits deck)"
+ },
+ {
+  "id": "e3-79",
+  "topic": "benefits",
+  "prompt": "Judging a benefit by the employee’s financial exposure with vs. without it is which planning objective?",
+  "options": [
+   "Competitiveness",
+   "Adequacy",
+   "Cost effectiveness",
+   "Equity"
+  ],
+  "answer": 1,
+  "explanation": "Adequacy = is the benefit enough to matter to the employee’s exposure.",
+  "source": "Written from Exam 3 Study Guide 1.4 (textbook — check vs Benefits deck)"
+ },
+ {
+  "id": "e3-80",
+  "topic": "benefits",
+  "prompt": "In a cafeteria plan, employees pick the coverage they already know they’ll use, driving up that option’s cost. This is called:",
+  "options": [
+   "Moral hazard",
+   "Adverse selection",
+   "Experience rating",
+   "Cost shifting"
+  ],
+  "answer": 1,
+  "explanation": "Adverse selection is the main downside of flexible (cafeteria) plans, along with administration.",
+  "source": "Written from Exam 3 Study Guide 1.5 (textbook — check vs Benefits deck)"
+ },
+ {
+  "id": "e3-81",
+  "topic": "benefits",
+  "prompt": "Which is an EMPLOYEE factor in deciding what goes into a benefit package?",
+  "options": [
+   "Competitor offerings",
+   "Legal requirements",
+   "Personal needs tied to age, marital status, and dependents",
+   "Relationship to total compensation costs"
+  ],
+  "answer": 2,
+  "explanation": "Employee factors: equity and personal needs. Competitor offerings is an employer factor.",
+  "source": "Written from Exam 3 Study Guide 1.6 (textbook — check vs Benefits deck)"
+ },
+ {
+  "id": "e3-82",
+  "topic": "benefits",
+  "prompt": "Which of these is a LEGALLY REQUIRED benefit?",
+  "options": [
+   "401(k) plan",
+   "Health insurance",
+   "Unemployment insurance",
+   "Paid vacation"
+  ],
+  "answer": 2,
+  "explanation": "Required: workers’ comp, Social Security/Medicare, unemployment insurance. The rest are discretionary.",
+  "source": "Written from Exam 3 Study Guide Part 2 (textbook — check vs Benefits deck)"
+ },
+ {
+  "id": "e3-83",
+  "topic": "benefits",
+  "prompt": "Social Security contributions paid in this year immediately pay this year’s beneficiaries. This funding approach is:",
+  "options": [
+   "Fully funded",
+   "Pay as you go",
+   "Defined contribution",
+   "Experience rated"
+  ],
+  "answer": 1,
+  "explanation": "Pay-as-you-go, which is the core funding problem as workers per retiree falls.",
+  "source": "Written from Exam 3 Study Guide 2.2 (textbook — check vs Benefits deck)"
+ },
+ {
+  "id": "e3-84",
+  "topic": "benefits",
+  "prompt": "A company with heavy layoffs sees its state unemployment tax rate rise. This is due to:",
+  "options": [
+   "Vesting",
+   "Experience rating",
+   "Adverse selection",
+   "COBRA"
+  ],
+  "answer": 1,
+  "explanation": "Experience rating: your rate depends on your own layoff history.",
+  "source": "Written from Exam 3 Study Guide 2.3 (textbook — check vs Benefits deck)"
+ },
+ {
+  "id": "e3-85",
+  "topic": "benefits",
+  "prompt": "Which law limits denying coverage for a preexisting condition and has strict privacy rules?",
+  "options": [
+   "FMLA",
+   "COBRA",
+   "HIPAA",
+   "ERISA"
+  ],
+  "answer": 2,
+  "explanation": "HIPAA (1996) = preexisting conditions + privacy.",
+  "source": "Written from Exam 3 Study Guide 2.4 (textbook — check vs Benefits deck)"
+ },
+ {
+  "id": "e3-86",
+  "topic": "benefits",
+  "prompt": "“How long until the company’s match is mine?” is a question about:",
+  "options": [
+   "Portability",
+   "Vesting",
+   "Coinsurance",
+   "Experience rating"
+  ],
+  "answer": 1,
+  "explanation": "Vesting = ownership over time. Portability = moving it to a new employer.",
+  "source": "Written from Exam 3 Study Guide 2.6 (textbook — check vs Benefits deck)"
+ },
+ {
+  "id": "e3-87",
+  "topic": "benefits",
+  "prompt": "A plan that restricts employees to a fixed network of providers in exchange for low cost is a(n):",
+  "options": [
+   "Indemnity plan",
+   "HMO",
+   "PPO",
+   "POS plan"
+  ],
+  "answer": 1,
+  "explanation": "Restricted to network providers only → HMO.",
+  "source": "Written from Exam 3 Study Guide 2.7 (textbook — check vs Benefits deck)"
+ },
+ {
+  "id": "e3-88",
+  "topic": "benefits",
+  "prompt": "Which health account is employee-owned and rolls over year to year?",
+  "options": [
+   "FSA",
+   "HSA",
+   "PPO",
+   "COBRA account"
+  ],
+  "answer": 1,
+  "explanation": "HSA money is yours and rolls over; FSA money is use-it-or-lose-it.",
+  "source": "Written from Exam 3 Study Guide 2.7 (textbook — check vs Benefits deck)"
+ },
+ {
+  "id": "e3k-q1",
+  "topic": "benefits",
+  "prompt": "Kathleen described four ways benefits shape an organization. Which is NOT one of them?",
+  "options": [
+   "Total compensation",
+   "Risk allocation",
+   "Compliance",
+   "Stock price"
+  ],
+  "answer": 3,
+  "explanation": "Benefits shape: 1 total compensation · 2 risk allocation · 3 compliance · 4 talent.",
+  "source": "Guest speaker Kathleen Hermacinski (9/23)"
+ },
+ {
+  "id": "e3k-q2",
+  "topic": "benefits",
+  "prompt": "Kathleen defined a “benefit” as:",
+  "options": [
+   "Any cash paid in a paycheck",
+   "An advantage or value gained from something",
+   "A tax the employer must pay",
+   "A bonus tied to performance"
+  ],
+  "answer": 1,
+  "explanation": "Benefit = an advantage or value gained from something (healthcare, paid time off, etc.).",
+  "source": "Guest speaker Kathleen Hermacinski (9/23)"
+ }
+]

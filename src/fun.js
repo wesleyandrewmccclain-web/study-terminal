@@ -75,7 +75,7 @@
   }
   const svLimit = () => Math.max(8, 20 - Math.floor(sv.score / 2));
   function svQ() {
-    const q = sv.pool[sv.i % sv.pool.length]; sv.order = shuffle(q.options.map((_, i) => i)); sv.answered = null; if (sv.kind === 'survival') sv.deadline = Date.now() + svLimit() * 1000;
+    const q = sv.pool[sv.i % sv.pool.length]; sv.order = (window.pinNone||((_,o)=>o))(q,shuffle(q.options.map((_, i) => i))); sv.answered = null; if (sv.kind === 'survival') sv.deadline = Date.now() + svLimit() * 1000;
     S().setPage('arcade', false);
     $('#app').innerHTML = S().heading(sv.kind === 'survival' ? 'SURVIVAL' : 'LIGHTNING', `Score ${sv.score}`, '', `<div class="timer" id="sv-clock"></div>`) +
       `<div class="sv-hud">${sv.kind === 'survival' ? `<span class="sv-lives">${'♥'.repeat(sv.lives)}<i>${'♥'.repeat(3 - sv.lives)}</i></span>` : ''}<span class="sv-bar"><i id="sv-bar"></i></span></div>

@@ -1,0 +1,326 @@
+[
+ {
+  "id": "e3-1",
+  "prompt": "A compensation manager reviews an employee whose compa-ratio is 1.32. Which of the following best describes this employee’s pay?",
+  "options": [
+   "Paid below the midpoint, but within the ideal range",
+   "Paid at the midpoint, since compa-ratios are always rounded to 1.0",
+   "Paid above the midpoint and outside the ideal range (0.75–1.25)",
+   "Federal law prohibits a compa-ratio above 1.25, so the employee is automatically misclassified"
+  ],
+  "answer": 2,
+  "explanation": "Above 1.0 means paying above average, and the ideal range is 0.75–1.25, so 1.32 falls outside it. Nothing about a high compa-ratio means the job is misclassified."
+ },
+ {
+  "id": "e3-5",
+  "prompt": "A compa-ratio helps an organization understand how it pays employees relative to which two areas?",
+  "options": [
+   "Seniority and Merit",
+   "Internal Pay Policy and Market Value",
+   "Base Pay and Bonuses",
+   "Federal and state law, which strictly mandate pay at the midpoint"
+  ],
+  "answer": 1,
+  "explanation": "The slide lists two areas: 1. Internal Pay Policy and 2. Market Value."
+ },
+ {
+  "id": "e3-6",
+  "prompt": "The range of compa-ratios considered ideal is:",
+  "options": [
+   "0.50 – 1.00",
+   "0.90 – 1.10",
+   "1.00 – 1.50",
+   "0.75 – 1.25"
+  ],
+  "answer": 3,
+  "explanation": "The slide gives the Ideal Compa-Ratio Range as .75 – 1.25."
+ },
+ {
+  "id": "e3-7",
+  "prompt": "An HR analyst calculates a compa-ratio of exactly 1.0. What does this indicate about how the organization is paying?",
+  "options": [
+   "At average",
+   "Below average",
+   "Above average",
+   "Outside the ideal range, which automatically requires a pay freeze"
+  ],
+  "answer": 0,
+  "explanation": "A compa-ratio of 1.0 means the organization is paying at average; below 1.0 is below average and above 1.0 is above average."
+ },
+ {
+  "id": "e3-8",
+  "prompt": "An organization finds that several employees have HIGH compa-ratios relative to its internal pay policy. What can HR do internally?",
+  "options": [
+   "Give these employees more frequent increases",
+   "“Freeze” employee increases to bring them more in line with pay policy",
+   "Reclassify these employees as independent contractors",
+   "Lower the range minimum, which automatically eliminates high compa-ratios"
+  ],
+  "answer": 1,
+  "explanation": "For high compa-ratios, the slide says HR can “freeze” employee increases to bring them more in line with the pay policy."
+ },
+ {
+  "id": "e3-9",
+  "prompt": "A compensation manager discovers several employees with LOW compa-ratios relative to internal pay policy. What procedure does the course suggest?",
+  "options": [
+   "Freeze their pay until the next review cycle",
+   "Move them to a lower pay grade",
+   "Work on bringing these employees in line with internal pay policy",
+   "Take no action, because a low compa-ratio is always ideal"
+  ],
+  "answer": 2,
+  "explanation": "For low compa-ratios, the slide says HR can work on bringing these employees in line with the internal pay policy; freezing is the response to HIGH ratios."
+ },
+ {
+  "id": "e3-10",
+  "prompt": "Which of the following is a caveat the course gives about interpreting high compa-ratios?",
+  "options": [
+   "High compa-ratios always mean an employee is overpaid",
+   "High compa-ratios only occur in executive positions",
+   "The FLSA prohibits any compa-ratio above 1.25",
+   "Highly experienced, long-tenured employees may have much higher pay, among other variables"
+  ],
+  "answer": 3,
+  "explanation": "The slide’s caveat is that highly experienced, long-tenured employees may have much higher pay, among other variables, so a high ratio is not automatically overpayment."
+ },
+ {
+  "id": "e3-11",
+  "prompt": "A compensation manager compares the company’s pay with market value and finds a HIGH compa-ratio. Which conclusion is most appropriate?",
+  "options": [
+   "The company is likely attracting top talent, but may consider decreasing pay depending on how far above market it is",
+   "The company is paying below market",
+   "The company must freeze pay immediately under federal law",
+   "The company is out of FLSA compliance"
+  ],
+  "answer": 0,
+  "explanation": "A high external compa-ratio means paying above market value: likely attracting top talent, but the company may want to consider decreasing pay depending on how far above it is."
+ },
+ {
+  "id": "e3-12",
+  "prompt": "An HR analyst finds that an employee earns $46,750 in a pay grade with a $55,000 midpoint. What is the employee’s compa-ratio?",
+  "options": [
+   "0.72",
+   "0.85",
+   "1.18",
+   "None of the answer choices are correct"
+  ],
+  "answer": 1,
+  "explanation": "46,750 ÷ 55,000 = 0.85: below average but inside the 0.75–1.25 ideal range. 1.18 comes from dividing the wrong way (midpoint ÷ pay)."
+ },
+ {
+  "id": "e3-46",
+  "prompt": "An employee’s actual pay is $54,000, and the midpoint of her pay range is $60,000. What is her compa-ratio, and what does it indicate?",
+  "options": [
+   "1.11, paying above average",
+   "0.90, paying above average",
+   "0.90, paying below average",
+   "1.11, paying below average"
+  ],
+  "answer": 2,
+  "explanation": "54,000 ÷ 60,000 = 0.90, and below 1.0 means paying below average. 1.11 comes from dividing the midpoint by pay."
+ },
+ {
+  "id": "e3-47",
+  "prompt": "An HR analyst finds that an employee’s compa-ratio is 1.38 relative to internal pay policy. What procedure should the analyst recommend?",
+  "options": [
+   "Immediately cut the employee’s pay to the midpoint, as is legally required",
+   "Freeze increases, while considering the employee’s tenure and experience",
+   "Promote the employee to the next pay grade",
+   "Take no action, since 1.38 is within the ideal range"
+  ],
+  "answer": 1,
+  "explanation": "Freeze increases, keeping in mind the slide’s caveat about long-tenured, highly experienced employees. 1.38 is outside the 0.75–1.25 ideal range, so doing nothing is wrong."
+ },
+ {
+  "id": "e3-66",
+  "prompt": "A compa-ratio is calculated by dividing an employee’s actual pay by:",
+  "options": [
+   "The minimum of the pay range",
+   "The maximum of the pay range",
+   "The midpoint of the pay range (or the market rate)",
+   "None of the answer choices are correct"
+  ],
+  "answer": 2,
+  "explanation": "Divide actual pay by the midpoint (or the market rate), never the minimum."
+ },
+ {
+  "id": "e3-89",
+  "prompt": "A compensation manager reviews a pay grade in which three employees earn $52,000, $55,000 and $61,000, and the grade midpoint is $58,000. What is the group compa-ratio?",
+  "options": [
+   "0.90",
+   "0.97",
+   "1.00",
+   "1.03"
+  ],
+  "answer": 1,
+  "explanation": "Average first: 168,000 ÷ 3 = 56,000. Then 56,000 ÷ 58,000 = 0.97."
+ },
+ {
+  "id": "e3-90",
+  "prompt": "An employee has a compa-ratio of 1.12 in a pay grade with a $64,000 midpoint. Her actual pay is:",
+  "options": [
+   "$57,143",
+   "$64,000",
+   "$76,800",
+   "$71,680"
+  ],
+  "answer": 3,
+  "explanation": "Actual pay = CR × midpoint = 1.12 × 64,000 = $71,680. $57,143 comes from dividing the midpoint by the compa-ratio instead of multiplying."
+ },
+ {
+  "id": "e3-91",
+  "prompt": "When an employee’s compa-ratio is well ABOVE market, the organization is likely:",
+  "options": [
+   "Attracting top talent, but may consider decreasing pay depending on how far above market it is",
+   "Violating the FLSA, which prohibits above-market pay",
+   "Legally required to freeze the employee’s pay",
+   "Paying below average"
+  ],
+  "answer": 0,
+  "explanation": "Above market means the organization is likely attracting top talent, but it may consider decreasing pay depending on how far above market it is."
+ },
+ {
+  "id": "e3x-q1",
+  "prompt": "Exercise P1: In a pay structure where Grade 3’s midpoint is $57,964 and every midpoint differential is 10%, Grade 4’s midpoint is:",
+  "options": [
+   "$52,695",
+   "$63,760",
+   "$66,659",
+   "$69,557"
+  ],
+  "answer": 1,
+  "explanation": "Moving up one grade, multiply by 1 + the differential: 57,964 × 1.10 = 63,760.4 → $63,760."
+ },
+ {
+  "id": "e3x-q2",
+  "prompt": "Exercise P1: A compensation analyst working DOWN from Grade 3 ($57,964 midpoint, 10% midpoint differential) must find Grade 2’s midpoint. What is it?",
+  "options": [
+   "$52,168",
+   "$49,269",
+   "$63,760",
+   "$52,695"
+  ],
+  "answer": 3,
+  "explanation": "Divide, don’t multiply by 0.90: 57,964 ÷ 1.10 = $52,695. (57,964 × 0.9 = $52,168 is the trap.)"
+ },
+ {
+  "id": "e3x-q3",
+  "prompt": "Exercise P1: Market survey data for the Employment Consultant job show $48,752, $50,247 and $45,132. The market average is:",
+  "options": [
+   "$50,247",
+   "$48,044",
+   "$48,752",
+   "$47,940"
+  ],
+  "answer": 1,
+  "explanation": "144,131 ÷ 3 = 48,043.67 → $48,044."
+ },
+ {
+  "id": "e3x-q4",
+  "prompt": "Exercise P1: An HR analyst places Accountant II (780 points) in Grade 4, which has a $63,760 midpoint. The market average for the job is $56,751. What is the company midpoint divided by the market average?",
+  "options": [
+   "0.89",
+   "1.25",
+   "1.12",
+   "1.30"
+  ],
+  "answer": 2,
+  "explanation": "63,760 ÷ 56,751 = 1.12: paying 12% above market, but inside 0.75–1.25. 0.89 is the same comparison flipped (market ÷ company)."
+ },
+ {
+  "id": "e3x-q5",
+  "prompt": "Exercise P1: After comparing each grade midpoint to the market average, a compensation manager must make a recommendation. What should it be?",
+  "options": [
+   "Raise Grade 2",
+   "Lower Grade 4, since any ratio above 1.0 must always be reduced",
+   "Rebuild the whole pay chart",
+   "No change: all three jobs land inside 0.75–1.25, and explain why"
+  ],
+  "answer": 3,
+  "explanation": "EC 1.21 · IT 1.07 · Acct II 1.12 (or 0.83 / 0.94 / 0.89 the other way): all inside the ideal range, so no change, and say WHY. Check this against Wednesday’s key."
+ },
+ {
+  "id": "e3x-q6",
+  "prompt": "Exercise P2: Grade 3’s midpoint is $67,860, and Grade 4 has a 17% midpoint differential. Grade 4’s midpoint is:",
+  "options": [
+   "$78,039",
+   "$81,432",
+   "$79,396",
+   "$95,275"
+  ],
+  "answer": 2,
+  "explanation": "67,860 × 1.17 = 79,396.2 → $79,396."
+ },
+ {
+  "id": "e3x-q7",
+  "prompt": "Exercise P2: Grade 5 has a 20% midpoint differential on top of Grade 4’s $79,396 midpoint. Grade 5’s midpoint is:",
+  "options": [
+   "$95,275",
+   "$93,000",
+   "$99,245",
+   "$114,330"
+  ],
+  "answer": 0,
+  "explanation": "79,396 × 1.20 = 95,275.2 → $95,275."
+ },
+ {
+  "id": "e3x-q8",
+  "prompt": "Exercise P2: An HR analyst finds that Job A (700 points) pays $59,780, and its Grade 4 midpoint is $79,396. What is Job A’s compa-ratio?",
+  "options": [
+   "0.73",
+   "0.88",
+   "1.33",
+   "0.75"
+  ],
+  "answer": 3,
+  "explanation": "59,780 ÷ 79,396 = 0.753: right at the bottom of 0.75–1.25, and $19,616 below the midpoint. 1.33 comes from dividing the midpoint by pay."
+ },
+ {
+  "id": "e3x-q9",
+  "prompt": "Exercise P2: Job B (900 points) pays $69,840, and its Grade 5 midpoint is $95,275. What is the compa-ratio, and what action should the compensation manager take?",
+  "options": [
+   "0.88: within the ideal range, so no action is needed",
+   "0.73: below 0.75, so the employee’s pay should be raised",
+   "1.36: above 1.25, so increases should be frozen",
+   "0.73: below 0.75, so federal law requires an immediate pay freeze"
+  ],
+  "answer": 1,
+  "explanation": "69,840 ÷ 95,275 = 0.733, which is below 0.75, so raise pay. It is even under the Grade 5 minimum ($76,220)."
+ },
+ {
+  "id": "e3x-q10",
+  "prompt": "Exercise P2: Job C (300 points) pays $51,655, and its Grade 2 midpoint is $59,009 (67,860 ÷ 1.15). What is Job C’s compa-ratio?",
+  "options": [
+   "0.88",
+   "1.14",
+   "0.73",
+   "None of the answer choices are correct"
+  ],
+  "answer": 0,
+  "explanation": "51,655 ÷ 59,009 = 0.875, inside the range and $7,354 below the midpoint, so no urgent change. 1.14 comes from dividing the midpoint by pay."
+ },
+ {
+  "id": "e3x-q11",
+  "prompt": "Exercise P2: Job A’s compa-ratio of 0.75 is technically within the ideal range. Why might a compensation manager still recommend a raise?",
+  "options": [
+   "It pays above the range maximum",
+   "Its compa-ratio is above 1.25",
+   "It pays below the Grade 4 MINIMUM ($63,517 at a 20% range spread)",
+   "Federal law requires every compa-ratio to be at least 1.0"
+  ],
+  "answer": 2,
+  "explanation": "Min = 79,396 × 0.80 = $63,517. Pay of $59,780 is under the floor of its own range, so raise it to at least the minimum."
+ },
+ {
+  "id": "e3x-q12",
+  "prompt": "Exercise P2: How much would it cost to bring Job B up to the midpoint (CR = 1.0)?",
+  "options": [
+   "$6,380",
+   "$25,435",
+   "$19,616",
+   "$7,354"
+  ],
+  "answer": 1,
+  "explanation": "Raising to 1.0 costs midpoint − pay = 95,275 − 69,840 = $25,435. $19,616 and $7,354 are Job A’s and Job C’s gaps to their midpoints."
+ }
+]

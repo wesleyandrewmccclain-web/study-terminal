@@ -1,0 +1,362 @@
+[
+ {
+  "id": "e3-2",
+  "topic": "flex",
+  "prompt": "A worker uses their own tools, is paid per project, and serves several clients. They are most likely a(n):",
+  "options": [
+   "Core employee",
+   "Leased employee",
+   "Independent contractor",
+   "Part-time employee"
+  ],
+  "answer": 2,
+  "explanation": "Own tools, paid by the project, and more than one business are contractor factors on the common-law test.",
+  "source": "Practice Set MC 9 · key"
+ },
+ {
+  "id": "e3-4",
+  "topic": "flex",
+  "prompt": "Part-time workers who resign can buy continued health coverage under:",
+  "options": [
+   "PPACA",
+   "ERISA",
+   "COBRA",
+   "FUTA"
+  ],
+  "answer": 2,
+  "explanation": "Following resignation, part-time workers are eligible to purchase health insurance under COBRA rules.",
+  "source": "Practice Set MC 11 · key"
+ },
+ {
+  "id": "e3-24",
+  "topic": "flex",
+  "prompt": "Contingent (flexible) workers are individuals who:",
+  "options": [
+   "Plan on long-term employment",
+   "Do not have an implicit or explicit contract for ongoing employment",
+   "Are always part-time",
+   "Work only for the government"
+  ],
+  "answer": 1,
+  "explanation": "Flexible/contingent workers do not have an implicit or explicit contract for ongoing employment; core employees plan on long-term relationships.",
+  "source": "Written from Slides 10 · Executives & Flexible Workforce"
+ },
+ {
+  "id": "e3-25",
+  "topic": "flex",
+  "prompt": "Someone who won’t continue employment because they are returning to school is:",
+  "options": [
+   "A contingent worker",
+   "NOT a contingent worker",
+   "A leased employee",
+   "An independent contractor"
+  ],
+  "answer": 1,
+  "explanation": "People who do not expect to continue for personal reasons such as returning to school or retirement are not contingent workers.",
+  "source": "Written from Slides 10 · Executives & Flexible Workforce"
+ },
+ {
+  "id": "e3-26",
+  "topic": "flex",
+  "prompt": "Two or more part-timers performing one job is called:",
+  "options": [
+   "Telecommuting",
+   "Job sharing",
+   "Compressed workweek",
+   "Leasing"
+  ],
+  "answer": 1,
+  "explanation": "Job sharing: reduces costs, increases flexibility, maintains productivity, may increase loyalty.",
+  "source": "Written from Slides 10 · Executives & Flexible Workforce"
+ },
+ {
+  "id": "e3-27",
+  "topic": "flex",
+  "prompt": "Which is NOT a listed reason for the rise in flexible workers?",
+  "options": [
+   "Economic recessions",
+   "International competition",
+   "Shift from manufacturing to a service economy",
+   "New federal overtime rules"
+  ],
+  "answer": 3,
+  "explanation": "The slide lists recessions, international competition, and the shift from manufacturing to a service economy.",
+  "source": "Written from Slides 10 · Executives & Flexible Workforce"
+ },
+ {
+  "id": "e3-28",
+  "topic": "flex",
+  "prompt": "About what share of part-time workers have retirement benefits, vs full-time?",
+  "options": [
+   "38% vs 81%",
+   "81% vs 38%",
+   "50% vs 50%",
+   "8.7% vs 91%"
+  ],
+  "answer": 0,
+  "explanation": "Retirement benefits: about 38% of part-time workers compared to 81% of full-time workers.",
+  "source": "Written from Slides 10 · Executives & Flexible Workforce"
+ },
+ {
+  "id": "e3-29",
+  "topic": "flex",
+  "prompt": "Employers must let part-timers join retirement plans after they meet the age and service requirements of:",
+  "options": [
+   "COBRA",
+   "ERISA",
+   "PPACA",
+   "FLSA"
+  ],
+  "answer": 1,
+  "explanation": "Part-time workers must be allowed to participate after fulfilling the ERISA age and service requirements.",
+  "source": "Written from Slides 10 · Executives & Flexible Workforce"
+ },
+ {
+  "id": "e3-30",
+  "topic": "flex",
+  "prompt": "Part-time workers are NOT protected under:",
+  "options": [
+   "PPACA",
+   "COBRA",
+   "ERISA",
+   "FICA"
+  ],
+  "answer": 0,
+  "explanation": "Health insurance: part-time workers are not protected under PPACA.",
+  "source": "Written from Slides 10 · Executives & Flexible Workforce"
+ },
+ {
+  "id": "e3-31",
+  "topic": "flex",
+  "prompt": "Flextime, compressed workweeks and telecommuting are examples of:",
+  "options": [
+   "Flexible work schedules",
+   "Contingent worker types",
+   "Perquisites",
+   "Payroll steps"
+  ],
+  "answer": 0,
+  "explanation": "Flexible work schedules: flextime, compressed workweeks, telecommuting.",
+  "source": "Written from Slides 10 · Executives & Flexible Workforce"
+ },
+ {
+  "id": "e3-32",
+  "topic": "flex",
+  "prompt": "When flexible employees work during holidays, companies must:",
+  "options": [
+   "Pay triple time",
+   "Provide alternative time off",
+   "Convert them to full-time",
+   "Nothing"
+  ],
+  "answer": 1,
+  "explanation": "Treatment of paid time off for holidays: companies must provide alternative time off.",
+  "source": "Written from Slides 10 · Executives & Flexible Workforce"
+ },
+ {
+  "id": "e3-33",
+  "topic": "flex",
+  "prompt": "Under the COMMON-LAW test, a worker paid by the hour, supervised, using the employer’s tools is:",
+  "options": [
+   "An employee",
+   "An independent contractor",
+   "A leased employee",
+   "A consultant"
+  ],
+  "answer": 0,
+  "explanation": "Employee if the employer controls/supervises, provides tools and location, and pays by the hour or time worked.",
+  "source": "Written from Slides 10 · Executives & Flexible Workforce"
+ },
+ {
+  "id": "e3-34",
+  "topic": "flex",
+  "prompt": "Which factor appears in the ECONOMIC REALITIES test?",
+  "options": [
+   "Intent of the parties",
+   "Opportunity for profit or loss (risk)",
+   "Method of payment",
+   "Type of business"
+  ],
+  "answer": 1,
+  "explanation": "Economic realities factors: integration, investment in facilities, right to control, risk (profit or loss), skill, continuing relationship.",
+  "source": "Written from Slides 10 · Executives & Flexible Workforce"
+ },
+ {
+  "id": "e3-35",
+  "topic": "flex",
+  "prompt": "A worker with a substantial investment in the work facilities and equipment points toward:",
+  "options": [
+   "Employee status",
+   "Independent contractor status",
+   "Part-time status",
+   "Leased status"
+  ],
+  "answer": 1,
+  "explanation": "Economic realities test: substantial investment in facilities and equipment → contractor.",
+  "source": "Written from Slides 10 · Executives & Flexible Workforce"
+ },
+ {
+  "id": "e3-52",
+  "topic": "flex",
+  "prompt": "Which of the following individuals is NOT a contingent worker?",
+  "options": [
+   "A part-time cashier",
+   "A seasonal warehouse worker hired through December 31",
+   "An employee who plans to leave in May to return to graduate school",
+   "A consultant engaged for a six-month project"
+  ],
+  "answer": 2,
+  "explanation": "Leaving for personal reasons (school, retirement) does not make someone contingent. The prof repeated this in the video.",
+  "source": "Exam 3 Practice Set A11 · key"
+ },
+ {
+  "id": "e3-53",
+  "topic": "flex",
+  "prompt": "A leased employee is legally the employee of:",
+  "options": [
+   "The client organization where the work is performed",
+   "The staffing agency",
+   "Neither; they are self-employed",
+   "Both, jointly and equally"
+  ],
+  "answer": 1,
+  "explanation": "The staffing agency. The client pays the agency; the agency pays the worker.",
+  "source": "Exam 3 Practice Set A12 · key"
+ },
+ {
+  "id": "e3-54",
+  "topic": "flex",
+  "prompt": "Which is NOT one of the three reasons given for the rise in use of flexible workers?",
+  "options": [
+   "Economic recessions",
+   "International competition",
+   "The shift from manufacturing to a service economy",
+   "The passage of the Family and Medical Leave Act"
+  ],
+  "answer": 3,
+  "explanation": "The three are recessions, international competition, and the manufacturing-to-service shift.",
+  "source": "Exam 3 Practice Set A13 · key"
+ },
+ {
+  "id": "e3-55",
+  "topic": "flex",
+  "prompt": "Regarding benefits for part-time workers, which statement is correct?",
+  "options": [
+   "Employers must offer them health insurance under PPACA",
+   "Employers must allow them into retirement plans once ERISA age and service requirements are met",
+   "They are ineligible for COBRA after resignation",
+   "Retirement is a legally required benefit for all workers"
+  ],
+  "answer": 1,
+  "explanation": "Must allow retirement participation once ERISA thresholds are met. Part-timers aren’t protected under PPACA, can buy COBRA, and retirement is discretionary.",
+  "source": "Exam 3 Practice Set A14 · key"
+ },
+ {
+  "id": "e3-56",
+  "topic": "flex",
+  "prompt": "“Investment in facilities” and “risk of profit or loss” are factors found in:",
+  "options": [
+   "The common-law test only",
+   "The economic realities test only",
+   "Both tests",
+   "Neither test"
+  ],
+  "answer": 1,
+  "explanation": "Economic realities test only. Those two never appear on the common-law list.",
+  "source": "Exam 3 Practice Set A15 · key"
+ },
+ {
+  "id": "e3-57",
+  "topic": "flex",
+  "prompt": "A compressed workweek most commonly takes the form of:",
+  "options": [
+   "Four 10-hour days",
+   "Five 7-hour days",
+   "Six 6-hour days",
+   "Three 8-hour days"
+  ],
+  "answer": 0,
+  "explanation": "Four 10-hour days. Three 12-hour days (36 hours) also appears, but 4×10 is most common.",
+  "source": "Exam 3 Practice Set A16 · key"
+ },
+ {
+  "id": "e3-70",
+  "topic": "flex",
+  "prompt": "True or false: Part-time employees are considered contingent workers.",
+  "options": [
+   "True",
+   "False"
+  ],
+  "answer": 0,
+  "explanation": "True. Part-timers are contingent workers.",
+  "source": "Exam 3 Practice Set B30 · key"
+ },
+ {
+  "id": "e3-73",
+  "topic": "flex",
+  "prompt": "True or false: Private organizations are legally required to close on federal holidays.",
+  "options": [
+   "True",
+   "False"
+  ],
+  "answer": 1,
+  "explanation": "False. That’s exactly why the alternative-paid-time-off rule exists.",
+  "source": "Exam 3 Practice Set B33 · key"
+ },
+ {
+  "id": "e3-95",
+  "topic": "flex",
+  "prompt": "A retailer hires three workers for the holidays with a definite stop date. The stop date is what makes them:",
+  "options": [
+   "Exempt",
+   "Contingent",
+   "Leased",
+   "Core employees"
+  ],
+  "answer": 1,
+  "explanation": "No contract for ongoing employment → contingent.",
+  "source": "Written from Exam 3 Study Guide 5.1"
+ },
+ {
+  "id": "e3-96",
+  "topic": "flex",
+  "prompt": "Two part-timers split one full-time job. Which is NOT one of the four listed effects of job sharing?",
+  "options": [
+   "Reduces costs",
+   "Increases flexibility",
+   "Guarantees benefits eligibility",
+   "May increase loyalty"
+  ],
+  "answer": 2,
+  "explanation": "The four: reduces costs, increases flexibility, maintains productivity, may increase loyalty. Job sharers typically aren’t benefit-eligible.",
+  "source": "Written from Exam 3 Study Guide 5.3"
+ },
+ {
+  "id": "e3-97",
+  "topic": "flex",
+  "prompt": "“Intent” and “method of payment” are factors on which test?",
+  "options": [
+   "Economic realities only",
+   "Common-law test",
+   "Both tests",
+   "FLSA duties test"
+  ],
+  "answer": 1,
+  "explanation": "Intent, tools, supervision, method of payment, type of business, more than one firm → common law only.",
+  "source": "Written from Exam 3 Study Guide 5.6"
+ },
+ {
+  "id": "e3-98",
+  "topic": "flex",
+  "prompt": "An employee drops her kid off at 8:15, starts at 8:30, leaves at 3:15, and finishes her hours remotely. This is:",
+  "options": [
+   "Compressed workweek",
+   "Flextime",
+   "Job sharing",
+   "Telecommuting only"
+  ],
+  "answer": 1,
+  "explanation": "Working different times of the day = flextime.",
+  "source": "Written from Exam 3 Study Guide 5.7"
+ }
+]

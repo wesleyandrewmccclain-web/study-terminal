@@ -1,0 +1,378 @@
+[
+ {
+  "id": "e3-1",
+  "topic": "compa",
+  "prompt": "A compa-ratio of 1.32 means the employee is:",
+  "options": [
+   "Paid below the midpoint, within the ideal range",
+   "Paid at the midpoint",
+   "Paid above the midpoint, outside the ideal range",
+   "Misclassified"
+  ],
+  "answer": 2,
+  "explanation": "Above 1.0 = above average; the ideal range is 0.75–1.25, so 1.32 is outside it.",
+  "source": "Practice Set MC 8 · key"
+ },
+ {
+  "id": "e3-5",
+  "topic": "compa",
+  "prompt": "A compa-ratio helps an organization understand how it pays employees relative to which two areas?",
+  "options": [
+   "Internal pay policy and market value",
+   "Seniority and merit",
+   "Base pay and bonuses",
+   "Federal and state law"
+  ],
+  "answer": 0,
+  "explanation": "The slide lists 1. Internal Pay Policy and 2. Market Value.",
+  "source": "Written from Slides 09 · Compa-Ratios & Payroll"
+ },
+ {
+  "id": "e3-6",
+  "topic": "compa",
+  "prompt": "What is the ideal compa-ratio range?",
+  "options": [
+   "0.50 – 1.00",
+   "0.75 – 1.25",
+   "0.90 – 1.10",
+   "1.00 – 1.50"
+  ],
+  "answer": 1,
+  "explanation": "Ideal Compa-Ratio Range: .75 – 1.25.",
+  "source": "Written from Slides 09 · Compa-Ratios & Payroll"
+ },
+ {
+  "id": "e3-7",
+  "topic": "compa",
+  "prompt": "A compa-ratio of exactly 1.0 means the organization is paying:",
+  "options": [
+   "Below average",
+   "At average",
+   "Above average",
+   "Outside the ideal range"
+  ],
+  "answer": 1,
+  "explanation": "At 1.0 means we are paying at average.",
+  "source": "Written from Slides 09 · Compa-Ratios & Payroll"
+ },
+ {
+  "id": "e3-8",
+  "topic": "compa",
+  "prompt": "Internally, what can HR do about HIGH compa-ratios?",
+  "options": [
+   "Give frequent increases",
+   "\"Freeze\" employee increases",
+   "Reclassify them as contractors",
+   "Lower the range minimum"
+  ],
+  "answer": 1,
+  "explanation": "High compa-ratios: we can “freeze” employee increases to bring them more in line with our pay policy.",
+  "source": "Written from Slides 09 · Compa-Ratios & Payroll"
+ },
+ {
+  "id": "e3-9",
+  "topic": "compa",
+  "prompt": "Internally, what does the slide suggest for LOW compa-ratios?",
+  "options": [
+   "Freeze their pay",
+   "Work on bringing these employees in line with internal pay policy",
+   "Move them to a lower grade",
+   "Nothing; low is ideal"
+  ],
+  "answer": 1,
+  "explanation": "Low compa-ratios: we can work on bringing these employees in line with our internal pay policy.",
+  "source": "Written from Slides 09 · Compa-Ratios & Payroll"
+ },
+ {
+  "id": "e3-10",
+  "topic": "compa",
+  "prompt": "Which caveat does the slide give about high compa-ratios?",
+  "options": [
+   "They always mean overpayment",
+   "Highly experienced, long-tenured employees may have much higher pay",
+   "They only happen to executives",
+   "They violate the FLSA"
+  ],
+  "answer": 1,
+  "explanation": "Caveat: highly experienced, long-tenured employees may have much higher pay, among other variables.",
+  "source": "Written from Slides 09 · Compa-Ratios & Payroll"
+ },
+ {
+  "id": "e3-11",
+  "topic": "compa",
+  "prompt": "Externally, a HIGH compa-ratio against market value means the company:",
+  "options": [
+   "Is paying below market",
+   "Is likely attracting top talent but may consider decreasing pay depending on how far above",
+   "Must freeze pay immediately",
+   "Is out of FLSA compliance"
+  ],
+  "answer": 1,
+  "explanation": "High = paying above market value; likely attracting top talent, but may want to consider decreasing pay depending on how far above.",
+  "source": "Written from Slides 09 · Compa-Ratios & Payroll"
+ },
+ {
+  "id": "e3-12",
+  "topic": "compa",
+  "prompt": "An employee earns $46,750 in a grade with a $55,000 midpoint. The compa-ratio is:",
+  "options": [
+   "0.72",
+   "0.85",
+   "1.00",
+   "1.18"
+  ],
+  "answer": 1,
+  "explanation": "46,750 ÷ 55,000 = 0.85: below average but inside the 0.75–1.25 ideal range.",
+  "source": "Written from Study Guide Part 4 example"
+ },
+ {
+  "id": "e3-46",
+  "topic": "compa",
+  "prompt": "An employee’s actual pay is $54,000 and the midpoint of her pay range is $60,000. Her compa-ratio is:",
+  "options": [
+   "0.90, paying below average",
+   "0.90, paying above average",
+   "1.11, paying above average",
+   "1.11, paying below average"
+  ],
+  "answer": 0,
+  "explanation": "54,000 ÷ 60,000 = 0.90, below 1.0 = paying below average.",
+  "source": "Exam 3 Practice Set A4 · key"
+ },
+ {
+  "id": "e3-47",
+  "topic": "compa",
+  "prompt": "An employee’s compa-ratio is 1.38 relative to internal pay policy. The most appropriate response is to:",
+  "options": [
+   "Immediately cut pay to the midpoint",
+   "Freeze increases, while considering tenure and experience",
+   "Promote the employee to the next grade",
+   "Do nothing, since 1.38 is within the ideal range"
+  ],
+  "answer": 1,
+  "explanation": "Freeze increases, with the slide’s caveat about long-tenured, highly experienced employees. 1.38 is outside 0.75–1.25.",
+  "source": "Exam 3 Practice Set A5 · key"
+ },
+ {
+  "id": "e3-66",
+  "topic": "compa",
+  "prompt": "True or false: A compa-ratio is calculated by dividing actual pay by the minimum of the pay range.",
+  "options": [
+   "True",
+   "False"
+  ],
+  "answer": 1,
+  "explanation": "False. Divide by the midpoint (or the market rate), never the minimum.",
+  "source": "Exam 3 Practice Set B26 · key"
+ },
+ {
+  "id": "e3-89",
+  "topic": "compa",
+  "prompt": "Pays in a grade are $52,000, $55,000 and $61,000; the midpoint is $58,000. The group compa-ratio is:",
+  "options": [
+   "0.90",
+   "0.97",
+   "1.00",
+   "1.03"
+  ],
+  "answer": 1,
+  "explanation": "Average first: 168,000 ÷ 3 = 56,000. Then 56,000 ÷ 58,000 = 0.97.",
+  "source": "Written from Exam 3 Study Guide 3.3"
+ },
+ {
+  "id": "e3-90",
+  "topic": "compa",
+  "prompt": "An employee has a compa-ratio of 1.12 in a grade with a $64,000 midpoint. Her pay is:",
+  "options": [
+   "$57,143",
+   "$64,000",
+   "$71,680",
+   "$76,800"
+  ],
+  "answer": 2,
+  "explanation": "Actual pay = CR × midpoint = 1.12 × 64,000 = $71,680.",
+  "source": "Written from Exam 3 Study Guide 3.3"
+ },
+ {
+  "id": "e3-91",
+  "topic": "compa",
+  "prompt": "Externally, an employee’s compa-ratio is well ABOVE market. The lecture says the organization is likely:",
+  "options": [
+   "Violating FLSA",
+   "Attracting top talent, but may consider decreasing pay",
+   "Required to freeze pay",
+   "Paying below average"
+  ],
+  "answer": 1,
+  "explanation": "Above market: likely attracting top talent; consider decreasing pay depending how far above.",
+  "source": "Written from Exam 3 Study Guide 3.2"
+ },
+ {
+  "id": "e3x-q1",
+  "topic": "compa",
+  "prompt": "Exercise P1: Grade 3’s midpoint is $57,964 and every midpoint differential is 10%. Grade 4’s midpoint is:",
+  "options": [
+   "$52,695",
+   "$63,760",
+   "$66,659",
+   "$69,557"
+  ],
+  "answer": 1,
+  "explanation": "57,964 × 1.10 = 63,760.4 → 63,760.",
+  "source": "Compa-Ratio Exercise (10/5) · worked, key pending"
+ },
+ {
+  "id": "e3x-q2",
+  "topic": "compa",
+  "prompt": "Exercise P1: going DOWN from Grade 3 ($57,964, 10% differential), Grade 2’s midpoint is:",
+  "options": [
+   "$52,168",
+   "$52,695",
+   "$49,269",
+   "$63,760"
+  ],
+  "answer": 1,
+  "explanation": "Divide, don’t multiply by 0.90: 57,964 ÷ 1.10 = 52,695. (57,964 × 0.9 = 52,168 is the trap.)",
+  "source": "Compa-Ratio Exercise (10/5) · worked, key pending"
+ },
+ {
+  "id": "e3x-q3",
+  "topic": "compa",
+  "prompt": "Exercise P1: the market average for Employment Consultant (48,752 · 50,247 · 45,132) is:",
+  "options": [
+   "$48,044",
+   "$50,247",
+   "$48,752",
+   "$47,940"
+  ],
+  "answer": 0,
+  "explanation": "144,131 ÷ 3 = 48,043.67 → $48,044.",
+  "source": "Compa-Ratio Exercise (10/5) · worked, key pending"
+ },
+ {
+  "id": "e3x-q4",
+  "topic": "compa",
+  "prompt": "Exercise P1: Accountant II (780 pts) is in Grade 4 (mid $63,760). Market average = $56,751. Company mid ÷ market =",
+  "options": [
+   "0.89",
+   "1.12",
+   "1.25",
+   "1.30"
+  ],
+  "answer": 1,
+  "explanation": "63,760 ÷ 56,751 = 1.12: paying 12% above market, but inside 0.75–1.25.",
+  "source": "Compa-Ratio Exercise (10/5) · worked, key pending"
+ },
+ {
+  "id": "e3x-q5",
+  "topic": "compa",
+  "prompt": "Exercise P1 result: comparing each grade midpoint to the market, what do you recommend?",
+  "options": [
+   "Raise Grade 2",
+   "Lower Grade 4",
+   "No change: all three jobs land inside 0.75–1.25",
+   "Rebuild the whole chart"
+  ],
+  "answer": 2,
+  "explanation": "EC 1.21 · IT 1.07 · Acct II 1.12 (or 0.83 / 0.94 / 0.89 the other way). All inside the ideal range → no change, and say WHY. Check this against Wednesday’s key.",
+  "source": "Compa-Ratio Exercise (10/5) · worked, key pending"
+ },
+ {
+  "id": "e3x-q6",
+  "topic": "compa",
+  "prompt": "Exercise P2: Grade 3 mid $67,860; Grade 4 has a 17% midpoint differential. Grade 4’s midpoint is:",
+  "options": [
+   "$78,039",
+   "$79,396",
+   "$81,432",
+   "$95,275"
+  ],
+  "answer": 1,
+  "explanation": "67,860 × 1.17 = 79,396.2 → 79,396.",
+  "source": "Compa-Ratio Exercise (10/5) · worked, key pending"
+ },
+ {
+  "id": "e3x-q7",
+  "topic": "compa",
+  "prompt": "Exercise P2: Grade 5 has a 20% midpoint differential on top of Grade 4 ($79,396). Grade 5’s midpoint is:",
+  "options": [
+   "$93,000",
+   "$95,275",
+   "$99,245",
+   "$114,330"
+  ],
+  "answer": 1,
+  "explanation": "79,396 × 1.20 = 95,275.2 → 95,275.",
+  "source": "Compa-Ratio Exercise (10/5) · worked, key pending"
+ },
+ {
+  "id": "e3x-q8",
+  "topic": "compa",
+  "prompt": "Exercise P2: Job A (700 pts) pays $59,780; Grade 4 mid = $79,396. Its compa-ratio is:",
+  "options": [
+   "0.73",
+   "0.75",
+   "0.88",
+   "1.33"
+  ],
+  "answer": 1,
+  "explanation": "59,780 ÷ 79,396 = 0.753: right at the bottom of 0.75–1.25, and $19,616 below the midpoint.",
+  "source": "Compa-Ratio Exercise (10/5) · worked, key pending"
+ },
+ {
+  "id": "e3x-q9",
+  "topic": "compa",
+  "prompt": "Exercise P2: Job B (900 pts) pays $69,840; Grade 5 mid = $95,275. Compa-ratio and action?",
+  "options": [
+   "0.73 → below 0.75, raise pay",
+   "0.88 → fine",
+   "1.36 → freeze",
+   "0.73 → freeze"
+  ],
+  "answer": 0,
+  "explanation": "69,840 ÷ 95,275 = 0.733 → below 0.75 → raise. It’s even under the Grade 5 minimum (76,220).",
+  "source": "Compa-Ratio Exercise (10/5) · worked, key pending"
+ },
+ {
+  "id": "e3x-q10",
+  "topic": "compa",
+  "prompt": "Exercise P2: Job C (300 pts) pays $51,655; Grade 2 mid = $59,009 (67,860 ÷ 1.15). Compa-ratio?",
+  "options": [
+   "0.76",
+   "0.88",
+   "1.14",
+   "0.73"
+  ],
+  "answer": 1,
+  "explanation": "51,655 ÷ 59,009 = 0.875 → inside the range; $7,354 below mid. No urgent change.",
+  "source": "Compa-Ratio Exercise (10/5) · worked, key pending"
+ },
+ {
+  "id": "e3x-q11",
+  "topic": "compa",
+  "prompt": "Exercise P2: Job A’s CR is 0.75, technically “in range.” Why might you still raise it?",
+  "options": [
+   "It’s above the max",
+   "It pays below the Grade 4 MINIMUM ($63,517 at a 20% range spread)",
+   "Its CR is above 1.25",
+   "Grade 4 has no midpoint"
+  ],
+  "answer": 1,
+  "explanation": "Min = 79,396 × 0.80 = 63,517. Pay of 59,780 is under the floor of its own range: raise to at least the minimum.",
+  "source": "Compa-Ratio Exercise (10/5) · worked, key pending"
+ },
+ {
+  "id": "e3x-q12",
+  "topic": "compa",
+  "prompt": "Exercise P2: how much would it cost to bring Job B up to the midpoint (CR = 1.0)?",
+  "options": [
+   "$6,380",
+   "$19,616",
+   "$25,435",
+   "$7,354"
+  ],
+  "answer": 2,
+  "explanation": "Raise to 1.0 = mid − pay = 95,275 − 69,840 = $25,435.",
+  "source": "Compa-Ratio Exercise (10/5) · worked, key pending"
+ }
+]

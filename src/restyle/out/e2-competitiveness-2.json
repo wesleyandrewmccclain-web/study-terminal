@@ -1,0 +1,206 @@
+[
+ {
+  "id": "bank-31",
+  "prompt": "Product-market data gets more weight when the supply of labor is:",
+  "options": [
+   "Very responsive to changes in pay",
+   "Unionized, which always mandates product-market pricing",
+   "Remote",
+   "Not responsive to changes in pay"
+  ],
+  "answer": 3,
+  "explanation": "Trap: it’s “NOT responsive” to changes in pay, not very responsive."
+ },
+ {
+  "id": "bank-32",
+  "prompt": "A firm is considering offshoring work to a country with lower average labor costs. What should the compensation manager expect about productivity there?",
+  "options": [
+   "Productivity will automatically be higher",
+   "Average productivity tends to be lower",
+   "There will be no intellectual property risk",
+   "Customer reactions will always be better"
+  ],
+  "answer": 1,
+  "explanation": "Countries with lower average labor costs also tend to have lower average productivity. Other offshoring factors: IP theft risk · agency theory monitoring costs · customer reactions."
+ },
+ {
+  "id": "bank-33",
+  "prompt": "After an organization moves production to a country with poor labor conditions, customers boycott the brand. Which offshoring factor does this illustrate?",
+  "options": [
+   "Agency theory",
+   "Lower productivity",
+   "Intellectual property theft",
+   "Customers’ reactions"
+  ],
+  "answer": 3,
+  "explanation": "This was the prof’s China example: customers’ reactions must be considered."
+ },
+ {
+  "id": "bank-34",
+  "prompt": "Which of the following IS a desired consequence of competitive pay-level and pay-mix decisions?",
+  "options": [
+   "Increase voluntary turnover",
+   "Increase pay-related work stoppages",
+   "Increase the applicant pool",
+   "Decrease union-free status"
+  ],
+  "answer": 2,
+  "explanation": "The goals: contain labor costs · increase the applicant pool · increase applicant quality/experience · reduce voluntary turnover · increase the probability of union-free status · reduce pay-related work stoppages."
+ },
+ {
+  "id": "bank-35",
+  "prompt": "A manager suggests letting an employee leave rather than giving a fair raise. According to the professor, replacing an employee typically costs about:",
+  "options": [
+   "The same as a raise",
+   "About three times what a fair raise would cost",
+   "Half their salary",
+   "Nothing, if the job is posted on Indeed"
+  ],
+  "answer": 1,
+  "explanation": "Replacing someone costs about three times a fair raise, which is the reason to pay competitively and retain people instead of letting them flip jobs for more money."
+ },
+ {
+  "id": "practice-1",
+  "prompt": "A retailer posts “Starting pay $17/hr” on every job ad. Which type of market is this?",
+  "options": [
+   "Quoted-Price Market",
+   "Bourse Market",
+   "Efficiency Wage",
+   "Segmented Supply"
+  ],
+  "answer": 0,
+  "explanation": "The employer quotes a set rate to all applicants, which is a quoted-price market. A bourse market is one where pay is negotiated with the candidate."
+ },
+ {
+  "id": "practice-2",
+  "prompt": "An organization pays above market to cut turnover and supervision costs. According to which theory is it acting?",
+  "options": [
+   "Tournament Theory",
+   "Human Capital Theory",
+   "Efficiency Wage Theory",
+   "Agency Theory"
+  ],
+  "answer": 2,
+  "explanation": "Efficiency wage theory says above-market pay can lower labor costs through lower turnover and less need for supervision."
+ },
+ {
+  "id": "practice-3",
+  "prompt": "A startup establishes a package of low base pay plus large performance bonuses, and it attracts risk-takers. This is best described as:",
+  "options": [
+   "Market Match",
+   "Sorting and Signaling",
+   "Broad Banding",
+   "Survey Leveling"
+  ],
+  "answer": 1,
+  "explanation": "The pay design signals what the employer values and sorts who is attracted (risk-takers); market match would mean pay equal to market."
+ },
+ {
+  "id": "practice-12",
+  "prompt": "Product-market competitor data should get MORE weight when:",
+  "options": [
+   "Labor supply is very responsive to pay",
+   "Labor costs are a small share of total costs",
+   "Product demand ignores price",
+   "Employee skills are specific to the product market"
+  ],
+  "answer": 3,
+  "explanation": "Skills specific to the product market increase the weight of product-market data; each of the other options is the opposite of a condition that does."
+ },
+ {
+  "id": "practice-13",
+  "prompt": "A travel nurse typically earns about what percent of a regular full-time nurse’s hourly wage?",
+  "options": [
+   "100%",
+   "150%",
+   "132%",
+   "200%"
+  ],
+  "answer": 1,
+  "explanation": "Traveler nurses earn about 150%; 132% is the pool nurse rate and 100% is the regular nurse."
+ },
+ {
+  "id": "practice-14",
+  "prompt": "A hospital pays its pool nurses about 132% of what regular nurses earn. What is the main reason?",
+  "options": [
+   "Union rules always require the premium",
+   "They are agency employees",
+   "They get no benefits and there’s no agency fee",
+   "They only work nights"
+  ],
+  "answer": 2,
+  "explanation": "Pool nurses get no benefits and the hospital pays no agency fee, so their pay rate is higher; agency employees are the registry and traveler nurses."
+ },
+ {
+  "id": "practice-15",
+  "prompt": "Per the professor, a market lead or lag policy usually sets pay how far from the market?",
+  "options": [
+   "15–25%",
+   "30% or more",
+   "0–1%",
+   "2–10%"
+  ],
+  "answer": 3,
+  "explanation": "Lead and lag policies are usually about 2–10% above or below the market."
+ },
+ {
+  "id": "practice-16",
+  "prompt": "Caterpillar moves most of a Peoria team to India, and the company now has to spend resources monitoring the workers’ effort and output. Which theory explains this?",
+  "options": [
+   "Agency Theory",
+   "Efficiency Wage Theory",
+   "Human Capital Theory",
+   "Equity Theory"
+  ],
+  "answer": 0,
+  "explanation": "Agency theory covers the cost of monitoring workers’ effort and output."
+ },
+ {
+  "id": "practice-17",
+  "prompt": "A car salesperson is paid mostly on commission, with a draw advanced against it. This pay arrangement shows:",
+  "options": [
+   "High risk propensity",
+   "Low risk propensity",
+   "Market match",
+   "None of the answer choices are correct"
+  ],
+  "answer": 0,
+  "explanation": "Pay that depends mostly on commission puts much of it at risk, which fits a high risk propensity."
+ },
+ {
+  "id": "practice-18",
+  "prompt": "Which of the following is NOT a goal (consequence) of competitive pay-level decisions?",
+  "options": [
+   "Reduce voluntary turnover",
+   "Increase the probability of union-free status",
+   "Increase pay-related work stoppages",
+   "Increase the applicant pool"
+  ],
+  "answer": 2,
+  "explanation": "The goal is to REDUCE pay-related work stoppages, not increase them; the other three are real goals."
+ },
+ {
+  "id": "practice-19",
+  "prompt": "A CHRO candidate negotiates for pay above the posted range plus a pay review after one year. Which type of market is this?",
+  "options": [
+   "Quoted-Price Market",
+   "Bourse Market",
+   "Segmented Supply",
+   "None of the answer choices are correct"
+  ],
+  "answer": 1,
+  "explanation": "Negotiating terms beyond the posted range is a bourse market; a quoted-price market posts a set rate."
+ },
+ {
+  "id": "practice-20",
+  "prompt": "An HR team plans to survey employees about their pay preferences. Why should the survey be anonymous?",
+  "options": [
+   "People answer more truthfully without fear of retaliation",
+   "The FLSA requires it",
+   "ERISA requires all pay surveys to be anonymous",
+   "Anonymous surveys are always cheaper"
+  ],
+  "answer": 0,
+  "explanation": "Anonymity lets people answer truthfully without fear of retaliation; neither the FLSA nor ERISA requires it."
+ }
+]

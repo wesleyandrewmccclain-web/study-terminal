@@ -1,0 +1,362 @@
+[
+ {
+  "id": "bank-60",
+  "prompt": "Periodic additions to base pay awarded according to an employee’s length of service are known as:",
+  "options": [
+   "Merit Pay",
+   "Seniority (Longevity) Pay",
+   "Pay-for-Knowledge",
+   "Profit Sharing"
+  ],
+  "answer": 1,
+  "explanation": "Seniority (longevity) pay makes periodic additions to base pay according to length of service, not performance."
+ },
+ {
+  "id": "bank-61",
+  "prompt": "An employer justifies automatic raises for tenure by arguing that employees become more valuable over time. Which theory supports this practice?",
+  "options": [
+   "Agency Theory",
+   "Efficiency Wage Theory",
+   "Tournament Theory",
+   "Human Capital Theory"
+  ],
+  "answer": 3,
+  "explanation": "Human capital theory says employees become more valuable over time, and it is the justification for seniority pay."
+ },
+ {
+  "id": "bank-62",
+  "prompt": "What is one of the major disadvantages of seniority pay?",
+  "options": [
+   "It avoids the perception of favoritism",
+   "It provides no incentive to improve",
+   "It facilitates administration",
+   "Employees feel treated fairly"
+  ],
+  "answer": 1,
+  "explanation": "Disadvantages: poor fit with competitive strategies · no incentive to improve · growing costs. The other three options are advantages."
+ },
+ {
+  "id": "bank-63",
+  "prompt": "An organization grants the same raise to every employee with the same tenure. Why does this seniority pay approach avoid the perception of favoritism?",
+  "options": [
+   "Raises depend only on time with the company, not on performance or relationships",
+   "Managers personally select who receives raises",
+   "Federal law prohibits managers from reviewing seniority raises",
+   "It relies on a Forced Distribution system"
+  ],
+  "answer": 0,
+  "explanation": "Everyone with the same tenure gets the same raise, so managers’ opinions and relationships play no role."
+ },
+ {
+  "id": "bank-64",
+  "prompt": "Permanent pay increases awarded for performance are known as:",
+  "options": [
+   "Incentive Pay",
+   "Seniority Pay",
+   "Merit Pay",
+   "Pay-for-Knowledge"
+  ],
+  "answer": 2,
+  "explanation": "Merit = permanent and based on performance. Seniority = permanent and based on time. Incentive = nonrecurring."
+ },
+ {
+  "id": "bank-65",
+  "prompt": "According to the slides, what was the approximate average merit increase in 2025?",
+  "options": [
+   "8%",
+   "1%",
+   "15%",
+   "3.3%"
+  ],
+  "answer": 3,
+  "explanation": "The slide says 3.3%. The prof said it was higher in 2023–24 and tied the drop to the reversal of the 2024 FLSA salary threshold increase."
+ },
+ {
+  "id": "bank-66",
+  "prompt": "Pay raises large enough that employees see them as a real change in compensation for their performance are called:",
+  "options": [
+   "Just-Meaningful Pay Increases",
+   "Spot Bonuses",
+   "Cost-of-Living Adjustments",
+   "Efficiency Wages"
+  ],
+  "answer": 0,
+  "explanation": "Just-meaningful pay increases are one of the elements of an effective merit program."
+ },
+ {
+  "id": "bank-67",
+  "prompt": "A compensation manager is designing a merit pay program. Which of the following is NOT an element of an effective merit pay program?",
+  "options": [
+   "Objective and subjective indicators of performance",
+   "Periodic performance reviews",
+   "Equal raises for everyone, regardless of performance",
+   "Realistic and attainable standards"
+  ],
+  "answer": 2,
+  "explanation": "Pay increases have to reflect performance, so equal raises for everyone don’t belong. Just-meaningful increases are also on the list."
+ },
+ {
+  "id": "bank-68",
+  "prompt": "An organization is setting up a new performance appraisal process. Which practice should come first?",
+  "options": [
+   "Rank all employees",
+   "Set bonus amounts",
+   "Hold formal appeal hearings",
+   "Conduct a job analysis"
+  ],
+  "answer": 3,
+  "explanation": "Order: job analysis → incorporate the results into ratings → train supervisors → formal appeals/review process."
+ },
+ {
+  "id": "bank-69",
+  "prompt": "A company trains every supervisor on how to use its performance appraisal system. What is the main reason for this training?",
+  "options": [
+   "So all departments rate employees consistently",
+   "To avoid FLSA claims",
+   "To reduce the number of pay grades",
+   "Because Federal law always strictly mandates annual rater certification"
+  ],
+  "answer": 0,
+  "explanation": "Training means everyone uses the same documents in the same way, so ratings are consistent across departments."
+ },
+ {
+  "id": "bank-70",
+  "prompt": "A formal appeals process for performance ratings mainly exists because:",
+  "options": [
+   "The law requires quarterly reviews",
+   "Employees may feel they were rated unfairly or discriminated against",
+   "Managers want to conduct fewer reviews",
+   "None of the answer choices are correct"
+  ],
+  "answer": 1,
+  "explanation": "An appeals process gives employees a voice if they feel they were rated unfairly or discriminated against."
+ },
+ {
+  "id": "bank-71",
+  "prompt": "An appraisal system that asks raters to evaluate employees’ traits or characteristics is known as a:",
+  "options": [
+   "Comparison System",
+   "Behavioral System",
+   "Trait System",
+   "Goal-Oriented System"
+  ],
+  "answer": 2,
+  "explanation": "Trait = characteristics · Comparison = vs other employees · Behavioral = displays successful behaviors · Goal-oriented = progress toward strategic objectives."
+ },
+ {
+  "id": "bank-72",
+  "prompt": "According to the professor, the most common performance appraisal system is the:",
+  "options": [
+   "Trait System",
+   "Comparison System",
+   "Goal-Oriented System",
+   "Behavioral System"
+  ],
+  "answer": 3,
+  "explanation": "Behavioral systems are the most common: employees are rated (e.g., 1–5) on job performance behaviors."
+ },
+ {
+  "id": "bank-73",
+  "prompt": "A company evaluates its managerial and professional employees on their progress toward strategic objectives. Which appraisal system is it using?",
+  "options": [
+   "Goal-Oriented System",
+   "Trait System",
+   "Comparison System",
+   "Behavioral System"
+  ],
+  "answer": 0,
+  "explanation": "This is the slide definition of a goal-oriented system, used mainly for managerial and professional employees."
+ },
+ {
+  "id": "bank-74",
+  "prompt": "An organization sorts employees into performance groups (e.g., top 10%, next 20%, and so on), and the bottom group is likely terminated. This appraisal method is called:",
+  "options": [
+   "Paired Comparison",
+   "Forced Distribution",
+   "Behavioral System",
+   "Broad Banding"
+  ],
+  "answer": 1,
+  "explanation": "Forced distribution is a type of comparison system. The prof warned it can be harsh and create litigation risk."
+ },
+ {
+  "id": "bank-75",
+  "prompt": "A manager compares two employees side by side to decide which one performs better. This method is known as:",
+  "options": [
+   "Forced Distribution",
+   "Trait System",
+   "Paired Comparison",
+   "Goal-Oriented System"
+  ],
+  "answer": 2,
+  "explanation": "Paired comparison is another comparison-system type; forced distribution sorts everyone into set percentage groups instead."
+ },
+ {
+  "id": "bank-76",
+  "prompt": "According to the professor’s statistics, approximately what percentage of managers are dissatisfied with their current performance management process?",
+  "options": [
+   "95%",
+   "71%",
+   "43%",
+   "18%"
+  ],
+  "answer": 0,
+  "explanation": "95% of managers are dissatisfied. Other stats: roughly 63–71% of organizations do annual reviews, about 18% semiannual, 8% quarterly."
+ },
+ {
+  "id": "bank-77",
+  "prompt": "An HR director is considering using AI to conduct performance reviews. Which of the following is a challenge of this approach?",
+  "options": [
+   "Real-time feedback",
+   "Saves managers time",
+   "Better data collection",
+   "Privacy concerns and ignoring outside challenges employees face"
+  ],
+  "answer": 3,
+  "explanation": "AI can’t account for things like a divorce or an illness. The other three options are positives."
+ },
+ {
+  "id": "bank-78",
+  "prompt": "Which of the following is NOT part of the pay-for-performance link?",
+  "options": [
+   "Link appraisals to business goals",
+   "Give everyone the same raise",
+   "Differentiate among performers",
+   "Communicate expectations"
+  ],
+  "answer": 1,
+  "explanation": "The link: tie appraisals to business goals · analyze jobs · establish effective appraisals · empower employees · differentiate performers · communicate expectations."
+ },
+ {
+  "id": "bank-79",
+  "prompt": "Which of the following does NOT determine how incentive pay fluctuates?",
+  "options": [
+   "Years of service",
+   "A preestablished formula",
+   "Individual or group goals",
+   "Company earnings"
+  ],
+  "answer": 0,
+  "explanation": "Years of service = seniority. Incentive pay adds to base pay on a nonrecurring basis, controls costs, and motivates through explicit goal setting."
+ },
+ {
+  "id": "bank-80",
+  "prompt": "A car dealership cut its monthly sales goal from 150 cars to 110 during a slow winter month. Which property of incentive pay allows the employer to make this change?",
+  "options": [
+   "It is a permanent addition to base pay",
+   "It is based on seniority",
+   "It is nonrecurring, so goals can be reset each period",
+   "It is required by the FLSA"
+  ],
+  "answer": 2,
+  "explanation": "Incentives have to be re-earned each period, so the employer can adjust the targets."
+ },
+ {
+  "id": "bank-81",
+  "prompt": "An annual salary or hourly wage that is increased periodically on the basis of seniority or merit is known as:",
+  "options": [
+   "Incentive Pay",
+   "Traditional Pay",
+   "Commission-Only Pay",
+   "Profit Sharing"
+  ],
+  "answer": 1,
+  "explanation": "Traditional pay increases are permanent. Incentive pay increases are nonrecurring."
+ },
+ {
+  "id": "bank-82",
+  "prompt": "Plans that tie employee compensation to the company’s performance over a short time frame are known as:",
+  "options": [
+   "Individual Incentives",
+   "Group Incentives",
+   "Merit Plans",
+   "Company-Wide Incentives"
+  ],
+  "answer": 3,
+  "explanation": "Individual = rewards independent work · Group = promotes collaborative behavior · Company-wide = tied to company performance."
+ },
+ {
+  "id": "bank-83",
+  "prompt": "Which incentive category promotes supportive, collaborative behavior among employees?",
+  "options": [
+   "Group Incentives",
+   "Individual Incentives",
+   "Seniority Pay",
+   "Referral Plans"
+  ],
+  "answer": 0,
+  "explanation": "This is the slide definition for group plans; individual plans reward independent work."
+ },
+ {
+  "id": "bank-84",
+  "prompt": "A manager receives a bonus for meeting the division’s sales, profit, or production objectives. Which type of incentive is this?",
+  "options": [
+   "Piecework Plan",
+   "Behavioral Encouragement Plan",
+   "Management Incentive Plan",
+   "Signing Bonus"
+  ],
+  "answer": 2,
+  "explanation": "Management incentive plans are based on division objectives."
+ },
+ {
+  "id": "bank-85",
+  "prompt": "An employer pays an employee for a specific behavioral accomplishment (e.g., an innovation or strong collaboration). This is called a:",
+  "options": [
+   "Referral Plan",
+   "Behavioral Encouragement Plan",
+   "Piecework Plan",
+   "Company-Wide Plan"
+  ],
+  "answer": 1,
+  "explanation": "Behavioral encouragement plans pay for specific behavioral accomplishments."
+ },
+ {
+  "id": "bank-86",
+  "prompt": "A manager hands an employee a $100 gift card for great work this past week. This is known as a:",
+  "options": [
+   "Merit Increase",
+   "Signing Bonus",
+   "Profit Sharing",
+   "Spot Bonus"
+  ],
+  "answer": 3,
+  "explanation": "A spot bonus is a small monetary gift for outstanding work over a reasonably short period."
+ },
+ {
+  "id": "bank-87",
+  "prompt": "A bonus paid to an employee for recruiting a highly qualified new hire is known as a:",
+  "options": [
+   "Referral Plan",
+   "Signing Bonus",
+   "Spot Bonus",
+   "Management Incentive"
+  ],
+  "answer": 0,
+  "explanation": "A referral plan rewards the employee who recruited the hire. A signing bonus goes to the NEW hire to get them to accept the offer."
+ },
+ {
+  "id": "bank-88",
+  "prompt": "A plan in which workers earn extra for every item produced over a designated production standard is called a:",
+  "options": [
+   "Gainsharing Plan",
+   "Piecework Plan",
+   "Seniority Plan",
+   "None of the answer choices are correct"
+  ],
+  "answer": 1,
+  "explanation": "This is a piecework plan, the plan type behind the $3-per-22-units math."
+ },
+ {
+  "id": "bank-89",
+  "prompt": "Which of the following is an advantage of individual (rather than group) incentive programs?",
+  "options": [
+   "Greater group cohesion",
+   "Easier to develop performance measures",
+   "Compatible with America’s individualistic culture",
+   "Federal law requires individual incentives for all sales positions"
+  ],
+  "answer": 2,
+  "explanation": "Individual advantages: relates pay to performance · equitable distribution · ownership mentality · fits an individualistic culture. Greater cohesion and easier performance measures are GROUP advantages."
+ }
+]

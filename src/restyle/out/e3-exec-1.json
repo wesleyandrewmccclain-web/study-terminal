@@ -1,0 +1,170 @@
+[
+ {
+  "id": "e3-3",
+  "prompt": "According to the course, base salary accounts for approximately what share of CEO pay?",
+  "options": [
+   "8.7%",
+   "30%",
+   "50%",
+   "81%"
+  ],
+  "answer": 0,
+  "explanation": "Base salary accounted for just 8.7%; long- and short-term incentives make up the bulk."
+ },
+ {
+  "id": "e3-36",
+  "prompt": "Which of the following is NOT one of the five elements of an executive compensation package?",
+  "options": [
+   "Base Salary",
+   "Long-Term Incentives",
+   "Overtime Pay",
+   "Perquisites"
+  ],
+  "answer": 2,
+  "explanation": "The five elements are base salary, short-term incentives/bonuses, long-term incentives, benefits and perquisites; overtime pay is not one of them."
+ },
+ {
+  "id": "e3-37",
+  "prompt": "A board of directors awards its CEO stock options and stock grants. These rewards are examples of:",
+  "options": [
+   "Short-Term Incentives",
+   "Perquisites",
+   "Benefits",
+   "Long-Term Incentives"
+  ],
+  "answer": 3,
+  "explanation": "Stock options and stock grants are long-term incentives."
+ },
+ {
+  "id": "e3-38",
+  "prompt": "The bulk of CEO pay comes from:",
+  "options": [
+   "Base salary, which always makes up the majority of an executive package",
+   "Long-term and short-term incentives",
+   "Benefits",
+   "Perquisites"
+  ],
+  "answer": 1,
+  "explanation": "Long-term and short-term incentives account for the bulk of CEO pay; base salary is only about 8.7%."
+ },
+ {
+  "id": "e3-39",
+  "prompt": "A compensation committee adopts an annual bonus plan for the company’s executives. These bonuses are designed primarily to:",
+  "options": [
+   "Replace base salary entirely",
+   "Satisfy ERISA, which legally mandates executive bonuses",
+   "Motivate better short-term performance",
+   "Reduce the company’s FICA taxes"
+  ],
+  "answer": 2,
+  "explanation": "Executive annual bonuses are designed to motivate better short-term performance."
+ },
+ {
+  "id": "e3-40",
+  "prompt": "The three common measures used for executive bonuses are:",
+  "options": [
+   "Profit, Revenue, and Cash Flow",
+   "Tenure, Merit, and Skill",
+   "Stock, Benefits, and Perks",
+   "Turnover, Absenteeism, and Safety"
+  ],
+  "answer": 0,
+  "explanation": "The three common measures are profit, revenue and cash flow."
+ },
+ {
+  "id": "e3-41",
+  "prompt": "Non-financial measures used in executive bonus plans can be:",
+  "options": [
+   "Federal, state, or local",
+   "Strategic, individual, or discretionary",
+   "Weekly, monthly, or yearly",
+   "Fixed, variable, or deferred"
+  ],
+  "answer": 1,
+  "explanation": "Non-financial measures can be strategic, individual or discretionary."
+ },
+ {
+  "id": "e3-42",
+  "prompt": "An organization provides one of its executives with a company car and a club membership. These rewards are known as:",
+  "options": [
+   "Long-Term Incentives",
+   "Short-Term Incentives",
+   "Base Salary",
+   "Perquisites"
+  ],
+  "answer": 3,
+  "explanation": "Perks such as these are perquisites, the fifth element of the executive package."
+ },
+ {
+  "id": "e3-58",
+  "prompt": "A company provides an executive with a company car that the executive’s spouse is also entitled to use. Which element of executive compensation is this?",
+  "options": [
+   "A Perquisite",
+   "A Benefit",
+   "A Long-Term Incentive",
+   "A Short-Term Incentive"
+  ],
+  "answer": 0,
+  "explanation": "This is a perquisite: perks attach to the position and typically extend to dependents."
+ },
+ {
+  "id": "e3-59",
+  "prompt": "A compensation committee is designing an executive bonus plan and wants to use the three common financial measures. Which measures should it use?",
+  "options": [
+   "Revenue, headcount, and market share",
+   "EPS, turnover, and customer satisfaction",
+   "Profit, compa-ratio, and labor cost",
+   "Profit, revenue, and cash flow"
+  ],
+  "answer": 3,
+  "explanation": "The three common financial measures are profit, revenue and cash flow."
+ },
+ {
+  "id": "e3-75",
+  "prompt": "Which of the following best describes how bonuses have changed as a portion of executive pay over time?",
+  "options": [
+   "Bonuses have become a larger portion of executive pay",
+   "Bonuses have become a smaller portion of executive pay",
+   "Bonuses are legally capped at a fixed share of executive pay",
+   "None of the answer choices are correct"
+  ],
+  "answer": 1,
+  "explanation": "Bonuses have become a smaller portion of executive pay, not a larger one."
+ },
+ {
+  "id": "e3-99",
+  "prompt": "A compensation analyst finds that an executive’s base salary is $522,000, the typical 8.7% of the total package. The total package is about:",
+  "options": [
+   "$4.5 million",
+   "$5.2 million",
+   "$6.0 million",
+   "$8.7 million"
+  ],
+  "answer": 2,
+  "explanation": "Total = 522,000 ÷ 0.087 = $6,000,000."
+ },
+ {
+  "id": "e3-100",
+  "prompt": "Stock options and stock grants fall under which executive pay component?",
+  "options": [
+   "Base Salary",
+   "Short-Term Incentives",
+   "Long-Term Incentives",
+   "None of the answer choices are correct"
+  ],
+  "answer": 2,
+  "explanation": "Stock options and stock grants are long-term incentives."
+ },
+ {
+  "id": "e3-101",
+  "prompt": "A compensation committee designs an executive bonus plan that mixes financial measures (e.g., profit, revenue) with non-financial measures. This reflects:",
+  "options": [
+   "A Cost-Centered Approach",
+   "Experience Rating",
+   "A Defined Benefit Plan",
+   "A Balanced Scorecard Approach"
+  ],
+  "answer": 3,
+  "explanation": "Mixing financial and non-financial measures is a balanced scorecard approach, which is preferred."
+ }
+]

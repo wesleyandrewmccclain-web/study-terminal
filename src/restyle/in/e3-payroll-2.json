@@ -1,0 +1,156 @@
+[
+ {
+  "id": "e3p-q13",
+  "topic": "payroll",
+  "prompt": "Monthly taxable pay is $3,650. Illinois income tax withheld is:",
+  "options": [
+   "$108.04",
+   "$180.68",
+   "$226.30",
+   "$279.23"
+  ],
+  "answer": 1,
+  "explanation": "4.95% × 3,650 = $180.68.",
+  "source": "Written from Payroll Update (10/3) 4.11"
+ },
+ {
+  "id": "e3p-q14",
+  "topic": "payroll",
+  "prompt": "Before using the bracket table on a bi-weekly paycheck, you multiply by:",
+  "options": [
+   "12",
+   "24",
+   "26",
+   "52"
+  ],
+  "answer": 2,
+  "explanation": "Annualize: monthly ×12 · semi-monthly ×24 · bi-weekly ×26 · weekly ×52. Then divide the annual tax back down.",
+  "source": "Written from Payroll Update (10/3)"
+ },
+ {
+  "id": "e3p-q15",
+  "topic": "payroll",
+  "prompt": "Monthly gross $4,000; before-tax $350; Roth $100; single, Illinois. Net pay (prof’s method, FICA off gross) is:",
+  "options": [
+   "$2,645.15",
+   "$2,745.15",
+   "$2,951.15",
+   "$3,034.00"
+  ],
+  "answer": 0,
+  "explanation": "FICA 248 + 58; fed 5,018/12 = 418.17; IL 180.68. 4,000 − 350 − 306 − 418.17 − 180.68 − 100 = $2,645.15.",
+  "source": "Written from Payroll Update (10/3) 4.11"
+ },
+ {
+  "id": "e3p-q16",
+  "topic": "payroll",
+  "prompt": "If a payroll problem GIVES you the income tax withheld, you should:",
+  "options": [
+   "Recompute it from the bracket table",
+   "Subtract the given amount as is",
+   "Apply 4.95% instead",
+   "Ignore it"
+  ],
+  "answer": 1,
+  "explanation": "Given a withholding number → just subtract it. Only use the brackets when you have to compute it yourself.",
+  "source": "Written from Payroll Update (10/3)"
+ },
+ {
+  "id": "e3p-q17",
+  "topic": "payroll",
+  "prompt": "Where does an employee’s completed Form W-4 go?",
+  "options": [
+   "To the IRS",
+   "To the employer",
+   "To the state",
+   "To the Social Security Administration"
+  ],
+  "answer": 1,
+  "explanation": "The form says “Give Form W-4 to your employer.” It tells the employer how much to withhold.",
+  "source": "2025 W-4 / IL-W-4"
+ },
+ {
+  "id": "e3p-q18",
+  "topic": "payroll",
+  "prompt": "An employee wants an extra $25 withheld from every paycheck. Which part of the federal W-4?",
+  "options": [
+   "Step 1",
+   "Step 2",
+   "Step 3",
+   "Step 4(c)"
+  ],
+  "answer": 3,
+  "explanation": "Step 4(c) = extra withholding each pay period.",
+  "source": "2025 W-4 / IL-W-4"
+ },
+ {
+  "id": "e3p-q19",
+  "topic": "payroll",
+  "prompt": "On the 2025 W-4, Step 3 (Claim Dependents) gives:",
+  "options": [
+   "$500 per child under 17",
+   "$2,000 per qualifying child under 17 and $500 per other dependent",
+   "$1,000 per dependent",
+   "One allowance per dependent"
+  ],
+  "answer": 1,
+  "explanation": "$2,000 × qualifying children under 17 + $500 × other dependents (income $200k or less; $400k MFJ).",
+  "source": "2025 W-4 / IL-W-4"
+ },
+ {
+  "id": "e3p-q20",
+  "topic": "payroll",
+  "prompt": "An employee has two jobs. Which W-4 step applies?",
+  "options": [
+   "Step 2: Multiple Jobs or Spouse Works",
+   "Step 3: Claim Dependents",
+   "Step 4(b): Deductions",
+   "Step 5: Sign"
+  ],
+  "answer": 0,
+  "explanation": "Step 2 covers more than one job or a working spouse (estimator, worksheet → 4(c), or the two-jobs checkbox).",
+  "source": "2025 W-4 / IL-W-4"
+ },
+ {
+  "id": "e3p-q21",
+  "topic": "payroll",
+  "prompt": "Which statement about allowances is TRUE?",
+  "options": [
+   "The federal W-4 still uses allowances",
+   "The IL-W-4 uses allowances; more allowances = less tax withheld",
+   "More allowances = more tax withheld",
+   "Neither form uses allowances"
+  ],
+  "answer": 1,
+  "explanation": "Federal dropped allowances in the 2020 redesign. The Illinois IL-W-4 still uses them.",
+  "source": "2025 W-4 / IL-W-4"
+ },
+ {
+  "id": "e3p-q22",
+  "topic": "payroll",
+  "prompt": "An employee claims exempt on the federal W-4. They:",
+  "options": [
+   "Leave the form blank",
+   "Write “Exempt” under Step 4(c) and complete only Steps 1(a), 1(b) and 5",
+   "Check a box in Step 3",
+   "Send it to the IRS"
+  ],
+  "answer": 1,
+  "explanation": "Exempt is allowed only if they owed no tax last year and expect to owe none.",
+  "source": "2025 W-4 / IL-W-4"
+ },
+ {
+  "id": "e3p-q23",
+  "topic": "payroll",
+  "prompt": "The W-4 determines:",
+  "options": [
+   "The final tax the employee owes",
+   "How much is withheld from each paycheck",
+   "The employer’s FUTA rate",
+   "The employee’s gross pay"
+  ],
+  "answer": 1,
+  "explanation": "W-4 sets withholding, not the final tax. The difference settles when they file.",
+  "source": "Written from Payroll Update (10/3)"
+ }
+]

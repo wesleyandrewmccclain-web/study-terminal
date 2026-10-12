@@ -1,0 +1,184 @@
+[
+ {
+  "id": "bank-94",
+  "prompt": "Which of the following is NOT one of the “top six” things employees value, according to guest speaker Sam Lewis?",
+  "options": ["Security", "Challenge", "Location", "Stock Options"],
+  "answer": 3,
+  "explanation": "Lewis’s top six are Challenge, Location, Advancement, Money, People and Security. Stock options are not on the list."
+ },
+ {
+  "id": "bank-95",
+  "prompt": "Guest speaker Sam Lewis described hiring a woman for less money because she hated her boss. According to Lewis, which employee value outweighed money in her decision?",
+  "options": ["Location", "People", "Security", "Challenge"],
+  "answer": 1,
+  "explanation": "People means who you work with and for. Her dislike of her boss mattered more to her than the pay difference."
+ },
+ {
+  "id": "bank-96",
+  "prompt": "Sam Lewis called ______ the “sneaky” value that sits at the top of many employees’ lists without them realizing it.",
+  "options": ["Money", "Advancement", "Security", "Challenge"],
+  "answer": 2,
+  "explanation": "Security is the sneaky one: some people won’t move for any amount of money."
+ },
+ {
+  "id": "bank-97",
+  "prompt": "An early-career employee looks at a flat organizational chart and concludes, “I’m not going anywhere.” According to Sam Lewis, which employee value matters most at this stage of a career?",
+  "options": ["Advancement", "Security", "Location", "Money"],
+  "answer": 0,
+  "explanation": "Advancement matters most early in a career, and priorities shift as a career goes on."
+ },
+ {
+  "id": "bank-98",
+  "prompt": "An organization gives employees a raise for each additional year on the job. Under Sam Lewis’s three compensation models, which model is it following?",
+  "options": ["Performance", "Competency", "Time & Tenure", "Gainsharing"],
+  "answer": 2,
+  "explanation": "Lewis’s three models are Time & Tenure, Performance and Competency; yearly raises are Time & Tenure. Gainsharing is a group incentive, not one of his three models, and most good systems combine all three."
+ },
+ {
+  "id": "bank-99",
+  "prompt": "Sam Lewis’s “manager’s test” for seniority pay asks which question?",
+  "options": [
+   "Can the employee’s certified skill actually be used on the job?",
+   "Is the starting year used as the baseline for targets reasonable?",
+   "No test is needed, because federal law requires an automatic raise after every year of service",
+   "What does an additional year of experience change in this role?"
+  ],
+  "answer": 3,
+  "explanation": "If an extra year changes nothing in the role, pay stays put: the job is the limiter, not the person. The skill-use and baseline questions belong to Lewis’s competency and performance-pay tests."
+ },
+ {
+  "id": "bank-100",
+  "prompt": "After a plant installs new equipment, output jumps and production workers ask for the productivity bonus. According to Sam Lewis’s tests for performance pay, which test does this bonus fail?",
+  "options": ["Clarity", "Influence (Line of Sight)", "Relevant", "Used"],
+  "answer": 1,
+  "explanation": "The four performance-pay tests are Influence, Clarity, Balance and Baseline; the workers didn’t cause the gain, so Influence fails (the new equipment also shifts the baseline). Relevant and Used are competency-pay tests."
+ },
+ {
+  "id": "bank-101",
+  "prompt": "A production line runs at 110% of rate but produces 80% scrap because its bonus rewards only speed. Which of Sam Lewis’s performance-pay tests does the plan fail?",
+  "options": ["Balance", "Clarity", "Baseline", "Applied"],
+  "answer": 0,
+  "explanation": "Balance means the measure can’t reward one result (speed) at the expense of another (quality)."
+ },
+ {
+  "id": "bank-102",
+  "prompt": "A compensation manager sets a bonus target using the 2008 housing crash as the starting year. According to Sam Lewis, which test does this plan fail?",
+  "options": ["Influence", "Balance", "Baseline", "Relevant"],
+  "answer": 2,
+  "explanation": "A bad starting year makes the targets far too easy, so the plan fails the Baseline test."
+ },
+ {
+  "id": "bank-103",
+  "prompt": "Sam Lewis held 8 meetings a month, including one at 11 p.m., to explain to employees how their bonus was calculated. Which performance-pay test was he addressing?",
+  "options": ["Baseline", "Used", "Balance", "Clarity"],
+  "answer": 3,
+  "explanation": "Clarity: people must understand how the payout is calculated."
+ },
+ {
+  "id": "bank-104",
+  "prompt": "Sam Lewis’s plant-wide STAR bonus (productivity + quality + expenses, with everyone in the pool) was modeled on the ______.",
+  "options": ["Hay System", "Forced Distribution system", "Scanlon Plan (Gainsharing)", "Piecework Plan"],
+  "answer": 2,
+  "explanation": "STAR was a Scanlon-style gainsharing plan. Lewis also cited Herzberg and open-book management, and he prefers bonuses for smaller groups."
+ },
+ {
+  "id": "bank-105",
+  "prompt": "An employer gave extruder operators a raise for certifying on the calender line, but none of them was ever moved there. According to Sam Lewis, which competency-pay test does this fail?",
+  "options": ["Relevant", "Used", "Applied", "Clarity"],
+  "answer": 1,
+  "explanation": "The three competency tests are Relevant, Applied and Used. The company never used the skill, so Lewis eliminated the pay."
+ },
+ {
+  "id": "bank-106",
+  "prompt": "All maintenance workers were paid for completing hydraulics training, but a later evaluation showed almost none of them could actually do the work. Which of Sam Lewis’s competency-pay tests does this fail?",
+  "options": ["Used", "Baseline", "Relevant", "Applied"],
+  "answer": 3,
+  "explanation": "The skill was never truly Applied. Lewis’s lesson: evaluate first, then pay."
+ },
+ {
+  "id": "bank-107",
+  "prompt": "According to Sam Lewis, pay rises as a job shifts from managing ______.",
+  "options": [
+   "Ideas → people → things",
+   "People → things → ideas",
+   "Things → people → ideas",
+   "None of the answer choices are correct"
+  ],
+  "answer": 2,
+  "explanation": "Entry-level jobs manage things, managers manage people and the CEO manages mostly ideas. This ties to point systems like Hay."
+ },
+ {
+  "id": "bank-108",
+  "prompt": "A company introduces an individual bonus for each completed work order. What is the most likely unintended consequence?",
+  "options": [
+   "Cherry-picking of easy orders and rushed repairs",
+   "More mentoring of newer workers",
+   "A move to Broad Banding of the pay structure",
+   "The plan is automatically void, because federal law prohibits per-order bonuses"
+  ],
+  "answer": 0,
+  "explanation": "Per-order bonuses lead to cherry-picking and rushed work, with no teamwork and no teaching. Lewis’s fix was a 4-tier maintenance pay system that rewarded seniors for bringing up the next tier."
+ },
+ {
+  "id": "bank-109",
+  "prompt": "Senior “wizard” technicians refuse to share their “little black book” of knowledge with newer workers. According to Sam Lewis, they do this because it protects their:",
+  "options": ["Security", "Challenge", "Advancement", "Location"],
+  "answer": 0,
+  "explanation": "Knowledge = power = job security. The answer is to reward mentoring through tiered, skill-based pay."
+ },
+ {
+  "id": "bank-110",
+  "prompt": "Rivian entered Normal at $17/hr, quickly went to $22/hr, and forced local plants to raise their pay. This situation is an example of:",
+  "options": [
+   "A labor-market shock driving external competitiveness",
+   "Internal Alignment",
+   "Seniority (Time & Tenure) Pay",
+   "A rule requiring employers to match any new entrant’s wage within the same county"
+  ],
+  "answer": 0,
+  "explanation": "A new employer changed the local labor market, so other employers had to respond to stay competitive. Lewis told clients, “Your pay has to go up.”"
+ },
+ {
+  "id": "bank-111",
+  "prompt": "According to Sam Lewis, a salary survey does NOT tell an organization:",
+  "options": [
+   "What competitors pay",
+   "Whether its rewards support the right behavior",
+   "Whether its pay is in the right range",
+   "Current market rates"
+  ],
+  "answer": 1,
+  "explanation": "Surveys answer only the competitiveness question. They also don’t tell you what different employees value."
+ },
+ {
+  "id": "bank-112",
+  "prompt": "A restaurant chain (e.g., Cracker Barrel) awards star pins to its servers. Which element of the total rewards portfolio is the chain using?",
+  "options": ["Cash", "Benefits", "Flexibility", "Recognition"],
+  "answer": 3,
+  "explanation": "The total rewards portfolio is cash, benefits, flexibility, growth opportunities and recognition; star pins are Recognition. The goal is to send employees a coherent signal."
+ },
+ {
+  "id": "bank-113",
+  "prompt": "Sam Lewis used the DISC analogy to make which point about compensation design?",
+  "options": [
+   "Organizations should hire only dominant personality types",
+   "Compensation should be designed for the whole team, not one type of person",
+   "Personality test results must always be used to set individual pay",
+   "None of the answer choices are correct"
+  ],
+  "answer": 1,
+  "explanation": "A room full of one personality type doesn’t work (the Jordan vs. Riley example), so pay plans should fit the whole team."
+ },
+ {
+  "id": "bank-114",
+  "prompt": "Performance pay fails when employees can’t influence the result. Competency pay fails when ______.",
+  "options": [
+   "employees are too senior",
+   "the salary survey is out of date",
+   "the skill isn’t used",
+   "pay is set above market"
+  ],
+  "answer": 2,
+  "explanation": "This is the “common trap” line from the Lewis notes: paying for a skill the company never uses. As he put it, don’t pay a PhD rocket scientist to assemble widgets."
+ }
+]

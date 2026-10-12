@@ -1,0 +1,240 @@
+[
+ {
+  "id": "bank-31",
+  "topic": "competitiveness",
+  "prompt": "Product-market data gets more weight when the supply of labor is:",
+  "options": [
+   "Very responsive to changes in pay",
+   "Not responsive to changes in pay",
+   "Unionized",
+   "Remote"
+  ],
+  "answer": 1,
+  "explanation": "Trap: it's 'NOT responsive'.",
+  "source": "MC Bank #31 · Question Bank PDF p. 4; key p. 16"
+ },
+ {
+  "id": "bank-32",
+  "topic": "competitiveness",
+  "prompt": "When offshoring, countries with lower average labor costs also tend to have:",
+  "options": [
+   "Higher productivity",
+   "Lower average productivity",
+   "No intellectual property risk",
+   "Better customer reactions"
+  ],
+  "answer": 1,
+  "explanation": "Other offshoring factors: IP theft risk · agency theory monitoring costs · customer reactions.",
+  "source": "MC Bank #32 · Question Bank PDF p. 4; key p. 16"
+ },
+ {
+  "id": "bank-33",
+  "topic": "competitiveness",
+  "prompt": "Customers boycott a brand after production moves to a country with poor labor conditions. Which offshoring factor is this?",
+  "options": [
+   "Agency theory",
+   "Customers' reactions",
+   "Lower productivity",
+   "Intellectual property theft"
+  ],
+  "answer": 1,
+  "explanation": "This was the prof's China example: customers' reactions must be considered.",
+  "source": "MC Bank #33 · Question Bank PDF p. 4; key p. 16"
+ },
+ {
+  "id": "bank-34",
+  "topic": "competitiveness",
+  "prompt": "Which IS a desired consequence of competitive pay-level and pay-mix decisions?",
+  "options": [
+   "Increase the applicant pool",
+   "Increase voluntary turnover",
+   "Increase pay-related work stoppages",
+   "Decrease union-free status"
+  ],
+  "answer": 0,
+  "explanation": "The goals: contain labor costs · increase the applicant pool · increase applicant quality/experience · reduce voluntary turnover · increase the probability of union-free status · reduce pay-related work stoppages.",
+  "source": "MC Bank #34 · Question Bank PDF p. 5; key p. 16"
+ },
+ {
+  "id": "bank-35",
+  "topic": "competitiveness",
+  "prompt": "Per the prof, replacing an employee typically costs about:",
+  "options": [
+   "The same as a raise",
+   "Half their salary",
+   "About three times what a fair raise would cost",
+   "Nothing if you post on Indeed"
+  ],
+  "answer": 2,
+  "explanation": "This is the reason to pay competitively and retain people instead of letting them flip jobs for more money.",
+  "source": "MC Bank #35 · Question Bank PDF p. 5; key p. 16"
+ },
+ {
+  "id": "practice-1",
+  "topic": "competitiveness",
+  "prompt": "A retailer posts \"Starting pay $17/hr\" on every job ad. This is a:",
+  "options": [
+   "Bourse market",
+   "Quoted-price market",
+   "Efficiency wage",
+   "Segmented supply"
+  ],
+  "answer": 1,
+  "explanation": "",
+  "source": "Practice MC #1 · Question Bank PDF p. 23; key p. 26"
+ },
+ {
+  "id": "practice-2",
+  "topic": "competitiveness",
+  "prompt": "A company pays above market to cut turnover and supervision costs. Which theory?",
+  "options": [
+   "Tournament theory",
+   "Efficiency wage theory",
+   "Human capital theory",
+   "Agency theory"
+  ],
+  "answer": 1,
+  "explanation": "",
+  "source": "Practice MC #2 · Question Bank PDF p. 23; key p. 26"
+ },
+ {
+  "id": "practice-3",
+  "topic": "competitiveness",
+  "prompt": "A startup pays low base plus big performance bonuses, and it attracts risk-takers. This is best described as:",
+  "options": [
+   "Sorting and signaling",
+   "Market match",
+   "Broadbanding",
+   "Survey leveling"
+  ],
+  "answer": 0,
+  "explanation": "",
+  "source": "Practice MC #3 · Question Bank PDF p. 23; key p. 26"
+ },
+ {
+  "id": "practice-12",
+  "topic": "competitiveness",
+  "prompt": "Product-market competitor data should get MORE weight when:",
+  "options": [
+   "Labor supply is very responsive to pay",
+   "Labor costs are a small share of total costs",
+   "Employee skills are specific to the product market",
+   "Product demand ignores price"
+  ],
+  "answer": 2,
+  "explanation": "",
+  "source": "Practice MC #12 · Question Bank PDF p. 23; key p. 26"
+ },
+ {
+  "id": "practice-13",
+  "topic": "competitiveness",
+  "prompt": "A travel nurse typically earns about what percent of a regular full-time nurse's hourly wage?",
+  "options": [
+   "100%",
+   "132%",
+   "150%",
+   "200%"
+  ],
+  "answer": 2,
+  "explanation": "",
+  "source": "Practice MC #13 · Question Bank PDF p. 23; key p. 26"
+ },
+ {
+  "id": "practice-14",
+  "topic": "competitiveness",
+  "prompt": "Pool nurses earn about 132% of regular nurses mainly because:",
+  "options": [
+   "Union rules require it",
+   "They get no benefits and there's no agency fee",
+   "They are agency employees",
+   "They only work nights"
+  ],
+  "answer": 1,
+  "explanation": "",
+  "source": "Practice MC #14 · Question Bank PDF p. 23; key p. 26"
+ },
+ {
+  "id": "practice-15",
+  "topic": "competitiveness",
+  "prompt": "Per the prof, a market lead or lag policy is usually how far from the market?",
+  "options": [
+   "0–1%",
+   "2–10%",
+   "15–25%",
+   "30% or more"
+  ],
+  "answer": 1,
+  "explanation": "",
+  "source": "Practice MC #15 · Question Bank PDF p. 23; key p. 26"
+ },
+ {
+  "id": "practice-16",
+  "topic": "competitiveness",
+  "prompt": "Caterpillar moves most of a Peoria team to India, and the company now has to spend resources monitoring the workers' effort and output. Which theory?",
+  "options": [
+   "Efficiency wage theory",
+   "Agency theory",
+   "Human capital theory",
+   "Equity theory"
+  ],
+  "answer": 1,
+  "explanation": "",
+  "source": "Practice MC #16 · Question Bank PDF p. 23; key p. 26"
+ },
+ {
+  "id": "practice-17",
+  "topic": "competitiveness",
+  "prompt": "A car salesperson paid mostly on commission, with a draw advanced against it, shows:",
+  "options": [
+   "Low risk propensity",
+   "High risk propensity",
+   "Market match",
+   "Seniority pay"
+  ],
+  "answer": 1,
+  "explanation": "",
+  "source": "Practice MC #17 · Question Bank PDF p. 24; key p. 26"
+ },
+ {
+  "id": "practice-18",
+  "topic": "competitiveness",
+  "prompt": "Which is NOT a goal (consequence) of competitive pay-level decisions?",
+  "options": [
+   "Reduce voluntary turnover",
+   "Increase the probability of union-free status",
+   "Increase pay-related work stoppages",
+   "Increase the applicant pool"
+  ],
+  "answer": 2,
+  "explanation": "",
+  "source": "Practice MC #18 · Question Bank PDF p. 24; key p. 26"
+ },
+ {
+  "id": "practice-19",
+  "topic": "competitiveness",
+  "prompt": "A CHRO candidate asks for pay above the posted range plus a pay review after one year. This is a:",
+  "options": [
+   "Quoted-price market",
+   "Bourse market",
+   "Segmented supply",
+   "Sorting effect"
+  ],
+  "answer": 1,
+  "explanation": "",
+  "source": "Practice MC #19 · Question Bank PDF p. 24; key p. 26"
+ },
+ {
+  "id": "practice-20",
+  "topic": "competitiveness",
+  "prompt": "Why should surveys of employee pay preferences be anonymous?",
+  "options": [
+   "FLSA requires it",
+   "People answer more truthfully without fear of retaliation",
+   "They are cheaper",
+   "ERISA requires it"
+  ],
+  "answer": 1,
+  "explanation": "",
+  "source": "Practice MC #20 · Question Bank PDF p. 24; key p. 26"
+ }
+]

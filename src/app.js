@@ -20,7 +20,7 @@
  }
  let state=normalizeState(read()), data=window.STUDY_DATA, page='home', session=null, lab=null, cards=null, cue=null;
  const libraryKey=()=>String(data?.exam||window.ACTIVE_EXAM||2);
- const optionOrder=q=>shuffle(q.options.map((_,i)=>i));
+ const optionOrder=q=>(window.pinNone||((_,o)=>o))(q,shuffle(q.options.map((_,i)=>i)));
  function validSession(candidate){
   if(!object(candidate)||!Array.isArray(candidate.items)||!candidate.items.length||!object(candidate.responses)||!Number.isInteger(candidate.index)||candidate.index<0||candidate.index>=candidate.items.length)return null;
   if(candidate.contentKey&&candidate.contentKey!==libraryKey())return null;

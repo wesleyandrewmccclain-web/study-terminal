@@ -1,0 +1,100 @@
+[
+ {
+  "id": "bank-90",
+  "topic": "merit",
+  "prompt": "A team bonus is split according to each member's contribution to the goals. Which allocation method is this?",
+  "options": [
+   "Equal payments",
+   "Differential payments based on contribution to goals",
+   "Differential payments according to base pay",
+   "Forced distribution"
+  ],
+  "answer": 1,
+  "explanation": "The prof said Jeff Stewart's bank uses contribution-based differential payments.",
+  "source": "MC Bank #90 · Question Bank PDF p. 11; key p. 19"
+ },
+ {
+  "id": "bank-91",
+  "topic": "merit",
+  "prompt": "Which is an ADVANTAGE of group incentives?",
+  "options": [
+   "Free-rider effect",
+   "Greater group cohesion",
+   "Members' pay depends on others",
+   "Higher turnover"
+  ],
+  "answer": 1,
+  "explanation": "Group advantages: performance measures are easier to develop · greater cohesion. The disadvantages are free riders (which lead to turnover) and discomfort with others influencing your pay.",
+  "source": "MC Bank #91 · Question Bank PDF p. 11; key p. 19"
+ },
+ {
+  "id": "bank-92",
+  "topic": "merit",
+  "prompt": "The free-rider effect in group incentives can lead to:",
+  "options": [
+   "Lower costs",
+   "Higher turnover among high performers",
+   "Better signaling",
+   "A higher range midpoint"
+  ],
+  "answer": 1,
+  "explanation": "High performers get frustrated carrying coasters and leave.",
+  "source": "MC Bank #92 · Question Bank PDF p. 11; key p. 19"
+ },
+ {
+  "id": "bank-93",
+  "topic": "merit",
+  "prompt": "In most situations, incentive pay should:",
+  "options": [
+   "Replace traditional pay",
+   "Complement traditional pay",
+   "Be paid annually only",
+   "Be based on seniority"
+  ],
+  "answer": 1,
+  "explanation": "Commission-only roles replace traditional pay, but usually incentives complement it. The time horizon for goals should be attainable and realistic.",
+  "source": "MC Bank #93 · Question Bank PDF p. 11; key p. 19"
+ },
+ {
+  "id": "practice-5",
+  "topic": "merit",
+  "prompt": "Which is an INCENTIVE (not merit) feature?",
+  "options": [
+   "Permanent addition to base",
+   "Nonrecurring payment that must be re-earned",
+   "Based on years of service",
+   "Raises the range midpoint"
+  ],
+  "answer": 1,
+  "explanation": "",
+  "source": "Practice MC #5 · Question Bank PDF p. 23; key p. 26"
+ },
+ {
+  "id": "practice-6",
+  "topic": "merit",
+  "prompt": "A manager ranks all 12 employees from best to worst. This appraisal type is a:",
+  "options": [
+   "Trait system",
+   "Behavioral system",
+   "Comparison system",
+   "Goal-oriented system"
+  ],
+  "answer": 2,
+  "explanation": "",
+  "source": "Practice MC #6 · Question Bank PDF p. 23; key p. 26"
+ },
+ {
+  "id": "practice-7",
+  "topic": "merit",
+  "prompt": "Team members complain one person coasts while sharing the group bonus. This is the:",
+  "options": [
+   "Halo effect",
+   "Free-rider effect",
+   "Signaling effect",
+   "Compa-ratio effect"
+  ],
+  "answer": 1,
+  "explanation": "",
+  "source": "Practice MC #7 · Question Bank PDF p. 23; key p. 26"
+ }
+]

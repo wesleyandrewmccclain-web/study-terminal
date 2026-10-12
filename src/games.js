@@ -122,7 +122,7 @@
   function swipeDeck() {
     const cur3 = (D()?.swipe || []).map(([t, v, why]) => ({ text: t, truth: v, why, topic: 'payroll', tag: 'tf' }));
     const mc = shuffle(S().data.questions.filter(q => q.prompt.length < 150)).slice(0, 30).map(q => {
-      const truth = Math.random() < 0.5, oi = truth ? q.answer : pick(q.options.map((_, i) => i).filter(i => i !== q.answer));
+      const truth = Math.random() < 0.5, oi = truth ? q.answer : pick(q.options.map((_, i) => i).filter(i => i !== q.answer && !(window.isNoneOption && window.isNoneOption(q.options[i]))));
       return { q: q.prompt, a: q.options[oi], truth, why: truth ? '' : 'Answer: ' + q.options[q.answer], topic: q.topic, tag: 'mc' };
     });
     return shuffle([...shuffle(cur3).slice(0, 9), ...mc]).slice(0, 15);

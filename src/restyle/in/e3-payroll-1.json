@@ -1,0 +1,422 @@
+[
+ {
+  "id": "e3-13",
+  "topic": "payroll",
+  "prompt": "Payroll is best defined as:",
+  "options": [
+   "The process of compensating employees for their work: calculating earnings, deductions and taxes, and issuing payments",
+   "The total of all bonuses paid in a year",
+   "A salary survey of competitors",
+   "The range between min and max pay"
+  ],
+  "answer": 0,
+  "explanation": "What is payroll: the process of compensating employees; involves calculating earnings, deductions, taxes and issuing payments.",
+  "source": "Written from Slides 09 · Compa-Ratios & Payroll"
+ },
+ {
+  "id": "e3-14",
+  "topic": "payroll",
+  "prompt": "Take-home pay after all deductions is called:",
+  "options": [
+   "Gross pay",
+   "Net pay",
+   "Pay level",
+   "Base pay"
+  ],
+  "answer": 1,
+  "explanation": "Net pay: take-home pay after all deductions. Gross pay is total earnings before deductions.",
+  "source": "Written from Slides 09 · Compa-Ratios & Payroll"
+ },
+ {
+  "id": "e3-15",
+  "topic": "payroll",
+  "prompt": "Which is the FIRST step in the payroll process?",
+  "options": [
+   "Calculations",
+   "Disbursement",
+   "Time collection",
+   "Reporting"
+  ],
+  "answer": 2,
+  "explanation": "1 Time collection → 2 Approval & entry → 3 Calculations → 4 Review & audit → 5 Disbursement → 6 Reporting.",
+  "source": "Written from Slides 09 · Compa-Ratios & Payroll"
+ },
+ {
+  "id": "e3-16",
+  "topic": "payroll",
+  "prompt": "Step 4 of the payroll process, the accuracy check, is:",
+  "options": [
+   "Approval & entry",
+   "Review & audit",
+   "Disbursement",
+   "Time collection"
+  ],
+  "answer": 1,
+  "explanation": "Review & Audit: accuracy check.",
+  "source": "Written from Slides 09 · Compa-Ratios & Payroll"
+ },
+ {
+  "id": "e3-17",
+  "topic": "payroll",
+  "prompt": "How long should payroll records be kept, per the slide?",
+  "options": [
+   "At least 1 year",
+   "At least 3–4 years",
+   "At least 10 years",
+   "Until the employee leaves"
+  ],
+  "answer": 1,
+  "explanation": "Recordkeeping: maintain for at least 3–4 years.",
+  "source": "Written from Slides 09 · Compa-Ratios & Payroll"
+ },
+ {
+  "id": "e3-18",
+  "topic": "payroll",
+  "prompt": "Which tax is paid by the EMPLOYER, not withheld from the employee?",
+  "options": [
+   "Federal income tax",
+   "State income tax",
+   "FUTA & SUTA",
+   "The employee share of FICA"
+  ],
+  "answer": 2,
+  "explanation": "Employer-paid: employer portion of FICA and FUTA & SUTA (federal and state unemployment taxes).",
+  "source": "Written from Slides 09 · Compa-Ratios & Payroll"
+ },
+ {
+  "id": "e3-19",
+  "topic": "payroll",
+  "prompt": "The Social Security and Medicare tax rates add up to:",
+  "options": [
+   "6.20%",
+   "1.45%",
+   "7.65%",
+   "15.30%"
+  ],
+  "answer": 2,
+  "explanation": "Social Security 6.20% + Medicare 1.45% = total payroll taxes 7.65%.",
+  "source": "Written from Slides 09 · Compa-Ratios & Payroll"
+ },
+ {
+  "id": "e3-20",
+  "topic": "payroll",
+  "prompt": "If an employee earns $1,000, how much Social Security + Medicare is withheld?",
+  "options": [
+   "$62.00",
+   "$14.50",
+   "$76.50",
+   "$100.00"
+  ],
+  "answer": 2,
+  "explanation": "$62.00 + $14.50 = $76.50, sent to the federal government.",
+  "source": "Written from Slides 09 · Compa-Ratios & Payroll"
+ },
+ {
+  "id": "e3-21",
+  "topic": "payroll",
+  "prompt": "Angela earns $2,000 gross with $124 Social Security, $29 Medicare, $237 income tax and $50 retirement. Her net pay is:",
+  "options": [
+   "$1,560",
+   "$1,610",
+   "$1,763",
+   "$1,847"
+  ],
+  "answer": 0,
+  "explanation": "2,000 − 124 − 29 − 237 − 50 = $1,560. Her employer sends $390 to the federal government and $50 to the retirement fund.",
+  "source": "Written from Slides 09 · Compa-Ratios & Payroll (Angela example)"
+ },
+ {
+  "id": "e3-22",
+  "topic": "payroll",
+  "prompt": "Which is listed as a common payroll MISTAKE?",
+  "options": [
+   "Using automated systems",
+   "Misclassifying employees (W-2 vs 1099)",
+   "Regular audits",
+   "Communicating clearly"
+  ],
+  "answer": 1,
+  "explanation": "Common challenges: misclassifying employees (W-2 vs 1099), incorrect tax calculations, late filings, poor documentation, manual entry errors.",
+  "source": "Written from Slides 09 · Compa-Ratios & Payroll"
+ },
+ {
+  "id": "e3-23",
+  "topic": "payroll",
+  "prompt": "Workday, ADP, Paychex and Gusto are examples of:",
+  "options": [
+   "Salary surveys",
+   "HRIS & payroll systems",
+   "Unemployment taxes",
+   "Incentive plans"
+  ],
+  "answer": 1,
+  "explanation": "Payroll systems & technology: Workday, ADP, Paychex, Gusto, etc.",
+  "source": "Written from Slides 09 · Compa-Ratios & Payroll"
+ },
+ {
+  "id": "e3-48",
+  "topic": "payroll",
+  "prompt": "Total FICA withheld from an employee’s pay is:",
+  "options": [
+   "6.20%",
+   "1.45%",
+   "7.65%",
+   "15.30%"
+  ],
+  "answer": 2,
+  "explanation": "6.20% + 1.45% = 7.65%. 15.30% is employee plus employer combined.",
+  "source": "Exam 3 Practice Set A7 · key"
+ },
+ {
+  "id": "e3-49",
+  "topic": "payroll",
+  "prompt": "Which of the following is paid by the employer only?",
+  "options": [
+   "Federal income tax withholding",
+   "The employee’s share of Medicare",
+   "FUTA and SUTA",
+   "A 401(k) elective deferral"
+  ],
+  "answer": 2,
+  "explanation": "FUTA and SUTA are employer-only. The employer matches FICA, but the employee pays FICA too.",
+  "source": "Exam 3 Practice Set A8 · key"
+ },
+ {
+  "id": "e3-50",
+  "topic": "payroll",
+  "prompt": "In the payroll process, which step comes immediately before disbursement?",
+  "options": [
+   "Time collection",
+   "Calculations",
+   "Review and audit",
+   "Reporting"
+  ],
+  "answer": 2,
+  "explanation": "Time collection → approval & entry → calculations → review & audit → disbursement → reporting.",
+  "source": "Exam 3 Practice Set A9 · key"
+ },
+ {
+  "id": "e3-51",
+  "topic": "payroll",
+  "prompt": "A worker who receives a 1099 rather than a W-2 is being treated as:",
+  "options": [
+   "An exempt employee",
+   "A leased employee",
+   "An independent contractor",
+   "A part-time employee"
+  ],
+  "answer": 2,
+  "explanation": "1099 = independent contractor. Misclassifying W-2 vs. 1099 is a listed common payroll mistake.",
+  "source": "Exam 3 Practice Set A10 · key"
+ },
+ {
+  "id": "e3-92",
+  "topic": "payroll",
+  "prompt": "Which form does an employee fill out at hire to tell the employer how much income tax to withhold?",
+  "options": [
+   "W-2",
+   "W-4",
+   "1099",
+   "I-9"
+  ],
+  "answer": 1,
+  "explanation": "W-4 goes in at hire; W-2 comes out at year end; 1099 is for contractors.",
+  "source": "Written from Exam 3 Study Guide 4.4"
+ },
+ {
+  "id": "e3-93",
+  "topic": "payroll",
+  "prompt": "On $1,000 of earnings, how much Social Security and Medicare is withheld in total?",
+  "options": [
+   "$62.00",
+   "$14.50",
+   "$76.50",
+   "$153.00"
+  ],
+  "answer": 2,
+  "explanation": "$62.00 SS + $14.50 Medicare = $76.50 (7.65%).",
+  "source": "Written from Exam 3 Study Guide 4.5"
+ },
+ {
+  "id": "e3-94",
+  "topic": "payroll",
+  "prompt": "When calculating Medicare withholding, the 1.45% is taken from:",
+  "options": [
+   "Gross pay",
+   "Pay left after Social Security",
+   "Net pay",
+   "Pay after income tax"
+  ],
+  "answer": 0,
+  "explanation": "Percentages come off gross, never off a running balance.",
+  "source": "Written from Exam 3 Study Guide 4.6"
+ },
+ {
+  "id": "e3p-q1",
+  "topic": "payroll",
+  "prompt": "In the payroll deduction flow, what is taken out FIRST after gross pay?",
+  "options": [
+   "Taxes",
+   "Before-tax deductions",
+   "After-tax deductions",
+   "Garnishments"
+  ],
+  "answer": 1,
+  "explanation": "Gross → before-tax deductions → taxes → after-tax deductions → net pay.",
+  "source": "Written from Canvas payroll flowchart"
+ },
+ {
+  "id": "e3p-q2",
+  "topic": "payroll",
+  "prompt": "A Roth 401(k) contribution is a(n):",
+  "options": [
+   "Before-tax deduction",
+   "After-tax deduction",
+   "Employer-paid tax",
+   "Part of gross pay"
+  ],
+  "answer": 1,
+  "explanation": "Roth = after-tax, so it doesn’t lower taxes. A plain 401(k) is before-tax. Same account family, opposite layer.",
+  "source": "Written from Canvas payroll flowchart"
+ },
+ {
+  "id": "e3p-q3",
+  "topic": "payroll",
+  "prompt": "Which of these is a BEFORE-tax deduction on the flowchart?",
+  "options": [
+   "Union dues",
+   "Wage garnishment",
+   "HSA contribution",
+   "Charitable giving"
+  ],
+  "answer": 2,
+  "explanation": "Before-tax: health insurance, 401(k)/HSA/FSA, commuter benefits. Dues, garnishments and charity are after-tax.",
+  "source": "Written from Canvas payroll flowchart"
+ },
+ {
+  "id": "e3p-q4",
+  "topic": "payroll",
+  "prompt": "Which of these is an AFTER-tax deduction?",
+  "options": [
+   "Health insurance premium",
+   "Traditional 401(k)",
+   "Commuter benefits",
+   "Union dues"
+  ],
+  "answer": 3,
+  "explanation": "After-tax: Roth 401(k), union dues, garnishments, charity.",
+  "source": "Written from Canvas payroll flowchart"
+ },
+ {
+  "id": "e3p-q5",
+  "topic": "payroll",
+  "prompt": "Why does a before-tax deduction save the employee money?",
+  "options": [
+   "It is paid by the employer",
+   "It lowers taxable income, so less income tax is withheld",
+   "It is refunded at year end",
+   "It skips Social Security"
+  ],
+  "answer": 1,
+  "explanation": "Before-tax deductions come out before income tax is figured, shrinking taxable pay. (In the prof’s method FICA still comes off gross.)",
+  "source": "Written from Payroll Update (10/3)"
+ },
+ {
+  "id": "e3p-q6",
+  "topic": "payroll",
+  "prompt": "The U.S. federal income tax is:",
+  "options": [
+   "Flat: one rate on all income",
+   "Progressive and marginal: each slice is taxed at its own rate",
+   "A fixed 4.95%",
+   "Paid only by the employer"
+  ],
+  "answer": 1,
+  "explanation": "Each slice of taxable income is taxed at its bracket’s rate. You never apply one rate to the whole amount.",
+  "source": "Written from Canvas tax table"
+ },
+ {
+  "id": "e3p-q7",
+  "topic": "payroll",
+  "prompt": "Taxable income is $40,000 (single, 2025). Federal income tax is:",
+  "options": [
+   "$4,000",
+   "$4,562",
+   "$4,800",
+   "$8,800"
+  ],
+  "answer": 1,
+  "explanation": "12% bracket: 1,193 + 0.12 × (40,000 − 11,925) = 1,193 + 3,369 = $4,562.",
+  "source": "Written from Canvas tax table · guide example A"
+ },
+ {
+  "id": "e3p-q8",
+  "topic": "payroll",
+  "prompt": "Taxable income is $49,000. Federal income tax is:",
+  "options": [
+   "$10,780.00",
+   "$5,880.00",
+   "$5,694.50",
+   "$4,900.00"
+  ],
+  "answer": 2,
+  "explanation": "22% bracket: 5,579 + 0.22 × (49,000 − 48,475) = 5,579 + 115.50 = $5,694.50. 22% × 49,000 = $10,780 is the trap.",
+  "source": "Written from Canvas tax table · guide example B"
+ },
+ {
+  "id": "e3p-q9",
+  "topic": "payroll",
+  "prompt": "Someone with $60,000 of taxable income has a MARGINAL tax rate of:",
+  "options": [
+   "10%",
+   "12%",
+   "22%",
+   "24%"
+  ],
+  "answer": 2,
+  "explanation": "$60,000 lands in the $48,476–$103,350 bracket, so the last dollar is taxed at 22%.",
+  "source": "Written from Canvas tax table"
+ },
+ {
+  "id": "e3p-q10",
+  "topic": "payroll",
+  "prompt": "Compared with the marginal rate, the EFFECTIVE tax rate (total tax ÷ taxable income) is:",
+  "options": [
+   "Always higher",
+   "Always lower (or equal in the first bracket)",
+   "Always the same",
+   "Unrelated"
+  ],
+  "answer": 1,
+  "explanation": "Lower slices are taxed at lower rates, so the average comes out below the top rate. $40,000 → $4,562 = 11.4% vs a 12% marginal rate.",
+  "source": "Written from Payroll Update (10/3)"
+ },
+ {
+  "id": "e3p-q11",
+  "topic": "payroll",
+  "prompt": "What is Illinois’s state income tax rate?",
+  "options": [
+   "3.00% with brackets",
+   "4.95% flat",
+   "6.20%",
+   "7.65%"
+  ],
+  "answer": 1,
+  "explanation": "Canvas: Illinois has a fixed income tax rate of 4.95%. No brackets.",
+  "source": "Canvas tax table"
+ },
+ {
+  "id": "e3p-q12",
+  "topic": "payroll",
+  "prompt": "A question describes a tax as “fixed” or “one rate.” Which tax is it?",
+  "options": [
+   "Federal income tax",
+   "Illinois income tax",
+   "FUTA",
+   "Medicare"
+  ],
+  "answer": 1,
+  "explanation": "“Flat/fixed” → Illinois. “Progressive/brackets” → federal.",
+  "source": "Written from Payroll Update (10/3)"
+ }
+]

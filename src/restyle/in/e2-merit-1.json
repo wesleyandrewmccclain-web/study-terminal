@@ -1,0 +1,422 @@
+[
+ {
+  "id": "bank-60",
+  "topic": "merit",
+  "prompt": "Seniority (longevity) pay rewards employees based on:",
+  "options": [
+   "Performance ratings",
+   "Length of service",
+   "Skills certified",
+   "Company profits"
+  ],
+  "answer": 1,
+  "explanation": "Periodic additions to base pay according to length of service.",
+  "source": "MC Bank #60 · Question Bank PDF p. 8; key p. 17"
+ },
+ {
+  "id": "bank-61",
+  "topic": "merit",
+  "prompt": "Which theory says employees become more valuable over time?",
+  "options": [
+   "Agency theory",
+   "Efficiency wage theory",
+   "Human capital theory",
+   "Tournament theory"
+  ],
+  "answer": 2,
+  "explanation": "Human capital theory is the justification for seniority pay.",
+  "source": "MC Bank #61 · Question Bank PDF p. 8; key p. 17"
+ },
+ {
+  "id": "bank-62",
+  "topic": "merit",
+  "prompt": "Which is a DISADVANTAGE of seniority pay?",
+  "options": [
+   "Avoids the perception of favoritism",
+   "Facilitates administration",
+   "No incentive to improve",
+   "Employees feel treated fairly"
+  ],
+  "answer": 2,
+  "explanation": "Disadvantages: poor fit with competitive strategies · no incentive to improve · growing costs. The other three options are advantages.",
+  "source": "MC Bank #62 · Question Bank PDF p. 8; key p. 17"
+ },
+ {
+  "id": "bank-63",
+  "topic": "merit",
+  "prompt": "Why does seniority pay avoid the perception of favoritism?",
+  "options": [
+   "Raises depend only on time with the company, not on performance or relationships",
+   "Managers pick who gets raises",
+   "It's anonymous",
+   "It uses forced distribution"
+  ],
+  "answer": 0,
+  "explanation": "Everyone with the same tenure gets the same raise.",
+  "source": "MC Bank #63 · Question Bank PDF p. 8; key p. 17"
+ },
+ {
+  "id": "bank-64",
+  "topic": "merit",
+  "prompt": "Merit pay awards:",
+  "options": [
+   "One-time bonuses that must be re-earned",
+   "Permanent pay increases for performance",
+   "Raises for years of service",
+   "Pay for certifications"
+  ],
+  "answer": 1,
+  "explanation": "Merit = permanent and based on performance. Seniority = permanent and based on time. Incentive = nonrecurring.",
+  "source": "MC Bank #64 · Question Bank PDF p. 8; key p. 17"
+ },
+ {
+  "id": "bank-65",
+  "topic": "merit",
+  "prompt": "Per the slide, the average merit increase in 2025 was about:",
+  "options": [
+   "1%",
+   "3.3%",
+   "8%",
+   "15%"
+  ],
+  "answer": 1,
+  "explanation": "The slide says 3.3%. The prof said it was higher in 2023–24 and tied the drop to the reversal of the 2024 FLSA salary threshold increase.",
+  "source": "MC Bank #65 · Question Bank PDF p. 8; key p. 17"
+ },
+ {
+  "id": "bank-66",
+  "topic": "merit",
+  "prompt": "Pay raises big enough that employees see them as a real change in compensation for their performance are called:",
+  "options": [
+   "Spot bonuses",
+   "Just-meaningful pay increases",
+   "Cost-of-living adjustments",
+   "Efficiency wages"
+  ],
+  "answer": 1,
+  "explanation": "This is one of the elements of an effective merit program.",
+  "source": "MC Bank #66 · Question Bank PDF p. 8; key p. 18"
+ },
+ {
+  "id": "bank-67",
+  "topic": "merit",
+  "prompt": "Which is NOT an element of an effective merit pay program?",
+  "options": [
+   "Objective and subjective indicators of performance",
+   "Periodic performance reviews",
+   "Realistic and attainable standards",
+   "Equal raises for everyone"
+  ],
+  "answer": 3,
+  "explanation": "Pay increases have to reflect performance. Just-meaningful increases are also on the list.",
+  "source": "MC Bank #67 · Question Bank PDF p. 8; key p. 18"
+ },
+ {
+  "id": "bank-68",
+  "topic": "merit",
+  "prompt": "What is the FIRST performance appraisal practice?",
+  "options": [
+   "Conduct a job analysis",
+   "Rank employees",
+   "Set bonus amounts",
+   "Hold an appeal hearing"
+  ],
+  "answer": 0,
+  "explanation": "Order: job analysis → incorporate the results into ratings → train supervisors → formal appeals/review process.",
+  "source": "MC Bank #68 · Question Bank PDF p. 9; key p. 18"
+ },
+ {
+  "id": "bank-69",
+  "topic": "merit",
+  "prompt": "Why train supervisors on the appraisal system?",
+  "options": [
+   "So all departments rate consistently",
+   "To avoid FLSA claims",
+   "To reduce the number of grades",
+   "To set the range differential"
+  ],
+  "answer": 0,
+  "explanation": "Everyone uses the same documents in the same way, so ratings are consistent.",
+  "source": "MC Bank #69 · Question Bank PDF p. 9; key p. 18"
+ },
+ {
+  "id": "bank-70",
+  "topic": "merit",
+  "prompt": "A formal appeals process for ratings mainly exists because:",
+  "options": [
+   "Employees may feel they were rated unfairly or discriminated against",
+   "The law requires quarterly reviews",
+   "Managers want fewer reviews",
+   "It raises the midpoint"
+  ],
+  "answer": 0,
+  "explanation": "It gives employees a voice if they feel they were treated unfairly.",
+  "source": "MC Bank #70 · Question Bank PDF p. 9; key p. 18"
+ },
+ {
+  "id": "bank-71",
+  "topic": "merit",
+  "prompt": "An appraisal system that asks raters to evaluate employees' traits or characteristics is a:",
+  "options": [
+   "Trait system",
+   "Comparison system",
+   "Behavioral system",
+   "Goal-oriented system"
+  ],
+  "answer": 0,
+  "explanation": "Trait = characteristics · Comparison = vs other employees · Behavioral = displays successful behaviors · Goal-oriented = progress toward strategic objectives.",
+  "source": "MC Bank #71 · Question Bank PDF p. 9; key p. 18"
+ },
+ {
+  "id": "bank-72",
+  "topic": "merit",
+  "prompt": "Per the prof, the MOST common appraisal system is:",
+  "options": [
+   "Trait",
+   "Comparison",
+   "Behavioral",
+   "Goal-oriented"
+  ],
+  "answer": 2,
+  "explanation": "Behavioral: employees are rated (for example 1–5) on job performance behaviors.",
+  "source": "MC Bank #72 · Question Bank PDF p. 9; key p. 18"
+ },
+ {
+  "id": "bank-73",
+  "topic": "merit",
+  "prompt": "Which system is used mainly for managerial and professional employees and evaluates progress toward strategic objectives?",
+  "options": [
+   "Trait",
+   "Comparison",
+   "Behavioral",
+   "Goal-oriented"
+  ],
+  "answer": 3,
+  "explanation": "This is the slide definition.",
+  "source": "MC Bank #73 · Question Bank PDF p. 9; key p. 18"
+ },
+ {
+  "id": "bank-74",
+  "topic": "merit",
+  "prompt": "A company sorts employees into top 10%, next 20%, and so on, and the bottom group is likely terminated. This is:",
+  "options": [
+   "Paired comparison",
+   "Forced distribution",
+   "Behavioral system",
+   "Broadbanding"
+  ],
+  "answer": 1,
+  "explanation": "Forced distribution is a type of comparison system. The prof warned it can be harsh and create litigation risk.",
+  "source": "MC Bank #74 · Question Bank PDF p. 9; key p. 18"
+ },
+ {
+  "id": "bank-75",
+  "topic": "merit",
+  "prompt": "A manager puts two employees side by side to decide who performs better. This is:",
+  "options": [
+   "Forced distribution",
+   "Paired comparison",
+   "Trait system",
+   "Goal-oriented system"
+  ],
+  "answer": 1,
+  "explanation": "It's another comparison-system type.",
+  "source": "MC Bank #75 · Question Bank PDF p. 9; key p. 18"
+ },
+ {
+  "id": "bank-76",
+  "topic": "merit",
+  "prompt": "Per the prof's statistics, what % of managers are dissatisfied with their current performance management process?",
+  "options": [
+   "18%",
+   "43%",
+   "71%",
+   "95%"
+  ],
+  "answer": 3,
+  "explanation": "Other stats: roughly 63–71% of organizations do annual reviews, about 18% semiannual, 8% quarterly.",
+  "source": "MC Bank #76 · Question Bank PDF p. 10; key p. 18"
+ },
+ {
+  "id": "bank-77",
+  "topic": "merit",
+  "prompt": "Which is a CHALLENGE of using AI for performance reviews?",
+  "options": [
+   "Real-time feedback",
+   "Saves managers time",
+   "Privacy concerns and ignoring outside challenges employees face",
+   "Better data collection"
+  ],
+  "answer": 2,
+  "explanation": "AI can't account for things like a divorce or an illness. Options a, b, and d are positives.",
+  "source": "MC Bank #77 · Question Bank PDF p. 10; key p. 18"
+ },
+ {
+  "id": "bank-78",
+  "topic": "merit",
+  "prompt": "Which is NOT part of the pay-for-performance link?",
+  "options": [
+   "Link appraisals to business goals",
+   "Differentiate among performers",
+   "Communicate expectations",
+   "Give everyone the same raise"
+  ],
+  "answer": 3,
+  "explanation": "The link: tie appraisals to business goals · analyze jobs · establish effective appraisals · empower employees · differentiate performers · communicate expectations.",
+  "source": "MC Bank #78 · Question Bank PDF p. 10; key p. 18"
+ },
+ {
+  "id": "bank-79",
+  "topic": "merit",
+  "prompt": "Incentive pay fluctuates according to all of these EXCEPT:",
+  "options": [
+   "A preestablished formula",
+   "Individual or group goals",
+   "Company earnings",
+   "Years of service"
+  ],
+  "answer": 3,
+  "explanation": "Years of service = seniority. Incentive pay adds to base pay on a nonrecurring basis, controls costs, and motivates through explicit goal setting.",
+  "source": "MC Bank #79 · Question Bank PDF p. 10; key p. 18"
+ },
+ {
+  "id": "bank-80",
+  "topic": "merit",
+  "prompt": "A dealership cut its monthly sales goal from 150 cars to 110 in a slow winter month. What property of incentive pay allows this?",
+  "options": [
+   "It's a permanent addition to base",
+   "It's nonrecurring, so goals can be reset each period",
+   "It's based on seniority",
+   "It's required by FLSA"
+  ],
+  "answer": 1,
+  "explanation": "Incentives have to be re-earned each period, so the employer can adjust the targets.",
+  "source": "MC Bank #80 · Question Bank PDF p. 10; key p. 18"
+ },
+ {
+  "id": "bank-81",
+  "topic": "merit",
+  "prompt": "Traditional pay is generally:",
+  "options": [
+   "An annual salary or hourly wage increased periodically by seniority or merit",
+   "A one-time goal-based payment",
+   "Paid only on commission",
+   "Tied to company earnings"
+  ],
+  "answer": 0,
+  "explanation": "Traditional pay increases are permanent. Incentive pay increases are nonrecurring.",
+  "source": "MC Bank #81 · Question Bank PDF p. 10; key p. 18"
+ },
+ {
+  "id": "bank-82",
+  "topic": "merit",
+  "prompt": "Plans that tie employee compensation to the company's performance over a short time frame are:",
+  "options": [
+   "Individual incentives",
+   "Group incentives",
+   "Company-wide incentives",
+   "Merit plans"
+  ],
+  "answer": 2,
+  "explanation": "Individual = rewards independent work · Group = promotes collaborative behavior · Company-wide = tied to company performance.",
+  "source": "MC Bank #82 · Question Bank PDF p. 10; key p. 18"
+ },
+ {
+  "id": "bank-83",
+  "topic": "merit",
+  "prompt": "Which incentive category promotes supportive, collaborative behavior among employees?",
+  "options": [
+   "Individual",
+   "Group",
+   "Seniority",
+   "Referral"
+  ],
+  "answer": 1,
+  "explanation": "This is the slide definition for group plans.",
+  "source": "MC Bank #83 · Question Bank PDF p. 10; key p. 18"
+ },
+ {
+  "id": "bank-84",
+  "topic": "merit",
+  "prompt": "A manager gets a bonus for meeting division sales, profit, or production objectives. This is a:",
+  "options": [
+   "Piecework plan",
+   "Management incentive plan",
+   "Behavioral encouragement plan",
+   "Signing bonus"
+  ],
+  "answer": 1,
+  "explanation": "Management incentive plans are based on division objectives.",
+  "source": "MC Bank #84 · Question Bank PDF p. 10; key p. 18"
+ },
+ {
+  "id": "bank-85",
+  "topic": "merit",
+  "prompt": "An employee gets a payment for a specific behavioral accomplishment, like an innovation or strong collaboration. This is a:",
+  "options": [
+   "Behavioral encouragement plan",
+   "Referral plan",
+   "Piecework plan",
+   "Company-wide plan"
+  ],
+  "answer": 0,
+  "explanation": "These pay for specific behavioral accomplishments.",
+  "source": "MC Bank #85 · Question Bank PDF p. 11; key p. 18"
+ },
+ {
+  "id": "bank-86",
+  "topic": "merit",
+  "prompt": "A manager hands an employee a $100 gift card for great work this past week. This is a:",
+  "options": [
+   "Merit increase",
+   "Spot bonus",
+   "Signing bonus",
+   "Profit sharing"
+  ],
+  "answer": 1,
+  "explanation": "A spot bonus is a small monetary gift for outstanding work over a reasonably short period.",
+  "source": "MC Bank #86 · Question Bank PDF p. 11; key p. 18"
+ },
+ {
+  "id": "bank-87",
+  "topic": "merit",
+  "prompt": "An employee receives a bonus for recruiting a highly qualified new hire. This is a:",
+  "options": [
+   "Referral plan",
+   "Signing bonus",
+   "Spot bonus",
+   "Management incentive"
+  ],
+  "answer": 0,
+  "explanation": "A signing bonus goes to the NEW hire to get them to accept the offer.",
+  "source": "MC Bank #87 · Question Bank PDF p. 11; key p. 18"
+ },
+ {
+  "id": "bank-88",
+  "topic": "merit",
+  "prompt": "Workers earn extra for every item produced over a designated production standard. This is a:",
+  "options": [
+   "Piecework plan",
+   "Gainsharing plan",
+   "Seniority plan",
+   "Behavioral plan"
+  ],
+  "answer": 0,
+  "explanation": "This is the plan type behind the $3-per-22-units math.",
+  "source": "MC Bank #88 · Question Bank PDF p. 11; key p. 18"
+ },
+ {
+  "id": "bank-89",
+  "topic": "merit",
+  "prompt": "Which is an advantage of INDIVIDUAL (not group) incentive programs?",
+  "options": [
+   "Greater group cohesion",
+   "Easier to develop performance measures",
+   "Compatible with America's individualistic culture",
+   "Reduces free riders"
+  ],
+  "answer": 2,
+  "explanation": "Individual advantages: relates pay to performance · equitable distribution · ownership mentality · fits an individualistic culture. Options a and b are GROUP advantages.",
+  "source": "MC Bank #89 · Question Bank PDF p. 11; key p. 19"
+ }
+]

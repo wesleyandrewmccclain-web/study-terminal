@@ -1,0 +1,326 @@
+[
+ {
+  "id": "e3k-q3",
+  "prompt": "A new hire asks HR whether workers’ compensation premiums will be taken out of her paycheck. Which answer is accurate?",
+  "options": [
+   "Yes; the employee pays through payroll deductions",
+   "Premiums are split 50/50 between employer and employee",
+   "No; the employer pays, and premiums are not deducted from the employee’s pay",
+   "The federal government pays all premiums"
+  ],
+  "answer": 2,
+  "explanation": "Workers’ comp is employer funded. Premiums are not taken out of paychecks."
+ },
+ {
+  "id": "e3k-q4",
+  "prompt": "An employee cuts a finger on a fan at work. Under workers’ compensation, what procedure should the supervisor follow first?",
+  "options": [
+   "Document and report the injury",
+   "Take no action, since the injury was the employee’s fault",
+   "Advise the employee to sue the employer",
+   "Have the employee file under COBRA"
+  ],
+  "answer": 0,
+  "explanation": "Workers’ comp covers work injuries, and the first step is to document and report the injury. It is no-fault, so blame doesn’t matter."
+ },
+ {
+  "id": "e3k-q5",
+  "prompt": "A 1099 independent contractor is hurt while working on a job for a company. Which statement generally applies?",
+  "options": [
+   "The company’s workers’ comp must always cover anyone injured on its jobs",
+   "COBRA covers the contractor",
+   "FMLA covers the contractor",
+   "The contractor falls outside the employer’s workers’ comp, so the company isn’t responsible"
+  ],
+  "answer": 3,
+  "explanation": "A 1099 contractor doesn’t work FOR the employer, just on the job, so contractors generally fall outside employee workers’ comp."
+ },
+ {
+  "id": "e3k-q6",
+  "prompt": "A CFO claims that switching to a self-funded health plan will eliminate all of the employer’s risk. Which response is accurate?",
+  "options": [
+   "The CFO is correct; self-funding automatically eliminates all claims risk",
+   "The employer pays claims itself, so it carries more claims risk, not none",
+   "Federal law requires the insurance carrier to absorb all claims in a self-funded plan",
+   "None of the answer choices are correct"
+  ],
+  "answer": 1,
+  "explanation": "In a self-funded plan the employer pays claims itself, so it carries MORE claims risk, not none."
+ },
+ {
+  "id": "e3k-q7",
+  "prompt": "Which of the following did guest speaker Kathleen Hermacinski list as a fringe benefit?",
+  "options": [
+   "Base Salary",
+   "Pet Insurance",
+   "Overtime Pay",
+   "FICA"
+  ],
+  "answer": 1,
+  "explanation": "Kathleen’s fringe benefits included vision, memberships, catered meals, snacks, pet insurance and EAP (mental health). Base salary and overtime are pay, and FICA is a tax."
+ },
+ {
+  "id": "e3k-q8",
+  "prompt": "An Employee Assistance Program (EAP) mainly offers:",
+  "options": [
+   "Retirement matching",
+   "Extra vacation days",
+   "Stock options",
+   "Mental health and personal support"
+  ],
+  "answer": 3,
+  "explanation": "An EAP provides mental health support and was listed as a fringe benefit."
+ },
+ {
+  "id": "e3k-q9",
+  "prompt": "A growing company wants to know when the ACA employer mandate will apply to it. The mandate applies to employers with at least:",
+  "options": [
+   "15 employees",
+   "20 employees",
+   "50 full-time equivalent employees",
+   "100 employees"
+  ],
+  "answer": 2,
+  "explanation": "The ACA employer mandate applies at 50+ full-time equivalents (an “applicable large employer”)."
+ },
+ {
+  "id": "e3k-q10",
+  "prompt": "An HR analyst is testing whether the organization’s health coverage is “affordable” under the ACA for 2026. The employee’s cost for self-only coverage must be no more than:",
+  "options": [
+   "7.65% of income",
+   "9.96% of household income",
+   "4.95% of income",
+   "$99.60 per year"
+  ],
+  "answer": 1,
+  "explanation": "The 2026 affordability threshold is 9.96%. Employers use IRS “safe harbors” (W-2 wages, rate of pay, or federal poverty line) to prove it."
+ },
+ {
+  "id": "e3k-q11",
+  "prompt": "Under the Family and Medical Leave Act (FMLA), an eligible employee can take up to 12 weeks of leave that is:",
+  "options": [
+   "Unpaid, but the job is protected",
+   "Paid at full salary, as federal law strictly mandates",
+   "Paid at 2/3 salary",
+   "Only for the employee’s own illness"
+  ],
+  "answer": 0,
+  "explanation": "FMLA leave is UNPAID with job protection. It is easy to mis-hear as “paid,” but the exam wants unpaid."
+ },
+ {
+  "id": "e3k-q12",
+  "prompt": "After a qualifying loss of coverage (e.g., job loss, cut hours), COBRA allows a worker to:",
+  "options": [
+   "Receive free insurance for life",
+   "Keep group health insurance, with the worker paying up to 102% of the premium",
+   "Take 12 weeks of leave",
+   "Avoid FICA"
+  ],
+  "answer": 1,
+  "explanation": "COBRA lets the person continue group insurance after a qualifying event. The person pays, up to 102%."
+ },
+ {
+  "id": "e3k-q13",
+  "prompt": "The account that is tied to a high-deductible health plan is called a(n):",
+  "options": [
+   "FSA",
+   "DC FSA",
+   "HSA",
+   "EAP"
+  ],
+  "answer": 2,
+  "explanation": "An HSA (Health Savings Account) is paired with a high-deductible plan, and the money rolls over."
+ },
+ {
+  "id": "e3k-q14",
+  "prompt": "An employee enrolls in a Dependent Care FSA (DC FSA). Which expense is the account designed to cover?",
+  "options": [
+   "Doctor copays",
+   "Retirement savings",
+   "Dental cleanings",
+   "Day care for dependents"
+  ],
+  "answer": 3,
+  "explanation": "A Dependent Care Flexible Spending Account is optional and pays for day care with pre-tax money."
+ },
+ {
+  "id": "e3k-q15",
+  "prompt": "FICA stands for:",
+  "options": [
+   "Federal Insurance Contributions Act",
+   "Federal Income Compensation Act",
+   "Fair Income Credit Account",
+   "Federal Insurance Coverage Allowance"
+  ],
+  "answer": 0,
+  "explanation": "FICA is the Federal Insurance Contributions Act: Social Security 6.2% + Medicare 1.45%."
+ },
+ {
+  "id": "e3k-q32",
+  "prompt": "According to guest speaker Kathleen Hermacinski, the 2026 wage limit for Social Security (6.2%) is:",
+  "options": [
+   "$168,600",
+   "$176,100",
+   "$184,500",
+   "No limit"
+  ],
+  "answer": 2,
+  "explanation": "Social Security stops at the $184,500 wage base. Medicare (1.45%) applies to ALL wages, with no cap."
+ },
+ {
+  "id": "e3k-q33",
+  "prompt": "A payroll specialist processes pay for an executive whose 2026 wages exceed $184,500. Which FICA tax continues to apply to all of the executive’s wages?",
+  "options": [
+   "Social Security",
+   "Medicare",
+   "FUTA",
+   "SUTA"
+  ],
+  "answer": 1,
+  "explanation": "Medicare (1.45%) applies to all wages. Social Security stops at the $184,500 wage base (2026)."
+ },
+ {
+  "id": "e3k-q34",
+  "prompt": "A compensation manager is budgeting for a new hire at a $60,000 salary. What does the EMPLOYER pay in FICA on top of the salary?",
+  "options": [
+   "$4,590",
+   "$3,720",
+   "$870",
+   "$9,180"
+  ],
+  "answer": 0,
+  "explanation": "Employer Social Security 6.2% × $60,000 = $3,720 plus Medicare 1.45% × $60,000 = $870, for $4,590 above the salary. $9,180 would be employer + employee."
+ },
+ {
+  "id": "e3k-q35",
+  "prompt": "In a fully insured health plan, the employer:",
+  "options": [
+   "Pays claims as they happen",
+   "Must always buy stop-loss coverage",
+   "Has no costs",
+   "Pays the carrier a fixed premium"
+  ],
+  "answer": 3,
+  "explanation": "Fully insured means a fixed premium to the carrier: predictable, less claims risk, less plan control, and subject to state premium tax."
+ },
+ {
+  "id": "e3k-q36",
+  "prompt": "An organization is comparing a self-funded health plan with a fully insured plan. Which of the following is true of the self-funded plan?",
+  "options": [
+   "Fixed, predictable cost",
+   "More claims risk, more control, and the employer keeps the savings",
+   "Less plan control",
+   "Subject to state premium tax"
+  ],
+  "answer": 1,
+  "explanation": "Self-funded means the employer pays claims + admin, so cost is variable, with more risk, more control and the savings kept. The other options describe fully insured."
+ },
+ {
+  "id": "e3k-q37",
+  "prompt": "Insurance on top of insurance that protects a self-funded employer from very large claims is called:",
+  "options": [
+   "Stop-Loss Coverage",
+   "COBRA Extension",
+   "Employee Deductible",
+   "Unemployment Insurance"
+  ],
+  "answer": 0,
+  "explanation": "Stop-loss protects a self-funded employer from very large claims: “insurance on top of insurance.”"
+ },
+ {
+  "id": "e3k-q38",
+  "prompt": "An employee asks how long her child can stay on her health plan. Under the ACA, a child can stay on a parent’s plan until age:",
+  "options": [
+   "18",
+   "21",
+   "26",
+   "None of the answer choices are correct"
+  ],
+  "answer": 2,
+  "explanation": "Under the ACA a child can stay on a parent’s plan until 26."
+ },
+ {
+  "id": "e3k-q39",
+  "prompt": "A child is covered by both parents’ plans. Under the birthday rule, which plan is primary?",
+  "options": [
+   "The older parent’s plan",
+   "The father’s plan",
+   "The plan with the lower premium",
+   "The plan of the parent whose birthday comes first in the calendar year"
+  ],
+  "answer": 3,
+  "explanation": "Under the birthday rule, whoever’s birthday comes first in the year (month and day, not age) is primary."
+ },
+ {
+  "id": "e3k-q40",
+  "prompt": "An event that lets an employee change insurance outside open enrollment (e.g., death, marriage, court order) is known as a:",
+  "options": [
+   "Qualifying Life Event (QLE)",
+   "COBRA Event",
+   "Stop-Loss Claim",
+   "Safe Harbor"
+  ],
+  "answer": 0,
+  "explanation": "Marriage, death and court orders are qualifying life events. Otherwise, changes wait for open enrollment."
+ },
+ {
+  "id": "e3k-q41",
+  "prompt": "Unemployment insurance is best described as:",
+  "options": [
+   "A federal-only program paid by employees",
+   "A federal–state program that replaces part of lost wages for eligible workers",
+   "A benefit paid by the worker’s new employer",
+   "The same program as workers’ comp"
+  ],
+  "answer": 1,
+  "explanation": "Unemployment insurance is a federal–state program that replaces part of lost wages for eligible workers, with extra for dependents in Illinois."
+ },
+ {
+  "id": "e3k-q42",
+  "prompt": "A new Illinois employer is estimating its state unemployment tax. According to guest speaker Kathleen Hermacinski, which taxable wage base and new-employer rate apply?",
+  "options": [
+   "$7,000 and 0.6%",
+   "$14,250 and 7.65%",
+   "$14,250 and 3.35%",
+   "$184,500 and 6.2%"
+  ],
+  "answer": 2,
+  "explanation": "Illinois: wage base $14,250, new-employer rate 3.35%, with rates ranging about 0.75%–7.05%. $7,000 and 0.6% is FUTA."
+ },
+ {
+  "id": "e3k-q43",
+  "prompt": "An Illinois organization is posting a job opening. Under Illinois pay transparency rules, what must the posting include?",
+  "options": [
+   "Only the job title",
+   "Every current employee’s pay",
+   "The previous incumbent’s salary",
+   "The salary range and a general description of benefits"
+  ],
+  "answer": 3,
+  "explanation": "Postings need the pay range and a reasonable benefits description, and internal candidates must be told about the opening."
+ },
+ {
+  "id": "e3k-q44",
+  "prompt": "According to guest speaker Kathleen Hermacinski, Illinois paid leave accrues at:",
+  "options": [
+   "1 hour per 40 hours worked",
+   "1 hour per 20 hours worked",
+   "1 day per month",
+   "Nothing until year 2"
+  ],
+  "answer": 0,
+  "explanation": "Illinois paid leave accrues at 1 hour for every 40 hours worked, and employers can also “front load” the hours."
+ },
+ {
+  "id": "e3k-q45",
+  "prompt": "An employee gets hurt at work, and the supervisor asks who pays for the workers’ comp coverage. Which answer is correct?",
+  "options": [
+   "The employee, as state law strictly mandates",
+   "The employer",
+   "Unemployment insurance",
+   "Medicare"
+  ],
+  "answer": 1,
+  "explanation": "Employers pay for workers’ comp."
+ }
+]

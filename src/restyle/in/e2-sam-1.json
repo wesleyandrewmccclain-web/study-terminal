@@ -1,0 +1,296 @@
+[
+ {
+  "id": "bank-94",
+  "topic": "sam",
+  "prompt": "Sam Lewis's 'top six' things employees value include all EXCEPT:",
+  "options": [
+   "Security",
+   "Location",
+   "Stock options",
+   "Challenge"
+  ],
+  "answer": 2,
+  "explanation": "The six: Challenge · Location · Advancement · Money · People · Security.",
+  "source": "MC Bank #94 · Question Bank PDF p. 12; key p. 19"
+ },
+ {
+  "id": "bank-95",
+  "topic": "sam",
+  "prompt": "Lewis hired a woman for LESS money because she hated her boss. Which value outweighed money?",
+  "options": [
+   "People",
+   "Location",
+   "Challenge",
+   "Security"
+  ],
+  "answer": 0,
+  "explanation": "People = who you work with and for.",
+  "source": "MC Bank #95 · Question Bank PDF p. 12; key p. 19"
+ },
+ {
+  "id": "bank-96",
+  "topic": "sam",
+  "prompt": "Lewis called which value the 'sneaky' one that's at the top of many lists without people realizing it?",
+  "options": [
+   "Money",
+   "Security",
+   "Advancement",
+   "Challenge"
+  ],
+  "answer": 1,
+  "explanation": "Some people won't move for any amount of money.",
+  "source": "MC Bank #96 · Question Bank PDF p. 12; key p. 19"
+ },
+ {
+  "id": "bank-97",
+  "topic": "sam",
+  "prompt": "Which value matters most EARLY in a career, when a flat org chart means 'I'm not going anywhere'?",
+  "options": [
+   "Security",
+   "Advancement",
+   "Location",
+   "Money"
+  ],
+  "answer": 1,
+  "explanation": "Priorities shift over a career.",
+  "source": "MC Bank #97 · Question Bank PDF p. 12; key p. 19"
+ },
+ {
+  "id": "bank-98",
+  "topic": "sam",
+  "prompt": "Raises given for each additional year on the job fit which of Lewis's three compensation models?",
+  "options": [
+   "Time & tenure",
+   "Performance",
+   "Competency",
+   "Gainsharing"
+  ],
+  "answer": 0,
+  "explanation": "His 3 models: time & tenure · performance · competency. Most good systems combine all three.",
+  "source": "MC Bank #98 · Question Bank PDF p. 12; key p. 19"
+ },
+ {
+  "id": "bank-99",
+  "topic": "sam",
+  "prompt": "Lewis's 'manager's test' for seniority pay asks:",
+  "options": [
+   "What does an additional year of experience change in this role?",
+   "Can the skill be used?",
+   "Is the baseline right?",
+   "Who is the master?"
+  ],
+  "answer": 0,
+  "explanation": "If an extra year changes nothing, pay stays put. The job is the limiter, not the person.",
+  "source": "MC Bank #99 · Question Bank PDF p. 12; key p. 19"
+ },
+ {
+  "id": "bank-100",
+  "topic": "sam",
+  "prompt": "Output jumped after new equipment was installed, and workers want the productivity bonus. Which performance-pay test does this fail?",
+  "options": [
+   "Clarity",
+   "Influence (line of sight)",
+   "Relevance",
+   "Used"
+  ],
+  "answer": 1,
+  "explanation": "The 4 tests: Influence · Clarity · Balance · Baseline. The workers didn't cause the gain. (New equipment also shifts the baseline.)",
+  "source": "MC Bank #100 · Question Bank PDF p. 12; key p. 19"
+ },
+ {
+  "id": "bank-101",
+  "topic": "sam",
+  "prompt": "A line runs at 110% of rate but produces 80% scrap because the bonus only rewards speed. Which test does it fail?",
+  "options": [
+   "Balance",
+   "Clarity",
+   "Baseline",
+   "Applied"
+  ],
+  "answer": 0,
+  "explanation": "Balance: the measure can't reward one result (speed) at the expense of another (quality).",
+  "source": "MC Bank #101 · Question Bank PDF p. 12; key p. 19"
+ },
+ {
+  "id": "bank-102",
+  "topic": "sam",
+  "prompt": "A bonus target is set using the 2008 housing crash as the starting year. Which test does it fail?",
+  "options": [
+   "Influence",
+   "Baseline",
+   "Balance",
+   "Relevant"
+  ],
+  "answer": 1,
+  "explanation": "A bad starting year makes the targets far too easy.",
+  "source": "MC Bank #102 · Question Bank PDF p. 13; key p. 19"
+ },
+ {
+  "id": "bank-103",
+  "topic": "sam",
+  "prompt": "Lewis held 8 meetings a month, including one at 11 p.m., to explain how the bonus was calculated. Which test was he addressing?",
+  "options": [
+   "Clarity",
+   "Baseline",
+   "Used",
+   "Balance"
+  ],
+  "answer": 0,
+  "explanation": "People must understand how the payout is calculated.",
+  "source": "MC Bank #103 · Question Bank PDF p. 13; key p. 19"
+ },
+ {
+  "id": "bank-104",
+  "topic": "sam",
+  "prompt": "Lewis's plant-wide STAR bonus (productivity + quality + expenses, with everyone in the pool) was modeled on the:",
+  "options": [
+   "Hay system",
+   "Scanlon plan (gainsharing)",
+   "Forced distribution",
+   "Piecework plan"
+  ],
+  "answer": 1,
+  "explanation": "Gainsharing. He also cited Herzberg and open-book management, and he prefers bonuses for smaller groups.",
+  "source": "MC Bank #104 · Question Bank PDF p. 13; key p. 19"
+ },
+ {
+  "id": "bank-105",
+  "topic": "sam",
+  "prompt": "Extruder operators got a raise for certifying on the calender line, but nobody was ever moved there. Which competency test does this fail?",
+  "options": [
+   "Relevant",
+   "Applied",
+   "Used",
+   "Clarity"
+  ],
+  "answer": 2,
+  "explanation": "The 3 competency tests: Relevant · Applied · Used. The company never used the skill, so he eliminated the pay.",
+  "source": "MC Bank #105 · Question Bank PDF p. 13; key p. 19"
+ },
+ {
+  "id": "bank-106",
+  "topic": "sam",
+  "prompt": "All maintenance workers were paid for hydraulics training, but a later evaluation showed almost nobody could actually do it. Which test does this fail?",
+  "options": [
+   "Used",
+   "Applied",
+   "Relevant",
+   "Baseline"
+  ],
+  "answer": 1,
+  "explanation": "Lesson: evaluate first, then pay.",
+  "source": "MC Bank #106 · Question Bank PDF p. 13; key p. 19"
+ },
+ {
+  "id": "bank-107",
+  "topic": "sam",
+  "prompt": "According to Lewis, pay rises as a job shifts from managing:",
+  "options": [
+   "Ideas → people → things",
+   "Things → people → ideas",
+   "People → things → ideas",
+   "Money → people → security"
+  ],
+  "answer": 1,
+  "explanation": "Entry level = things, managers = people, CEO = mostly ideas. This ties to point systems like Hay.",
+  "source": "MC Bank #107 · Question Bank PDF p. 13; key p. 19"
+ },
+ {
+  "id": "bank-108",
+  "topic": "sam",
+  "prompt": "A company offers an individual bonus per completed work order. The most likely unintended consequence is:",
+  "options": [
+   "More mentoring",
+   "Cherry-picking easy orders and rushed repairs",
+   "Lower pay levels",
+   "More broadbanding"
+  ],
+  "answer": 1,
+  "explanation": "You also get no teamwork and no teaching. Lewis's fix was a 4-tier maintenance pay system that rewarded seniors for bringing up the next tier.",
+  "source": "MC Bank #108 · Question Bank PDF p. 13; key p. 19"
+ },
+ {
+  "id": "bank-109",
+  "topic": "sam",
+  "prompt": "Senior 'wizard' technicians won't share their 'little black book' of knowledge because it protects their:",
+  "options": [
+   "Challenge",
+   "Security",
+   "Location",
+   "Advancement"
+  ],
+  "answer": 1,
+  "explanation": "Knowledge = power = job security. The answer is to reward mentoring through tiered, skill-based pay.",
+  "source": "MC Bank #109 · Question Bank PDF p. 13; key p. 19"
+ },
+ {
+  "id": "bank-110",
+  "topic": "sam",
+  "prompt": "Rivian entered Normal at $17/hr, quickly went to $22, and forced local plants to raise pay. This shows:",
+  "options": [
+   "Internal alignment",
+   "A labor-market shock driving external competitiveness",
+   "Seniority pay",
+   "Forced distribution"
+  ],
+  "answer": 1,
+  "explanation": "Lewis told clients: 'Your pay has to go up.'",
+  "source": "MC Bank #110 · Question Bank PDF p. 14; key p. 19"
+ },
+ {
+  "id": "bank-111",
+  "topic": "sam",
+  "prompt": "Per Lewis, a salary survey does NOT tell you:",
+  "options": [
+   "What competitors pay",
+   "Whether you're in the right range",
+   "Whether your rewards support the right behavior",
+   "Market rates"
+  ],
+  "answer": 2,
+  "explanation": "Surveys only answer the competitiveness question. They also don't tell you what different employees value.",
+  "source": "MC Bank #111 · Question Bank PDF p. 14; key p. 20"
+ },
+ {
+  "id": "bank-112",
+  "topic": "sam",
+  "prompt": "Cracker Barrel's star pins for servers are an example of which total-rewards element?",
+  "options": [
+   "Cash",
+   "Benefits",
+   "Recognition",
+   "Flexibility"
+  ],
+  "answer": 2,
+  "explanation": "The total rewards portfolio: cash · benefits · flexibility · growth opportunities · recognition. The goal is to send employees a coherent signal.",
+  "source": "MC Bank #112 · Question Bank PDF p. 14; key p. 20"
+ },
+ {
+  "id": "bank-113",
+  "topic": "sam",
+  "prompt": "Lewis used the DISC analogy to make which point about comp design?",
+  "options": [
+   "Hire only dominant types",
+   "Design comp for the whole team, not one type of person",
+   "Use personality tests to set pay",
+   "Pay introverts less"
+  ],
+  "answer": 1,
+  "explanation": "A room full of one type doesn't work (the Jordan vs. Riley example).",
+  "source": "MC Bank #113 · Question Bank PDF p. 14; key p. 20"
+ },
+ {
+  "id": "bank-114",
+  "topic": "sam",
+  "prompt": "Performance pay fails when employees can't influence the result. Competency pay fails when:",
+  "options": [
+   "The skill isn't used",
+   "Employees are too senior",
+   "The survey is old",
+   "Pay is above market"
+  ],
+  "answer": 0,
+  "explanation": "This is the 'common trap' line from the Lewis notes. Also: don't pay a PhD rocket scientist to assemble widgets.",
+  "source": "MC Bank #114 · Question Bank PDF p. 14; key p. 20"
+ }
+]

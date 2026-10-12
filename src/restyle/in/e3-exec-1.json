@@ -1,0 +1,196 @@
+[
+ {
+  "id": "e3-3",
+  "topic": "exec",
+  "prompt": "About what share of CEO pay is base salary?",
+  "options": [
+   "8.7%",
+   "30%",
+   "50%",
+   "81%"
+  ],
+  "answer": 0,
+  "explanation": "Base salary accounted for just 8.7%; long- and short-term incentives are the bulk.",
+  "source": "Practice Set MC 10 · key"
+ },
+ {
+  "id": "e3-36",
+  "topic": "exec",
+  "prompt": "Which is NOT one of the five elements of an executive compensation package?",
+  "options": [
+   "Base salary",
+   "Long-term incentives",
+   "Perquisites",
+   "Overtime pay"
+  ],
+  "answer": 3,
+  "explanation": "The five: base salary, short-term incentives/bonuses, long-term incentives, benefits, perquisites.",
+  "source": "Written from Slides 10 · Executives & Flexible Workforce"
+ },
+ {
+  "id": "e3-37",
+  "topic": "exec",
+  "prompt": "Stock options and stock grants are examples of:",
+  "options": [
+   "Short-term incentives",
+   "Long-term incentives",
+   "Perquisites",
+   "Benefits"
+  ],
+  "answer": 1,
+  "explanation": "Long-term incentives (for example, stock options and stock grants).",
+  "source": "Written from Slides 10 · Executives & Flexible Workforce"
+ },
+ {
+  "id": "e3-38",
+  "topic": "exec",
+  "prompt": "The bulk of CEO pay comes from:",
+  "options": [
+   "Base salary",
+   "Benefits",
+   "Long-term and short-term incentives",
+   "Perquisites"
+  ],
+  "answer": 2,
+  "explanation": "Long-term and short-term incentives account for the bulk of CEO pay.",
+  "source": "Written from Slides 10 · Executives & Flexible Workforce"
+ },
+ {
+  "id": "e3-39",
+  "topic": "exec",
+  "prompt": "Executive annual bonuses are designed to:",
+  "options": [
+   "Motivate better short-term performance",
+   "Replace base salary",
+   "Satisfy ERISA",
+   "Reduce FICA taxes"
+  ],
+  "answer": 0,
+  "explanation": "Bonuses are designed to motivate better short-term performance.",
+  "source": "Written from Slides 10 · Executives & Flexible Workforce"
+ },
+ {
+  "id": "e3-40",
+  "topic": "exec",
+  "prompt": "The three common measures for executive bonuses are:",
+  "options": [
+   "Profit, revenue, and cash flow",
+   "Tenure, merit, and skill",
+   "Stock, benefits, and perks",
+   "Turnover, absenteeism, and safety"
+  ],
+  "answer": 0,
+  "explanation": "Three common measures are profit, revenue, and cash flow.",
+  "source": "Written from Slides 10 · Executives & Flexible Workforce"
+ },
+ {
+  "id": "e3-41",
+  "topic": "exec",
+  "prompt": "Non-financial measures for executive bonuses can be:",
+  "options": [
+   "Strategic, individual, or discretionary",
+   "Federal, state, or local",
+   "Weekly, monthly, or yearly",
+   "Fixed, variable, or deferred"
+  ],
+  "answer": 0,
+  "explanation": "Non-financial measures can be strategic, individual, or discretionary.",
+  "source": "Written from Slides 10 · Executives & Flexible Workforce"
+ },
+ {
+  "id": "e3-42",
+  "topic": "exec",
+  "prompt": "A company car and a club membership for an executive are:",
+  "options": [
+   "Long-term incentives",
+   "Perquisites",
+   "Short-term incentives",
+   "Base salary"
+  ],
+  "answer": 1,
+  "explanation": "Perks such as these are perquisites, the fifth element of the package.",
+  "source": "Written from Study Guide Part 5"
+ },
+ {
+  "id": "e3-58",
+  "topic": "exec",
+  "prompt": "A company car that the executive’s spouse is also entitled to use is an example of:",
+  "options": [
+   "A benefit",
+   "A long-term incentive",
+   "A perquisite",
+   "A short-term incentive"
+  ],
+  "answer": 2,
+  "explanation": "Perquisite. Perks attach to the position and typically extend to dependents.",
+  "source": "Exam 3 Practice Set A18 · key"
+ },
+ {
+  "id": "e3-59",
+  "topic": "exec",
+  "prompt": "The three common financial measures used in executive bonus plans are:",
+  "options": [
+   "Profit, revenue, and cash flow",
+   "Revenue, headcount, and market share",
+   "EPS, turnover, and customer satisfaction",
+   "Profit, compa-ratio, and labor cost"
+  ],
+  "answer": 0,
+  "explanation": "Profit, revenue, cash flow.",
+  "source": "Exam 3 Practice Set A19 · key"
+ },
+ {
+  "id": "e3-75",
+  "topic": "exec",
+  "prompt": "True or false: Bonuses have become a larger portion of executive pay over time.",
+  "options": [
+   "True",
+   "False"
+  ],
+  "answer": 1,
+  "explanation": "False. Bonuses have become a smaller portion.",
+  "source": "Exam 3 Practice Set B35 · key"
+ },
+ {
+  "id": "e3-99",
+  "topic": "exec",
+  "prompt": "An executive’s base salary is $522,000, the typical 8.7% of the package. The total package is about:",
+  "options": [
+   "$4.5 million",
+   "$5.2 million",
+   "$6.0 million",
+   "$8.7 million"
+  ],
+  "answer": 2,
+  "explanation": "Total = 522,000 ÷ 0.087 = $6,000,000.",
+  "source": "Written from Exam 3 Study Guide 6.3"
+ },
+ {
+  "id": "e3-100",
+  "topic": "exec",
+  "prompt": "Stock options and stock grants are which executive pay component?",
+  "options": [
+   "Base salary",
+   "Short-term incentives",
+   "Long-term incentives",
+   "Perquisites"
+  ],
+  "answer": 2,
+  "explanation": "Stock options/grants = long-term incentives.",
+  "source": "Written from Exam 3 Study Guide 6.1"
+ },
+ {
+  "id": "e3-101",
+  "topic": "exec",
+  "prompt": "An executive bonus plan that mixes financial and non-financial measures reflects:",
+  "options": [
+   "A cost-centered approach",
+   "A balanced scorecard approach",
+   "Experience rating",
+   "A defined benefit plan"
+  ],
+  "answer": 1,
+  "explanation": "A balanced scorecard approach is preferred.",
+  "source": "Written from Exam 3 Study Guide 6.2"
+ }
+]
