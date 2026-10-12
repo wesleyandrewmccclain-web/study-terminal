@@ -517,47 +517,48 @@ window.EXAM3_DATA = (() => {
     dk('“AI hiring tool discriminates”', 'employer is liable (compliance)')
   );
 
-  /* ---- Compa-Ratio Exercise (handed out Mon 10/5). No answer key yet: answers worked by Claude with the class
-     conventions (midpoint differential applies to the grade you move INTO; pay-table numbers use normal rounding).
-     Problem 1 reads "ideal pay rate" as the grade midpoint (CR = 1.0). Check both against the 10/7 review. */
-  const CX = 'Compa-Ratio Exercise (10/5) · worked, key pending';
+  /* ---- Compa-Ratio Exercise: class worked answers (shared 10/12). Written in the professor's MC style (src/QUESTION-STYLE.md).
+     "Ideal pay rate" = pay for the job's points (round UP); target "within 90% of the midpoint" = 0.90–1.10; ratios to 2 decimals.
+     Problem 2: the class sheet divided ideal ÷ actual; the textbook way is actual ÷ ideal. Both are taught. */
+  const CX = 'Compa-Ratio Exercise · class worked answers';
   let xn = 0;
-  const xq = (prompt, options, answer, explanation) => ({ id: 'e3x-q' + (++xn), topic: 'compa', prompt, options, answer, answerKeyText: options[answer], explanation, source: CX });
+  const xq = (prompt, options, answer, explanation) => ({ id: 'e3x-q' + (++xn), topic: 'compa', prompt, options, answer, answerKeyText: options[answer], explanation, source: CX, profStyle: true });
   const xc = (front, back) => ({ id: 'e3x-c' + (++xn), topic: 'compa', front, back, source: CX, core: true });
   questions.push(
-    xq('Exercise P1: Grade 3’s midpoint is $57,964 and every midpoint differential is 10%. Grade 4’s midpoint is:', ['$52,695', '$63,760', '$66,659', '$69,557'], 1, '57,964 × 1.10 = 63,760.4 → 63,760.'),
-    xq('Exercise P1: going DOWN from Grade 3 ($57,964, 10% differential), Grade 2’s midpoint is:', ['$52,168', '$52,695', '$49,269', '$63,760'], 1, 'Divide, don’t multiply by 0.90: 57,964 ÷ 1.10 = 52,695. (57,964 × 0.9 = 52,168 is the trap.)'),
-    xq('Exercise P1: the market average for Employment Consultant (48,752 · 50,247 · 45,132) is:', ['$48,044', '$50,247', '$48,752', '$47,940'], 0, '144,131 ÷ 3 = 48,043.67 → $48,044.'),
-    xq('Exercise P1: Accountant II (780 pts) is in Grade 4 (mid $63,760). Market average = $56,751. Company mid ÷ market =', ['0.89', '1.12', '1.25', '1.30'], 1, '63,760 ÷ 56,751 = 1.12: paying 12% above market, but inside 0.75–1.25.'),
-    xq('Exercise P1 result: comparing each grade midpoint to the market, what do you recommend?', ['Raise Grade 2', 'Lower Grade 4', 'No change: all three jobs land inside 0.75–1.25', 'Rebuild the whole chart'], 2, 'EC 1.21 · IT 1.07 · Acct II 1.12 (or 0.83 / 0.94 / 0.89 the other way). All inside the ideal range → no change, and say WHY. Check this against Wednesday’s key.'),
-    xq('Exercise P2: Grade 3 mid $67,860; Grade 4 has a 17% midpoint differential. Grade 4’s midpoint is:', ['$78,039', '$79,396', '$81,432', '$95,275'], 1, '67,860 × 1.17 = 79,396.2 → 79,396.'),
-    xq('Exercise P2: Grade 5 has a 20% midpoint differential on top of Grade 4 ($79,396). Grade 5’s midpoint is:', ['$93,000', '$95,275', '$99,245', '$114,330'], 1, '79,396 × 1.20 = 95,275.2 → 95,275.'),
-    xq('Exercise P2: Job A (700 pts) pays $59,780; Grade 4 mid = $79,396. Its compa-ratio is:', ['0.73', '0.75', '0.88', '1.33'], 1, '59,780 ÷ 79,396 = 0.753: right at the bottom of 0.75–1.25, and $19,616 below the midpoint.'),
-    xq('Exercise P2: Job B (900 pts) pays $69,840; Grade 5 mid = $95,275. Compa-ratio and action?', ['0.73 → below 0.75, raise pay', '0.88 → fine', '1.36 → freeze', '0.73 → freeze'], 0, '69,840 ÷ 95,275 = 0.733 → below 0.75 → raise. It’s even under the Grade 5 minimum (76,220).'),
-    xq('Exercise P2: Job C (300 pts) pays $51,655; Grade 2 mid = $59,009 (67,860 ÷ 1.15). Compa-ratio?', ['0.76', '0.88', '1.14', '0.73'], 1, '51,655 ÷ 59,009 = 0.875 → inside the range; $7,354 below mid. No urgent change.'),
-    xq('Exercise P2: Job A’s CR is 0.75, technically “in range.” Why might you still raise it?', ['It’s above the max', 'It pays below the Grade 4 MINIMUM ($63,517 at a 20% range spread)', 'Its CR is above 1.25', 'Grade 4 has no midpoint'], 1, 'Min = 79,396 × 0.80 = 63,517. Pay of 59,780 is under the floor of its own range: raise to at least the minimum.'),
-    xq('Exercise P2: how much would it cost to bring Job B up to the midpoint (CR = 1.0)?', ['$6,380', '$19,616', '$25,435', '$7,354'], 2, 'Raise to 1.0 = mid − pay = 95,275 − 69,840 = $25,435.')
+    xq('A compensation analyst is building a pay grade chart. Grade 3’s midpoint is $56,400 and every midpoint differential is 10%. What is Grade 2’s midpoint?', ['$50,760', '$51,273', '$62,040', 'Federal guidelines require all midpoints to be set at $56,400'], 1, 'Going down a grade you divide: 56,400 ÷ 1.10 = 51,273. Multiplying by 0.90 (50,760) is the trap.'),
+    xq('A pay grade has a $62,040 midpoint and a 20% range differential. Its minimum and maximum are:', ['$52,734 / $71,346', '$49,632 / $74,448', '$56,400 / $68,244', 'The range differential must always equal the midpoint differential'], 1, 'Min = 62,040 × 0.80 = 49,632; max = 62,040 × 1.20 = 74,448. × 0.85 / × 1.15 is for a 15% range.'),
+    xq('When the exercise says the company uses the “ideal pay rate” for a position, it means the:', ['Range minimum of the grade', 'Pay for the job’s point total: min + (mid − min) × a ÷ 100', 'Highest market rate in the survey', 'None of the answer choices are correct'], 1, 'In class the ideal rate was the Exam 2 pay-for-points formula, with the increase rounded UP.'),
+    xq('A Senior Financial Analyst job is worth 740 points (Grade 4: min $49,632, mid $62,040). What is its ideal pay rate?', ['$62,040', '$67,003', '$66,312', '$74,448'], 1, 'a = 740 − 600 = 140 → 12,408 × 1.4 = 17,371.2 → + 49,632 = 67,003 (67,004 if you round the increase up).'),
+    xq('Survey data for the Senior Financial Analyst shows $76,850, $74,200 and $72,450. The ideal pay rate is $67,003. What is the compa-ratio, and is it within the company’s 0.90–1.10 target?', ['1.11, outside the target', '0.90, within the target', '0.87, outside the target', '0.75, the legally mandated floor'], 1, 'Market = 223,500 ÷ 3 = 74,500 → 67,003 ÷ 74,500 = 0.899 → 0.90. Inside 0.90–1.10.'),
+    xq('The Systems Administrator (350 pts, Grade 2) has an ideal pay rate of $55,119 and a market average of $49,950. The compa-ratio is:', ['0.91', '1.10', '1.20', '0.80'], 1, '55,119 ÷ 49,950 = 1.10 → right at the top of the 0.90–1.10 target.'),
+    xq('An HR Generalist (460 pts) has an ideal pay of $53,016 against a market average of $56,100. What should the analyst conclude?', ['Compa-ratio 0.94: within the target, no change needed', 'Compa-ratio 1.06: freeze pay', 'Compa-ratio 0.75: rebuild Grade 3 immediately', 'Federal law requires pay to equal the market average exactly'], 0, '53,016 ÷ 56,100 = 0.94–0.95, inside 0.90–1.10, so Problem 1’s answer is no change to the chart.'),
+    xq('A company wants every position “within 90% of the midpoint.” Which compa-ratio range does that describe?', ['0.75 – 1.25', '0.90 – 1.10', '0.80 – 1.20', '0.90 – 1.00 only'], 1, '100% − 90% = 10% on either side → 0.90 to 1.10.'),
+    xq('In Problem 2, Grade 3’s midpoint is $64,128 and Grade 4’s midpoint differential is 17%. Grade 4’s midpoint is:', ['$75,030', '$73,747', '$69,903', '$90,036'], 0, '64,128 × 1.17 = 75,029.8 → 75,030. Then Grade 5 = 75,030 × 1.20 = 90,036.'),
+    xq('Job A (650 pts, Grade 4: min $60,024, mid $75,030) has an ideal pay of $67,527 and pays $60,352. Using the class sheet’s method (ideal ÷ actual), the compa-ratio and action are:', ['0.89 → raise pay', '1.12 → above the target, freeze pay until the position is more in line', '1.00 → no action', '0.75 → terminate the position'], 1, 'Class sheet: 67,527 ÷ 60,352 = 1.12 → freeze. (The textbook way, 60,352 ÷ 67,527 = 0.89, reads it as below the target.)'),
+    xq('Job C (850 pts, Grade 5) has an ideal pay of $81,033 but actually pays $102,422. Which statement is accurate?', ['Ideal ÷ actual = 0.79 and actual ÷ ideal = 1.26, so the pay is far out of line with the target', 'The ratio is exactly 1.00, so no action is needed', 'Grade 5 pay is automatically capped at the midpoint by law', 'None of the answer choices are correct'], 0, '81,033 ÷ 102,422 = 0.79; 102,422 ÷ 81,033 = 1.26. Either way it is outside 0.90–1.10, so the class fixed Grade 5’s range.'),
+    xq('To fix Grade 5 for Job C, the class took the gap (102,422 − 90,036 = 12,386) and added it to the old minimum (72,029). With a 20% range differential, the new range is:', ['Min 84,415 · Mid 101,298 · Max 118,181', 'Min 72,029 · Mid 90,036 · Max 108,043', 'Min 84,415 · Mid 105,519 · Max 126,623', 'Min 90,036 · Mid 102,422 · Max 114,808'], 0, 'New min 84,415; step 84,415 × 0.20 = 16,883 → mid 101,298 → max 118,181. (The class sheet wrote 118,151, an addition slip.)')
   );
   flashcards.push(
-    xc('Compa-ratio exercise: steps', '1 Fill the midpoints (× 1 + diff going up, ÷ 1 + diff going down) · 2 Min/max = mid × (1 ∓ range diff) · 3 Put each job in its grade by points · 4 CR = pay ÷ mid (or mid vs market) · 5 Act: <0.75 raise, >1.25 freeze, in range → explain why no change.'),
-    xc('Going DOWN a grade', 'Divide by (1 + the differential of the grade above): 57,964 ÷ 1.10 = 52,695. NOT × 0.90 (52,168).'),
-    xc('Exercise P2 answers', 'Mids: G2 59,009 · G3 67,860 · G4 79,396 · G5 95,275. Job A 0.75 (below G4 min 63,517) · Job B 0.73 → raise (cost to mid 25,435) · Job C 0.88 OK.'),
-    xc('Exercise P1 answers (key pending)', 'Mids: G2 52,695 · G3 57,964 · G4 63,760. Market: EC 48,044 · IT 49,386 · Acct II 56,751. Mid ÷ market: 1.21 · 1.07 · 1.12 → all in range → no change.')
+    xc('Compa-ratio exercise: class rules', '“Ideal pay rate” = pay for the job’s points (min + (mid − min) × a ÷ 100, round UP). “Within 90% of the midpoint” = 0.90–1.10. Round ratios to 2 decimals. More than ~5% off → fix it.'),
+    xc('Going DOWN a grade', 'Divide by (1 + the differential): 56,400 ÷ 1.10 = 51,273. Not × 0.90.'),
+    xc('Problem 1 answers (class)', 'Chart: G1 39,620/46,612/53,604 · G2 43,582/51,273/58,964 · G3 47,940/56,400/64,860 · G4 49,632/62,040/74,448 · G5 54,595/68,244/81,893. SFA 67,003 vs 74,500 = 0.90 · Sys Admin 55,119 vs 49,950 = 1.10 · HR Gen 53,016 vs 56,100 = 0.94 → all in range, no change.'),
+    xc('Problem 2 answers (class)', 'Chart: G1 44,611/50,694/56,777 · G2 47,956/55,763/63,570 · G3 53,226/64,128/75,030 · G4 60,024/75,030/90,036 · G5 72,029/90,036/108,043. Ideal: A 67,527 · B 57,324 · C 81,033. Ideal ÷ actual: A 1.12 freeze · B 1.11 freeze · C 0.79. (Actual ÷ ideal: 0.89 · 0.90 · 1.26.)'),
+    xc('Fixing a grade (class method)', 'Gap = actual − grade mid → new min = old min + gap → step = new min × range diff → mid = min + step, max = mid + step. Job C: 84,415 / 101,298 / 118,181.')
   );
   math.push(
-    { id: 'e3m-cx2', title: 'Compa-Ratio Exercise · Problem 2 (10/5)', topic: 'compa', type: 'compa', source: CX, origin: 'notes',
-      prompt: 'Grade 3 mid = $67,860. Midpoint differentials: G2 10%, G3 15%, G4 17%, G5 20%. Job A (700 pts) $59,780 · Job B (900 pts) $69,840 · Job C (300 pts) $51,655. Find each job’s compa-ratio (2 decimals) and how far Job B is below its midpoint.',
-      fields: [$f('a', 'Job A CR', 0.75, '', 0.006), $f('b', 'Job B CR', 0.73, '', 0.006), $f('c', 'Job C CR', 0.88, '', 0.006), $f('gap', 'Job B below mid', 25435)],
-      steps: ['G4 mid = 67,860 × 1.17 = 79,396 · G5 = 79,396 × 1.20 = 95,275 · G2 = 67,860 ÷ 1.15 = 59,009.', 'A (G4): 59,780 ÷ 79,396 = 0.75 · B (G5): 69,840 ÷ 95,275 = 0.73 · C (G2): 51,655 ÷ 59,009 = 0.88.', 'B gap: 95,275 − 69,840 = 25,435. B is below 0.75 → raise. A sits under the G4 minimum (63,517) → raise to at least the min.'] },
-    { id: 'e3m-cx1', title: 'Compa-Ratio Exercise · Problem 1 (10/5)', topic: 'compa', type: 'compa', source: CX, origin: 'notes',
-      prompt: 'Grade 3 mid = $57,964, all midpoint differentials 10%. Find the Grade 2 and Grade 4 midpoints, the Accountant II market average (59,134 · 54,326 · 56,794), and Grade 4 mid ÷ that market average.',
-      fields: [$f('g2', 'Grade 2 midpoint', 52695), $f('g4', 'Grade 4 midpoint', 63760), $f('mkt', 'Accountant II market avg', 56751), $f('cr', 'G4 mid ÷ market', 1.12, '', 0.006)],
-      steps: ['G4 = 57,964 × 1.10 = 63,760. G2 = 57,964 ÷ 1.10 = 52,695.', 'Market = 170,254 ÷ 3 = 56,751.', '63,760 ÷ 56,751 = 1.12 → inside 0.75–1.25. Same for the other two jobs (1.21, 1.07) → no change recommended.'] }
+    { id: 'e3m-cx1', title: 'Compa-Ratio Exercise · Problem 1 (class)', topic: 'compa', type: 'compa', source: CX, origin: 'notes',
+      prompt: 'Grade 3 mid = $56,400; all midpoint differentials 10%; range differentials 15/15/15/20/20%. Senior Financial Analyst = 740 pts; market pay $76,850, $74,200, $72,450. Find the Grade 4 min and mid, the ideal pay rate, the market average, and the compa-ratio (ideal ÷ market, 2 decimals).',
+      fields: [$f('min4', 'Grade 4 minimum', 49632), $f('mid4', 'Grade 4 midpoint', 62040), $f('ideal', 'Ideal pay (740 pts)', 67003, '$', 1), $f('mkt', 'Market average', 74500), $f('cr', 'Compa-ratio', 0.9, '', 0.006)],
+      steps: ['G4 mid = 56,400 × 1.10 = 62,040; min = 62,040 × 0.80 = 49,632.', 'a = 740 − 600 = 140 → (62,040 − 49,632) × 1.4 = 17,371.2 → + 49,632 = 67,003.', 'Market = (76,850 + 74,200 + 72,450) ÷ 3 = 74,500.', '67,003 ÷ 74,500 = 0.899 → 0.90, inside 0.90–1.10 → no change.'] },
+    { id: 'e3m-cx2', title: 'Compa-Ratio Exercise · Problem 2 (class)', topic: 'compa', type: 'compa', source: CX, origin: 'notes',
+      prompt: 'Grade 3 mid = $64,128. Midpoint differentials G2 10%, G3 15%, G4 17%, G5 20%; range differentials 12/14/17/20/20%. Job A (650 pts) pays $60,352. Find the Grade 4 min and mid, Job A’s ideal pay, and both compa-ratios (2 decimals).',
+      fields: [$f('mid4', 'Grade 4 midpoint', 75030), $f('min4', 'Grade 4 minimum', 60024), $f('ideal', 'Job A ideal pay', 67527), $f('crA', 'Ideal ÷ actual (class sheet)', 1.12, '', 0.006), $f('crB', 'Actual ÷ ideal (textbook)', 0.89, '', 0.006)],
+      steps: ['G4 mid = 64,128 × 1.17 = 75,030; min = 75,030 × 0.80 = 60,024.', 'a = 650 − 600 = 50 → (75,030 − 60,024) × 0.5 = 7,503 → + 60,024 = 67,527.', 'Class sheet: 67,527 ÷ 60,352 = 1.12 → above 1.10 → freeze until in line.', 'Textbook: 60,352 ÷ 67,527 = 0.89 → just under 0.90.'] }
   );
 
   return {
     exam: 3, examDay: 'Mon 10/12', examDate: [2026, 9, 12, 12, 35], scope: 'Benefits + Slides 09–10 + payroll update + both guest speakers',
-    note: 'Exam 3 is Mon 10/12 (150 pts). Canvas lists: Kathleen’s Benefits talk (that IS the benefits unit, no separate deck), Derek’s AI & HR talk, Compa-Ratios & Payroll class notes + exercises, and the Exec/Flexible Workforce lecture video. The compa-ratio exercise is in (answers worked by Claude; check them at the 10/7 review).',
+    note: 'Exam 3 is Mon 10/12 (150 pts). Canvas lists: Kathleen’s Benefits talk (that IS the benefits unit, no separate deck), Derek’s AI & HR talk, Compa-Ratios & Payroll class notes + exercises, and the Exec/Flexible Workforce lecture video. The compa-ratio exercise is in, with the class’s worked answers.',
     topics: [{ id: 'benefits', name: 'Benefits' }, { id: 'compa', name: 'Compa-Ratios' }, { id: 'payroll', name: 'Payroll' }, { id: 'flex', name: 'Flexible Workforce' }, { id: 'exec', name: 'Executive Pay' }, { id: 'ai', name: 'AI & HR' }],
     /* Class meetings the study plan shows on their day. */
     classes: [
@@ -567,7 +568,6 @@ window.EXAM3_DATA = (() => {
     /* Exam 3 material that isn't in the game yet. Shown as "Not yet available" cards. When you add one,
        give its questions/cards a topic id and move it into topics above, then delete it here. */
     pending: [
-      { id: 'compa-exercise', name: 'Compa-Ratio exercise answer key', sub: 'Reviewed Wed 10/7', status: 'In progress', what: 'The exercise is in the game with answers worked by Claude. Send the answers from Wednesday’s review so they can be checked.' }
     ],
     questions, flashcards, cues, math, scenarioIds: questions.filter(x => x.prompt.length > 70).map(x => x.id), scenarioContexts: {}
   };

@@ -1,7 +1,11 @@
-/* Compa-Ratio worksheet: the 10/5 Compa-Ratio Exercise, cell by cell (plus a "New numbers" version).
-   Class conventions: the midpoint differential belongs to the grade you move INTO (up: × (1 + diff), down: ÷ (1 + diff));
-   pay-table numbers use normal rounding; dollar cells accept ±$1, compa-ratios accept 2-decimal answers.
-   Problem 1 reads "ideal pay rate" as the grade midpoint, so CR = midpoint ÷ market average (key pending, 10/7). */
+/* Compa-Ratio worksheet: the class Compa-Ratio Exercise, cell by cell (plus a "New numbers" version).
+   Built from the class's worked answers (shared 10/12):
+   - midpoint differential belongs to the grade you move INTO (up: × (1 + diff), down: ÷ (1 + diff)); pay tables use normal rounding;
+   - the "ideal pay rate" = pay for the job's points: min + (mid − min) × a ÷ b, a = points − grade bottom, b = 100, rounded UP;
+   - target band "within 90% of the midpoint" = compa-ratio 0.90 – 1.10, rounded to 2 decimals;
+   - Problem 1: compa-ratio = ideal pay ÷ market average;
+   - Problem 2: the class sheet divided ideal ÷ actual; the textbook way is actual ÷ ideal. Both are asked. Actions follow the class sheet.
+   Dollar cells accept ±$1; compa-ratios accept ±0.01 (the class mixed rounding and truncating). */
 (() => {
   'use strict';
   const S = () => window.Study;
@@ -14,39 +18,49 @@
   const parse = v => Number(String(v ?? '').replace(/[$,%\s]/g, ''));
   const gradeOf = pts => Math.max(1, Math.ceil(pts / 200));
   const exam = () => Number(S().data?.exam || window.ACTIVE_EXAM || 2);
+  const LO = 0.9, HI = 1.1;
 
   const CLASS = {
-    title: 'Class sheet · MGT 354 Compa-Ratio Exercise (10/5)',
-    p1: { mid3: 57964, diff: [0, 10, 10, 10, 10], rd: [15, 15, 15, 20, 20],
-      jobs: [['Employment Consultant', 425, [['ISU', 48752], ['UIUC', 50247], ['IWU', 45132]]],
-        ['IT Specialist', 340, [['UIUC', 48356], ['IWU', 53215], ['ISU', 46587]]],
-        ['Accountant II', 780, [['IWU', 59134], ['ISU', 54326], ['UIUC', 56794]]]] },
-    p2: { mid3: 67860, diff: [0, 10, 15, 17, 20], rd: [12, 14, 17, 20, 20],
-      jobs: [['Job A', 700, 59780], ['Job B', 900, 69840], ['Job C', 300, 51655]] }
+    title: 'Class sheet · MGT 354 Compa-Ratio Exercise (class worked answers)',
+    p1: { mid3: 56400, diff: [0, 10, 10, 10, 10], rd: [15, 15, 15, 20, 20],
+      jobs: [['Senior Financial Analyst', 740, [['Caterpillar', 76850], ['Rivian', 74200], ['OSF', 72450]]],
+        ['Systems Administrator', 350, [['Rivian', 51400], ['OSF', 48600], ['Rivian', 49850]]],
+        ['HR Generalist', 460, [['OSF', 55900], ['Caterpillar', 57800], ['Caterpillar', 54600]]]] },
+    p2: { mid3: 64128, diff: [0, 10, 15, 17, 20], rd: [12, 14, 17, 20, 20],
+      jobs: [['Job A', 650, 60352], ['Job B', 320, 51708], ['Job C', 850, 102422]] }
   };
 
-  /* Midpoints from Grade 3: up × (1 + diff of the grade above), down ÷ (1 + diff of the grade you leave). */
   function table(p) {
     const mid = []; mid[2] = p.mid3;
     mid[3] = r(mid[2] * (1 + p.diff[3] / 100)); mid[4] = r(mid[3] * (1 + p.diff[4] / 100));
     mid[1] = r(mid[2] / (1 + p.diff[2] / 100)); mid[0] = r(mid[1] / (1 + p.diff[1] / 100));
     return mid.map((m, i) => ({ g: i + 1, mid: m, rd: p.rd[i], min: r(m * (1 - p.rd[i] / 100)), max: r(m * (1 + p.rd[i] / 100)) }));
   }
-  const act = cr => cr < 0.75 ? 'Raise' : cr > 1.25 ? 'Freeze' : 'OK';
+  /* Ideal pay rate for a point total (Exam 2 pay-for-points, rounded UP). */
+  function ideal(t, pts) {
+    const g = gradeOf(pts), row = t[g - 1], a = pts - (g - 1) * 200, exact = (row.mid - row.min) * a / 100;
+    return { g, a, row, exact: row.min + exact, pay: row.min + Math.ceil(exact - 1e-9) };
+  }
+  const r2 = v => Math.round(v * 100 + 1e-9) / 100; // the class rounds the ratio to 2 decimals before comparing
+  const act = cr => r2(cr) > HI ? 'Freeze' : r2(cr) < LO ? 'Raise gradually' : 'OK';
   function solve(sh) {
     const t1 = table(sh.p1), t2 = table(sh.p2);
-    const j1 = sh.p1.jobs.map(([name, pts, pays]) => { const g = gradeOf(pts), mkt = pays.reduce((a, [, v]) => a + v, 0) / pays.length, mid = t1[g - 1].mid; return { name, pts, pays, g, mkt, mid, cr: mid / r(mkt) }; });
-    const j2 = sh.p2.jobs.map(([name, pts, pay]) => { const g = gradeOf(pts), row = t2[g - 1]; return { name, pts, pay, g, mid: row.mid, min: row.min, cr: pay / row.mid, gap: row.mid - pay }; });
-    const out = j1.filter(j => j.cr < 0.75 || j.cr > 1.25);
-    return { t1, t2, j1, j2, change: out.length ? 'Change Grade ' + [...new Set(out.map(j => j.g))].join(' & ') : 'No change' };
+    const j1 = sh.p1.jobs.map(([name, pts, pays]) => { const id = ideal(t1, pts), mkt = r(pays.reduce((a, [, v]) => a + v, 0) / pays.length); return { name, pts, pays, ...id, mkt, cr: id.pay / mkt }; });
+    const j2 = sh.p2.jobs.map(([name, pts, pay]) => { const id = ideal(t2, pts); return { name, pts, actual: pay, ...id, crA: id.pay / pay, crB: pay / id.pay }; });
+    const out = j1.filter(j => r2(j.cr) < LO || r2(j.cr) > HI);
+    // The class fixed the job furthest out of line: gap = actual − its grade mid; new min = old min + gap; step = new min × range diff.
+    const worst = j2.reduce((w, j) => Math.abs(1 - j.crA) > Math.abs(1 - w.crA) ? j : w, j2[0]);
+    const gap = worst.actual - worst.row.mid, nmin = worst.row.min + gap, step = r(nmin * worst.row.rd / 100);
+    return { t1, t2, j1, j2, change: out.length ? 'Change Grade ' + [...new Set(out.map(j => j.g))].join(' & ') : 'No change', fix: { job: worst, gap, nmin, step, nmid: nmin + step, nmax: nmin + 2 * step } };
   }
   function cells(sol) {
-    const c = {}, $c = (a, tol = 1) => ({ answer: a, tol }), crc = a => ({ answer: a, tol: 0.0051, cr: true });
+    const c = {}, $c = (a, tol = 1) => ({ answer: a, tol }), crc = a => ({ answer: a, tol: 0.0101, cr: true });
     sol.t1.forEach((row, i) => { if (i !== 2) c['a_mid' + i] = $c(row.mid); c['a_min' + i] = $c(row.min); c['a_max' + i] = $c(row.max); });
-    sol.j1.forEach((j, i) => { c['a_g' + i] = $c(j.g, 0); c['a_mkt' + i] = $c(r(j.mkt)); c['a_cr' + i] = crc(j.cr); });
+    sol.j1.forEach((j, i) => { c['a_g' + i] = $c(j.g, 0); c['a_ip' + i] = $c(j.pay); c['a_mkt' + i] = $c(j.mkt); c['a_cr' + i] = crc(j.cr); });
     c.a_dec = { choice: sol.change, options: [...new Set(['No change', ...sol.j1.map(j => 'Change Grade ' + j.g).sort(), sol.change])] };
     sol.t2.forEach((row, i) => { if (i !== 2) c['b_mid' + i] = $c(row.mid); c['b_min' + i] = $c(row.min); c['b_max' + i] = $c(row.max); });
-    sol.j2.forEach((j, i) => { c['b_g' + i] = $c(j.g, 0); c['b_cr' + i] = crc(j.cr); c['b_gap' + i] = $c(j.gap); c['b_act' + i] = { choice: act(j.cr), options: ['Raise', 'OK', 'Freeze'] }; });
+    sol.j2.forEach((j, i) => { c['b_g' + i] = $c(j.g, 0); c['b_ip' + i] = $c(j.pay); c['b_crA' + i] = crc(j.crA); c['b_crB' + i] = crc(j.crB); c['b_act' + i] = { choice: act(j.crA), options: ['Raise gradually', 'OK', 'Freeze'] }; });
+    const f = sol.fix; c.f_gap = $c(f.gap); c.f_min = $c(f.nmin); c.f_mid = $c(f.nmid, 2); c.f_max = $c(f.nmax, 3);
     return c;
   }
   function grade(cell, v) {
@@ -59,17 +73,15 @@
 
   function genSheet() {
     const p = () => ({ mid3: rand(480, 720) * 100 + rand(0, 99), diff: [0, ...Array.from({ length: 4 }, () => pick([8, 10, 12, 15, 17, 20]))], rd: [pick([10, 12, 15]), pick([12, 14, 15]), pick([15, 17]), pick([18, 20]), pick([20, 25])] });
-    const p1 = p(), p2 = p();
-    const t1 = table(p1), t2 = table(p2);
-    const names1 = ['Payroll Specialist', 'HR Generalist', 'Benefits Analyst', 'Recruiter', 'Systems Analyst', 'Accountant I'];
-    const shuffled = names1.sort(() => Math.random() - .5);
-    const schools = ['ISU', 'IWU', 'UIUC'];
-    p1.jobs = [0, 1, 2].map(i => { const pts = rand(1, 4) * 200 + rand(5, 190), g = gradeOf(pts), mid = t1[g - 1].mid; const target = mid / pick([0.7, 0.85, 0.95, 1.05, 1.15, 1.3]); return [shuffled[i], pts, schools.map(s => [s, r(target * (0.92 + Math.random() * 0.16))])]; });
-    p2.jobs = ['Job A', 'Job B', 'Job C'].map(n => { const pts = rand(20, 990), g = gradeOf(pts); return [n, pts, r(t2[g - 1].mid * pick([0.7, 0.73, 0.8, 0.9, 1.0, 1.1, 1.3]) / 5) * 5]; });
-    return { title: 'New numbers · same steps as the 10/5 exercise', p1, p2 };
+    const p1 = p(), p2 = p(), t1 = table(p1), t2 = table(p2);
+    const names = ['Payroll Specialist', 'HR Generalist', 'Benefits Analyst', 'Recruiter', 'Systems Analyst', 'Accountant I'].sort(() => Math.random() - .5);
+    const cos = ['Caterpillar', 'Rivian', 'OSF', 'State Farm', 'ISU'];
+    p1.jobs = [0, 1, 2].map(i => { const pts = rand(1, 4) * 200 + rand(5, 190), ip = ideal(t1, pts).pay, mkt = ip / pick([0.84, 0.9, 0.95, 1.0, 1.05, 1.08, 1.16]); return [names[i], pts, [0, 1, 2].map(k => [pick(cos), r(mkt * (0.94 + Math.random() * 0.12) / 50) * 50])]; });
+    p2.jobs = ['Job A', 'Job B', 'Job C'].map(n => { const pts = rand(20, 990), ip = ideal(t2, pts).pay; return [n, pts, r(ip * pick([0.78, 0.86, 0.95, 1.0, 1.04, 1.12, 1.25]))]; });
+    return { title: 'New numbers · same steps as the class exercise', p1, p2 };
   }
 
-  const st = () => { const s = S().state; if (!s.crsheet) s.crsheet = { kind: 'class', gen: null, vals: {}, checked: false, reveal: false }; return s.crsheet; };
+  const st = () => { const s = S().state; if (!s.crsheet || s.crsheet.v !== 2) s.crsheet = { v: 2, kind: 'class', gen: null, vals: {}, checked: false, reveal: false }; return s.crsheet; };
   const current = () => { const w = st(); if (w.kind === 'gen' && !w.gen) w.gen = genSheet(); return w.kind === 'gen' ? w.gen : CLASS; };
 
   function page(keep) {
@@ -86,23 +98,28 @@
     const ids = Object.keys(C), ok = ids.filter(id => grade(C[id], w.vals[id]) === true).length;
     const gradeRows = (t, p, k) => t.map((row, i) => `<tr><td>${row.g} (${i ? i * 200 + 1 : 0}–${(i + 1) * 200})</td><td>${i ? p.diff[i] + '%' : '—'}</td><td>${row.rd}%</td><td>${inp(k + '_min' + i)}</td><td>${i === 2 ? '<b>' + fmt(row.mid) + '</b>' : inp(k + '_mid' + i)}</td><td>${inp(k + '_max' + i)}</td></tr>`).join('');
     const head = '<thead><tr><th>Grade</th><th>Mid diff</th><th>Range diff</th><th>Minimum</th><th>Midpoint</th><th>Maximum</th></tr></thead>';
-    const p1 = `<p class="ws-given">Grade 3 midpoint <b>${fmt(sh.p1.mid3)}</b>. The midpoint differential is the % you go up INTO that grade.</p>
+    const f = sol.fix;
+    const p1 = `<p class="ws-given">Grade 3 midpoint <b>${fmt(sh.p1.mid3)}</b>. The midpoint differential is the % you go up INTO that grade. The company pays the “ideal” rate (pay for the job’s points) and wants each position within 90% of the midpoint: a compa-ratio of <b>0.90–1.10</b>.</p>
       <div class="table-wrap"><table class="ws">${head}<tbody>${gradeRows(sol.t1, sh.p1, 'a')}</tbody></table></div>
       <h3 class="ws-h3">Market research</h3>
-      <div class="table-wrap"><table class="ws"><thead><tr><th>Position</th><th>Market pay</th><th>Grade</th><th>Market average</th><th>Midpoint ÷ market</th></tr></thead><tbody>
-      ${sol.j1.map((j, i) => `<tr><td>${esc(j.name)} (${j.pts} pts)</td><td>${j.pays.map(([s, v]) => esc(s) + ' ' + fmt(v)).join('<br>')}</td><td>${inp('a_g' + i)}</td><td>${inp('a_mkt' + i)}</td><td>${inp('a_cr' + i)}</td></tr>`).join('')}</tbody></table></div>
-      <p class="ws-given">Recommendation (the company pays the “ideal” rate = the midpoint): ${inp('a_dec')}</p>`;
-    const p2 = `<p class="ws-given">Grade 3 midpoint <b>${fmt(sh.p2.mid3)}</b>.</p>
+      <div class="table-wrap"><table class="ws"><thead><tr><th>Position</th><th>Market pay</th><th>Grade</th><th>Ideal pay (points)</th><th>Market average</th><th>Ideal ÷ market</th></tr></thead><tbody>
+      ${sol.j1.map((j, i) => `<tr><td>${esc(j.name)} (${j.pts} pts)</td><td>${j.pays.map(([s, v]) => esc(s) + ' ' + fmt(v)).join('<br>')}</td><td>${inp('a_g' + i)}</td><td>${inp('a_ip' + i)}</td><td>${inp('a_mkt' + i)}</td><td>${inp('a_cr' + i)}</td></tr>`).join('')}</tbody></table></div>
+      <p class="ws-given">Recommendation: ${inp('a_dec')}</p>`;
+    const p2 = `<p class="ws-given">Grade 3 midpoint <b>${fmt(sh.p2.mid3)}</b>. Positions should be within 90% of the midpoint (0.90–1.10). Round to 2 decimals.</p>
       <div class="table-wrap"><table class="ws">${head}<tbody>${gradeRows(sol.t2, sh.p2, 'b')}</tbody></table></div>
       <h3 class="ws-h3">Your employees</h3>
-      <div class="table-wrap"><table class="ws"><thead><tr><th>Job</th><th>Pay</th><th>Grade</th><th>Compa-ratio</th><th>Below (+) / above (−) mid</th><th>Action</th></tr></thead><tbody>
-      ${sol.j2.map((j, i) => `<tr><td>${esc(j.name)} (${j.pts} pts)</td><td>${fmt(j.pay)}</td><td>${inp('b_g' + i)}</td><td>${inp('b_cr' + i)}</td><td>${inp('b_gap' + i)}</td><td>${inp('b_act' + i)}</td></tr>`).join('')}</tbody></table></div>`;
+      <div class="table-wrap"><table class="ws"><thead><tr><th>Job</th><th>Actual pay</th><th>Grade</th><th>Ideal pay (points)</th><th>Ideal ÷ actual<br><small>class sheet</small></th><th>Actual ÷ ideal<br><small>textbook</small></th><th>Action (class)</th></tr></thead><tbody>
+      ${sol.j2.map((j, i) => `<tr><td>${esc(j.name)} (${j.pts} pts)</td><td>${fmt(j.actual)}</td><td>${inp('b_g' + i)}</td><td>${inp('b_ip' + i)}</td><td>${inp('b_crA' + i)}</td><td>${inp('b_crB' + i)}</td><td>${inp('b_act' + i)}</td></tr>`).join('')}</tbody></table></div>
+      <h3 class="ws-h3">Fix the range for ${esc(f.job.name)} (Grade ${f.job.g}), the class way</h3>
+      <div class="table-wrap"><table class="ws"><thead><tr><th>Gap = actual − grade mid</th><th>New min = old min + gap</th><th>New mid = min + min × ${f.job.row.rd}%</th><th>New max = mid + same step</th></tr></thead><tbody><tr><td>${inp('f_gap')}</td><td>${inp('f_min')}</td><td>${inp('f_mid')}</td><td>${inp('f_max')}</td></tr></tbody></table></div>`;
     const steps = w.checked || w.reveal ? `<section class="panel ws-part"><details class="ws-steps" open><summary>Worked steps</summary>
       <p><b>Midpoints.</b> Up: mid × (1 + the next grade’s differential). Down: mid ÷ (1 + this grade’s differential), never × (1 − diff). Min = mid × (1 − range diff), max = mid × (1 + range diff). Normal rounding.</p>
-      <p><b>Problem 1.</b> ${sol.j1.map(j => `${esc(j.name)}: Grade ${j.g} · market ${fmt(j.pays.reduce((a, [, v]) => a + v, 0))} ÷ 3 = ${fmt(r(j.mkt))} · ${fmt(j.mid)} ÷ ${fmt(r(j.mkt))} = ${j.cr.toFixed(2)}`).join('<br>')}<br>Inside 0.75–1.25 → no change; outside → change that grade’s range. Answer: <b>${esc(sol.change)}</b>.</p>
-      <p><b>Problem 2.</b> ${sol.j2.map(j => `${esc(j.name)}: Grade ${j.g} · ${fmt(j.pay)} ÷ ${fmt(j.mid)} = ${j.cr.toFixed(2)} → ${act(j.cr)} · ${j.gap >= 0 ? fmt(j.gap) + ' below' : fmt(-j.gap) + ' above'} the midpoint${j.pay < j.min ? ` · under the grade minimum (${fmt(j.min)}): raise to at least the min` : ''}`).join('<br>')}</p>
-      <p class="source">Dollar cells accept ±$1. Compa-ratios accept 2 decimals. Problem 1 uses midpoint ÷ market (the “ideal pay rate” = the midpoint); check this against the 10/7 review.</p></details></section>` : '';
-    $('#app').innerHTML = S().heading('CALCULATE / WORKSHEET', 'Compa-Ratio Sheet', 'The 10/5 Compa-Ratio Exercise, cell by cell. Your entries save as you type.',
+      <p><b>Ideal pay.</b> min + (mid − min) × a ÷ 100, where a = points − grade bottom; round UP.</p>
+      <p><b>Problem 1.</b> ${sol.j1.map(j => `${esc(j.name)}: Grade ${j.g} · (${fmt(j.row.mid)} − ${fmt(j.row.min)}) × ${j.a}/100 + ${fmt(j.row.min)} = ${fmt(j.pay)} · market ${fmt(j.pays.reduce((a, [, v]) => a + v, 0))} ÷ 3 = ${fmt(j.mkt)} · ${fmt(j.pay)} ÷ ${fmt(j.mkt)} = ${j.cr.toFixed(2)}`).join('<br>')}<br>All inside 0.90–1.10 → no change; outside → change that grade’s range. Answer: <b>${esc(sol.change)}</b>.</p>
+      <p><b>Problem 2.</b> ${sol.j2.map(j => `${esc(j.name)}: Grade ${j.g} · ideal ${fmt(j.pay)} · ideal ÷ actual = ${j.crA.toFixed(2)} → ${act(j.crA)} · actual ÷ ideal = ${j.crB.toFixed(2)}`).join('<br>')}</p>
+      <p><b>Fix (class method).</b> ${fmt(f.job.actual)} − ${fmt(f.job.row.mid)} = ${fmt(f.gap)} · new min ${fmt(f.job.row.min)} + ${fmt(f.gap)} = ${fmt(f.nmin)} · step ${fmt(f.nmin)} × ${f.job.row.rd}% = ${fmt(f.step)} → mid ${fmt(f.nmid)}, max ${fmt(f.nmax)}.</p>
+      <p class="source">The class sheet divided ideal ÷ actual in Problem 2; the textbook divides actual (pay) ÷ ideal (target). Ask which one counts. Dollar cells accept ±$1, ratios ±0.01.</p></details></section>` : '';
+    $('#app').innerHTML = S().heading('CALCULATE / WORKSHEET', 'Compa-Ratio Sheet', 'The class Compa-Ratio Exercise, cell by cell. Your entries save as you type.',
       `<div class="ws-score">${w.checked ? `<b>${ok}</b> / ${ids.length}<small>cells correct</small>` : `<small>${ids.length} cells</small>`}</div>`) +
       `<section class="panel ws-bar"><div class="ws-switch"><button class="${w.kind === 'class' ? 'primary' : ''}" data-action="crs-kind" data-kind="class">Class sheet</button><button class="${w.kind === 'gen' ? 'primary' : ''}" data-action="crs-kind" data-kind="gen">New numbers</button><button data-action="crw-open" class="wt-launch">▶ Guided walkthrough</button></div>
       <span class="source">${esc(sh.title)}</span></section>
@@ -127,56 +144,50 @@
   const f$ = v => '$' + fmt(v);
   const wst = () => { const w = st(); if (!w.walk) w.walk = { i: 0, vals: {}, status: {} }; return w.walk; };
   function buildSteps(sh) {
-    const sol = solve(sh), C = cells(sol), t1 = sol.t1, t2 = sol.t2, p1 = sh.p1, p2 = sh.p2, steps = [];
+    const sol = solve(sh), C = cells(sol), t1 = sol.t1, t2 = sol.t2, p1 = sh.p1, p2 = sh.p2, steps = [], f = sol.fix;
     const F = (id, label) => ({ id, label, cell: C[id] });
     const add = (part, title, teach, fields, hint, work) => steps.push({ part, title, teach, fields, hint, work });
+    const ipWork = j => `Grade ${j.g}: a = ${j.pts} − ${(j.g - 1) * 200} = ${j.a} → (${f$(j.row.mid)} − ${f$(j.row.min)}) × ${j.a}/100 = ${fmt(j.exact - j.row.min)} → round UP → + ${f$(j.row.min)} = <b>${f$(j.pay)}</b>`;
     // Problem 1
-    add(1, 'Go UP one grade', `Every grade’s midpoint comes from the one next to it. Going <b>up</b>, multiply by (1 + the midpoint differential of the grade you move <b>into</b>).<div class="wt-formula">Next mid = mid × (1 + diff)</div>Grade 3’s midpoint is given: <b>${f$(p1.mid3)}</b>. Grade 4’s differential is <b>${p1.diff[3]}%</b>.`,
-      [F('a_mid3', 'Grade 4 midpoint')], `${fmt(p1.mid3)} × ${1 + p1.diff[3] / 100}, then round to the nearest dollar.`, `${f$(p1.mid3)} × ${1 + p1.diff[3] / 100} = ${fmt(p1.mid3 * (1 + p1.diff[3] / 100))} → <b>${f$(t1[3].mid)}</b>`);
-    add(1, 'Keep going up', `Same move again: Grade 5 = Grade 4’s midpoint × (1 + Grade 5’s differential, <b>${p1.diff[4]}%</b>). Use your rounded Grade 4 number.`,
-      [F('a_mid4', 'Grade 5 midpoint')], `${fmt(t1[3].mid)} × ${1 + p1.diff[4] / 100}`, `${f$(t1[3].mid)} × ${1 + p1.diff[4] / 100} = <b>${f$(t1[4].mid)}</b>`);
-    add(1, 'Go DOWN one grade', `Going <b>down</b> undoes the step up, so you <b>divide</b> by (1 + the differential of the grade you are leaving). Grade 3’s differential is <b>${p1.diff[2]}%</b>.<div class="wt-formula">Lower mid = mid ÷ (1 + diff)</div>The trap: × (1 − diff) gives the wrong answer (${f$(r(p1.mid3 * (1 - p1.diff[2] / 100)))}).`,
-      [F('a_mid1', 'Grade 2 midpoint')], `${fmt(p1.mid3)} ÷ ${1 + p1.diff[2] / 100}`, `${f$(p1.mid3)} ÷ ${1 + p1.diff[2] / 100} = ${fmt(p1.mid3 / (1 + p1.diff[2] / 100))} → <b>${f$(t1[1].mid)}</b>`);
-    add(1, 'Down to Grade 1', `Divide Grade 2’s midpoint by (1 + Grade 2’s differential, <b>${p1.diff[1]}%</b>).`,
-      [F('a_mid0', 'Grade 1 midpoint')], `${fmt(t1[1].mid)} ÷ ${1 + p1.diff[1] / 100}`, `${f$(t1[1].mid)} ÷ ${1 + p1.diff[1] / 100} = <b>${f$(t1[0].mid)}</b> (±$1 is fine)`);
-    add(1, 'Minimum and maximum', `Each grade’s range spreads around its midpoint by the <b>range differential</b>.<div class="wt-formula">Min = mid × (1 − range diff)<br>Max = mid × (1 + range diff)</div>Start with Grade 3: midpoint ${f$(p1.mid3)}, range differential <b>${p1.rd[2]}%</b>.`,
-      [F('a_min2', 'Grade 3 minimum'), F('a_max2', 'Grade 3 maximum')], `${fmt(p1.mid3)} × ${1 - p1.rd[2] / 100} and × ${1 + p1.rd[2] / 100}`, `Min ${f$(p1.mid3)} × ${1 - p1.rd[2] / 100} = <b>${f$(t1[2].min)}</b> · Max × ${1 + p1.rd[2] / 100} = <b>${f$(t1[2].max)}</b>. Check: mid − min = max − mid.`);
-    add(1, 'The rest of the ranges', `Same formula for every other grade. Watch the range differential change: ${t1.map(x => `G${x.g} ${x.rd}%`).join(' · ')}.`,
-      [0, 1, 3, 4].flatMap(i => [F('a_min' + i, `Grade ${i + 1} min`), F('a_max' + i, `Grade ${i + 1} max`)]), `Use each grade’s own midpoint and its own range %.`, [0, 1, 3, 4].map(i => `G${i + 1}: ${f$(t1[i].mid)} → ${f$(t1[i].min)} – ${f$(t1[i].max)}`).join('<br>'));
+    add(1, 'Go UP one grade', `Each midpoint comes from the one next to it. Going <b>up</b>, multiply by (1 + the differential of the grade you move <b>into</b>).<div class="wt-formula">Next mid = mid × (1 + diff)</div>Grade 3’s midpoint is given: <b>${f$(p1.mid3)}</b>. Grade 4’s differential is <b>${p1.diff[3]}%</b>.`,
+      [F('a_mid3', 'Grade 4 midpoint'), F('a_mid4', 'Grade 5 midpoint')], `${fmt(p1.mid3)} × ${1 + p1.diff[3] / 100}, round, then × ${1 + p1.diff[4] / 100}.`, `${f$(p1.mid3)} × ${1 + p1.diff[3] / 100} = <b>${f$(t1[3].mid)}</b> · × ${1 + p1.diff[4] / 100} = <b>${f$(t1[4].mid)}</b>`);
+    add(1, 'Go DOWN', `Going <b>down</b> undoes the step up, so <b>divide</b> by (1 + the differential of the grade you leave).<div class="wt-formula">Lower mid = mid ÷ (1 + diff)</div>Trap: × (1 − diff) gives ${f$(r(p1.mid3 * (1 - p1.diff[2] / 100)))}, which is wrong.`,
+      [F('a_mid1', 'Grade 2 midpoint'), F('a_mid0', 'Grade 1 midpoint')], `${fmt(p1.mid3)} ÷ ${1 + p1.diff[2] / 100}`, `${f$(p1.mid3)} ÷ ${1 + p1.diff[2] / 100} = <b>${f$(t1[1].mid)}</b> · ÷ ${1 + p1.diff[1] / 100} = <b>${f$(t1[0].mid)}</b>`);
+    add(1, 'Minimums and maximums', `<div class="wt-formula">Min = mid × (1 − range diff)<br>Max = mid × (1 + range diff)</div>A 20% range diff means × 0.80 and × 1.20; 15% means × 0.85 and × 1.15. Range diffs: ${t1.map(x => `G${x.g} ${x.rd}%`).join(' · ')}.`,
+      [0, 1, 2, 3, 4].flatMap(i => [F('a_min' + i, `Grade ${i + 1} min`), F('a_max' + i, `Grade ${i + 1} max`)]), `Each grade uses its own midpoint and its own range %.`, t1.map(x => `G${x.g}: ${f$(x.mid)} → ${f$(x.min)} – ${f$(x.max)}`).join('<br>'));
     add(1, 'Find each job’s grade', `Grades are 200 points wide: 0–200 = 1, 201–400 = 2, 401–600 = 3, 601–800 = 4, 801–1000 = 5.`,
       sol.j1.map((j, i) => F('a_g' + i, `${j.name} (${j.pts} pts)`)), `Which 200-point band holds the points?`, sol.j1.map(j => `${j.name}: ${j.pts} pts → <b>Grade ${j.g}</b>`).join('<br>'));
-    add(1, 'Average the market', `Your research found three schools’ pay for each job. The market rate = their <b>average</b>.<div class="wt-formula">Market = (A + B + C) ÷ 3</div>`,
-      sol.j1.map((j, i) => F('a_mkt' + i, `${j.name} market average`)), `Add the three numbers, divide by 3, round to the dollar.`, sol.j1.map(j => `${j.name}: ${j.pays.map(([, v]) => fmt(v)).join(' + ')} = ${fmt(j.pays.reduce((a, [, v]) => a + v, 0))} ÷ 3 = <b>${f$(r(j.mkt))}</b>`).join('<br>'));
-    add(1, 'Compare the grade to the market', `The company pays the “ideal” rate, which is the grade <b>midpoint</b> (a compa-ratio of 1.0). Compare it with the market:<div class="wt-formula">Compa-ratio = midpoint ÷ market average</div>Answer to 2 decimals. The ideal range is <b>0.75 – 1.25</b>.`,
-      sol.j1.map((j, i) => F('a_cr' + i, `${j.name} compa-ratio`)), `Use the midpoint of the job’s grade from your chart.`, sol.j1.map(j => `${j.name}: ${f$(j.mid)} ÷ ${f$(r(j.mkt))} = <b>${j.cr.toFixed(2)}</b>`).join('<br>'));
-    add(1, 'Make the call', `If every ratio is inside 0.75–1.25, the chart is fine: recommend <b>no change</b> and say why. If one is outside, that grade’s range needs to change.`,
-      [F('a_dec', 'Recommendation')], `Look at your three ratios. Are any below 0.75 or above 1.25?`, `${sol.j1.map(j => j.cr.toFixed(2)).join(' · ')} → <b>${esc(sol.change)}</b>`);
+    add(1, 'The “ideal” pay rate', `The company pays the <b>ideal</b> rate: the Exam 2 pay-for-points formula.<div class="wt-formula">Ideal = min + (mid − min) × a ÷ 100<br>a = points − grade bottom</div>Round the increase <b>UP</b>.`,
+      sol.j1.map((j, i) => F('a_ip' + i, `${j.name} ideal pay`)), `Example: 740 pts is Grade 4, a = 740 − 600 = 140, so × 1.4.`, sol.j1.map(j => `${j.name}: ${ipWork(j)}`).join('<br>'));
+    add(1, 'Average the market', `The market rate is the <b>average</b> of the three companies’ pay for that job.<div class="wt-formula">Market = (A + B + C) ÷ 3</div>`,
+      sol.j1.map((j, i) => F('a_mkt' + i, `${j.name} market average`)), `Add the three numbers and divide by 3.`, sol.j1.map(j => `${j.name}: ${j.pays.map(([, v]) => fmt(v)).join(' + ')} ÷ 3 = <b>${f$(j.mkt)}</b>`).join('<br>'));
+    add(1, 'Compa-ratio vs the market', `<div class="wt-formula">Compa-ratio = ideal pay ÷ market average</div>Round to <b>2 decimals</b>. “Within 90% of the midpoint” = <b>0.90 – 1.10</b>.`,
+      sol.j1.map((j, i) => F('a_cr' + i, `${j.name} compa-ratio`)), `Divide your ideal pay by your market average.`, sol.j1.map(j => `${j.name}: ${f$(j.pay)} ÷ ${f$(j.mkt)} = <b>${j.cr.toFixed(2)}</b>`).join('<br>'));
+    add(1, 'Make the call', `All inside 0.90–1.10 → recommend <b>no change</b> and say why. One outside → that grade’s range needs a change.`,
+      [F('a_dec', 'Recommendation')], `Any ratio below 0.90 or above 1.10?`, `${sol.j1.map(j => j.cr.toFixed(2)).join(' · ')} → <b>${esc(sol.change)}</b>`);
     // Problem 2
-    add(2, 'New chart: go up', `Problem 2 has its own chart. Grade 3’s midpoint is <b>${f$(p2.mid3)}</b>, and the differentials change by grade: G4 <b>${p2.diff[3]}%</b>, G5 <b>${p2.diff[4]}%</b>.`,
-      [F('b_mid3', 'Grade 4 midpoint'), F('b_mid4', 'Grade 5 midpoint')], `Grade 4 = ${fmt(p2.mid3)} × ${1 + p2.diff[3] / 100}. Then Grade 5 = your Grade 4 × ${1 + p2.diff[4] / 100}.`, `${f$(p2.mid3)} × ${1 + p2.diff[3] / 100} = <b>${f$(t2[3].mid)}</b> · × ${1 + p2.diff[4] / 100} = <b>${f$(t2[4].mid)}</b>`);
-    add(2, 'Go down', `Divide: Grade 2 = Grade 3 ÷ (1 + <b>${p2.diff[2]}%</b>), Grade 1 = Grade 2 ÷ (1 + <b>${p2.diff[1]}%</b>).`,
-      [F('b_mid1', 'Grade 2 midpoint'), F('b_mid0', 'Grade 1 midpoint')], `${fmt(p2.mid3)} ÷ ${1 + p2.diff[2] / 100}`, `${f$(p2.mid3)} ÷ ${1 + p2.diff[2] / 100} = <b>${f$(t2[1].mid)}</b> · ÷ ${1 + p2.diff[1] / 100} = <b>${f$(t2[0].mid)}</b>`);
-    add(2, 'All the ranges', `Min = mid × (1 − range diff), max = mid × (1 + range diff). Range differentials: ${t2.map(x => `G${x.g} ${x.rd}%`).join(' · ')}.`,
+    add(2, 'New chart: midpoints', `Problem 2 has its own chart. Grade 3 mid = <b>${f$(p2.mid3)}</b>. Differentials change by grade: G2 ${p2.diff[1]}%, G3 ${p2.diff[2]}%, G4 ${p2.diff[3]}%, G5 ${p2.diff[4]}%.`,
+      [F('b_mid3', 'Grade 4 midpoint'), F('b_mid4', 'Grade 5 midpoint'), F('b_mid1', 'Grade 2 midpoint'), F('b_mid0', 'Grade 1 midpoint')], `Up: × (1 + diff). Down: ÷ (1 + diff of the grade you leave).`, `G4 ${f$(t2[3].mid)} · G5 ${f$(t2[4].mid)} · G2 ${f$(t2[1].mid)} · G1 ${f$(t2[0].mid)}`);
+    add(2, 'All the ranges', `Min = mid × (1 − range diff), max = mid × (1 + range diff). Range diffs: ${t2.map(x => `G${x.g} ${x.rd}%`).join(' · ')}.`,
       [0, 1, 2, 3, 4].flatMap(i => [F('b_min' + i, `Grade ${i + 1} min`), F('b_max' + i, `Grade ${i + 1} max`)]), `Each grade uses its own midpoint and range %.`, t2.map(x => `G${x.g}: ${f$(x.mid)} → ${f$(x.min)} – ${f$(x.max)}`).join('<br>'));
-    add(2, 'Find each job’s grade', `Same 200-point bands as before.`,
-      sol.j2.map((j, i) => F('b_g' + i, `${j.name} (${j.pts} pts)`)), `0–200 = 1 · 201–400 = 2 · 401–600 = 3 · 601–800 = 4 · 801–1000 = 5`, sol.j2.map(j => `${j.name}: ${j.pts} pts → <b>Grade ${j.g}</b>`).join('<br>'));
-    add(2, 'Compa-ratio for each employee', `Now it’s the employee’s actual pay against the grade midpoint:<div class="wt-formula">Compa-ratio = pay ÷ midpoint</div>Below 1 = paid below the midpoint. Answer to 2 decimals.`,
-      sol.j2.map((j, i) => F('b_cr' + i, `${j.name} compa-ratio`)), `Divide each pay by the midpoint of its grade (never the min or max).`, sol.j2.map(j => `${j.name}: ${f$(j.pay)} ÷ ${f$(j.mid)} = <b>${j.cr.toFixed(2)}</b>`).join('<br>'));
-    add(2, 'How far from the midpoint?', `The question asks how much below or above the midpoint you pay. That’s also what it would cost to bring them to 1.0.<div class="wt-formula">Gap = midpoint − pay</div>Positive = below the midpoint; negative = above.`,
-      sol.j2.map((j, i) => F('b_gap' + i, `${j.name} gap`)), `Midpoint minus pay.`, sol.j2.map(j => `${j.name}: ${f$(j.mid)} − ${f$(j.pay)} = <b>${f$(j.gap)}</b>`).join('<br>'));
-    add(2, 'Recommend', `Below <b>0.75</b> → raise. Above <b>1.25</b> → freeze. In between → OK. Also check the grade <b>minimum</b>: anyone paid under the min should come up to at least the min.`,
-      sol.j2.map((j, i) => F('b_act' + i, `${j.name} action`)), `Compare each ratio with 0.75 and 1.25.`, sol.j2.map(j => `${j.name}: ${j.cr.toFixed(2)} → <b>${act(j.cr)}</b>${j.pay < j.min ? ` (and under the Grade ${j.g} minimum of ${f$(j.min)}: raise to at least the min)` : ''}`).join('<br>'));
+    add(2, 'Grade and ideal pay', `Put each job in its grade, then find its <b>ideal</b> pay with the points formula (round UP).`,
+      sol.j2.flatMap((j, i) => [F('b_g' + i, `${j.name} grade`), F('b_ip' + i, `${j.name} ideal pay`)]), `a = points − grade bottom; b = 100.`, sol.j2.map(j => `${j.name}: ${ipWork(j)}`).join('<br>'));
+    add(2, 'Compa-ratios, both ways', `The class sheet divided <b>ideal ÷ actual</b>. The textbook divides <b>actual ÷ ideal</b>. Do both, 2 decimals, so you’re ready either way.`,
+      sol.j2.flatMap((j, i) => [F('b_crA' + i, `${j.name}: ideal ÷ actual`), F('b_crB' + i, `${j.name}: actual ÷ ideal`)]), `One ratio is just 1 ÷ the other.`, sol.j2.map(j => `${j.name}: ${f$(j.pay)} ÷ ${f$(j.actual)} = <b>${j.crA.toFixed(2)}</b> · ${f$(j.actual)} ÷ ${f$(j.pay)} = <b>${j.crB.toFixed(2)}</b>`).join('<br>'));
+    add(2, 'What to do (class sheet)', `Using the class ratio (ideal ÷ actual): above <b>1.10</b> → freeze pay until the position is more in line; below <b>0.90</b> → gradually increase; in between → OK.`,
+      sol.j2.map((j, i) => F('b_act' + i, `${j.name} action`)), `Compare each ideal ÷ actual ratio with 0.90 and 1.10.`, sol.j2.map(j => `${j.name}: ${j.crA.toFixed(2)} → <b>${act(j.crA)}</b>`).join('<br>'));
+    add(2, 'Fix the range (class method)', `For the job furthest out of line (<b>${esc(f.job.name)}</b>, Grade ${f.job.g}) the class rebuilt the range:<div class="wt-formula">Gap = actual − grade mid<br>New min = old min + gap<br>Step = new min × range diff<br>New mid = min + step · New max = mid + step</div>`,
+      [F('f_gap', 'Gap'), F('f_min', 'New min'), F('f_mid', 'New mid'), F('f_max', 'New max')], `${fmt(f.job.actual)} − ${fmt(f.job.row.mid)}, then add that to ${fmt(f.job.row.min)}.`, `${f$(f.job.actual)} − ${f$(f.job.row.mid)} = <b>${f$(f.gap)}</b> · ${f$(f.job.row.min)} + ${f$(f.gap)} = <b>${f$(f.nmin)}</b> · step ${f$(f.step)} → mid <b>${f$(f.nmid)}</b>, max <b>${f$(f.nmax)}</b>`);
     return { steps, sol };
   }
   function walkOpen(restart) { const w = st(); if (restart || !w.walk) w.walk = { i: 0, vals: {}, status: {} }; W = buildSteps(current()); S().save(); S().sound('start'); walkRender(); window.scrollTo(0, 0); }
   function givenPanel(step, sh) {
-    const p = step.part === 1 ? sh.p1 : sh.p2, t = step.part === 1 ? W.sol.t1 : W.sol.t2;
+    const p = step.part === 1 ? sh.p1 : sh.p2, t = step.part === 1 ? W.sol.t1 : W.sol.t2, pre = step.part === 1 ? 'a' : 'b';
     const known = id => { const wk = wst(); for (let k = 0; k < wk.i; k++) if (W.steps[k].fields.some(f => f.id === id)) return true; return false; };
-    const pre = step.part === 1 ? 'a' : 'b';
-    const cell = (id, v) => id === null || known(id) ? fmt(v) : '?';
+    const cell = (id, v) => known(id) ? fmt(v) : '?';
     const rows = t.map((row, i) => `<tr><td>${row.g}</td><td>${i ? p.diff[i] + '%' : '—'}</td><td>${row.rd}%</td><td>${cell(pre + '_min' + i, row.min)}</td><td>${i === 2 ? '<b>' + fmt(row.mid) + '</b>' : cell(pre + '_mid' + i, row.mid)}</td><td>${cell(pre + '_max' + i, row.max)}</td></tr>`).join('');
-    const jobs = step.part === 1 ? W.sol.j1.map(j => `<li>${esc(j.name)} · ${j.pts} pts · ${j.pays.map(([s, v]) => esc(s) + ' ' + fmt(v)).join(', ')}</li>`) : W.sol.j2.map(j => `<li>${esc(j.name)} · ${j.pts} pts · pays ${f$(j.pay)}</li>`);
-    return `<div class="table-wrap"><table class="ws"><thead><tr><th>G</th><th>Mid diff</th><th>Range</th><th>Min</th><th>Mid</th><th>Max</th></tr></thead><tbody>${rows}</tbody></table></div><ul class="wt-jobs">${jobs.join('')}</ul>`;
+    const jobs = step.part === 1 ? W.sol.j1.map(j => `<li>${esc(j.name)} · ${j.pts} pts · ${j.pays.map(([s, v]) => esc(s) + ' ' + fmt(v)).join(', ')}</li>`) : W.sol.j2.map(j => `<li>${esc(j.name)} · ${j.pts} pts · pays ${f$(j.actual)}</li>`);
+    return `<div class="table-wrap"><table class="ws"><thead><tr><th>G</th><th>Mid diff</th><th>Range</th><th>Min</th><th>Mid</th><th>Max</th></tr></thead><tbody>${rows}</tbody></table></div><ul class="wt-jobs">${jobs.join('')}</ul><p class="source">Target: 0.90 – 1.10 · round ratios to 2 decimals</p>`;
   }
   function walkRender(keep) {
     if (!keep || S().page !== 'crsheet') S().setPage('crsheet');
