@@ -17,9 +17,18 @@
   const exam = () => Number(S().data?.exam || window.ACTIVE_EXAM || 2);
 
   const TOM = { title: 'Payroll Worksheet 1 · Tom Cruise, October', name: 'Tom Cruise', base: 9435, bonus: 1250, retPct: 2, pre: [['Health Insurance', 225], ['Dental Insurance', 50], ['Vision Insurance', 18]], fed: 12, post: [['Life Insurance', 35], ['Short-Term Disability Ins.', 42]] };
-  const MARIA = { title: 'Payroll as a Function of HR · Exercise 2 (Maria)', name: 'Maria', hours: 45, rate: 20, fed: 10, state: 5, fica: 7.65 };
   const TERMS = [['Gross Pay', 'D'], ['Net Pay', 'B'], ['FLSA', 'F'], ['Withholding Tax', 'E'], ['W-4 Form', 'A'], ['HRIS', 'C']];
   const DEFS = { A: 'Federal form completed by employees to determine tax withholdings', B: 'The employee’s take-home earnings after deductions', C: 'Technology system used to manage employee information and payroll', D: 'Employee’s total earnings before deductions', E: 'Tax deducted from employee pay for income and other purposes', F: 'Federal law governing wages, overtime, and child labor' };
+  const MARIA = { title: 'Payroll as a Function of HR · Exercise 2 (Maria)', name: 'Maria', hours: 45, rate: 20, fed: 10, state: 5, fica: 7.65, defs: DEFS, key: TERMS.map(t => t[1]) };
+  /* Practice versions A–C from the extra worksheet packet (keys double-checked; payroll math matches the class method). */
+  const D_ = { gross: 'Employee’s total earnings before deductions', net: 'The employee’s take-home earnings after deductions', flsa: 'Federal law governing wages, overtime, and child labor', wh: 'Tax deducted from employee pay for income and other purposes', w4: 'Federal form completed by employees to determine tax withholdings', hris: 'Technology system used to manage employee information and payroll' };
+  const defsOf = order => Object.fromEntries(order.map((k, i) => ['ABCDEF'[i], D_[k]]));
+  const keyOf = order => ['gross', 'net', 'flsa', 'wh', 'w4', 'hris'].map(k => 'ABCDEF'[order.indexOf(k)]);
+  const mk = (v, name, hours, rate, fed, state, order) => ({ title: `Practice ${v} · ${name}’s overtime (worksheet packet)`, name, hours, rate, fed, state, fica: 7.65, defs: defsOf(order), key: keyOf(order) });
+  const TOMS = { pA: { title: 'Practice A · Jordan Lee, September (worksheet packet)', name: 'Jordan Lee', base: 8275, bonus: 1475, retPct: 3, pre: [['Health Insurance', 240], ['Dental Insurance', 46], ['Vision Insurance', 21]], fed: 12, post: [['Life Insurance', 39], ['Short-Term Disability Ins.', 48]] },
+    pB: { title: 'Practice B · Taylor Morgan, November (worksheet packet)', name: 'Taylor Morgan', base: 10680, bonus: 920, retPct: 4, pre: [['Health Insurance', 285], ['Dental Insurance', 62], ['Vision Insurance', 24]], fed: 22, post: [['Life Insurance', 44], ['Short-Term Disability Ins.', 56]] },
+    pC: { title: 'Practice C · Casey Rivera, December (worksheet packet)', name: 'Casey Rivera', base: 9140, bonus: 1685, retPct: 5, pre: [['Health Insurance', 260], ['Dental Insurance', 54], ['Vision Insurance', 23]], fed: 18, post: [['Life Insurance', 41], ['Short-Term Disability Ins.', 52]] } };
+  const MARIAS = { pA: mk('A', 'Alex', 47, 24, 12, 4, ['hris', 'flsa', 'net', 'wh', 'w4', 'gross']), pB: mk('B', 'Sam', 43, 28, 15, 6, ['gross', 'w4', 'wh', 'hris', 'flsa', 'net']), pC: mk('C', 'Jamie', 49, 26, 14, 5, ['wh', 'net', 'flsa', 'w4', 'gross', 'hris']) };
 
   /* ---------- solving ---------- */
   function solveTom(t) {
@@ -35,9 +44,9 @@
   }
   const $c = (a, tol = 0.02) => ({ answer: a, tol });
   function cellsTom(s) { return { t_gross: $c(s.gross), t_ret: $c(s.ret), t_bt: $c(s.bt), t_taxable: $c(s.taxable), t_ss: $c(s.ss), t_med: $c(s.med), t_fed: $c(s.fed), t_il: $c(s.il), t_taxes: $c(s.taxes, 0.03), t_at: $c(s.at), t_post: $c(s.post, 0.03), t_net: $c(s.net, 0.03) }; }
-  function cellsMaria(s, withTerms) {
+  function cellsMaria(s, x) {
     const c = { m_reg: $c(s.reg), m_ot: $c(s.ot), m_gross: $c(s.gross), m_fed: $c(s.fed), m_state: $c(s.state), m_fica: $c(s.fica), m_taxes: $c(s.taxes, 0.03), m_net: $c(s.net, 0.03) };
-    if (withTerms) TERMS.forEach(([, k], i) => { c['k' + i] = { choice: k, options: 'ABCDEF'.split('') }; });
+    if (x && x.key) x.key.forEach((k, i) => { c['k' + i] = { choice: k, options: 'ABCDEF'.split('') }; });
     return c;
   }
   const grade = (cell, v) => { if (String(v ?? '').trim() === '') return null; if (cell.choice) return v === cell.choice; const x = parse(v); return Number.isFinite(x) && Math.abs(x - cell.answer) <= cell.tol + 1e-6; };
@@ -50,8 +59,8 @@
 
   /* ---------- state ---------- */
   const st = () => { const s = S().state; if (!s.paysheet) s.paysheet = { tab: 'tom', kind: { tom: 'class', maria: 'class' }, gen: {}, vals: {}, checked: false, reveal: false, walk: null }; return s.paysheet; };
-  const cur = () => { const w = st(), t = w.tab, k = w.kind[t]; if (k === 'gen' && !w.gen[t]) w.gen[t] = t === 'tom' ? genTom() : genMaria(); return k === 'gen' ? w.gen[t] : t === 'tom' ? TOM : MARIA; };
-  const cellsNow = () => { const w = st(), x = cur(); return w.tab === 'tom' ? cellsTom(solveTom(x)) : cellsMaria(solveMaria(x), w.kind.maria === 'class'); };
+  const cur = () => { const w = st(), t = w.tab, k = w.kind[t]; if (k === 'gen' && !w.gen[t]) w.gen[t] = t === 'tom' ? genTom() : genMaria(); if (k === 'gen') return w.gen[t]; if (k !== 'class') return (t === 'tom' ? TOMS : MARIAS)[k] || (t === 'tom' ? TOM : MARIA); return t === 'tom' ? TOM : MARIA; };
+  const cellsNow = () => { const w = st(), x = cur(); return w.tab === 'tom' ? cellsTom(solveTom(x)) : cellsMaria(solveMaria(x), x); };
   const vkey = id => { const w = st(); return w.tab + ':' + w.kind[w.tab] + ':' + id; };
 
   /* ---------- the sheet ---------- */
@@ -80,16 +89,16 @@
       <section class="panel ws-part"><h2>Step 6 · Net pay</h2><div class="table-wrap"><table class="ws ws-fit"><tbody><tr><td>Taxable income − total taxes = post-tax income</td><td>${inp('t_post')}</td></tr><tr><td>Post-tax income − after-tax deductions = <b>final net pay</b></td><td>${inp('t_net')}</td></tr></tbody></table></div></section>
       ${w.checked || w.reveal ? `<section class="panel ws-part"><details class="ws-steps" open><summary>Worked steps</summary><p>Gross ${m(x.base)} + ${m(x.bonus)} = <b>${m(s.gross)}</b> · retirement ${x.retPct}% × ${m(s.gross)} = ${m(s.ret)} · before-tax total ${m(s.bt)} · taxable ${m(s.gross)} − ${m(s.bt)} = <b>${m(s.taxable)}</b></p><p>SS 6.2% × ${m(s.taxable)} = ${m(s.ss)} · Medicare 1.45% = ${m(s.med)} · federal ${x.fed}% = ${m(s.fed)} · Illinois 4.95% = ${m(s.il)} → total taxes <b>${m(s.taxes)}</b></p><p>Post-tax ${m(s.taxable)} − ${m(s.taxes)} = ${m(s.post)} · after-tax ${m(s.at)} → <b>net ${m(s.net)}</b></p><p class="source">This sheet takes every tax off taxable income. The Payroll Update method takes FICA (SS + Medicare) off gross instead, so check which one a question wants. Answers accept ±2¢ for rounding.</p></details></section>` : ''}`;
     } else {
-      const s = solveMaria(x), terms = w.kind.maria === 'class';
-      body = (terms ? `<section class="panel ws-part"><h2>Part 1 · Terminology matching</h2><div class="table-wrap"><table class="ws ws-fit"><thead><tr><th>Term</th><th>Definition (A–F)</th></tr></thead><tbody>${TERMS.map(([t], i) => `<tr><td>${i + 1}. ${esc(t)}</td><td>${inp('k' + i)}</td></tr>`).join('')}</tbody></table></div><ul class="wt-jobs">${Object.entries(DEFS).map(([k, d]) => `<li><b>${k}.</b> ${esc(d)}</li>`).join('')}</ul></section>` : '') +
+      const s = solveMaria(x), terms = !!x.key, defs = x.defs || {};
+      body = (terms ? `<section class="panel ws-part"><h2>Part 1 · Terminology matching</h2><div class="table-wrap"><table class="ws ws-fit"><thead><tr><th>Term</th><th>Definition (A–F)</th></tr></thead><tbody>${TERMS.map(([t], i) => `<tr><td>${i + 1}. ${esc(t)}</td><td>${inp('k' + i)}</td></tr>`).join('')}</tbody></table></div><ul class="wt-jobs">${Object.entries(defs).map(([k, d]) => `<li><b>${k}.</b> ${esc(d)}</li>`).join('')}</ul></section>` : '') +
       `<section class="panel ws-part"><h2>${terms ? 'Part 2 · ' : ''}${esc(x.name)}’s paycheck</h2><p class="ws-given">${esc(x.name)} works <b>${x.hours} hours</b> in a week at <b>$${m(x.rate)}/hour</b>, with 1.5× her regular rate for hours over 40. Federal withholding <b>${x.fed}%</b>, state <b>${x.state}%</b>, FICA <b>${x.fica}%</b>, all off gross.</p>
       <div class="table-wrap"><table class="ws ws-fit"><tbody><tr><td>1. Regular pay (40 hrs)</td><td>${inp('m_reg')}</td></tr><tr><td>1. Overtime pay</td><td>${inp('m_ot')}</td></tr><tr><td>2. Gross pay</td><td>${inp('m_gross')}</td></tr><tr><td>3. Federal tax</td><td>${inp('m_fed')}</td></tr><tr><td>3. State tax</td><td>${inp('m_state')}</td></tr><tr><td>3. FICA</td><td>${inp('m_fica')}</td></tr><tr><td>3. Total taxes withheld</td><td>${inp('m_taxes')}</td></tr><tr><td>4. <b>Net pay</b></td><td>${inp('m_net')}</td></tr></tbody></table></div></section>
-      ${w.checked || w.reveal ? `<section class="panel ws-part"><details class="ws-steps" open><summary>Worked steps</summary>${terms ? `<p>Matching: ${TERMS.map(([t, k], i) => `${i + 1}-${k}`).join(' · ')}</p>` : ''}<p>Regular 40 × ${m(x.rate)} = <b>${m(s.reg)}</b> · overtime ${x.hours - 40} × (${m(x.rate)} × 1.5 = ${m(s.otRate)}) = <b>${m(s.ot)}</b> · gross <b>${m(s.gross)}</b></p><p>Federal ${x.fed}% = ${m(s.fed)} · state ${x.state}% = ${m(s.state)} · FICA ${x.fica}% = ${m(s.fica)} → total <b>${m(s.taxes)}</b> · net ${m(s.gross)} − ${m(s.taxes)} = <b>${m(s.net)}</b></p><p class="source">Answers accept ±2¢ for rounding.</p></details></section>` : ''}`;
+      ${w.checked || w.reveal ? `<section class="panel ws-part"><details class="ws-steps" open><summary>Worked steps</summary>${terms ? `<p>Matching: ${TERMS.map(([t], i) => `${i + 1}-${x.key[i]}`).join(' · ')}</p>` : ''}<p>Regular 40 × ${m(x.rate)} = <b>${m(s.reg)}</b> · overtime ${x.hours - 40} × (${m(x.rate)} × 1.5 = ${m(s.otRate)}) = <b>${m(s.ot)}</b> · gross <b>${m(s.gross)}</b></p><p>Federal ${x.fed}% = ${m(s.fed)} · state ${x.state}% = ${m(s.state)} · FICA ${x.fica}% = ${m(s.fica)} → total <b>${m(s.taxes)}</b> · net ${m(s.gross)} − ${m(s.taxes)} = <b>${m(s.net)}</b></p><p class="source">Answers accept ±2¢ for rounding.</p></details></section>` : ''}`;
     }
     $('#app').innerHTML = S().heading('CALCULATE / WORKSHEET', 'Payroll Worksheets', 'The class payroll handouts, cell by cell. Your entries save as you type.',
       `<div class="ws-score">${w.checked ? `<b>${ok}</b> / ${ids.length}<small>cells correct</small>` : `<small>${ids.length} cells</small>`}</div>`) +
       `<section class="panel ws-bar"><div class="ws-switch"><button class="${w.tab === 'tom' ? 'primary' : ''}" data-action="pys-tab" data-tab="tom">Worksheet 1 · Tom</button><button class="${w.tab === 'maria' ? 'primary' : ''}" data-action="pys-tab" data-tab="maria">Exercise 2 · Maria</button></div>
-      <div class="ws-switch"><button class="${w.kind[w.tab] === 'class' ? 'primary' : ''}" data-action="pys-kind" data-kind="class">Class numbers</button><button class="${w.kind[w.tab] === 'gen' ? 'primary' : ''}" data-action="pys-kind" data-kind="gen">New numbers</button><button data-action="pyw-open" class="wt-launch">▶ Guided walkthrough</button></div>
+      <div class="ws-switch">${[['class', 'Class sheet'], ['pA', 'Practice A'], ['pB', 'Practice B'], ['pC', 'Practice C'], ['gen', 'New numbers']].map(([k, l]) => `<button class="${w.kind[w.tab] === k ? 'primary' : ''}" data-action="pys-kind" data-kind="${k}">${l}</button>`).join('')}<button data-action="pyw-open" class="wt-launch">▶ Guided walkthrough</button></div>
       <span class="source">${esc(x.title)}</span></section>${body}
       <div class="ws-actions"><button data-action="pys-clear">Clear sheet</button><button data-action="pys-reveal">${w.reveal ? 'Hide answers' : 'Reveal answers'}</button>${w.kind[w.tab] === 'gen' ? '<button data-action="pys-new">New numbers ↻</button>' : ''}<button class="primary" data-action="pys-check">Check sheet →</button></div>`;
   }
@@ -119,7 +128,7 @@
       add('Net pay', `<div class="wt-formula">Post-tax income = taxable − total taxes<br>Net pay = post-tax − after-tax deductions</div>`, [F('t_post', 'Post-tax income'), F('t_net', 'Final net pay')], `${m(s.taxable)} − ${m(s.taxes)}, then − ${m(s.at)}.`, `${m(s.taxable)} − ${m(s.taxes)} = ${m(s.post)} · − ${m(s.at)} = <b>$${m(s.net)}</b>`);
     } else {
       const s = solveMaria(x);
-      if (w.kind.maria === 'class') add('Match the terms', `Match each payroll term to its definition:<ul class="wt-jobs">${Object.entries(DEFS).map(([k, d]) => `<li><b>${k}.</b> ${esc(d)}</li>`).join('')}</ul>`, TERMS.map(([t], i) => F('k' + i, `${i + 1}. ${t}`)), `Gross = before deductions; net = take-home; FLSA = wages & overtime law.`, TERMS.map(([t, k]) => `${t} → <b>${k}</b>`).join(' · '));
+      if (x.key) add('Match the terms', `Match each payroll term to its definition:<ul class="wt-jobs">${Object.entries(x.defs).map(([k, d]) => `<li><b>${k}.</b> ${esc(d)}</li>`).join('')}</ul>`, TERMS.map(([t], i) => F('k' + i, `${i + 1}. ${t}`)), `Gross = before deductions; net = take-home; FLSA = wages & overtime law.`, TERMS.map(([t], i) => `${t} → <b>${x.key[i]}</b>`).join(' · '));
       add('Regular and overtime pay', `The first 40 hours are paid at the regular rate. Hours over 40 get <b>1.5×</b> the rate (FLSA).<div class="wt-formula">Regular = 40 × rate<br>Overtime = (hours − 40) × rate × 1.5</div>`, [F('m_reg', 'Regular pay'), F('m_ot', 'Overtime pay')], `40 × ${m(x.rate)} and ${x.hours - 40} × ${m(s.otRate)}`, `40 × ${m(x.rate)} = <b>${m(s.reg)}</b> · ${x.hours - 40} × ${m(s.otRate)} = <b>${m(s.ot)}</b>`);
       add('Gross pay', `<div class="wt-formula">Gross = regular + overtime</div>`, [F('m_gross', 'Gross pay')], `${m(s.reg)} + ${m(s.ot)}`, `<b>$${m(s.gross)}</b>`);
       add('Taxes withheld', `Here every tax comes off <b>gross</b>: federal ${x.fed}%, state ${x.state}%, FICA ${x.fica}% (6.2% SS + 1.45% Medicare).`, [F('m_fed', 'Federal'), F('m_state', 'State'), F('m_fica', 'FICA'), F('m_taxes', 'Total taxes')], `Multiply ${m(s.gross)} by each rate.`, `${m(s.fed)} + ${m(s.state)} + ${m(s.fica)} = <b>$${m(s.taxes)}</b>`);
@@ -177,6 +186,6 @@
       else if (a === 'pys-kind') { w.kind[w.tab] = b.dataset.kind; w.checked = false; w.reveal = false; S().save(); page(true); }
       return true;
     },
-    _solveTom: solveTom, _solveMaria: solveMaria, _TOM: TOM, _MARIA: MARIA, _cellsTom: cellsTom, _cellsMaria: cellsMaria, _genTom: genTom, _genMaria: genMaria
+    _solveTom: solveTom, _solveMaria: solveMaria, _TOM: TOM, _MARIA: MARIA, _cellsTom: cellsTom, _cellsMaria: cellsMaria, _TOMS: TOMS, _MARIAS: MARIAS, _genTom: genTom, _genMaria: genMaria
   };
 })();

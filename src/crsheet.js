@@ -29,6 +29,15 @@
     p2: { mid3: 64128, diff: [0, 10, 15, 17, 20], rd: [12, 14, 17, 20, 20],
       jobs: [['Job A', 650, 60352], ['Job B', 320, 51708], ['Job C', 850, 102422]] }
   };
+  /* Practice versions A–C from the extra worksheet packet. Same inputs, solved the CLASS way (ideal pay for points,
+     rounded-dollar charts, 0.90–1.10), not the packet key's method (actual ÷ midpoint, cents, revise every grade to market). */
+  const pv = (v, m3, d, ec, ac, it, m32, pays) => ({ title: `Practice ${v} · worksheet packet (solved the class way)`,
+    p1: { mid3: m3, diff: [0, d, d, d, d], rd: [15, 15, 15, 20, 20], jobs: [['Employment Consultant', 425, [['ISU', ec[0]], ['UIUC', ec[1]], ['IWU', ec[2]]]], ['Accountant II', 780, [['IWU', ac[0]], ['ISU', ac[1]], ['UIUC', ac[2]]]], ['IT Specialist', 340, [['UIUC', it[0]], ['IWU', it[1]], ['ISU', it[2]]]]] },
+    p2: { mid3: m32, diff: [0, 10, 15, 17, 20], rd: [12, 14, 17, 20, 20], jobs: [['Job A', 700, pays[0]], ['Job B', 900, pays[1]], ['Job C', 300, pays[2]]] } });
+  const PRACTICE = {
+    pA: pv('A', 62400, 12, [65000, 67500, 66000], [58000, 61000, 64500], [55000, 57000, 59000], 71200, [64850, 104500, 55720]),
+    pB: pv('B', 58600, 8, [54500, 56500, 55500], [68000, 70500, 69500], [47000, 49000, 48000], 65300, [88400, 71800, 63400]),
+    pC: pv('C', 64800, 11, [63500, 66000, 65000], [74000, 76500, 75250], [52000, 55000, 56500], 68400, [58950, 112400, 61300]) };
   /* Second version of the handout (Grade 3 mid 57,964 / 67,860), worked with the same class rules. */
   const CLASS_B = {
     title: 'Class sheet B · MGT 354 Compa-Ratio Exercise (57,964 version)',
@@ -92,7 +101,7 @@
   }
 
   const st = () => { const s = S().state; if (!s.crsheet || s.crsheet.v !== 2) s.crsheet = { v: 2, kind: 'class', gen: null, vals: {}, checked: false, reveal: false }; return s.crsheet; };
-  const current = () => { const w = st(); if (w.kind === 'gen' && !w.gen) w.gen = genSheet(); return w.kind === 'gen' ? w.gen : w.kind === 'classB' ? CLASS_B : CLASS; };
+  const current = () => { const w = st(); if (w.kind === 'gen' && !w.gen) w.gen = genSheet(); return w.kind === 'gen' ? w.gen : w.kind === 'classB' ? CLASS_B : PRACTICE[w.kind] || CLASS; };
 
   function page(keep) {
     if (!keep || S().page !== 'crsheet') S().setPage('crsheet');
@@ -131,7 +140,7 @@
       <p class="source">The class sheet divided ideal ÷ actual in Problem 2; the textbook divides actual (pay) ÷ ideal (target). Ask which one counts. Dollar cells accept ±$1, ratios ±0.01.</p></details></section>` : '';
     $('#app').innerHTML = S().heading('CALCULATE / WORKSHEET', 'Compa-Ratio Sheet', 'The class Compa-Ratio Exercise, cell by cell. Your entries save as you type.',
       `<div class="ws-score">${w.checked ? `<b>${ok}</b> / ${ids.length}<small>cells correct</small>` : `<small>${ids.length} cells</small>`}</div>`) +
-      `<section class="panel ws-bar"><div class="ws-switch"><button class="${w.kind === 'class' ? 'primary' : ''}" data-action="crs-kind" data-kind="class">Class sheet A</button><button class="${w.kind === 'classB' ? 'primary' : ''}" data-action="crs-kind" data-kind="classB">Class sheet B</button><button class="${w.kind === 'gen' ? 'primary' : ''}" data-action="crs-kind" data-kind="gen">New numbers</button><button data-action="crw-open" class="wt-launch">▶ Guided walkthrough</button></div>
+      `<section class="panel ws-bar"><div class="ws-switch">${[['class', 'Class sheet A'], ['classB', 'Class sheet B'], ['pA', 'Practice A'], ['pB', 'Practice B'], ['pC', 'Practice C'], ['gen', 'New numbers']].map(([k, l]) => `<button class="${w.kind === k ? 'primary' : ''}" data-action="crs-kind" data-kind="${k}">${l}</button>`).join('')}<button data-action="crw-open" class="wt-launch">▶ Guided walkthrough</button></div>
       <span class="source">${esc(sh.title)}</span></section>
       <section class="panel ws-part"><h2>Problem 1 · Pay grades vs the market</h2>${p1}</section>
       <section class="panel ws-part"><h2>Problem 2 · How far from the midpoint?</h2>${p2}</section>
@@ -262,6 +271,6 @@
       else if (a === 'crs-kind') { if (w.kind !== b.dataset.kind) { w.kind = b.dataset.kind; w.walk = null; w.vals = {}; w.checked = false; w.reveal = false; S().save(); } page(true); }
       return true;
     },
-    _solve: solve, _cells: cells, _CLASS: CLASS, _CLASS_B: CLASS_B, _gen: genSheet, _steps: buildSteps
+    _solve: solve, _cells: cells, _CLASS: CLASS, _CLASS_B: CLASS_B, _PRACTICE: PRACTICE, _gen: genSheet, _steps: buildSteps
   };
 })();
