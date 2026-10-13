@@ -316,3 +316,9 @@ mark{background:rgba(255,204,0,.45);color:inherit;border-radius:3px;padding:0 2p
 .wt-field small{color:#ff3b30;font-size:13px}
 .wt-launch{font-weight:600}
 .wt-jobs{margin:12px 0 0;padding-left:18px;font-size:14px;line-height:1.6;color:var(--ap-2)}
+
+/* Worksheet toolbars wrap on phones; short two-column tables fit the screen */
+.ws-switch{flex-wrap:wrap}
+@media (max-width:720px){.ws-switch button{flex:1 1 auto}}
+table.ws.ws-fit{min-width:0!important;width:100%}
+table.ws.ws-fit td:last-child{white-space:nowrap}

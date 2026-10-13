@@ -4,8 +4,8 @@
   'use strict';
   const $ = s => document.querySelector(s);
   const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-  const MATH_PAGES = ['math', 'sheet', 'mathexam', 'exam', 'drill'];
-  const FIELD_SEL = '[data-math-field],[data-ws],[data-wt]';
+  const MATH_PAGES = ['math', 'sheet', 'crsheet', 'paysheet', 'mathexam', 'exam', 'drill'];
+  const FIELD_SEL = '[data-math-field],[data-ws],[data-wt],input[data-crs],input[data-crw],input[data-pys],input[data-pyw]';
   let expr = '', tape = [], lastField = null, justEvaluated = false;
 
   /* ---------- parser: numbers, + − × ÷, parentheses, %, unary minus ---------- */

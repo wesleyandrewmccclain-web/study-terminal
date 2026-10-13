@@ -29,6 +29,16 @@
     p2: { mid3: 64128, diff: [0, 10, 15, 17, 20], rd: [12, 14, 17, 20, 20],
       jobs: [['Job A', 650, 60352], ['Job B', 320, 51708], ['Job C', 850, 102422]] }
   };
+  /* Second version of the handout (Grade 3 mid 57,964 / 67,860), worked with the same class rules. */
+  const CLASS_B = {
+    title: 'Class sheet B · MGT 354 Compa-Ratio Exercise (57,964 version)',
+    p1: { mid3: 57964, diff: [0, 10, 10, 10, 10], rd: [15, 15, 15, 20, 20],
+      jobs: [['Employment Consultant', 425, [['ISU', 48752], ['UIUC', 50247], ['IWU', 45132]]],
+        ['Accountant II', 780, [['IWU', 59134], ['ISU', 54326], ['UIUC', 56794]]],
+        ['IT Specialist', 340, [['UIUC', 48356], ['IWU', 53215], ['ISU', 46587]]]] },
+    p2: { mid3: 67860, diff: [0, 10, 15, 17, 20], rd: [12, 14, 17, 20, 20],
+      jobs: [['Job A', 700, 59780], ['Job B', 900, 69840], ['Job C', 300, 51655]] }
+  };
 
   function table(p) {
     const mid = []; mid[2] = p.mid3;
@@ -51,16 +61,16 @@
     // The class fixed the job furthest out of line: gap = actual − its grade mid; new min = old min + gap; step = new min × range diff.
     const worst = j2.reduce((w, j) => Math.abs(1 - j.crA) > Math.abs(1 - w.crA) ? j : w, j2[0]);
     const gap = worst.actual - worst.row.mid, nmin = worst.row.min + gap, step = r(nmin * worst.row.rd / 100);
-    return { t1, t2, j1, j2, change: out.length ? 'Change Grade ' + [...new Set(out.map(j => j.g))].join(' & ') : 'No change', fix: { job: worst, gap, nmin, step, nmid: nmin + step, nmax: nmin + 2 * step } };
+    return { t1, t2, j1, j2, change: out.length ? 'Change Grade ' + [...new Set(out.map(j => j.g))].sort().join(' & ') : 'No change', fix: gap > 0 ? { job: worst, gap, nmin, step, nmid: nmin + step, nmax: nmin + 2 * step } : null };
   }
   function cells(sol) {
     const c = {}, $c = (a, tol = 1) => ({ answer: a, tol }), crc = a => ({ answer: a, tol: 0.0101, cr: true });
     sol.t1.forEach((row, i) => { if (i !== 2) c['a_mid' + i] = $c(row.mid); c['a_min' + i] = $c(row.min); c['a_max' + i] = $c(row.max); });
     sol.j1.forEach((j, i) => { c['a_g' + i] = $c(j.g, 0); c['a_ip' + i] = $c(j.pay); c['a_mkt' + i] = $c(j.mkt); c['a_cr' + i] = crc(j.cr); });
-    c.a_dec = { choice: sol.change, options: [...new Set(['No change', ...sol.j1.map(j => 'Change Grade ' + j.g).sort(), sol.change])] };
+    const gs = [...new Set(sol.j1.map(j => j.g))].sort(); c.a_dec = { choice: sol.change, options: [...new Set(['No change', ...gs.map(g => 'Change Grade ' + g), ...(gs.length > 1 ? ['Change Grade ' + gs.join(' & ')] : []), sol.change])] };
     sol.t2.forEach((row, i) => { if (i !== 2) c['b_mid' + i] = $c(row.mid); c['b_min' + i] = $c(row.min); c['b_max' + i] = $c(row.max); });
     sol.j2.forEach((j, i) => { c['b_g' + i] = $c(j.g, 0); c['b_ip' + i] = $c(j.pay); c['b_crA' + i] = crc(j.crA); c['b_crB' + i] = crc(j.crB); c['b_act' + i] = { choice: act(j.crA), options: ['Raise gradually', 'OK', 'Freeze'] }; });
-    const f = sol.fix; c.f_gap = $c(f.gap); c.f_min = $c(f.nmin); c.f_mid = $c(f.nmid, 2); c.f_max = $c(f.nmax, 3);
+    const f = sol.fix; if (f) { c.f_gap = $c(f.gap); c.f_min = $c(f.nmin); c.f_mid = $c(f.nmid, 2); c.f_max = $c(f.nmax, 3); }
     return c;
   }
   function grade(cell, v) {
@@ -82,7 +92,7 @@
   }
 
   const st = () => { const s = S().state; if (!s.crsheet || s.crsheet.v !== 2) s.crsheet = { v: 2, kind: 'class', gen: null, vals: {}, checked: false, reveal: false }; return s.crsheet; };
-  const current = () => { const w = st(); if (w.kind === 'gen' && !w.gen) w.gen = genSheet(); return w.kind === 'gen' ? w.gen : CLASS; };
+  const current = () => { const w = st(); if (w.kind === 'gen' && !w.gen) w.gen = genSheet(); return w.kind === 'gen' ? w.gen : w.kind === 'classB' ? CLASS_B : CLASS; };
 
   function page(keep) {
     if (!keep || S().page !== 'crsheet') S().setPage('crsheet');
@@ -110,18 +120,18 @@
       <h3 class="ws-h3">Your employees</h3>
       <div class="table-wrap"><table class="ws"><thead><tr><th>Job</th><th>Actual pay</th><th>Grade</th><th>Ideal pay (points)</th><th>Ideal ÷ actual<br><small>class sheet</small></th><th>Actual ÷ ideal<br><small>textbook</small></th><th>Action (class)</th></tr></thead><tbody>
       ${sol.j2.map((j, i) => `<tr><td>${esc(j.name)} (${j.pts} pts)</td><td>${fmt(j.actual)}</td><td>${inp('b_g' + i)}</td><td>${inp('b_ip' + i)}</td><td>${inp('b_crA' + i)}</td><td>${inp('b_crB' + i)}</td><td>${inp('b_act' + i)}</td></tr>`).join('')}</tbody></table></div>
-      <h3 class="ws-h3">Fix the range for ${esc(f.job.name)} (Grade ${f.job.g}), the class way</h3>
-      <div class="table-wrap"><table class="ws"><thead><tr><th>Gap = actual − grade mid</th><th>New min = old min + gap</th><th>New mid = min + min × ${f.job.row.rd}%</th><th>New max = mid + same step</th></tr></thead><tbody><tr><td>${inp('f_gap')}</td><td>${inp('f_min')}</td><td>${inp('f_mid')}</td><td>${inp('f_max')}</td></tr></tbody></table></div>`;
+      ${f ? `<h3 class="ws-h3">Fix the range for ${esc(f.job.name)} (Grade ${f.job.g}), the class way</h3>
+      <div class="table-wrap"><table class="ws"><thead><tr><th>Gap = actual − grade mid</th><th>New min = old min + gap</th><th>New mid = min + min × ${f.job.row.rd}%</th><th>New max = mid + same step</th></tr></thead><tbody><tr><td>${inp('f_gap')}</td><td>${inp('f_min')}</td><td>${inp('f_mid')}</td><td>${inp('f_max')}</td></tr></tbody></table></div>` : `<p class="ws-given">No job is paid above its grade’s midpoint here, so there’s no range to rebuild: underpaid jobs get raised toward the ideal rate instead.</p>`}`;
     const steps = w.checked || w.reveal ? `<section class="panel ws-part"><details class="ws-steps" open><summary>Worked steps</summary>
       <p><b>Midpoints.</b> Up: mid × (1 + the next grade’s differential). Down: mid ÷ (1 + this grade’s differential), never × (1 − diff). Min = mid × (1 − range diff), max = mid × (1 + range diff). Normal rounding.</p>
       <p><b>Ideal pay.</b> min + (mid − min) × a ÷ 100, where a = points − grade bottom; round UP.</p>
       <p><b>Problem 1.</b> ${sol.j1.map(j => `${esc(j.name)}: Grade ${j.g} · (${fmt(j.row.mid)} − ${fmt(j.row.min)}) × ${j.a}/100 + ${fmt(j.row.min)} = ${fmt(j.pay)} · market ${fmt(j.pays.reduce((a, [, v]) => a + v, 0))} ÷ 3 = ${fmt(j.mkt)} · ${fmt(j.pay)} ÷ ${fmt(j.mkt)} = ${j.cr.toFixed(2)}`).join('<br>')}<br>All inside 0.90–1.10 → no change; outside → change that grade’s range. Answer: <b>${esc(sol.change)}</b>.</p>
       <p><b>Problem 2.</b> ${sol.j2.map(j => `${esc(j.name)}: Grade ${j.g} · ideal ${fmt(j.pay)} · ideal ÷ actual = ${j.crA.toFixed(2)} → ${act(j.crA)} · actual ÷ ideal = ${j.crB.toFixed(2)}`).join('<br>')}</p>
-      <p><b>Fix (class method).</b> ${fmt(f.job.actual)} − ${fmt(f.job.row.mid)} = ${fmt(f.gap)} · new min ${fmt(f.job.row.min)} + ${fmt(f.gap)} = ${fmt(f.nmin)} · step ${fmt(f.nmin)} × ${f.job.row.rd}% = ${fmt(f.step)} → mid ${fmt(f.nmid)}, max ${fmt(f.nmax)}.</p>
+      ${f ? `<p><b>Fix (class method).</b> ${fmt(f.job.actual)} − ${fmt(f.job.row.mid)} = ${fmt(f.gap)} · new min ${fmt(f.job.row.min)} + ${fmt(f.gap)} = ${fmt(f.nmin)} · step ${fmt(f.nmin)} × ${f.job.row.rd}% = ${fmt(f.step)} → mid ${fmt(f.nmid)}, max ${fmt(f.nmax)}.</p>` : ''}
       <p class="source">The class sheet divided ideal ÷ actual in Problem 2; the textbook divides actual (pay) ÷ ideal (target). Ask which one counts. Dollar cells accept ±$1, ratios ±0.01.</p></details></section>` : '';
     $('#app').innerHTML = S().heading('CALCULATE / WORKSHEET', 'Compa-Ratio Sheet', 'The class Compa-Ratio Exercise, cell by cell. Your entries save as you type.',
       `<div class="ws-score">${w.checked ? `<b>${ok}</b> / ${ids.length}<small>cells correct</small>` : `<small>${ids.length} cells</small>`}</div>`) +
-      `<section class="panel ws-bar"><div class="ws-switch"><button class="${w.kind === 'class' ? 'primary' : ''}" data-action="crs-kind" data-kind="class">Class sheet</button><button class="${w.kind === 'gen' ? 'primary' : ''}" data-action="crs-kind" data-kind="gen">New numbers</button><button data-action="crw-open" class="wt-launch">▶ Guided walkthrough</button></div>
+      `<section class="panel ws-bar"><div class="ws-switch"><button class="${w.kind === 'class' ? 'primary' : ''}" data-action="crs-kind" data-kind="class">Class sheet A</button><button class="${w.kind === 'classB' ? 'primary' : ''}" data-action="crs-kind" data-kind="classB">Class sheet B</button><button class="${w.kind === 'gen' ? 'primary' : ''}" data-action="crs-kind" data-kind="gen">New numbers</button><button data-action="crw-open" class="wt-launch">▶ Guided walkthrough</button></div>
       <span class="source">${esc(sh.title)}</span></section>
       <section class="panel ws-part"><h2>Problem 1 · Pay grades vs the market</h2>${p1}</section>
       <section class="panel ws-part"><h2>Problem 2 · How far from the midpoint?</h2>${p2}</section>
@@ -176,7 +186,7 @@
       sol.j2.flatMap((j, i) => [F('b_crA' + i, `${j.name}: ideal ÷ actual`), F('b_crB' + i, `${j.name}: actual ÷ ideal`)]), `One ratio is just 1 ÷ the other.`, sol.j2.map(j => `${j.name}: ${f$(j.pay)} ÷ ${f$(j.actual)} = <b>${j.crA.toFixed(2)}</b> · ${f$(j.actual)} ÷ ${f$(j.pay)} = <b>${j.crB.toFixed(2)}</b>`).join('<br>'));
     add(2, 'What to do (class sheet)', `Using the class ratio (ideal ÷ actual): above <b>1.10</b> → freeze pay until the position is more in line; below <b>0.90</b> → gradually increase; in between → OK.`,
       sol.j2.map((j, i) => F('b_act' + i, `${j.name} action`)), `Compare each ideal ÷ actual ratio with 0.90 and 1.10.`, sol.j2.map(j => `${j.name}: ${j.crA.toFixed(2)} → <b>${act(j.crA)}</b>`).join('<br>'));
-    add(2, 'Fix the range (class method)', `For the job furthest out of line (<b>${esc(f.job.name)}</b>, Grade ${f.job.g}) the class rebuilt the range:<div class="wt-formula">Gap = actual − grade mid<br>New min = old min + gap<br>Step = new min × range diff<br>New mid = min + step · New max = mid + step</div>`,
+    if (f) add(2, 'Fix the range (class method)', `For the job furthest out of line (<b>${esc(f.job.name)}</b>, Grade ${f.job.g}) the class rebuilt the range:<div class="wt-formula">Gap = actual − grade mid<br>New min = old min + gap<br>Step = new min × range diff<br>New mid = min + step · New max = mid + step</div>`,
       [F('f_gap', 'Gap'), F('f_min', 'New min'), F('f_mid', 'New mid'), F('f_max', 'New max')], `${fmt(f.job.actual)} − ${fmt(f.job.row.mid)}, then add that to ${fmt(f.job.row.min)}.`, `${f$(f.job.actual)} − ${f$(f.job.row.mid)} = <b>${f$(f.gap)}</b> · ${f$(f.job.row.min)} + ${f$(f.gap)} = <b>${f$(f.nmin)}</b> · step ${f$(f.step)} → mid <b>${f$(f.nmid)}</b>, max <b>${f$(f.nmax)}</b>`);
     return { steps, sol };
   }
@@ -252,6 +262,6 @@
       else if (a === 'crs-kind') { if (w.kind !== b.dataset.kind) { w.kind = b.dataset.kind; w.walk = null; w.vals = {}; w.checked = false; w.reveal = false; S().save(); } page(true); }
       return true;
     },
-    _solve: solve, _cells: cells, _CLASS: CLASS, _gen: genSheet, _steps: buildSteps
+    _solve: solve, _cells: cells, _CLASS: CLASS, _CLASS_B: CLASS_B, _gen: genSheet, _steps: buildSteps
   };
 })();

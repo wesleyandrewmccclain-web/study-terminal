@@ -556,6 +556,48 @@ window.EXAM3_DATA = (() => {
       steps: ['G4 mid = 64,128 × 1.17 = 75,030; min = 75,030 × 0.80 = 60,024.', 'a = 650 − 600 = 50 → (75,030 − 60,024) × 0.5 = 7,503 → + 60,024 = 67,527.', 'Class sheet: 67,527 ÷ 60,352 = 1.12 → above 1.10 → freeze until in line.', 'Textbook: 60,352 ÷ 67,527 = 0.89 → just under 0.90.'] }
   );
 
+  /* ---- New class sheets (shared 10/13): Payroll Worksheet 1 (Tom Cruise), Payroll as a Function of HR Exercise 2 (Maria),
+     and Compa-Ratio Exercise sheet B (57,964 version), worked with the class rules. Professor's MC style. */
+  const NS = 'Class payroll & compa-ratio sheets (10/13)';
+  let nn = 0;
+  const nq = (topic, prompt, options, answer, explanation) => ({ id: 'e3n-q' + (++nn), topic, prompt, options, answer, answerKeyText: options[answer], explanation, source: NS, profStyle: true });
+  const nc = (topic, front, back) => ({ id: 'e3n-c' + (++nn), topic, front, back, source: NS, core: true });
+  questions.push(
+    nq('payroll', 'An employee’s total earnings before any deductions are taken out is known as:', ['Net Pay', 'Gross Pay', 'Taxable Income', 'Withholding Tax'], 1, 'Gross pay = total earnings before deductions. Net pay is the take-home amount after them.'),
+    nq('payroll', 'The employee’s take-home earnings after all deductions is called:', ['Gross Pay', 'Post-Tax Income', 'Net Pay', 'None of the answer choices are correct'], 2, 'Net pay = gross − taxes − all other deductions.'),
+    nq('payroll', 'Which federal law governs wages, overtime and child labor?', ['FMLA', 'ERISA', 'FLSA', 'HIPAA'], 2, 'The Fair Labor Standards Act sets minimum wage, overtime (1.5× over 40 hours) and child-labor rules.'),
+    nq('payroll', 'A tax deducted from an employee’s pay for income and other purposes is called a(n):', ['Withholding Tax', 'Payroll Fee', 'FUTA Credit', 'Garnishment'], 0, 'Withholding tax is held back from each paycheck and sent to the government.'),
+    nq('payroll', 'A new hire completes a federal form so the employer knows how much tax to withhold. That form is the:', ['W-2', 'W-4', '1099', 'I-9'], 1, 'W-4 at hire sets withholding; the W-2 reports the year’s pay afterward.'),
+    nq('payroll', 'An organization uses one technology system to manage employee information and run payroll. That system is a(n):', ['HRIS', 'ERP', 'FLSA', 'POS'], 0, 'HRIS = Human Resource Information System.'),
+    nq('payroll', 'Maria works 45 hours in a week at $20/hour and is paid 1.5× her regular rate for overtime. What is her gross pay?', ['$900', '$950', '$1,000', '$1,350'], 1, 'Regular 40 × 20 = 800; overtime 5 × 30 = 150; gross 950. $900 forgets the 1.5× premium.'),
+    nq('payroll', 'Maria’s $950 gross pay has 10% federal, 5% state and 7.65% FICA withheld, all off gross. Her total taxes withheld are:', ['$145.00', '$215.18', '$237.50', '$72.68'], 1, '95.00 + 47.50 + 72.68 = 215.18 (22.65% of 950).'),
+    nq('payroll', 'After $215.18 in taxes, Maria’s net pay on $950 gross is:', ['$734.82', '$950.00', '$877.32', '$800.00'], 0, '950 − 215.18 = 734.82 (734.83 if you don’t round each tax first).'),
+    nq('payroll', 'Tom earns a $9,435 base salary plus a $1,250 bonus this month. His before-tax deductions are 2% retirement (on gross), $225 health, $50 dental and $18 vision. His taxable income is:', ['$10,685.00', '$10,178.30', '$10,391.00', '$9,928.30'], 1, 'Gross 10,685; retirement 2% = 213.70; before-tax total 506.70; taxable = 10,685 − 506.70 = 10,178.30.'),
+    nq('payroll', 'On the class payroll worksheet, Tom’s $10,178.30 of taxable income is taxed at 6.2% SS, 1.45% Medicare, 12% federal and 4.95% Illinois. His total taxes are:', ['$2,503.87', '$1,989.85', '$2,636.83', '$778.64'], 0, '631.05 + 147.59 + 1,221.40 + 503.83 = 2,503.87.'),
+    nq('payroll', 'Tom’s post-tax income is $7,674.43 and his after-tax deductions are $35 life insurance and $42 short-term disability. His final net pay is:', ['$7,674.43', '$7,597.43', '$7,509.73', '$10,108.30'], 1, '7,674.43 − 77.00 = 7,597.43. Life and disability insurance come out after taxes.'),
+    nq('payroll', 'Which of the following is NOT a before-tax deduction on the class payroll worksheet?', ['Retirement (2%)', 'Health Insurance', 'Short-Term Disability Insurance', 'Vision Insurance'], 2, 'Life and short-term disability insurance are after-tax deductions on the sheet.'),
+    nq('compa', 'Using sheet B (Grade 4 mid $63,760, min $51,008), the Accountant II job (780 pts) has an ideal pay of $73,962 against a market average of $56,751. What should the analyst recommend?', ['No change: 1.03 is within the target', 'Change Grade 4: 1.30 is above the 0.90–1.10 target', 'Change Grade 4: 0.77 is below the target', 'Federal law requires the company to match the market exactly'], 1, '73,962 ÷ 56,751 = 1.30, above 1.10, so Grade 4’s range should change.'),
+    nq('compa', 'On sheet B, the IT Specialist (340 pts) has an ideal pay of $55,857 and a market average of $49,386. Its compa-ratio is:', ['0.88', '1.13', '1.07', '1.00'], 1, '55,857 ÷ 49,386 = 1.13 → above 1.10 → Grade 2 also needs a change. Only the Employment Consultant (1.07) is in range.'),
+    nq('compa', 'On sheet B’s Problem 2, Jobs A (700 pts), B (900 pts) and C (300 pts) all sit exactly halfway up their grades. Their ideal pay rate therefore equals:', ['The grade minimum', 'The grade midpoint', 'The grade maximum', 'None of the answer choices are correct'], 1, 'a ÷ b = 100 ÷ 100 = 1, so ideal = min + (mid − min) = mid: 79,396 · 95,275 · 59,009.')
+  );
+  flashcards.push(
+    nc('payroll', 'Payroll terms (Exercise 2)', 'Gross pay = before deductions · Net pay = take-home · FLSA = wages, overtime, child labor · Withholding tax = held from pay · W-4 = sets withholding · HRIS = HR/payroll system.'),
+    nc('payroll', 'Overtime pay', 'First 40 hours × rate; hours over 40 × rate × 1.5. Maria: 40 × 20 = 800 + 5 × 30 = 150 → gross 950.'),
+    nc('payroll', 'Payroll Worksheet 1 (Tom)', 'Gross 10,685 → before-tax 506.70 (2% retirement 213.70 + 225 + 50 + 18) → taxable 10,178.30 → taxes 2,503.87 (SS 631.05, Med 147.59, Fed 12% 1,221.40, IL 503.83) → post-tax 7,674.43 → after-tax 77 → net 7,597.43.'),
+    nc('payroll', 'Order of a paycheck', 'Gross → before-tax deductions → taxable income → taxes → post-tax income → after-tax deductions → net pay.'),
+    nc('compa', 'Compa sheet B answers', 'P1: ideal ÷ market: Employment Consultant 51,443 ÷ 48,044 = 1.07 OK · Accountant II 73,962 ÷ 56,751 = 1.30 · IT Specialist 55,857 ÷ 49,386 = 1.13 → change Grades 2 & 4. P2: ideal = midpoint (a = 100): A 79,396 · B 95,275 · C 59,009; ideal ÷ actual 1.33 · 1.36 · 1.14.')
+  );
+  math.push(
+    { id: 'e3m-pw1', title: 'Payroll Worksheet 1 · Tom’s net pay', topic: 'payroll', type: 'paytax', source: NS, origin: 'notes',
+      prompt: 'Monthly base $9,435 + bonus $1,250. Before-tax: retirement 2% of gross, health $225, dental $50, vision $18. Taxes on taxable income: SS 6.2%, Medicare 1.45%, federal 12%, Illinois 4.95%. After-tax: life $35, short-term disability $42. Find taxable income, total taxes and net pay.',
+      fields: [$f('taxable', 'Taxable income', 10178.30, '$', 0.02), $f('taxes', 'Total taxes', 2503.87, '$', 0.03), $f('net', 'Net pay', 7597.43, '$', 0.03)],
+      steps: ['Gross = 9,435 + 1,250 = 10,685. Retirement = 2% × 10,685 = 213.70.', 'Before-tax = 213.70 + 225 + 50 + 18 = 506.70 → taxable = 10,178.30.', 'Taxes = 631.05 + 147.59 + 1,221.40 + 503.83 = 2,503.87.', 'Post-tax 7,674.43 − 77 = 7,597.43.'] },
+    { id: 'e3m-pw2', title: 'Exercise 2 · Maria’s overtime paycheck', topic: 'payroll', type: 'overtime', source: NS, origin: 'notes',
+      prompt: 'Maria works 45 hours at $20/hour (1.5× over 40). Federal 10%, state 5%, FICA 7.65%, all off gross. Find gross pay, total taxes and net pay.',
+      fields: [$f('gross', 'Gross pay', 950), $f('taxes', 'Total taxes', 215.18, '$', 0.02), $f('net', 'Net pay', 734.82, '$', 0.02)],
+      steps: ['Regular 40 × 20 = 800; overtime 5 × 30 = 150 → gross 950.', 'Federal 95 + state 47.50 + FICA 72.68 = 215.18.', 'Net = 950 − 215.18 = 734.82.'] }
+  );
+
   return {
     exam: 3, examDay: 'Mon 10/12', examDate: [2026, 9, 12, 12, 35], scope: 'Benefits + Slides 09–10 + payroll update + both guest speakers',
     note: 'Exam 3 is Mon 10/12 (150 pts). Canvas lists: Kathleen’s Benefits talk (that IS the benefits unit, no separate deck), Derek’s AI & HR talk, Compa-Ratios & Payroll class notes + exercises, and the Exec/Flexible Workforce lecture video. The compa-ratio exercise is in, with the class’s worked answers.',
